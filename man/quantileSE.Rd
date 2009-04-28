@@ -1,0 +1,52 @@
+\name{quantileSE}
+\alias{quantileSE}
+
+\title{Sample quantiles and their standard errors}
+
+\description{
+  Calculate sample quantiles and their estimated standard errors.
+}
+
+\usage{
+quantileSE(x, p=0.95, bw, na.rm=TRUE, names=TRUE)
+}
+
+\arguments{
+ \item{x}{Numeric vector whose sample quantiles are wanted.}
+ \item{p}{Numeric vector with values in [0,1].}
+ \item{bw}{Bandwidth to use in the density estimation.}
+ \item{na.rm}{Logical; if true, and \code{NA} and \code{NaN}'s are
+   removed from \code{x} before the quantiles are computed.}
+ \item{names}{Logical; if true, the column names of the result is set to
+   the values in \code{p}.}
+}
+
+\details{
+  The sample quantiles are calculated with the function
+  \code{\link[base]{quantile}}.
+  
+  Standard errors are obtained by the asymptotic approximation described
+  in Cox and Hinkley (1974).  Density values are estimated using a
+  kernel density estimate with the function \code{\link[base]{density}}. 
+}
+
+\value{
+  A matrix of size 2 x \code{length(p)}.  The first row contains the
+  estimated quantiles; the second row contains the corresponding
+  estimated standard errors.
+}
+
+\references{
+  Cox and Hinkley (1974) \emph{Theoretical statistics}.  Chapman and
+  Hall. 
+}
+
+\author{Karl W Broman \email{kbroman@biostat.wisc.edu} }
+
+\examples{
+quantileSE(rchisq(1000,4), c(0.9,0.95))
+}
+
+\seealso{ \code{\link[base]{quantile}}, \code{\link[base]{density}} }
+
+\keyword{univar}

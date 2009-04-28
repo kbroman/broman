@@ -1,0 +1,109 @@
+
+Library broman
+==============
+
+Version 0.23, 11/20/2008:
+
+    Revised perm.test and paired.perm.test so that they can return the
+    actual permutation results (rather than just the p-value), though
+    the default is still to just return the p-value.
+
+    Fixed a bug in myround().
+
+Version 0.22, 9/19/2008:
+
+    Revised attachfile and attachwork so that they return (invisibly)
+    TRUE/FALSE according to whether the file was found.
+
+    Also added an argument 'verbose'; if TRUE and the file can't be
+    loaded, a warning is given.
+
+Version 0.21, 2/29/2008:
+
+    Added a function normalize() for doing quantile normalization.
+
+Version 0.20, 1/18/2007:
+
+    Modified fisher() so that the p-value is Prop'n >= rather
+    than just >.
+
+    Added a similar function, chisq() for doing a chi-square test
+    with p-value calculated by simulation.  In 0.20-2, suppressed
+    warnings produced by chisq.test.
+
+
+Version 0.19, 10/9/2007:
+
+    Added a function runningratio, for calculating
+    sum(numerator)/sum(denominator) in sliding window.
+
+    Fixed some errors in the help files.
+
+
+Version 0.18, 9/20/2007:
+
+    Fixed a bug in loadwork().
+
+
+Version 0.17, 1/16/2006:
+  
+    Added a function h() for getting access to html help files while
+    running R via ESS within emacs.
+
+
+Version 0.16, 12/19/2006:
+
+    Added a function runningmean().
+
+    Fixed a bug in paired.perm.test().
+
+
+Version 0.15, 8/14/2006
+
+    Added a function myround().
+	
+
+Version 0.14, 6/28/2006
+
+    Added a function mypairs(), similar to pairs() but producing only
+    the upper triangle.
+
+    Added a convert2hex() function.
+
+
+Version 0.13, 12/8/2004
+
+    Added attachfile() and loadfile(), similar to loadwork() and
+    attachwork(). 
+
+Version 0.12, 8/6/2004
+
+    Added little utility functions loadwork() and attachwork()
+    for loading or attaching .RData files of the form
+    "dir*/.RData", when * is an integer, and especially when
+    dir = "Work".
+
+Version 0.11, 4/29/2002:
+
+    Added perm.test and paired.perm.test for getting p-values for a
+    two-sample t-statistic by permutation.
+
+    There was an obvious bug in the function fisher(), which is now
+    fixed. 
+
+
+Version 0.10, 11/21/2001:
+
+    This is a package to contain miscellaneous R functions that I find
+    useful.  
+
+    Currently, it contains functions to get SEs of sample quantiles, 
+    a sampling version of fisher.test, a re-parse of the output of
+    qr(), simulation from a multivariate normal distribution, and
+    numerical integration by Simpson's rule.
+
+----------------------------------------------------------------------
+copyright (c) 2001-7, Karl W Broman
+Licensed under the GNU General Public License version 2 (June, 1991)
+
+http://www.biostat.wisc.edu/~kbroman/software.html

@@ -1,0 +1,21 @@
+attachfile              Attach a workspace
+attachwork              Attach a workspace
+chisq                   Chi-square test by simuation for a two-way
+                        table
+convert2hex             Convert to hex
+fisher                  Fisher's exact test for a two-way table
+h                       View html version of help file
+loadfile                Load a workspace
+loadwork                Load a workspace
+mypairs                 My scatterplot matrix
+myround                 Round a number, preserving extra 0's
+normalize               Quantile normalization
+nqrank                  Convert data to normal quantiles
+paired.perm.test        Paired permutation t-test
+perm.test               Permutation t-test
+qr2                     The QR decomposition of a matrix
+quantileSE              Sample quantiles and their standard errors
+rmvn                    Simulate multivariate normal
+runningmean             Running mean, sum, or median
+runningratio            Running ratio
+simp                    Numerical integration

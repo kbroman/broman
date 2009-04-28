@@ -1,0 +1,37 @@
+\name{nqrank}
+\alias{nqrank}
+
+\title{Convert data to normal quantiles}
+
+\description{
+  Convert data to the normal quantiles corresponding to the ranks.
+}
+
+\usage{
+nqrank(x)
+}
+
+\arguments{
+ \item{x}{A numeric vector; NAs and Infs are allowed.}
+}
+
+\details{
+  The data are converted to ranks, and then to the corresponding normal
+  quantiles.  NAs are ignored and returned as NAs.  Infs are taken to be
+  the largest values; similarly for -Infs.
+}
+
+\value{
+  A vector of the same length as the input, with NAs retained.
+}
+
+\author{Karl W Broman \email{kbroman@biostat.wisc.edu} }
+
+\examples{
+x <- runif(30)
+nqrank(x)
+}
+
+\seealso{ \code{\link[base]{qnorm}}, \code{\link[base]{rank}} }
+
+\keyword{univar}
