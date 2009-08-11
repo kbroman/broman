@@ -15,6 +15,11 @@ copyright (c) 2001-2009, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.25, 8/11/2009:
+
+    Slight change to nqrank, so that ties are not jittered by default,
+    but may be (if one uses the argument jitter=TRUE).
+
 Version 0.24, 4/28/2009:
 
     Updated license to GPL-3

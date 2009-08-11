@@ -2,8 +2,9 @@
 #
 # nqrank.R
 #
-# copyright (c) 2001, Karl W Broman
-# Nov, 2001
+# copyright (c) 2001-9, Karl W Broman
+# last modified Aug, 2009
+# first written Nov, 2001
 #
 #     This program is free software; you can redistribute it and/or
 #     modify it under the terms of the GNU General Public License,
@@ -30,12 +31,14 @@
 ######################################################################
 
 nqrank <-
-function(x)
+function(x, jitter=FALSE)
 {
   y <- x[!is.na(x)]
   y[y == Inf] <- max(y[y<Inf])+10
   y[y == -Inf] <- min(y[y > -Inf]) + 10
-  y <- rank(y+runif(length(y))/(sd(y)*10^8))
+  if(jitter)
+    y <- rank(y+runif(length(y))/(sd(y)*10^8))
+  else y <- rank(y)
   x[!is.na(x)] <- qnorm((y-0.5)/length(y))
   x
 }

@@ -8,11 +8,12 @@
 }
 
 \usage{
-nqrank(x)
+nqrank(x, jitter=FALSE)
 }
 
 \arguments{
  \item{x}{A numeric vector; NAs and Infs are allowed.}
+ \item{jitter}{If TRUE, randomly jitter the ties.}
 }
 
 \details{
