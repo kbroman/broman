@@ -34,7 +34,7 @@ loadfile(i,stem="perm",end=".RData",fixdig=TRUE, verbose=TRUE)
 \dontrun{for(i in 1:5) loadfile(i)}
 }
 
-\seealso{ \code{\link[broman]{loadwork}},
-  \code{\link[broman]{attachwork}}, \code{\link[broman]{attachfile}}}
+\seealso{ \code{\link{loadwork}},
+  \code{\link{attachwork}}, \code{\link{attachfile}}}
 
 \keyword{IO}

@@ -23,11 +23,11 @@ quantileSE(x, p=0.95, bw, na.rm=TRUE, names=TRUE)
 
 \details{
   The sample quantiles are calculated with the function
-  \code{\link[base]{quantile}}.
+  \code{\link[stats]{quantile}}.
   
   Standard errors are obtained by the asymptotic approximation described
   in Cox and Hinkley (1974).  Density values are estimated using a
-  kernel density estimate with the function \code{\link[base]{density}}. 
+  kernel density estimate with the function \code{\link[stats]{density}}. 
 }
 
 \value{
@@ -47,6 +47,6 @@ quantileSE(x, p=0.95, bw, na.rm=TRUE, names=TRUE)
 quantileSE(rchisq(1000,4), c(0.9,0.95))
 }
 
-\seealso{ \code{\link[base]{quantile}}, \code{\link[base]{density}} }
+\seealso{ \code{\link[stats]{quantile}}, \code{\link[stats]{density}} }
 
 \keyword{univar}

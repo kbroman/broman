@@ -18,7 +18,7 @@ fisher(tab, n.sim=1000)
 }
 
 \details{
-  This is like the function \code{\link[ctest]{fisher.test}}, but
+  This is like the function \code{\link[stats]{fisher.test}}, but
   calculates an approximate P-value rather than performing a complete
   enumeration.  This will be better for large, sparse tables.
 }
@@ -41,6 +41,6 @@ fisher(TeaTasting,1000)
 }
 
 \seealso{ \code{\link[stats]{chisq.test}},
-  \code{\link[stats]{fisher.test}}, \code{\link[broman]{chisq}} }
+  \code{\link[stats]{fisher.test}}, \code{\link{chisq}} }
 
 \keyword{htest}

@@ -17,7 +17,7 @@ chisq(tab, n.sim=1000)
 }
 
 \details{
-  This is like the function \code{\link[ctest]{chisq.test}}, but
+  This is like the function \code{\link[stats]{chisq.test}}, but
   calculates an approximate P-value rather than refering to
   asymptotics.  This will be better for large, sparse tables.
 }
@@ -35,6 +35,6 @@ chisq(TeaTasting,1000)
 }
 
 \seealso{ \code{\link[stats]{chisq.test}},
-  \code{\link[stats]{fisher.test}}, \code{\link[broman]{fisher}} }
+  \code{\link[stats]{fisher.test}}, \code{\link{fisher}} }
 
 \keyword{htest}

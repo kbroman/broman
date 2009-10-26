@@ -31,8 +31,8 @@ loadwork(i="", dir="Work", verbose=TRUE)
 \dontrun{for(i in 1:5) loadwork(i)}
 }
 
-\seealso{ \code{\link[broman]{attachwork}},
-  \code{\link[broman]{attachfile}},   \code{\link[broman]{loadfile}}
+\seealso{ \code{\link{attachwork}},
+  \code{\link{attachfile}},   \code{\link{loadfile}}
 }
 
 \keyword{IO}

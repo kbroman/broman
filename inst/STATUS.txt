@@ -15,9 +15,11 @@ copyright (c) 2001-2009, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.26, 10/13/2009:
+Version 0.26, 10/26/2009:
 
     Slight change to nqrank, to preserve the mean and SD.
+
+    Fixed a few links in the help files.
 
 Version 0.25, 8/11/2009:
 

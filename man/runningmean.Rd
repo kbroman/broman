@@ -37,4 +37,6 @@ lines(x, runningmean(x, y, window=100, what="median"),
       col="red", lwd=2)
 }
 
+\seealso{ \code{\link{runningratio}} }
+
 \keyword{univar}

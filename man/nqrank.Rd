@@ -33,6 +33,6 @@ x <- runif(30)
 nqrank(x)
 }
 
-\seealso{ \code{\link[base]{qnorm}}, \code{\link[base]{rank}} }
+\seealso{ \code{\link[stats]{qnorm}}, \code{\link[base]{rank}} }
 
 \keyword{univar}

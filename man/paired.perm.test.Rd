@@ -22,7 +22,7 @@ paired.perm.test(d, n.perm=NULL, pval=TRUE)
 }
 
 \details{
-  This calls the function \code{\link[ctest]{t.test}} to calculate a
+  This calls the function \code{\link[stats]{t.test}} to calculate a
   t-statistic comparing the mean of \code{d} to 0.  Permutations
   are perfomed to give an exact or approximate conditional p-value.
 }
@@ -45,6 +45,6 @@ y <- c(51.9, 95.1, 90.0, 49.7, 101.5, 74.1)
 paired.perm.test(x-y)
 }
 
-\seealso{ \code{\link[ctest]{t.test}}, \code{\link[broman]{perm.test}} }
+\seealso{ \code{\link[stats]{t.test}}, \code{\link{perm.test}} }
 
 \keyword{htest}

@@ -45,6 +45,6 @@ I1 <- trap(f,0,2)
 I2 <- simp(f,0,2)
 }
 
-\seealso{ \code{\link[base]{integrate}} }
+\seealso{ \code{\link[stats]{integrate}} }
 
 \keyword{math}

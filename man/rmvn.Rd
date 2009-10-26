@@ -36,6 +36,6 @@ rmvn(n, mu=0, V=matrix(1))
 x <- rmvn(100, c(1,2),matrix(c(1,1,1,4),ncol=2))
 }
 
-\seealso{ \code{\link[base]{rnorm}} }
+\seealso{ \code{\link[stats]{rnorm}} }
 
 \keyword{datagen}

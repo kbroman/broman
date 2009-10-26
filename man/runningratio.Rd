@@ -34,4 +34,6 @@ lines(x, runningratio(x, y, z, window=50), lwd=2, col="blue")
 lines(x, runningratio(x, y, z, window=100), lwd=2, col="red")
 }
 
+\seealso{ \code{\link{runningmean}} }
+
 \keyword{univar}

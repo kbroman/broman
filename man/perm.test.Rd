@@ -25,7 +25,7 @@ perm.test(x, y, n.perm=NULL, var.equal=TRUE, pval=TRUE)
 }
 
 \details{
-  This calls the function \code{\link[ctest]{t.test}} to calculate a
+  This calls the function \code{\link[stats]{t.test}} to calculate a
   t-statistic comparing the vectors \code{x} and \code{y}.  Permutations
   are perfomed to give an exact or approximate conditional p-value.
 }
@@ -48,6 +48,6 @@ y <- c(51.9, 95.1, 90.0, 49.7, 101.5, 74.1)
 perm.test(x,y)
 }
 
-\seealso{ \code{\link[ctest]{t.test}}, \code{\link[broman]{paired.perm.test}} }
+\seealso{ \code{\link[stats]{t.test}}, \code{\link{paired.perm.test}} }
 
 \keyword{htest}
