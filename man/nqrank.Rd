@@ -18,8 +18,8 @@ nqrank(x, jitter=FALSE)
 
 \details{
   The data are converted to ranks, and then to the corresponding normal
-  quantiles.  NAs are ignored and returned as NAs.  Infs are taken to be
-  the largest values; similarly for -Infs.
+  quantiles, preserving the mean and SD.  NAs are ignored and returned
+  as NAs.  Infs are taken to be the largest values; similarly for -Infs.
 }
 
 \value{
