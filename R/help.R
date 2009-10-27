@@ -2,8 +2,8 @@
 #
 # help.R
 #
-# copyright (c) 2007, Karl W Broman
-# Jan, 2007
+# copyright (c) 2007-9, Karl W Broman
+# Jan, 2007; Oct, 2009
 #
 #     This program is free software; you can redistribute it and/or
 #     modify it under the terms of the GNU General Public License,
@@ -31,8 +31,7 @@
 h <-
 function(...)
 {
-  help(..., htmlhelp=TRUE)
-  
+  help(..., help_type="html")
 }
 
 # end of help.R

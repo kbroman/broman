@@ -21,6 +21,8 @@ Version 0.26, 10/26/2009:
 
     Fixed a few links in the help files.
 
+    Revised h() to conform to a change in R.
+
 Version 0.25, 8/11/2009:
 
     Slight change to nqrank, so that ties are not jittered by default,
