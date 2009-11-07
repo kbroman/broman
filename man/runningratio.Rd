@@ -8,18 +8,21 @@
 }
 
 \usage{
-runningratio(pos, numerator, denominator, window=1000)
+runningratio(pos, numerator, denominator, at, window=1000)
 }
 
 \arguments{
  \item{pos}{Positions for the values.}
  \item{numerator}{Values for numerator in ratio.}
  \item{denominator}{Values for denominator in ratio.}
+ \item{at}{Positions at which running ratio is
+ calculated.  If missing, \code{pos} is used.}
  \item{window}{Window width.}
 }
 
 \value{
-  A vector with the same length as the input, containing the running ratio.
+  A vector with the same length as the input \code{at} (or \code{pos},
+  if \code{at} is missing), containing the running ratio.
 }
 
 \author{Karl W Broman \email{kbroman@biostat.wisc.edu} }

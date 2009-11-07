@@ -2,7 +2,7 @@
 # runningmean.R
 #
 # Karl W Broman
-# last modified Sep, 2007
+# last modified Nov, 2009
 # first written Sep, 2005
 #
 #     This program is free software; you can redistribute it and/or
@@ -24,7 +24,7 @@
 # get running mean, sum or median within a specified window
 ######################################################################
 runningmean <-
-function(pos, value, window=1000, what=c("mean","sum", "median"))
+function(pos, value, at, window=1000, what=c("mean","sum", "median"))
 {
   what <- which(c("sum","mean","median")==match.arg(what))
   
@@ -32,14 +32,41 @@ function(pos, value, window=1000, what=c("mean","sum", "median"))
   if(length(value) != n)
     stop("pos and value must have the same length\n")
 
-  .C("R_runningmean",
-     as.integer(n),
-     as.double(pos),
-     as.double(value),
-     z=as.double(rep(0,n)),
-     as.double(window),
-     as.integer(what),
-     PACKAGE="broman")$z
+  if(missing(at)) # if missing 'at', use input 'pos'
+    at <- pos
+
+  # check that pos is sorted
+  if(any(diff(pos) < 0)) { # needs to be sorted
+    o <- order(pos)
+    pos <- pos[o]
+    value <- value[o]
+  }
+    
+  # check that pos is sorted
+  if(any(diff(at) < 0)) { # needs to be sorted
+    o.at <- order(at)
+    at <- at[o.at]
+    reorderresult <- TRUE
+  }
+  else reorderresult <- FALSE
+    
+  n.res <- length(at)
+
+  z <- .C("R_runningmean",
+          as.integer(n),
+          as.double(pos),
+          as.double(value),
+          as.integer(n.res),
+          as.double(at),
+          z=as.double(rep(0,n.res)),
+          as.double(window),
+          as.integer(what),
+          PACKAGE="broman")$z
+  
+  if(reorderresult) 
+    z <- z[match(1:length(at), o.at)]
+  
+  z
 }
 
 
@@ -49,20 +76,47 @@ function(pos, value, window=1000, what=c("mean","sum", "median"))
 # take sum(numerator)/sum(denominator) in sliding window
 ######################################################################
 runningratio <-
-function(pos, numerator, denominator, window=1000)
+function(pos, numerator, denominator, at, window=1000)
 {
   n <- length(pos)
   if(length(numerator) != n || length(denominator) != n)
     stop("pos, numerator and denominator must all be the same length\n")
 
-  .C("R_runningratio",
-     as.integer(n),
-     as.double(pos),
-     as.double(numerator),
-     as.double(denominator),
-     z=as.double(rep(0,n)),
-     as.double(window),
-     PACKAGE="broman")$z
+  if(missing(at)) # if missing 'at', use input 'pos'
+    at <- pos
+
+  # check that pos is sorted
+  if(any(diff(pos) < 0)) { # needs to be sorted
+    o <- order(pos)
+    pos <- pos[o]
+    value <- value[o]
+  }
+    
+  # check that pos is sorted
+  if(any(diff(at) < 0)) { # needs to be sorted
+    o.at <- order(at)
+    at <- at[o.at]
+    reorderresult <- TRUE
+  }
+  else reorderresult <- FALSE
+    
+  n.res <- length(at)
+
+  z <- .C("R_runningratio",
+          as.integer(n),
+          as.double(pos),
+          as.double(numerator),
+          as.double(denominator),
+          as.integer(n.res),
+          as.double(at),
+          z=as.double(rep(0,n.res)),
+          as.double(window),
+          PACKAGE="broman")$z
+
+  if(reorderresult)
+    z <- z[match(1:length(z), o.at)]
+
+  z
 }
 
 # end of runningmean.R

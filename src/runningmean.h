@@ -2,9 +2,9 @@
  * 
  * runningmean.h
  *
- * copyright (c) 2006-7, Karl W Broman
+ * copyright (c) 2006-9, Karl W Broman
  *
- * last modified Sep, 2007
+ * last modified Nov, 2009
  * first written Dec, 2006
  *
  *     This program is free software; you can redistribute it and/or
@@ -38,11 +38,13 @@
  *        = 3 -> median
  *
  **********************************************************************/
-void runningmean(int n, double *pos, double *value, double *result, 
+void runningmean(int n, double *pos, double *value, int n_result,
+		 double *resultpos, double *result, 
 		 double window, int method);
 
 /* wrapper for R */
-void R_runningmean(int *n, double *pos, double *value, double *result, double *window,
+void R_runningmean(int *n, double *pos, double *value, int *n_result, 
+		   double *resultpos, double *result, double *window,
 		   int *method);
 
 /**********************************************************************
@@ -52,10 +54,10 @@ void R_runningmean(int *n, double *pos, double *value, double *result, double *w
  *
  **********************************************************************/
 void runningratio(int n, double *pos, double *numerator, double *denominator,
-		  double *result, double window);
+		  int n_result, double *resultpos, double *result, double window);
 
 /* wrapper for R */
 void R_runningratio(int *n, double *pos, double *numerator, double *denominator,
-		    double *result, double *window);
+		    int *n_result, double *resultpos, double *result, double *window);
 
 /* end of runningmean.h */

@@ -8,19 +8,22 @@
 }
 
 \usage{
-runningmean(pos, value, window=1000, what=c("mean", "sum", "median"))
+runningmean(pos, value, at, window=1000, what=c("mean", "sum", "median"))
 }
 
 \arguments{
  \item{pos}{Positions for the values.}
  \item{value}{Values for which the running mean/sum/median is to be
    applied.}
+ \item{at}{Positions at which running mean (or sum or median) is
+ calculated.  If missing, \code{pos} is used.}
  \item{window}{Window width.}
  \item{what}{Statistic to use.}
 }
 
 \value{
-  A vector with the same length as the input, containing the running
+  A vector with the same length as the input \code{at} (or \code{pos},
+  if \code{at} is missing), containing the running
   statistic. 
 }
 
