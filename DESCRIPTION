@@ -1,6 +1,6 @@
 Package: broman
-Version: 0.27-1
-Date: 11/6/2009
+Version: 0.28-1
+Date: 3/25/2010
 Title: Karl Broman's R code
 Author: Karl W Broman <kbroman@biostat.wisc.edu>
 Maintainer: Karl W Broman <kbroman@biostat.wisc.edu>

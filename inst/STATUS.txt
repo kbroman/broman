@@ -1,6 +1,6 @@
 Revision history for the R/broman package
 ----------------------------------------------------------------------
-copyright (c) 2001-2009, Karl W Broman
+copyright (c) 2001-2010, Karl W Broman
 
     The R/broman package is free software; you can redistribute it
     and/or modify it under the terms of the GNU General Public
@@ -14,6 +14,13 @@ copyright (c) 2001-2009, Karl W Broman
     A copy of the GNU General Public License, version 3, is available
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
+
+Version 0.28, 3/25/2010:
+
+    Slight change to nqrank, so that -Inf values are replaced by
+    10 *less* than the minimum of any finite values (rather than 10
+    *more* than that minimum).
+
 
 Version 0.27, 11/6/2009:
 

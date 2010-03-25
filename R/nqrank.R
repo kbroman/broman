@@ -2,8 +2,8 @@
 #
 # nqrank.R
 #
-# copyright (c) 2001-9, Karl W Broman
-# last modified Oct, 2009
+# copyright (c) 2001-2010, Karl W Broman
+# last modified Mar, 2010
 # first written Nov, 2001
 #
 #     This program is free software; you can redistribute it and/or
@@ -38,7 +38,7 @@ function(x, jitter=FALSE)
   thesd <- sd(y, na.rm=TRUE)
 
   y[y == Inf] <- max(y[y<Inf])+10
-  y[y == -Inf] <- min(y[y > -Inf]) + 10
+  y[y == -Inf] <- min(y[y > -Inf]) - 10
   if(jitter)
     y <- rank(y+runif(length(y))/(sd(y)*10^8))
   else y <- rank(y)
