@@ -15,6 +15,12 @@ copyright (c) 2001-2010, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.29, 8/6/2010:
+
+    Deleted the nqrank() function, as I've now placed it within
+    R/qtl. 
+
+
 Version 0.28, 3/25/2010:
 
     Slight change to nqrank, so that -Inf values are replaced by
