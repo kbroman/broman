@@ -102,7 +102,7 @@ function(x, y, n.perm=NULL, var.equal=TRUE, pval=TRUE)
       allt[i] <- t.test(xn,yn,var.equal=var.equal)$statistic
     }
   }
-  if(pval) mean( abs(allt) >= abs(tobs) )
+  if(pval) return(mean( abs(allt) >= abs(tobs) ))
   attr(allt, "tobs") <- tobs
   allt
 }
