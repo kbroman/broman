@@ -47,7 +47,7 @@ function(d, n.perm=NULL, pval=TRUE)
   n <- length(d)
   tobs <- t.test(d)$statistic
   if(is.null(n.perm)) { # do exact test
-    ind <- binary.v(n+1)
+    ind <- binary.v(n)
     allt <- apply(ind,2,function(x,y)
                   t.test((2*x-1)*y)$statistic,d)
   }
