@@ -17,6 +17,10 @@ copyright (c) 2001-2010, Karl W Broman
 
 Version 0.31, 11/22/2010:
 
+    Added functions triplot(), tripoints(), trilines(), triarrow() for
+    plotting Holmans triangle (an equilateral triangle used to depict
+    trinomial distributions).
+
     Added function venn() for drawing a to-scale Venn diagram.
 
 
