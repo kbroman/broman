@@ -23,6 +23,9 @@ Version 0.31, 11/22/2010:
 
     Added function venn() for drawing a to-scale Venn diagram.
 
+    Added function arrowlocator() for using locator() to indicate the
+    endpoints of an arrow and then draw it.
+
 
 Version 0.30, 11/17/2010:
 
