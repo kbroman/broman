@@ -15,6 +15,11 @@ copyright (c) 2001-2010, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.31, 11/22/2010:
+
+    Added function venn() for drawing a to-scale Venn diagram.
+
+
 Version 0.30, 11/17/2010:
 
     Fixed a bug in permtest (the pval argument didn't work).
