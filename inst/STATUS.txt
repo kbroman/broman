@@ -15,6 +15,12 @@ copyright (c) 2001-2010, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.32, 12/14/2010:
+
+    Added function objectsizes(), for calculating the sizes of the
+    objects in one's workspace.
+
+
 Version 0.31, 11/22/2010:
 
     Added functions triplot(), tripoints(), trilines(), triarrow() for
