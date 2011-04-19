@@ -2,9 +2,9 @@
  * 
  * runningmean.h
  *
- * copyright (c) 2005, Karl W Broman
+ * copyright (c) 2005-2011, Karl W Broman
  *
- * last modified 28 Oct 2005
+ * last modified 19 Apr 2011
  * first written 18 Sep 2005
  *
  *     This program is free software; you can redistribute it and/or
@@ -28,13 +28,14 @@
 /**********************************************************************
  * normalize
  * 
- * force two sets of intensities to have the same marginal distributions
+ * force a matrix of intensities to have columns with the same marginal
+ * distribution
  *
  **********************************************************************/
-void normalize(int n, int p, double **X, int **iX, double **tX);
+void normalize(int n, int p, double **X, double maxval, int **iX, double **tX);
 
 /* wrapper for R */
-void R_normalize(int *n, int *p, double *x, int *ix, double *tx);
+void R_normalize(int *n, int *p, double *x, double *maxval, int *ix, double *tx);
 
 /**********************************************************************
  * reorg_dmatrix 
