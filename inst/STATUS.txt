@@ -15,9 +15,11 @@ copyright (c) 2001-2011, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.33, 4/19/2011:
+Version 0.33, 4/23/2011:
 
     Revised normalize() to handle NAs.
+
+    Added function winsorize() for winsorizing a numeric vector.
 
     Added function bromanversion() to print installed version number. 
 
