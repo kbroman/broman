@@ -1,4 +1,4 @@
-useDynLib(broman, .registration = TRUE)
+useDynLib(broman)
 
 # functions to export
 export(bromanversion)
@@ -17,3 +17,8 @@ export(normalize)
 export(quantileSE)
 export(runningmean, runningratio)
 export(rmvn)
+
+# functions to import
+importFrom(graphics, arrows, layout, plot, par, text, rect, lines)
+importFrom(utils, help, object.size)
+importFrom(stats, t.test, density, quantile, rnorm)
