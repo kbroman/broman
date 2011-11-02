@@ -1,0 +1,4 @@
+useDynLib(broman, .registration = TRUE)
+
+# Export all names
+exportPattern(".")

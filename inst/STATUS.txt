@@ -15,6 +15,10 @@ copyright (c) 2001-2011, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.34, 11/2/2011:
+
+    Added NAMESPACE (for R 2.14.0)
+
 Version 0.33, 4/23/2011:
 
     Revised normalize() to handle NAs.
