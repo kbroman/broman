@@ -1,4 +1,19 @@
 useDynLib(broman, .registration = TRUE)
 
-# Export all names
-exportPattern(".")
+# functions to export
+export(bromanversion)
+export(convert2hex)
+export(h, objectsizes, myround)
+export(simp, trap)
+export(venn, mypairs)
+export(winsorize)
+export(normalize)
+export(attachfile, attachwork, loadfile, loadwork)
+export(binary.v, chisq, fisher, paired.perm.test, perm.test)
+export(triarrow, trilines, triplot, tripoints)
+export(arrowlocator)
+export(qr2)
+export(normalize)
+export(quantileSE)
+export(runningmean, runningratio)
+export(rmvn)
