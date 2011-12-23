@@ -2,7 +2,7 @@
 # runningmean.R
 #
 # Karl W Broman
-# last modified Nov, 2009
+# last modified Dec, 2011
 # first written Sep, 2005
 #
 #     This program is free software; you can redistribute it and/or
@@ -24,9 +24,9 @@
 # get running mean, sum or median within a specified window
 ######################################################################
 runningmean <-
-function(pos, value, at, window=1000, what=c("mean","sum", "median"))
+function(pos, value, at, window=1000, what=c("mean","sum", "median", "sd"))
 {
-  what <- which(c("sum","mean","median")==match.arg(what))
+  what <- which(c("sum","mean","median","sd")==match.arg(what))
   
   n <- length(pos)
   if(length(value) != n)

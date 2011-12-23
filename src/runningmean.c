@@ -2,9 +2,9 @@
  * 
  * runningmean.c
  *
- * copyright (c) 2006-9, Karl W Broman
+ * copyright (c) 2006-2011, Karl W Broman
  *
- * last modified Nov, 2009
+ * last modified Dec, 2011
  * first written Dec, 2006
  *
  *     This program is free software; you can redistribute it and/or
@@ -47,6 +47,7 @@
  * method = 1 -> sum
  *        = 2 -> mean
  *        = 3 -> median
+ *        = 4 -> sd
  *
  * We assume that pos and resultpos are both sorted (lo to high)
  *
@@ -58,9 +59,11 @@ void runningmean(int n, double *pos, double *value,
 {
   int lo, ns;
   int i, j;
-  double *work;
+  double *work3, work4;
   
-  work = (double *)R_alloc(n, sizeof(double));
+  
+  if(method==3)
+    work3 = (double *)R_alloc(n, sizeof(double));
 
   window /= 2.0;
 
@@ -69,30 +72,34 @@ void runningmean(int n, double *pos, double *value,
 
     R_CheckUserInterrupt(); /* check for ^C */
 
-    result[i] = 0.0; ns=0;
+    work4 = result[i] = 0.0; ns=0;
     for(j=lo; j<n; j++) {
       if(pos[j] < resultpos[i]-window) lo = j+1;
       else if(pos[j] > resultpos[i]+window) break;
       else {
 
-	if(method==1 || method==2) 
+	if(method==1 || method==2 || method==4)
 	  result[i] += value[j];
-	else 
-	  work[ns] = value[j];
+	if(method==3) 
+	  work3[ns] = value[j];
+	if(method==4)
+	  work4 += (value[j]*value[j]);
 
 	ns++;
       }
     }
-    if(ns==0) result[i] = NA_REAL;
+    if(ns==0 || (method==4 && ns==1)) result[i] = NA_REAL;
     else {
       if(method==2) result[i] /= (double)ns;
       if(method==3) {
-	R_rsort(work, ns);
+	R_rsort(work3, ns);
 	if(ns % 2) 
-	  result[i] = work[(ns-1)/2];
+	  result[i] = work3[(ns-1)/2];
 	else /* even */
-	  result[i] = (work[ns/2-1]+work[ns/2])/2.0;
+	  result[i] = (work3[ns/2-1]+work3[ns/2])/2.0;
       }
+      if(method==4) 
+	result[i] = sqrt((work4 - result[i]*result[i]/(double)ns)/((double)(ns-1)));
     }
   }
 
