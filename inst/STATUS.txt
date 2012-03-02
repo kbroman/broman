@@ -1,6 +1,6 @@
 Revision history for the R/broman package
 ----------------------------------------------------------------------
-copyright (c) 2001-2011, Karl W Broman
+copyright (c) 2001-2012, Karl W Broman
 
     The R/broman package is free software; you can redistribute it
     and/or modify it under the terms of the GNU General Public
@@ -15,9 +15,11 @@ copyright (c) 2001-2011, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.35, 11/23/2011:
+Version 0.35, 3/2/2012:
 
     runningmean() can now also calculate a running SD.
+
+    Revised bromanversion() to use packageVersion().
 
 
 Version 0.34, 11/7/2011:
