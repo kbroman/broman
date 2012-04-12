@@ -17,7 +17,7 @@ myround(x, digits=1)
 }
 
 \details{
-  Rounds a number, keeping extra 0's.
+  Uses \code{\link[base]{sprintf}} to round a number, keeping extra 0's.
 }
 
 \value{
@@ -30,5 +30,7 @@ myround(x, digits=1)
 myround(51.01, 3)
 myround(0.199, 2)
 }
+
+\seealso{ \code{\link[base]{round}}, \code{\link[base]{sprintf}} }
 
 \keyword{utilities}

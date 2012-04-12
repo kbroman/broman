@@ -2,8 +2,9 @@
 #
 # myround.R
 #
-# copyright (c) 2006, Karl W Broman
-# Aug, 2002
+# copyright (c) 2002-2012, Karl W Broman
+# First written Aug, 2002
+# Last modified Apr, 2012
 #
 #     This program is free software; you can redistribute it and/or
 #     modify it under the terms of the GNU General Public License,
@@ -28,23 +29,12 @@ function(x, digits=1)
   if(digits < 1) 
     stop("This is intended for the case digits >= 1.")
   
-  y <- as.character(round(x, digits))
+  if(length(digits) > 1) {
+    digits <- digits[1]
+    warning("Using only digits[1]")
+  }
 
-  z <- strsplit(y, "\\.")
-  sapply(z, function(a, digits)
-         {
-           if(length(a) == 1)
-             b <- paste(a[1], ".", paste(rep("0", digits),collapse=""), sep="")
-           else {
-             if(nchar(a[2]) == digits)
-               b <- paste(a, collapse=".")
-             else
-               b <- paste(a[1], ".", a[2],
-                          paste(rep("0", digits - nchar(a[2])), collapse=""),
-                          sep="")
-           }
-         }, digits)
+  sprintf(paste("%.", digits, "f", sep=""), x)
 }
-         
  
 # end of myround.R

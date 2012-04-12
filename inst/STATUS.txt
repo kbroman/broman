@@ -15,11 +15,13 @@ copyright (c) 2001-2012, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.35, 3/2/2012:
+Version 0.35, 4/11/2012:
 
     runningmean() can now also calculate a running SD.
 
     Revised bromanversion() to use packageVersion().
+
+    Simplified myround(), using sprintf().
 
 
 Version 0.34, 11/7/2011:
