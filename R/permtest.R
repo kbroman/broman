@@ -2,8 +2,8 @@
 #
 # permtest.R
 #
-# copyright (c) 2002-6, Karl W Broman
-# Last modified Dec, 2006
+# copyright (c) 2002-2012, Karl W Broman
+# Last modified Apr, 2012
 # First written Apr, 2002
 #
 #     This program is free software; you can redistribute it and/or
@@ -54,7 +54,7 @@ function(d, n.perm=NULL, pval=TRUE)
   else { # do n.perm samples
     allt <- 1:n.perm
     for(i in 1:n.perm) 
-      allt[i] <- t.test(d*sample(c(-1,1),n,repl=TRUE))$statistic
+      allt[i] <- t.test(d*sample(c(-1,1),n,replace=TRUE))$statistic
   }
   if(pval) return(mean(abs(allt) >= abs(tobs)))
   attr(allt, "tobs") <- tobs
