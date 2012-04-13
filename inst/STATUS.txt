@@ -15,6 +15,12 @@ copyright (c) 2001-2012, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.36, 4/12/2012:
+
+    Added function cf() for comparing vectors/matrices/lists,
+    including proper handling of NAs
+
+
 Version 0.35, 4/11/2012:
 
     runningmean() can now also calculate a running SD.
