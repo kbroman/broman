@@ -9,11 +9,7 @@
   Check whether two objects are the same, including their patterns of \code{NA}s.
 }
 
-\usage{
-cf(a, b)
-\method{cf}{default}(a, b)
-\method{cf}{list}(a, b)
-}
+\usage{cf(a, b)}
 
 \arguments{
   \item{a}{Some object.}
