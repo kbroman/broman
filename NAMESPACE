@@ -2,7 +2,9 @@ useDynLib(broman)
 
 # functions to export
 export(bromanversion)
+export(cf)
 export(convert2hex)
+export(get0, get.)
 export(h, objectsizes, myround)
 export(simp, trap)
 export(venn, mypairs)
