@@ -1,0 +1,60 @@
+\name{cf}
+\alias{cf}
+\alias{cf.default}
+\alias{cf.list}
+
+\title{Compare objects, including missing data pattern}
+
+\description{
+  Check whether two objects are the same, including their patterns of \code{NA}s.
+}
+
+\usage{
+cf(a, b)
+\method{cf}{default}(a, b)
+\method{cf}{list}(a, b)
+}
+
+\arguments{
+  \item{a}{Some object.}
+  \item{b}{Another object of same class and size as \code{a}.}
+}
+
+\details{
+  It's not very complicated: \code{((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & a == b))}
+}
+
+\value{
+  Boolean object with \code{TRUE} indicating an element is the same.
+}
+
+\author{Karl W Broman \email{kbroman@biostat.wisc.edu} }
+
+\examples{
+x <- c(5, 8, 9, NA, 3, NA)
+y <- c(5, 2, 9, 4, NA, NA)
+cf(x,y)
+
+x <- matrix(rnorm(1000), ncol=20)
+x[sample(seq(along=x), 100)] <- NA
+all(cf(x,x))
+dim(cf(x,x))
+
+y <- x
+y[4,8] <- NA
+sum(!cf(x,y))
+y[6,2] <- 18
+sum(!cf(x,y))
+y[6,5] <- 32
+sum(!cf(x,y))
+
+x <- as.data.frame(x)
+y <- as.data.frame(y)
+sum(!cf(x,y))
+
+x <- as.list(x)
+y <- as.list(y)
+sapply(cf(x,y), function(a) sum(!a))
+}
+
+\keyword{data}
