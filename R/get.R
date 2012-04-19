@@ -25,3 +25,5 @@
 
 get0 <- function(...) get(paste0(...))
 get. <- function(...) get(paste(..., sep="."))
+
+# end of get.R

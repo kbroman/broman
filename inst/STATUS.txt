@@ -22,6 +22,8 @@ Version 0.36, 4/18/2012:
 
     Added functions get0() and get.() which combine get and paste.
 
+    Added grayplot() for plots with gray backgrounds.
+
 
 Version 0.35, 4/11/2012:
 
