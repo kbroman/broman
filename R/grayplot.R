@@ -9,15 +9,15 @@
 #     This program is free software; you can redistribute it and/or
 #     modify it under the terms of the GNU General Public License,
 #     version 3, as published by the Free Software Foundation.
-# 
+#
 #     This program is distributed in the hope that it will be useful,
 #     but without any warranty; without even the implied warranty of
 #     merchantability or fitness for a particular purpose.  See the GNU
 #     General Public License, version 3, for more details.
-# 
+#
 #     A copy of the GNU General Public License, version 3, is available
 #     at http://www.r-project.org/Licenses/GPL-3
-# 
+#
 # Part of the R/broman package
 # Contains: grayplot
 #
@@ -37,44 +37,53 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
   if(missing(x)) stop("x unspecified")
   if(missing(y)) y <- NULL
 
+  # this is to deal with varying inputs (did "..." include xaxt or not?)
   hidegrayplot <-
   function(x, y, ..., type="p", hlines, hlines.col, hlines.lty, hlines.lwd,
            vlines, vlines.col, vlines.lty, vlines.lwd,
            xat, yat, bgcolor="gray80", xaxt="n", yaxt="n",
            las=1)
   {
+    # blank plot
     if(is.null(y))
       plot(x, ..., type="n", xaxt="n", yaxt="n")
     else
       plot(x, y, ..., type="n", xaxt="n", yaxt="n")
-      
+
+    # add gray rectangle
     u <- par("usr")
     rect(u[1], u[3], u[2], u[4], col=bgcolor, border="black")
 
-    if(!is.null(xat)) {
-      if(!is.null(vlines))       
-        axis(side=1, at=xat, mgp=c(3, 0.5, 0), tick=FALSE, las=las)
-      else
-        axis(side=1, at=xat, las=las)
-    }
-    else {
-      if(!is.null(vlines))
-        axis(side=1, mgp=c(3,0.5,0), tick=FALSE, las=las)
-      else
-        axis(side=1, las=las)
+    # x axis: if adding white lines, skip the tick marks and move the numbers closer
+    if(!(!is.null(xat) && length(xat)==1 && is.na(xat))) { # if a single NA, skip x-axis
+      if(!is.null(xat)) {
+        if(!is.null(vlines))
+          axis(side=1, at=xat, mgp=c(3, 0.5, 0), tick=FALSE, las=las)
+        else
+          axis(side=1, at=xat, las=las)
+      }
+      else {
+        if(!is.null(vlines))
+          axis(side=1, mgp=c(3,0.5,0), tick=FALSE, las=las)
+        else
+          axis(side=1, las=las)
+      }
     }
 
-    if(!is.null(yat)) {
-      if(!is.null(hlines))       
-        axis(side=2, at=yat, mgp=c(3, 0.5, 0), tick=FALSE, las=las)
-      else
-        axis(side=2, at=yat, las=las)
-    }
-    else {
-      if(!is.null(hlines))
-        axis(side=2, mgp=c(3,0.5,0), tick=FALSE, las=las)
-      else
-        axis(side=2, las=las)
+    # y axis: like the x-axis
+    if(!(!is.null(yat) && length(yat)==1 && is.na(yat))) { # if a single NA, skip y-axis
+      if(!is.null(yat)) {
+        if(!is.null(hlines))
+          axis(side=2, at=yat, mgp=c(3, 0.5, 0), tick=FALSE, las=las)
+        else
+          axis(side=2, at=yat, las=las)
+      }
+      else {
+        if(!is.null(hlines))
+          axis(side=2, mgp=c(3,0.5,0), tick=FALSE, las=las)
+        else
+          axis(side=2, las=las)
+      }
     }
 
     if(!is.null(hlines)) abline(h=hlines, col=hlines.col, lty=hlines.lty, lwd=hlines.lwd)

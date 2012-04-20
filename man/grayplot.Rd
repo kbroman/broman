@@ -26,15 +26,15 @@ grayplot(x, y, ..., type="p",
   \item{vlines.col}{Colors of vertical grid lines}
   \item{vlines.lty}{Line type of vertical grid lines}
   \item{vlines.lwd}{Line width of vertical grid lines}
-  \item{xat}{Locations for x-axis labels}
-  \item{yat}{Locations for y-axis labels}
+  \item{xat}{Locations for x-axis labels; \code{xat=NA} indicates no labels}
+  \item{yat}{Locations for y-axis labels; \code{yat=NA} indicates no labels}
   \item{bgcolor}{Background color}
 }
 
 \details{
   Calls \code{\link[graphics]{plot}} with \code{type="n"}, then
   \code{\link[graphics]{rect}} to get the background, and then
-  \code{\link[graphics]{points}}. 
+  \code{\link[graphics]{points}}.
 }
 
 \value{
@@ -44,10 +44,10 @@ grayplot(x, y, ..., type="p",
 \author{Karl W Broman \email{kbroman@biostat.wisc.edu} }
 
 \seealso{
-  \code{\link[graphics]{plot}}, 
-  \code{\link[graphics]{par}}, 
-  \code{\link[graphics]{rect}}, 
-  \code{\link[graphics]{points}} 
+  \code{\link[graphics]{plot}},
+  \code{\link[graphics]{par}},
+  \code{\link[graphics]{rect}},
+  \code{\link[graphics]{points}}
 }
 
 \examples{
