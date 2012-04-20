@@ -24,6 +24,8 @@ Version 0.36, 4/19/2012:
 
     Added grayplot() for plots with gray backgrounds.
 
+    Added bigboxplot() for making boxplot-like figures with *many* groups
+
 
 Version 0.35, 4/11/2012:
 
