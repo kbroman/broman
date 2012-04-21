@@ -39,7 +39,9 @@ manyboxplot(x, probs = c(0.05, 0.1, 0.25), dotcol = "blue",
 \seealso{ \code{\link{grayplot}} }
 
 \examples{
-x <- matrix(rnorm(1000*100), ncol=100)
+mu <- c(rnorm(50, 0, 0.3), rnorm(50, 2, 0.3)) # vector of means
+x <- t(matrix(rnorm(1000*100, mu), ncol=1000))
+
 manyboxplot(x, c(0.05, 0.25), dotcol=rep(c("blue","green"),c(50,50)),
            ylim=range(x))
 }
