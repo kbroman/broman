@@ -1,5 +1,5 @@
-\name{bigboxplot}
-\alias{bigboxplot}
+\name{manyboxplot}
+\alias{manyboxplot}
 
 \title{Boxplot-like figure for many groups}
 
@@ -8,7 +8,7 @@
 
 
 \usage{
-bigboxplot(x, probs = c(0.05, 0.1, 0.25), dotcol = "blue",
+manyboxplot(x, probs = c(0.05, 0.1, 0.25), dotcol = "blue",
            linecol = c("black", "red", "green", "orange"), ...)
 }
 
@@ -40,7 +40,7 @@ bigboxplot(x, probs = c(0.05, 0.1, 0.25), dotcol = "blue",
 
 \examples{
 x <- matrix(rnorm(1000*100), ncol=100)
-bigboxplot(x, c(0.05, 0.25), dotcol=rep(c("blue","green"),c(50,50)),
+manyboxplot(x, c(0.05, 0.25), dotcol=rep(c("blue","green"),c(50,50)),
            ylim=range(x))
 }
 

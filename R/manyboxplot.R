@@ -16,7 +16,7 @@
 #     at http://www.r-project.org/Licenses/GPL-3
 #
 # Part of the R/broman package
-# Contains: bigboxplot
+# Contains: manyboxplot
 #
 # a box-plot like figure, for *many* groups
 #
@@ -25,11 +25,11 @@
 #   - will always include dots at the median and make symmetric
 ######################################################################
 
-bigboxplot <-
+manyboxplot <-
 function(x, probs=c(0.05, 0.1, 0.25), dotcol="blue",
-         linecol=c("black","red","green", "orange"), 
-         ...) 
-{  
+         linecol=c("black","red","green", "orange"),
+         ...)
+{
   if(!all(probs >= 0 & probs < 1/2))
     stop("probs should be >=0 and < 1/2")
   if(length(linecol) < length(probs))
@@ -42,8 +42,8 @@ function(x, probs=c(0.05, 0.1, 0.25), dotcol="blue",
 
   xqu <- apply(x, 2, quantile, probs, na.rm=TRUE)
 
-   # this is to deal with varying inputs (did "..." include xaxs or not?)
-   bigboxplot.sub <-
+  # this is to deal with varying inputs (did "..." include xaxs or not?)
+  manyboxplot.sub <-
   function(xqu, dotcol, xlab="", xat=NA, xaxs="i", ylab="quantiles",
            xlim=c(0, ncol(xqu)+1), linecol, type="p",
            lwd=2, lty=1, pch=16, ylim=range(xqu), ...)
@@ -56,10 +56,10 @@ function(x, probs=c(0.05, 0.1, 0.25), dotcol="blue",
       lines(1:ncolx, xqu[j,], col=linecol[j], lwd=lwd, lty=lty)
       lines(1:ncolx, xqu[nrow(xqu)-j+1,], col=linecol[j], lwd=lwd, lty=lty)
     }
-  }    
+  }
 
-  bigboxplot.sub(xqu, dotcol=dotcol, linecol=linecol, ...)
+  manyboxplot.sub(xqu, dotcol=dotcol, linecol=linecol, ...)
   invisible()
 }
-  
-  
+
+
