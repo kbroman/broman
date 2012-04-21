@@ -91,6 +91,9 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
 
     if(is.null(y)) points(x, ..., type=type)
     else points(x, y, ..., type=type)
+
+    # add black border again
+    abline(v=u[1:2], h=u[3:4])
   }
 
   hidegrayplot(x=x, y=y, ..., type=type, hlines=hlines, hlines.col=hlines.col,
