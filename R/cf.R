@@ -57,3 +57,5 @@ function(a,b)
 #x <- as.list(x)
 #y <- as.list(y)
 #sapply(cf(x,y), function(a) sum(!a))
+
+# end of cf.R
