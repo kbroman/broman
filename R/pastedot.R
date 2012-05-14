@@ -3,7 +3,7 @@
 # pastedot.R
 #
 # copyright (c) 2012, Karl W Broman
-# First written Apr, 2012
+# First written May, 2012
 # Last modified Apr, 2012
 #
 #     This program is free software; you can redistribute it and/or
@@ -25,5 +25,14 @@
 
 
 paste. <- function(...) paste(..., sep=".")
+
+paste.. <- function(...) paste(..., sep=".", collapse=".")
+
+paste00 <- function(...) paste(..., sep="", collapse="")
+
+paste0. <- function(...) paste(..., sep="", collapse=".")
+
+paste.0 <- function(...) paste(..., sep=".", collapse="")
+
 
 # end of pastedot.R

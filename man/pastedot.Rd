@@ -27,7 +27,11 @@ A character string or vector of character strings.
 
 \seealso{
   \code{\link[base]{paste}}, 
-  \code{\link[base]{paste0}} 
+  \code{\link[base]{paste0}},
+  \code{\link{paste00}}, 
+  \code{\link{paste..}}, 
+  \code{\link{paste0.}}, 
+  \code{\link{paste.0}} 
 }
 \examples{
 x <- 3

@@ -15,7 +15,7 @@ copyright (c) 2001-2012, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.36, 4/24/2012:
+Version 0.36, 5/14/2012:
 
     Added function cf() for comparing vectors/matrices/lists,
     including proper handling of NAs
@@ -29,6 +29,8 @@ Version 0.36, 4/24/2012:
     Added paste.() function, which is just paste(..., sep=".")
 
     Added function revrainbow(), which is just rev(rainbow(start=0, end=2/3, ...))
+
+    Added paste00(), paste..(), paste0.() and paste.0()
 
 
 Version 0.35, 4/11/2012:
