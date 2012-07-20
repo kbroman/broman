@@ -25,4 +25,11 @@ hex2dec(h)
 
 \author{Karl W Broman, \email{kbroman@biostat.wisc.edu} }
 
+\examples{
+hex2dec("14D")
+hex2dec("14D") == 333
+}
+
+\seealso{ \code{\link{dec2hex}} }
+
 \keyword{manip}

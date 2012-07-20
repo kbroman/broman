@@ -27,4 +27,12 @@ dec2hex(d)
 
 \author{Karl W Broman, \email{kbroman@biostat.wisc.edu} }
 
+\examples{
+convert2hex(333)
+dec2hex(333)
+dec2hex(333) == "14D"
+}
+
+\seealso{ \code{\link{hex2dec}} }
+
 \keyword{manip}
