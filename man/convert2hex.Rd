@@ -31,6 +31,7 @@ dec2hex(d)
 convert2hex(333)
 dec2hex(333)
 dec2hex(333) == "14D"
+dec2hex(0:30)
 }
 
 \seealso{ \code{\link{hex2dec}} }

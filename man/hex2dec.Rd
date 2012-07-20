@@ -28,6 +28,7 @@ hex2dec(h)
 \examples{
 hex2dec("14D")
 hex2dec("14D") == 333
+hex2dec(0:30)
 }
 
 \seealso{ \code{\link{dec2hex}} }
