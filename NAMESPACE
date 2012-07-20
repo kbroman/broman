@@ -3,7 +3,7 @@ useDynLib(broman)
 # functions to export
 export(bromanversion)
 export(cf)
-export(convert2hex)
+export(convert2hex, dec2hex, hex2dec)
 export(get0, get.)
 export(paste., paste00, paste.., paste0., paste.0)
 export(revrainbow)

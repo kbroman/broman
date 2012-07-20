@@ -15,6 +15,12 @@ copyright (c) 2001-2012, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.37, 7/19/2012:
+
+    Improved convert2hex so it handles numbers > 255; added alias
+    dec2hex.  Added related function hex2dec.
+  
+
 Version 0.36, 5/14/2012:
 
     Added function cf() for comparing vectors/matrices/lists,

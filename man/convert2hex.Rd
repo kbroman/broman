@@ -1,5 +1,6 @@
 \name{convert2hex}
 \alias{convert2hex}
+\alias{dec2hex}
 
 \title{Convert to hex}
 
@@ -9,6 +10,7 @@
 
 \usage{
 convert2hex(d)
+dec2hex(d)
 }
 
 \arguments{

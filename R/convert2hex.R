@@ -15,14 +15,52 @@
 # 
 ######################################################################
 
+dec2hex <- 
 convert2hex <-
 function(d)
 {
+  if(length(d) > 1) {
+    res <- d
+    for(i in seq(along=d))
+      res[i] <- convert2hex(d[i])
+    return(res)
+  }
+  
+  if(d != round(d)) 
+    stop("d must be an integer")
+
   hex <- c(0:9,LETTERS[1:6])
-  first <- d %/% 16
-  second <- d %% 16
-  paste(hex[first+1],hex[second+1],sep="")
+
+  high <- floor(log(d, 16))
+  if(high < 1) return(hex[d])
+
+  res <- ""
+  for(i in high:1) {
+    z <- d %/% (16^i)
+    res <- paste(res, hex[z + 1], sep="")
+    d <- d - z*(16^i)
+  }
+  
+  paste(res, hex[(d %% 16) + 1], sep="")
 }
 
-  
+hex2dec <-
+function(h)
+{
+  if(length(h) > 1) {
+    res <- h
+    for(i in seq(along=h))
+      res[i] <- hex2dec(h[i])
+    return(res)
+  }
+
+  hex <- c(0:9,LETTERS[1:6])
+
+  hspl <- rev(unlist(strsplit(h, "")))
+  hc <- match(hspl, hex)-1
+  if(any(is.na(hc)))
+     stop("Invalid characters (", paste(hspl[is.na(hc)], collapse=" "), ") in ", h)
+
+  sum(hc * 16^(0:(length(hc)-1)))
+}  
 # end of convert2hex.R
