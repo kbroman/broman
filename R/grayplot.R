@@ -3,7 +3,7 @@
 # grayplot.R
 #
 # copyright (c) 2012, Karl W Broman
-# First written Apr, 2012
+# First written Oct, 2012
 # Last modified Apr, 2012
 #
 #     This program is free software; you can redistribute it and/or
@@ -86,8 +86,8 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
       }
     }
 
-    if(!is.null(hlines)) abline(h=hlines, col=hlines.col, lty=hlines.lty, lwd=hlines.lwd)
     if(!is.null(vlines)) abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
+    if(!is.null(hlines)) abline(h=hlines, col=hlines.col, lty=hlines.lty, lwd=hlines.lwd)
 
     if(is.null(y)) points(x, ..., type=type)
     else points(x, y, ..., type=type)

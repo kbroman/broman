@@ -15,6 +15,12 @@ copyright (c) 2001-2012, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.38, 10/3/2012:
+
+    Changed order of plotting of vertical and horizontal lines in
+    grayplot().
+
+
 Version 0.37, 7/19/2012:
 
     Improved convert2hex so it handles numbers > 255; added alias
