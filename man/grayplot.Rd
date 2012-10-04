@@ -35,6 +35,10 @@ grayplot(x, y, ..., type="p",
   Calls \code{\link[graphics]{plot}} with \code{type="n"}, then
   \code{\link[graphics]{rect}} to get the background, and then
   \code{\link[graphics]{points}}.
+
+  Additional arguments you can include: \code{mgp.x} and \code{mgp.y}
+  (like \code{mgp}, for controlling parameters of axis labels, but
+  separate for x- and y-axis).
 }
 
 \value{
