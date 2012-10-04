@@ -15,10 +15,11 @@ copyright (c) 2001-2012, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.38, 10/3/2012:
+Version 0.38, 10/4/2012:
 
     Changed order of plotting of vertical and horizontal lines in
-    grayplot().
+    grayplot().  Also added ability to control the margin parameters
+    (spacing of axis labels and such).
 
 
 Version 0.37, 7/19/2012:

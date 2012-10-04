@@ -42,8 +42,14 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
   function(x, y, ..., type="p", hlines, hlines.col, hlines.lty, hlines.lwd,
            vlines, vlines.col, vlines.lty, vlines.lwd,
            xat, yat, bgcolor="gray80", xaxt="n", yaxt="n",
-           las=1)
+           las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0))
   {
+    dots <- list(...)
+    if("mgp" %in% names(dots) && missing(mgp.x))
+      mgp.x <- dots$mgp
+    if("mgp" %in% names(dots) && missing(mgp.y))
+      mgp.y <- dots$mgp
+
     # blank plot
     if(is.null(y))
       plot(x, ..., type="n", xaxt="n", yaxt="n")
@@ -58,13 +64,13 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
     if(!(!is.null(xat) && length(xat)==1 && is.na(xat))) { # if a single NA, skip x-axis
       if(!is.null(xat)) {
         if(!is.null(vlines))
-          axis(side=1, at=xat, mgp=c(3, 0.5, 0), tick=FALSE, las=las)
+          axis(side=1, at=xat, mgp=mgp.x, tick=FALSE, las=las)
         else
           axis(side=1, at=xat, las=las)
       }
       else {
         if(!is.null(vlines))
-          axis(side=1, mgp=c(3,0.5,0), tick=FALSE, las=las)
+          axis(side=1, mgp=mgp.x, tick=FALSE, las=las)
         else
           axis(side=1, las=las)
       }
@@ -74,13 +80,13 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
     if(!(!is.null(yat) && length(yat)==1 && is.na(yat))) { # if a single NA, skip y-axis
       if(!is.null(yat)) {
         if(!is.null(hlines))
-          axis(side=2, at=yat, mgp=c(3, 0.5, 0), tick=FALSE, las=las)
+          axis(side=2, at=yat, mgp=mgp.y, tick=FALSE, las=las)
         else
           axis(side=2, at=yat, las=las)
       }
       else {
         if(!is.null(hlines))
-          axis(side=2, mgp=c(3,0.5,0), tick=FALSE, las=las)
+          axis(side=2, mgp=mgp.y, tick=FALSE, las=las)
         else
           axis(side=2, las=las)
       }
