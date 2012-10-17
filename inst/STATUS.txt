@@ -15,6 +15,12 @@ copyright (c) 2001-2012, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.39, 10/17/2012:
+
+   In Description file, added "Depends: R (>= 2.15.0)", since get0
+   uses paste0.  I could use paste(..., sep=""), but...
+
+
 Version 0.38, 10/4/2012:
 
     Changed order of plotting of vertical and horizontal lines in
