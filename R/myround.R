@@ -2,9 +2,9 @@
 #
 # myround.R
 #
-# copyright (c) 2002-2012, Karl W Broman
+# copyright (c) 2002-2013, Karl W Broman
 # First written Aug, 2002
-# Last modified Apr, 2012
+# Last modified Mar, 2013
 #
 #     This program is free software; you can redistribute it and/or
 #     modify it under the terms of the GNU General Public License,
@@ -34,7 +34,13 @@ function(x, digits=1)
     warning("Using only digits[1]")
   }
 
-  sprintf(paste("%.", digits, "f", sep=""), x)
+  tmp <- sprintf(paste("%.", digits, "f", sep=""), x)
+
+  # deal with "-0.00" case
+  zero <- paste0("0.", paste(rep("0", digits), collapse=""))
+  tmp[tmp == paste0("-", zero)] <- zero
+
+  tmp
 }
  
 # end of myround.R
