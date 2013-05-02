@@ -3,7 +3,7 @@
 xlimlabel <- function(x,xlabels, pos=4, offset=0.5,...){
   dots <- list(...)
   cex <- if(!is.na(match("cex",names(dots)))) dots$cex else 1
-  xwid <- (strwidth(label2,units="inches",cex=cex)+
+  xwid <- (strwidth(xlabels,units="inches",cex=cex)+
            offset*par("cin")[1])/par("pin")[1]
   xmax <- max(x,na.rm=TRUE)
   xmin <- min(x,na.rm=TRUE)
