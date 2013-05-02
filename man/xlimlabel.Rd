@@ -10,7 +10,7 @@ Calculates the x-axis limits when adding (long) labels to a plot
 \usage{
 xlimlabel(x, xlabels, pos=4, offset = 0.5, ...)
 }
-%- maybe also 'usage' for other objects documented here.
+
 \arguments{
   \item{x}{numeric vector of horizontal coordinates}
   \item{xlabels}{character vector, specifying text to be written}
@@ -39,13 +39,14 @@ x <- runif(15,-1,1)*10
 xlabs <- sapply(sample(1:20,15,replace=TRUE),
          function(a) paste(LETTERS[1:a], collapse=""))
 
+par(mfrow=c(2,1))
 ## Labels to the left ##
 xlims <- xlimlabel(x,xlabs,pos=2)
 plot(x,1:length(x),xlim=xlims)
-text(x,1:length(x),label2,pos=2)
+text(x,1:length(x),xlabs,pos=2)
 
 ## Labels to the right ##
 xlims <- xlimlabel(x,xlabs,pos=4,cex=0.7)
 plot(x,1:length(x),xlim=xlims)
-text(x,1:length(x),label2,pos=4,cex=0.7)
+text(x,1:length(x),xlabs,pos=4,cex=0.7)
 }
