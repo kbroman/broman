@@ -32,21 +32,23 @@ Minimum and maximum x-axis limits for adding horizontal text
 Aimee Teo Broman
 }
 \seealso{
-\code{text}
+\code{\link[base]{text}}
 }
 \examples{
-x <- runif(15,-1,1)*10
-xlabs <- sapply(sample(1:20,15,replace=TRUE),
-         function(a) paste(LETTERS[1:a], collapse=""))
+# text of random length
+x <- runif(15, -1, 1)*10
+xlabs <- sapply(sample(1:20, 15, replace=TRUE),
+                function(a) paste(LETTERS[1:a], collapse=""))
 
 par(mfrow=c(2,1))
+
 ## Labels to the left ##
-xlims <- xlimlabel(x,xlabs,pos=2)
-plot(x,1:length(x),xlim=xlims)
-text(x,1:length(x),xlabs,pos=2)
+xlims <- xlimlabel(x, xlabs, pos=2)
+plot(x, 1:length(x), xlim=xlims)
+text(x, 1:length(x), xlabs, pos=2)
 
 ## Labels to the right ##
-xlims <- xlimlabel(x,xlabs,pos=4,cex=0.7)
-plot(x,1:length(x),xlim=xlims)
-text(x,1:length(x),xlabs,pos=4,cex=0.7)
+xlims <- xlimlabel(x, xlabs, pos=4, cex=0.7)
+plot(x, 1:length(x), xlim=xlims)
+text(x, 1:length(x), xlabs, pos=4, cex=0.7)
 }
