@@ -21,7 +21,7 @@ xlimlabel(x, xlabels, pos=4, offset = 0.5, ...)
     a character width}
   \item{\dots}{additional text parameters from \code{par}, such as \code{cex}}
 }
-}
+
 \details{
   See \code{text} for details on \code{pos} and \code{offset}.
 }
@@ -32,7 +32,7 @@ Minimum and maximum x-axis limits for adding horizontal text
 Aimee Teo Broman
 }
 \seealso{
-\code{\link[base]{text}}
+\code{\link[graphics]{text}}
 }
 \examples{
 # text of random length
