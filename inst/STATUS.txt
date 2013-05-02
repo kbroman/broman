@@ -1,6 +1,6 @@
 Revision history for the R/broman package
 ----------------------------------------------------------------------
-copyright (c) 2001-2012, Karl W Broman
+copyright (c) 2001-2013, Karl W Broman
 
     The R/broman package is free software; you can redistribute it
     and/or modify it under the terms of the GNU General Public
@@ -14,6 +14,12 @@ copyright (c) 2001-2012, Karl W Broman
     A copy of the GNU General Public License, version 3, is available
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
+
+Version 0.40, 5/2/2013:
+
+   Added function xlimlabel for determining appropriate xlim to add
+   character string labels to a plot
+
 
 Version 0.39, 10/17/2012:
 
