@@ -2,6 +2,9 @@ useDynLib(broman)
 
 # functions to export
 export(xlimlabel)
+export(strwidth2xlim)
+export(strwidth2lines)
+
 export(bromanversion)
 export(cf)
 export(convert2hex, dec2hex, hex2dec)

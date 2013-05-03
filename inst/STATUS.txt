@@ -15,10 +15,13 @@ copyright (c) 2001-2013, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.40, 5/2/2013:
+Version 0.40, 5/3/2013:
 
    Added function xlimlabel for determining appropriate xlim to add
    character string labels to a plot
+
+   Added functions strwidth2xlim and strwidth2lines for calculating
+   margin lengths or x-axis limits that will fit a given set of text.
 
 
 Version 0.39, 10/17/2012:
