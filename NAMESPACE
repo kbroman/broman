@@ -1,6 +1,8 @@
 useDynLib(broman)
 
 # functions to export
+export(histlines)
+
 export(xlimlabel)
 export(strwidth2xlim)
 export(strwidth2lines)

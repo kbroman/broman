@@ -15,6 +15,11 @@ copyright (c) 2001-2013, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.41, 5/13/2013:
+
+   Added function histlines for making a histogram with lines().
+
+
 Version 0.40, 5/3/2013:
 
    Added function xlimlabel for determining appropriate xlim to add
