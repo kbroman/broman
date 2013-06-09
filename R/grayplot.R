@@ -2,9 +2,9 @@
 #
 # grayplot.R
 #
-# copyright (c) 2012, Karl W Broman
+# copyright (c) 2012-2013, Karl W Broman
 # First written Oct, 2012
-# Last modified Apr, 2012
+# Last modified Jun, 2013
 #
 #     This program is free software; you can redistribute it and/or
 #     modify it under the terms of the GNU General Public License,
@@ -42,6 +42,7 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
   function(x, y, ..., type="p", hlines, hlines.col, hlines.lty, hlines.lwd,
            vlines, vlines.col, vlines.lty, vlines.lwd,
            xat, yat, bgcolor="gray80", xaxt="n", yaxt="n",
+           xlab, ylab, xname, yname,
            las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0))
   {
     dots <- list(...)
@@ -50,11 +51,24 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
     if("mgp" %in% names(dots) && missing(mgp.y))
       mgp.y <- dots$mgp
 
+    if(is.null(y)) {
+      if(missing(xlab)) xlab <- "Index"
+      if(missing(ylab)) ylab <- xname
+    }
+    else {
+      if(missing(xlab)) xlab <- xname
+      if(missing(ylab)) ylab <- yname
+    }
+
     # blank plot
     if(is.null(y))
-      plot(x, ..., type="n", xaxt="n", yaxt="n")
+      plot(x, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
     else
-      plot(x, y, ..., type="n", xaxt="n", yaxt="n")
+      plot(x, y, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
+
+    # axis titles
+    title(xlab=xlab, mgp=mgp.x)
+    title(ylab=ylab, mgp=mgp.y)
 
     # add gray rectangle
     u <- par("usr")
@@ -106,7 +120,8 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
                hlines.lty=hlines.lty, hlines.lwd=hlines.lwd,
                vlines=vlines, vlines.col=vlines.col,
                vlines.lty=vlines.lty, vlines.lwd=vlines.lwd,
-               xat=xat, yat=yat, bgcolor=bgcolor)
+               xat=xat, yat=yat, bgcolor=bgcolor,
+               xname=substitute(x), yname=substitute(y))
   invisible()
 }
 

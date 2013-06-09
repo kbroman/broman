@@ -15,6 +15,12 @@ copyright (c) 2001-2013, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.42, 6/8/2013:
+
+   Revise grayplot for better treatment of x- and y-axis titles,
+   including the use of mgp/mgp.x/mgp.y.
+
+
 Version 0.41, 5/13/2013:
 
    Added function histlines for making a histogram with lines().
