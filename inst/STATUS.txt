@@ -15,6 +15,11 @@ copyright (c) 2001-2013, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.43, 8/2/2013:
+
+   Added qqline2(), which is like qqline() but for two datasets.
+
+
 Version 0.42, 6/8/2013:
 
    Revise grayplot for better treatment of x- and y-axis titles,

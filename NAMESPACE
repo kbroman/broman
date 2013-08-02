@@ -1,6 +1,8 @@
 useDynLib(broman)
 
 # functions to export
+export(qqline2)
+
 export(histlines)
 
 export(xlimlabel)
