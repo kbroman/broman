@@ -30,7 +30,7 @@ triplot(labels, \dots)
   \code{\link{triarrow}}. 
 }
 
-\value{None.}
+\value{The (x,y) coordinates of the points plotted, if any.}
 
 \examples{
 triplot()

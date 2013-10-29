@@ -2,8 +2,8 @@
 #
 # holmans_triangle.R
 #
-# copyright (c) 2006-2010, Karl W Broman
-# Last modified Nov, 2010
+# copyright (c) 2006-2013, Karl W Broman
+# Last modified Oct, 2013
 # First written May, 2006
 #
 #     This program is free software; you can redistribute it and/or
@@ -56,6 +56,7 @@ function(labels, ...)
     for(j in (i+1):3)
       segments(pts[1,i], pts[2,i], pts[1,j], pts[2,j], lwd=2)
   }
+  invisible(pts)
 }
   
 
@@ -90,6 +91,7 @@ function(x, ...)
   for(i in 1:2) x[,i] <- x[,i] - mean(range(pts[i,])) + mean(range(lim[,i]))
 
   points(x, ...)
+  invisible(x)
 }
 
 trilines <-
@@ -123,6 +125,7 @@ function(x, ...)
   for(i in 1:2) x[,i] <- x[,i] - mean(range(pts[i,])) + mean(range(lim[,i]))
 
   lines(x, ...)
+  invisible(x)
 }
 
 triarrow <-
@@ -160,6 +163,7 @@ function(x, ...)
   for(i in 1:2) x[,i] <- x[,i] - mean(range(pts[i,])) + mean(range(lim[,i]))
 
   arrows(x[1,1], x[1,2], x[2,1], x[2,2], ...)
+  invisible(x)
 }
 
 # end of holmans_triangle.R

@@ -28,7 +28,7 @@ tripoints(x, \dots)
   First use \code{\link{triplot}} to first plot the equilateral triangle. 
 }
 
-\value{None.}
+\value{The (x,y) coordinates of the points plotted.}
 
 \examples{
 triplot()

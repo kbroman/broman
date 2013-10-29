@@ -15,6 +15,12 @@ copyright (c) 2001-2013, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.44, 10/29/2013:
+
+   Revise tripoints() and related functions to invisibly return the
+   (x,y) coordinates of the points, as plotted.
+
+
 Version 0.43, 8/2/2013:
 
    Added qqline2(), which is like qqline() but for two datasets.
