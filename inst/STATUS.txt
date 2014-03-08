@@ -1,6 +1,6 @@
 Revision history for the R/broman package
 ----------------------------------------------------------------------
-copyright (c) 2001-2013, Karl W Broman
+copyright (c) 2001-2014, Karl W Broman
 
     The R/broman package is free software; you can redistribute it
     and/or modify it under the terms of the GNU General Public
@@ -17,7 +17,9 @@ copyright (c) 2001-2013, Karl W Broman
 
 Version 0.45, 3/8/2014:
 
-  Add function brocolors()
+  Add function brocolors() returning vectors of colors I use in
+  figures.
+
 
 Version 0.44, 10/29/2013:
 
