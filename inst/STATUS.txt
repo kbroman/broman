@@ -15,6 +15,10 @@ copyright (c) 2001-2013, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.45, 3/8/2014:
+
+  Add function brocolors()
+
 Version 0.44, 10/29/2013:
 
    Revise tripoints() and related functions to invisibly return the
