@@ -34,6 +34,7 @@
 #' character
 paste. <- function(...) paste(..., sep=".")
 
+#' @export
 paste.. <- function(...) paste(..., sep=".", collapse=".")
 
 #  paste00
@@ -78,6 +79,8 @@ paste.. <- function(...) paste(..., sep=".", collapse=".")
 #' character
 paste00 <- function(...) paste(..., sep="", collapse="")
 
+#' @export
 paste0. <- function(...) paste(..., sep="", collapse=".")
 
+#' @export
 paste.0 <- function(...) paste(..., sep=".", collapse="")

@@ -48,6 +48,8 @@
 #'
 #' @keywords
 #' utilities
+#'
+#' @useDynLib broman
 normalize <-
 function(x,y)
 {

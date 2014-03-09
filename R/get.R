@@ -35,4 +35,6 @@
 #' @keywords
 #' data
 get0 <- function(...) get(paste0(...))
+
+#' @export
 get. <- function(...) get(paste(..., sep="."))

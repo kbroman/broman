@@ -6,6 +6,7 @@ function(f, a, b, n=1, ...)
   else return(h*sum( f(seq(a+h,b,by=2*h),...) ))
 }
 
+#' @export
 trap <-
 function(f, a, b, tol=1e-8, max.step=1000, ...)
 {
