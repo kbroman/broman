@@ -1,3 +1,4 @@
 \.git
 README.md
 \.gitignore
+Makefile

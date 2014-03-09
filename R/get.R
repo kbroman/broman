@@ -1,29 +1,38 @@
-######################################################################
-#
-# get.R
-#
-# copyright (c) 2012, Karl W Broman
-# First written Apr, 2012
-# Last modified Apr, 2012
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: get0, get.
-#
-######################################################################
-
+#  get0
+#'
+#' get with paste
+#'
+#' Calls \code{\link[base]{paste}} then \code{\link[base]{get}}
+#'
+#' @aliases get.
+#'
+#' @param ... Vector of character strings.
+#'
+#' @details
+#' There's not much to these functions.  \code{get0} uses \code{\link[base]{paste0}}
+#'   and so combines its arguments with \code{sep=""}.   \code{get.} uses
+#'   \code{\link[base]{paste}} with \code{sep="."}.
+#'
+#' @export
+#'
+#' @return
+#' The object found.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' xy <- 3
+#' x.y <- 18.3
+#' get0("x", "y")
+#' get.("x", "y")
+#'
+#' @seealso
+#' \code{\link[base]{get}}, 
+#'   \code{\link[base]{paste}}, 
+#'   \code{\link[base]{paste0}}
+#'
+#' @keywords
+#' data
 get0 <- function(...) get(paste0(...))
 get. <- function(...) get(paste(..., sep="."))
-
-# end of get.R

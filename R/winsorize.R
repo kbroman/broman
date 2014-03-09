@@ -1,34 +1,35 @@
 ######################################################################
-#
-# winsorize.R
-#
-# copyright (c) 2011, Karl W Broman
-# last modified Apr, 2011
-# first written Apr, 2011
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: winsorize
-#
-######################################################################
-
-######################################################################
 # winsorize a vector
 #
 # (move values above and below the alpha and 1-alpha quantiles
 # to those quantiles)
 ######################################################################
+#  winsorize
+#'
+#' Winsorize a vector
+#'
+#' For a numeric vector, move values below and above the q and 1-q
+#'   quantiles to those quantiles.
+#'
+#' @param x Numeric vector
+#'
+#' @param q Lower quantile to use
+#'
+#' @export
+#'
+#' @return
+#' A vector like the input \code{x}, but with extreme values moved in to
+#'   the \code{q} and \code{1-q} quantiles.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' x <- sample(c(1:10, rep(NA, 10), 21:30))
+#' winsorize(x, 0.2)
+#'
+#' @keywords
+#' utilities
 winsorize <- 
 function(x, q=0.006)
 {
@@ -39,5 +40,3 @@ function(x, q=0.006)
   x[!is.na(x) & x > lohi[2]] <- lohi[2]
   x
 }
-
-# end of winsorize.R

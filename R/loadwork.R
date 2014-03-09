@@ -1,28 +1,35 @@
-######################################################################
-#
-# loadwork.R
-#
-# copyright (c) 2008, Karl W Broman
-# Last revised:  Sep, 2008
-# First written: Aug, 2004
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: loadwork, attachwork, attachfile
-#
-######################################################################
-
+#  loadwork
+#'
+#' Load a workspace
+#'
+#' Load a workspace for a directory name of a particular form.
+#'
+#' @param i An integer or character string.
+#'
+#' @param dir Directory name.
+#'
+#' @param verbose If true, print a message if the file can't be loaded.
+#'
+#' @details
+#' This function loads the workspace \code{paste(dir,i,"/.RData",sep="")}.
+#'
+#' @export
+#'
+#' @return
+#' TRUE/FALSE according to whether the file exists (and so the function worked).
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' \dontrun{for(i in 1:5) loadwork(i)}
+#'
+#' @seealso
+#' \code{\link{attachwork}},
+#'   \code{\link{attachfile}},   \code{\link{loadfile}}
+#'
+#' @keywords
+#' IO
 loadwork <-
 function(i="",dir="Work", verbose=TRUE) {
   file <- paste(dir,i,"/.RData",sep="")
@@ -37,6 +44,38 @@ function(i="",dir="Work", verbose=TRUE) {
   invisible(result)
 }
 
+#  attachwork
+#'
+#' Attach a workspace
+#'
+#' Attach a workspace for a directory name of a particular form.
+#'
+#' @param i An integer or character string.
+#'
+#' @param dir Directory name.
+#'
+#' @param verbose If true, print a message if the file can't be loaded.
+#'
+#' @details
+#' This function attaches the workspace \code{paste(dir,i,"/.RData",sep="")}.
+#'
+#' @export
+#'
+#' @return
+#' TRUE/FALSE according to whether the file exists (and so the function worked).
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' \dontrun{for(i in 1:5) attachwork(i)}
+#'
+#' @seealso
+#' \code{\link{loadwork}},
+#'   \code{\link{attachfile}}, \code{\link{loadfile}}
+#'
+#' @keywords
+#' IO
 attachwork <-
 function(i="",dir="Work", verbose=TRUE) {
   file <- paste(dir,i,"/.RData",sep="")
@@ -51,6 +90,43 @@ function(i="",dir="Work", verbose=TRUE) {
   invisible(result)
 }
   
+#  attachfile
+#'
+#' Attach a workspace
+#'
+#' Attach a workspace for a directory name of a particular form.
+#'
+#' @param i An integer or character string.
+#'
+#' @param stem Initial part of name.
+#'
+#' @param end Last part of name.
+#'
+#' @param fixdig If TRUE and \code{i} is an integer < 10, append a 0 to i.
+#'
+#' @param verbose If true, print a message if the file can't be loaded.
+#'
+#' @details
+#' This function attaches the workspace \code{paste(stem,i,end,sep="")},
+#'   possibly adding a 0 before i if i < 10.
+#'
+#' @export
+#'
+#' @return
+#' TRUE/FALSE according to whether the file exists (and so the function worked).
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' \dontrun{for(i in 1:5) attachfile(i)}
+#'
+#' @seealso
+#' \code{\link{loadwork}},
+#'   \code{\link{attachwork}}, \code{\link{loadfile}}
+#'
+#' @keywords
+#' IO
 attachfile <-
 function(i,stem="perm",end=".RData",fixdig=TRUE, verbose=TRUE)
 {
@@ -68,6 +144,43 @@ function(i,stem="perm",end=".RData",fixdig=TRUE, verbose=TRUE)
   invisible(result)
 }
 
+#  loadfile
+#'
+#' Load a workspace
+#'
+#' Load a workspace for a directory name of a particular form.
+#'
+#' @param i An integer or character string.
+#'
+#' @param stem Initial part of name.
+#'
+#' @param end Last part of name.
+#'
+#' @param fixdig If TRUE and \code{i} is an integer < 10, append a 0 to i.
+#' 
+#' @param verbose If true, print a message if the file can't be loaded.
+#'
+#' @details
+#' This function loads the workspace \code{paste(stem,i,end,sep="")},
+#'   possibly adding a 0 before i if i < 10.
+#'
+#' @export
+#'
+#' @return
+#' TRUE/FALSE according to whether the file exists (and so the function worked).
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' \dontrun{for(i in 1:5) loadfile(i)}
+#'
+#' @seealso
+#' \code{\link{loadwork}},
+#'   \code{\link{attachwork}}, \code{\link{attachfile}}
+#'
+#' @keywords
+#' IO
 loadfile <-
 function(i,stem="perm",end=".RData",fixdig=TRUE, verbose=TRUE)
 {
@@ -85,5 +198,3 @@ function(i,stem="perm",end=".RData",fixdig=TRUE, verbose=TRUE)
   }
   invisible(result)
 }
-
-# end of loadwork.R

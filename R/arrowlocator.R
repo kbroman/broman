@@ -1,37 +1,51 @@
-######################################################################
-#
-# arrowlocator.R
-#
-# copyright (c) 2010, Karl W Broman
-# last modified: Nov, 2010
-# first written: Nov, 2010
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: arrowlocator
-#
-######################################################################
-
-######################################################################
-#
-# arrowlocator: use locator() to draw an error; returning the
-#               two endpoints
-#
-#   If reverse=TRUE, start with head; if reverse=FALSE, start with tail
-#
-######################################################################
-
+#  arrowlocator
+#'
+#' Use the locator function to plot an arrow
+#'
+#' Use the \code{\link[graphics]{locator}} function to indicate the
+#'   endpoints of an arrow and then plot it.
+#'
+#' @param reverse If FALSE, first indicate the tail of the arrow and
+#'     then the head; if TRUE, first indicate the head of the arrow and then
+#'     the tail.
+#'
+#' @param horizontal If TRUE, force the arrow to be horizontal.  (Use the
+#'   average y-axis value of the two clicks for the vertical placement.)
+#'
+#' @param vertical If TRUE, force the arrow to be vertical.  (Use the
+#'   average x-axis value of the two clicks for the horizontal placement.)
+#'
+#' @param length Length of the edges of the arrow head.
+#'
+#' @param ... Additional graphics parameters
+#' 
+#' @details
+#' Use \code{\link[graphics]{locator}} to indicate the two endpoints of
+#'   an arrow and then draw it.
+#'
+#' @export
+#'
+#' @return
+#' The locations of the endpoints of the arrow, as a two-row
+#'   matrix.  The first row indicates the location of the tail of the
+#'   arrow; the second row indicates the location of the head of the
+#'   arrow.
+#'
+#' @author
+#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' \dontrun{
+#' plot(0,0,type="n", xlab="", ylab="", xlim=c(0,100), ylim=c(0,100))
+#' arrowlocator(col="blue", lwd=2)
+#' }
+#'
+#' @seealso
+#' \code{\link[graphics]{arrows}},
+#'   \code{\link[graphics]{locator}}
+#'
+#' @keywords
+#' hplot
 arrowlocator <-
 function(reverse=FALSE, horizontal=FALSE, vertical=FALSE, length=0.1, ...)
 {
@@ -46,5 +60,3 @@ function(reverse=FALSE, horizontal=FALSE, vertical=FALSE, length=0.1, ...)
   dimnames(x) <- list(c("tail","head"), c("x","y"))
   invisible(x)
 }
-
-# end of arrowlocator.R

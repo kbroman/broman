@@ -1,33 +1,40 @@
 ######################################################################
-#
-# fisher.R
-#
-# copyright (c) 2001-8, Karl W Broman
-# Nov, 2001; Apr, 2002; Dec, 2007; Jan, 2008
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: fisher
-#
-######################################################################
-
-######################################################################
-#
 # fisher: "approximate" fisher's exact test
-#
 ######################################################################
-
+#'
+#' Fisher's exact test for a two-way table
+#'
+#' Performs a sampling version of Fisher's exact test for a two-way
+#'   contingency table.
+#'
+#' @param tab A matrix of counts.
+#'
+#' @param n.sim Number of samples of permuted tables to consider.
+#'
+#' @details
+#' This is like the function \code{\link[stats]{fisher.test}}, but
+#'   calculates an approximate P-value rather than performing a complete
+#'   enumeration.  This will be better for large, sparse tables.
+#'
+#' @export
+#'
+#' @return
+#' A single number: the P-value testing independence of rows and columns
+#'   in the table.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' TeaTasting <- matrix(c(3,1,1,3),nrow=2)
+#' fisher(TeaTasting,1000)
+#'
+#' @seealso
+#' \code{\link[stats]{chisq.test}},
+#'   \code{\link[stats]{fisher.test}}, \code{\link{chisq}}
+#'
+#' @keywords
+#' htest
 fisher <-
 function(tab, n.sim=1000)
 {
@@ -45,6 +52,39 @@ function(tab, n.sim=1000)
 ######################################################################
 # chisq: approximate chi-square test
 ######################################################################
+#'
+#' Chi-square test by simuation for a two-way table
+#'
+#' Calculate a p-value for a chi-square test by Monte Carlo simulation.
+#'
+#' @param tab A matrix of counts.
+#'
+#' @param n.sim Number of samples of permuted tables to consider.
+#'
+#' @details
+#' This is like the function \code{\link[stats]{chisq.test}}, but
+#'   calculates an approximate P-value rather than refering to
+#'   asymptotics.  This will be better for large, sparse tables.
+#'
+#' @export
+#'
+#' @return
+#' A single number: the P-value testing independence of rows and columns
+#'   in the table.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' TeaTasting <- matrix(c(3,1,1,3),nrow=2)
+#' chisq(TeaTasting,1000)
+#'
+#' @seealso
+#' \code{\link[stats]{chisq.test}},
+#'   \code{\link[stats]{fisher.test}}, \code{\link{fisher}}
+#'
+#' @keywords
+#' htest
 chisq <-
 function(tab, n.sim=1000)
 {
@@ -58,6 +98,3 @@ function(tab, n.sim=1000)
   }
   mean(sims >= observed)
 }
-
-
-# end of fisher.R

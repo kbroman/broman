@@ -1,28 +1,52 @@
 ######################################################################
-# runningmean.R
-#
-# Karl W Broman
-# last modified Dec, 2011
-# first written Sep, 2005
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-#
-# Contains: runningmean, runningratio
-######################################################################
-
-######################################################################
 # get running mean, sum or median within a specified window
 ######################################################################
+#  runningmean
+#'
+#' Running mean, sum, or median
+#'
+#' Calculates a running mean, sum or median with a specified window.
+#'
+#' @param pos
+#' Positions for the values.
+#'
+#' @param value
+#' Values for which the running mean/sum/median/sd is to be
+#'    applied.
+#'
+#' @param at Positions at which running mean (or sum or median or sd) is
+#' calculated.  If missing, \code{pos} is used.
+#'
+#' @param window  Window width.
+#'
+#' @param what  Statistic to use.
+#'
+#' @export
+#'
+#' @return
+#' A vector with the same length as the input \code{at} (or \code{pos},
+#'   if \code{at} is missing), containing the running
+#'   statistic.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' x <- 1:10000
+#' y <- rnorm(length(x))
+#' plot(x,y, xaxs="i", yaxs="i")
+#' lines(x, runningmean(x, y, window=100, what="mean"),
+#'       col="blue", lwd=2)
+#' lines(x, runningmean(x, y, window=100, what="median"),
+#'       col="red", lwd=2)
+#' lines(x, runningmean(x, y, window=100, what="sd"),
+#'       col="green", lwd=2)
+#'
+#' @seealso
+#' \code{\link{runningratio}}
+#'
+#' @keywords
+#' univar
 runningmean <-
 function(pos, value, at, window=1000, what=c("mean","sum", "median", "sd"))
 {
@@ -75,6 +99,45 @@ function(pos, value, at, window=1000, what=c("mean","sum", "median", "sd"))
 #
 # take sum(numerator)/sum(denominator) in sliding window
 ######################################################################
+#  runningratio
+#'
+#' Running ratio
+#'
+#' Calculates a running ratio; a ratio sum(top)/sum(bottom) in a sliding window.
+#'
+#' @param pos Positions for the values.
+#'
+#' @param numerator Values for numerator in ratio.
+#'
+#' @param denominator Values for denominator in ratio.
+#'
+#' @param at Positions at which running ratio is
+#' calculated.  If missing, \code{pos} is used.
+#'
+#' @param window Window width.
+#'
+#' @export
+#'
+#' @return
+#' A vector with the same length as the input \code{at} (or \code{pos},
+#'   if \code{at} is missing), containing the running ratio.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' x <- 1:1000
+#' y <- runif(1000, 1, 5)
+#' z <- runif(1000, 1, 5)
+#' plot(x, runningratio(x, y, z, window=5), type="l", lwd=2)
+#' lines(x, runningratio(x, y, z, window=50), lwd=2, col="blue")
+#' lines(x, runningratio(x, y, z, window=100), lwd=2, col="red")
+#'
+#' @seealso
+#' \code{\link{runningmean}}
+#'
+#' @keywords
+#' univar
 runningratio <-
 function(pos, numerator, denominator, at, window=1000)
 {
@@ -118,5 +181,3 @@ function(pos, numerator, denominator, at, window=1000)
 
   z
 }
-
-# end of runningmean.R

@@ -1,28 +1,75 @@
-######################################################################
-#
-# grayplot.R
-#
-# copyright (c) 2012-2013, Karl W Broman
-# First written Oct, 2012
-# Last modified Jun, 2013
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-#
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-#
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-#
-# Part of the R/broman package
-# Contains: grayplot
-#
-######################################################################
-
+#  grayplot
+#'
+#' Plot with a gray background
+#'
+#' Like the plot function, but using a gray background just
+#'   for the plot regin.
+#'
+#' @param x Coordinates of points in the plot
+#'
+#' @param y Corrdinates of points in the plot (optional)
+#'
+#' @param ... Optional graphics arguments
+#'
+#' @param type Plot type (points, lines, etc.)
+#'
+#' @param hlines Locations of horizontal grid lines
+#'
+#' @param hlines.col Colors of horizontal grid lines
+#'
+#' @param hlines.lty Line type of horizontal grid lines
+#'
+#' @param hlines.lwd Line width of horizontal grid lines
+#'
+#' @param vlines Locations of vertical grid lines
+#'
+#' @param vlines.col Colors of vertical grid lines
+#'
+#' @param vlines.lty Line type of vertical grid lines
+#'
+#' @param vlines.lwd Line width of vertical grid lines
+#'
+#' @param xat Locations for x-axis labels; \code{xat=NA} indicates no labels
+#'
+#' @param yat Locations for y-axis labels; \code{yat=NA} indicates no labels
+#' 
+#' @param bgcolor Background color
+#'
+#' @details
+#' Calls \code{\link[graphics]{plot}} with \code{type="n"}, then
+#'   \code{\link[graphics]{rect}} to get the background, and then
+#'   \code{\link[graphics]{points}}.
+#'   Additional arguments you can include: \code{mgp.x} and \code{mgp.y}
+#'   (like \code{mgp}, for controlling parameters of axis labels, but
+#'   separate for x- and y-axis).
+#'
+#' @export
+#'
+#' @return
+#' None.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' \dontshow{set.seed(97536917)}
+#' x <- rnorm(100)
+#' y <- x+rnorm(100, 0, 0.7)
+#' grayplot(x, y, col="blue", pch=16)
+#' at <- seq(-3, 3)
+#' grayplot(x, y, col="blue", pch=16, hlines=at, vlines=at)
+#' grayplot(x, col="violet", pch=16, bgcolor="gray90",
+#'          hlines=seq(-4, 4, by=0.5), hlines.lwd=c(3,1),
+#'          vlines=seq(0, 100, by=5), vlines.lwd=c(3,1,1,1))
+#'
+#' @seealso
+#' \code{\link[graphics]{plot}},
+#'   \code{\link[graphics]{par}},
+#'   \code{\link[graphics]{rect}},
+#'   \code{\link[graphics]{points}}
+#'
+#' @keywords
+#' graphics
 grayplot <-
 function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.lwd=1,
          vlines, vlines.col="white", vlines.lty=1, vlines.lwd=1,
@@ -124,5 +171,3 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
                xname=substitute(x), yname=substitute(y))
   invisible()
 }
-
-# end of grayplot.R

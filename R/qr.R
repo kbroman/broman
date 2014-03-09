@@ -1,33 +1,38 @@
 ######################################################################
-#
-# qr.R
-#
-# copyright (c) 2001, Karl W Broman
-# Nov, 2001
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: qr2
-#
-######################################################################
-
-######################################################################
-#
 # qr2: Pulls out Q and R for Q-R decomposition given by qr()
-#
 ######################################################################
-
+#'
+#' The QR decomposition of a matrix
+#'
+#' Computes the QR decomposition of a matrix.
+#'
+#' @param x A matrix whose QR decomposition is to be computed.
+#'
+#' @param tol The tolerance for detecting linear dependencies in the
+#'   columns of \code{x}.
+#'
+#' @details
+#' Calls the function \code{\link[base]{qr}} and returns
+#'   less compact but more understandable output.
+#'
+#' @export
+#'
+#' @return
+#' A list of two matrices: Q and R.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' hilbert <- function(n) { i <- 1:n; 1/outer(i-1,i,"+") }
+#' h5 <- hilbert(5);
+#' qr2(h5)
+#'
+#' @seealso
+#' \code{\link[base]{qr}}
+#'
+#' @keywords
+#' algebra
 qr2 <-
 function(x, tol=1e-7)
 {
@@ -44,5 +49,3 @@ function(x, tol=1e-7)
 
   list(q=q0,r=r0)
 }
-
-# end of qr.R

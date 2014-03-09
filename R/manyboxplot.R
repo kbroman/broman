@@ -1,30 +1,48 @@
-######################################################################
-# copyright (c) 2012, Karl W Broman
-# First written Apr, 2012
-# Last modified Apr, 2012
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-#
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-#
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-#
-# Part of the R/broman package
-# Contains: manyboxplot
-#
-# a box-plot like figure, for *many* groups
-#
-# x is (n x p) where p is the number of groups
-# probs is a vector with 0 <= probs < 1/2
-#   - will always include dots at the median and make symmetric
-######################################################################
-
+#  manyboxplot
+#'
+#' Boxplot-like figure for many groups
+#'
+#' Boxplot-like figure for many groups, with lines connecting
+#'   selected quantiles.
+#'
+#' @param x Matrix of data, with columns indicating the groups.
+#'
+#' @param probs Numeric vecotr of probabilities with values in [0,1).
+#'     Quantiles will be symmetric, and the median will always be included.
+#'
+#' @param dotcol Color for median
+#'
+#' @param linecol Line colors, same length as \code{probs}
+#'
+#' @param ... Additional graphics parameters
+#' 
+#' @details
+#' Calculates quantiles of the columns of \code{x} and then plots dots or
+#'   lines at median plus lines at a series of quantiles, using
+#'   \code{\link{grayplot}} for the actual plot.
+#'
+#' @export
+#'
+#' @return
+#' None.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' \dontshow{set.seed(8422668)}
+#' mu <- c(rnorm(50, 0, 0.3), rnorm(50, 2, 0.3)) # vector of means
+#' x <- t(matrix(rnorm(1000*100, mu), ncol=1000))
+#' manyboxplot(x, c(0.05, 0.25), ylim=range(x), 
+#'            dotcol=c("blue","green")[(1:100 > 50) + 1],
+#'            hlines=seq(-4, 6, by=2),
+#'            vlines=c(1, seq(20, 100, by=20)))
+#'
+#' @seealso
+#' \code{\link{grayplot}}
+#'
+#' @keywords
+#' graphics
 manyboxplot <-
 function(x, probs=c(0.05, 0.1, 0.25), dotcol="blue",
          linecol=c("black","red","green", "orange"),

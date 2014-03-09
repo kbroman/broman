@@ -1,22 +1,35 @@
-######################################################################
-# convert a number to hex notation (and back)
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-#
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-#
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-#
-######################################################################
-
-dec2hex <-
-convert2hex <-
+#  convert2hex
+#' Convert to hex
+#'
+#' Convert a number to hexidecimal notation.
+#'
+#' @aliases dec2hex
+#'
+#' @param d A number.
+#'
+#' @details
+#' Nothing important to say here.
+#'
+#' @export
+#'
+#' @return
+#' A character string; the input in hex.
+#'
+#' @author
+#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' convert2hex(333)
+#' dec2hex(333)
+#' dec2hex(333) == "14D"
+#' dec2hex(0:30)
+#'
+#' @seealso
+#' \code{\link{hex2dec}}
+#'
+#' @keywords
+#' manip
+convert2hex <- dec2hex <-
 function(d)
 {
   if(length(d) > 1) {
@@ -45,6 +58,35 @@ function(d)
   paste(res, hex[(d %% 16) + 1], sep="")
 }
 
+#  hex2dec
+#'
+#' Convert from hex to decimal
+#'
+#' Convert a number from hexidecimal to decimal notation.
+#'
+#' @param h #' Character string with hexadecimal representation of a number
+#'
+#' @details
+#' Nothing important to say here.
+#'
+#' @export
+#'
+#' @return
+#' The input converted from hexadecimal to decimal notation.
+#'
+#' @author
+#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' hex2dec("14D")
+#' hex2dec("14D") == 333
+#' hex2dec(0:30)
+#'
+#' @seealso
+#' \code{\link{dec2hex}}
+#'
+#' @keywords
+#' manip
 hex2dec <-
 function(h)
 {

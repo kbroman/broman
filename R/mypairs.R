@@ -1,34 +1,40 @@
 ######################################################################
-#
-# mypairs.R
-#
-# copyright (c) 2006, Karl W Broman
-# First written Jun, 2006
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: mypairs
-#
-######################################################################
-
-######################################################################
-#
 # mypairs: Like the pairs() function, but doing just the upper
 #          triangle and taking par() arguments in the "..."
-#
 ######################################################################
-
+#'
+#' My scatterplot matrix
+#'
+#' A matrix of scatterplots is produced; it's similar to
+#'   \code{\link[graphics]{pairs}}, but with only the upper triangle is
+#'   made.
+#'
+#' @param x A numeric matrix or data frame.
+#'
+#' @param ... Passed to the \code{\link[graphics]{plot}} function.
+#' 
+#' @details
+#' This is like the function \code{\link[graphics]{pairs}}, but
+#'   only the upper triangle is produced.
+#'
+#' @export
+#'
+#' @return
+#' None.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' v <- rbind(c(1,0.5,0.2),c(0.5,1,0.9),c(0.2,0.9,1))
+#' x <- rmvn(500, rep(5,3), v)
+#' mypairs(x, col=sample(c("blue","red"), 500, repl=TRUE))
+#'
+#' @seealso
+#' \code{\link[graphics]{pairs}}
+#'
+#' @keywords
+#' hplot
 mypairs <-
 function(x, ...)
 {
@@ -52,5 +58,3 @@ function(x, ...)
     }
   }
 }
-
-# end of mypairs.R

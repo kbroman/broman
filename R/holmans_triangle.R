@@ -1,28 +1,48 @@
-######################################################################
-#
-# holmans_triangle.R
-#
-# copyright (c) 2006-2013, Karl W Broman
-# Last modified Oct, 2013
-# First written May, 2006
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: triplot, tripoints, trilines, triarrow
-#
-######################################################################
 
+#  triplot
+#'
+#' Plot Holmans triangle
+#'
+#' Plot Holmans triangle (an equilateral triangle used to depict
+#'   trinomial distributions).
+#'
+#' @param labels Labels for the three corners (lower-right, top, lower-left).
+#'
+#' @param ... Passed to \code{\link[graphics]{plot}}.
+#' 
+#' @details
+#' Plot of an equilateral triangle, in order to depict trinomial
+#'   distributions.  A trinomial distribution (that is, a trio of
+#'   non-negative numbers that add to 1) is equated to a point in the
+#'   triangle through the distances to the three sides.  This makes use of
+#'   the fact that for any point in an equilateral triangle, the sum of the
+#'   distances to the three sides is constant.  
+#'   The \code{triplot} function creates an empty triangle for use with the
+#'   related functions \code{\link{tripoints}}, \code{\link{trilines}},
+#'   \code{\link{triarrow}}.
+#'
+#' @export
+#'
+#' @return
+#' The (x,y) coordinates of the points plotted, if any.
+#'
+#' @author
+#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' triplot()
+#' x <- cbind(c(0.9, 0.05, 0.05), c(0.8, 0.1, 0.1), c(0.1, 0.9, 0), c(0, 0.9, 0.1))
+#' tripoints(x, lwd=2, col=c("black","blue","red","green"), pch=16)
+#' trilines(x, lwd=2, col="orange")
+#' y <- cbind(c(0.05, 0.05, 0.9), c(0.25, 0.25, 0.5))
+#' triarrow(y, col="blue", lwd=2, len=0.1)
+#'
+#' @seealso
+#' \code{\link{tripoints}}, \code{\link{trilines}},
+#'   \code{\link{triarrow}}
+#'
+#' @keywords
+#' hplot
 triplot <-
 function(labels, ...)
 {
@@ -60,6 +80,48 @@ function(labels, ...)
 }
   
 
+#  tripoints
+#'
+#' Plot points within a Holmans triangle
+#'
+#' Plot points within a Holmans triangle (an equilateral triangle used to depict
+#'   trinomial distributions).
+#'
+#' @param x A matrix with three rows, each column being a trinomial distribution.
+#'
+#' @param ... Passed to \code{\link[graphics]{points}}.
+#' 
+#' @details
+#' Plot of an equilateral triangle, in order to depict trinomial
+#'   distributions.  A trinomial distribution (that is, a trio of
+#'   non-negative numbers that add to 1) is equated to a point in the
+#'   triangle through the distances to the three sides.  This makes use of
+#'   the fact that for any point in an equilateral triangle, the sum of the
+#'   distances to the three sides is constant.  
+#'   First use \code{\link{triplot}} to first plot the equilateral triangle.
+#'
+#' @export
+#'
+#' @return
+#' The (x,y) coordinates of the points plotted.
+#'
+#' @author
+#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' triplot()
+#' x <- cbind(c(0.9, 0.05, 0.05), c(0.8, 0.1, 0.1), c(0.1, 0.9, 0), c(0, 0.9, 0.1))
+#' tripoints(x, lwd=2, col=c("black","blue","red","green"), pch=16)
+#' trilines(x, lwd=2, col="orange")
+#' y <- cbind(c(0.05, 0.05, 0.9), c(0.25, 0.25, 0.5))
+#' triarrow(y, col="blue", lwd=2, len=0.1)
+#'
+#' @seealso
+#' \code{\link{triplot}}, \code{\link{trilines}},
+#'   \code{\link{triarrow}}
+#'
+#' @keywords
+#' hplot
 tripoints <-
 function(x, ...)
 {
@@ -94,6 +156,49 @@ function(x, ...)
   invisible(x)
 }
 
+#  trilines
+#'
+#' Plot lines within a Holmans triangle
+#'
+#' Plot lines within a Holmans triangle (an equilateral triangle used to depict
+#'   trinomial distributions).
+#'
+#' @param x A matrix with three rows, each column being a trinomial
+#'   distribution.  Lines between these points are plotted.
+#'
+#' @param ... Passed to \code{\link[graphics]{lines}}.
+#' 
+#' @details
+#' Plot of an equilateral triangle, in order to depict trinomial
+#'   distributions.  A trinomial distribution (that is, a trio of
+#'   non-negative numbers that add to 1) is equated to a point in the
+#'   triangle through the distances to the three sides.  This makes use of
+#'   the fact that for any point in an equilateral triangle, the sum of the
+#'   distances to the three sides is constant.  
+#'   First use \code{\link{triplot}} to first plot the equilateral triangle.
+#'
+#' @export
+#'
+#' @return
+#' The (x,y) coordinates of the endpoints of the lines plotted.
+#'
+#' @author
+#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' triplot()
+#' x <- cbind(c(0.9, 0.05, 0.05), c(0.8, 0.1, 0.1), c(0.1, 0.9, 0), c(0, 0.9, 0.1))
+#' tripoints(x, lwd=2, col=c("black","blue","red","green"), pch=16)
+#' trilines(x, lwd=2, col="orange")
+#' y <- cbind(c(0.05, 0.05, 0.9), c(0.25, 0.25, 0.5))
+#' triarrow(y, col="blue", lwd=2, len=0.1)
+#'
+#' @seealso
+#' \code{\link{triplot}}, \code{\link{tripoints}},
+#'   \code{\link{triarrow}}
+#'
+#' @keywords
+#' hplot
 trilines <-
 function(x, ...)
 {
@@ -128,6 +233,49 @@ function(x, ...)
   invisible(x)
 }
 
+#  triarrow
+#'
+#' Plot an arrow within a Holmans triangle
+#'
+#' Plot an arrow within a Holmans triangle (an equilateral triangle used to depict
+#'   trinomial distributions).
+#'
+#' @param x A matrix with three rows and two columns, each column being a trinomial
+#'   distribution.  An arrow between the two points is plotted.
+#'
+#' @param ... Passed to \code{\link[graphics]{arrows}}.
+#' 
+#' @details
+#' Plot of an equilateral triangle, in order to depict trinomial
+#'   distributions.  A trinomial distribution (that is, a trio of
+#'   non-negative numbers that add to 1) is equated to a point in the
+#'   triangle through the distances to the three sides.  This makes use of
+#'   the fact that for any point in an equilateral triangle, the sum of the
+#'   distances to the three sides is constant.  
+#'   First use \code{\link{triplot}} to first plot the equilateral triangle.
+#'
+#' @export
+#'
+#' @return
+#' The (x,y) coordinates of the endpoints of the arrows plotted.
+#'
+#' @author
+#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' triplot()
+#' x <- cbind(c(0.9, 0.05, 0.05), c(0.8, 0.1, 0.1), c(0.1, 0.9, 0), c(0, 0.9, 0.1))
+#' tripoints(x, lwd=2, col=c("black","blue","red","green"), pch=16)
+#' trilines(x, lwd=2, col="orange")
+#' y <- cbind(c(0.05, 0.05, 0.9), c(0.25, 0.25, 0.5))
+#' triarrow(y, col="blue", lwd=2, len=0.1)
+#'
+#' @seealso
+#' \code{\link{triplot}}, \code{\link{tripoints}},
+#'   \code{\link{trilines}}
+#'
+#' @keywords
+#' hplot
 triarrow <-
 function(x, ...)
 {
@@ -166,4 +314,3 @@ function(x, ...)
   invisible(x)
 }
 
-# end of holmans_triangle.R

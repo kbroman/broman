@@ -1,31 +1,40 @@
-####################################################################
-# venn_diagram.R
-#
-# copyright (c) 2003-2010, Karl W Broman
-# Last modified Nov, 2010
-# First written May, 2003
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: venn 
-#
-# Draw a to-scale Venn diagram:
-#     Two circles whose area is prop'l to the number of data points
-#     in two sets, and for which the area of the region of overlap is
-#     proportional to the number of data points in both sets.
-#####################################################################
-
+#  venn
+#'
+#' Plot to-scale Venn diagram
+#'
+#' Plot a Venn diagram (with two groups), to scale, either with circles
+#'   or with squares.
+#'
+#' @param setA Total area of set A.
+#'
+#' @param setB Total area of set B.
+#'
+#' @param both Area of intersection of sets A and B.
+#'
+#' @param method Indicates whether to plot circles or squares.
+#'
+#' @param labels Labels for the two sets.  (\code{NULL} for no labels.)
+#' 
+#' @param col Colors of the two sets.
+#'
+#' @details
+#' Plots a to-scale Venn diagram with two sets, so that the relative
+#'   areas of the two sets and their intersection are exact.
+#'
+#' @export
+#'
+#' @return
+#' None.
+#'
+#' @author
+#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' venn(setA=86, setB=1622, both=10)
+#' venn(setA=86, setB=1622, both=10, method="square")
+#'
+#' @keywords
+#' hplot
 venn <-
 function(setA=50, setB=50, both=25,
          method=c("circle", "square"), labels=c("A","B"),
@@ -251,5 +260,4 @@ function(setA=50, setB=50, both=25,
 #}
 
 
-# end of venn_diagram.R
 

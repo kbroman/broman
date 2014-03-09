@@ -1,3 +1,4 @@
+# brocolors
 #' Vectors of colors for figures
 #'
 #' Creates different vectors of related colors that may be useful for figures.
@@ -5,9 +6,11 @@
 #' @param set Character string indicating a set of colors.
 #' @return Vector of character strings representing the chosen set of colors, in RGB.
 #' @export
+#' @author Karl W Broman, \email{kbroman@@biostat.wisc.edu}
 #' @examples
 #' col <- brocolors("general")
 #' plot(seq(along=col), pch=21, bg=col, cex=4)
+#' @keywords utilities
 brocolors <-
 function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main"))
 {

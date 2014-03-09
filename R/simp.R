@@ -1,27 +1,3 @@
-######################################################################
-#
-# simp.R: Numerical integration by Simpson's rule
-#
-# copyright (c) 2001, Karl W Broman
-# Nov, 2001
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: subtrap, trap, simp
-#
-######################################################################
-
 subtrap <-
 function(f, a, b, n=1, ...)
 {
@@ -44,6 +20,50 @@ function(f, a, b, tol=1e-8, max.step=1000, ...)
   i.new
 }
 
+#  simp
+#'
+#' Numerical integration
+#'
+#' Perform numerical integration by Simpson's rule or the trapezoidal
+#'   rule.
+#'
+#' @aliases trap
+#'
+#' @param f The integrand; must be a vectorized function.
+#'
+#' @param a Lower limit of integration.
+#'
+#' @param b Upper limit of integration.
+#'
+#' @param tol Tolerance for choosing the number of grid points.
+#'
+#' @param max.step Log base 2 of the total number of grid points.
+#'
+#' @param ... Other arguments passed to the integrand, \code{f}.
+#'
+#' @details
+#' Iterately doubles the number of grid points for the numerical
+#'   integral, stopping when the integral decreases by less than
+#'   \code{tol}.
+#'
+#' @export
+#'
+#' @return
+#' The integral of \code{f} from \code{a} to \code{b}.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' f <- function(x) x*x*(1-x)*sin(x*x)
+#' I1 <- trap(f,0,2)
+#' I2 <- simp(f,0,2)
+#'
+#' @seealso
+#' \code{\link[stats]{integrate}}
+#'
+#' @keywords
+#' math
 simp <-
 function(f, a, b, tol=1e-8, max.step=1000, ...)
 {
@@ -58,5 +78,3 @@ function(f, a, b, tol=1e-8, max.step=1000, ...)
   }
   i.new
 }
-
-# end of simp.R

@@ -1,33 +1,36 @@
-######################################################################
-#
-# rmvn.R
-#
-# copyright (c) 2001, Karl W Broman
-# Nov, 2001
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: rmvn
-#
-######################################################################
-
-######################################################################
-#
-# rmvn: simulate from multivariate normal distribution
-#
-######################################################################
-
+#  rmvn
+#'
+#' Simulate multivariate normal
+#'
+#' Simulate from a multivariate normal distribution.
+#'
+#' @param n Number of simulation replicates.
+#'
+#' @param mu Mean vector.
+#'
+#' @param V Variance-covariance matrix.
+#'
+#' @details
+#' Uses the Cholesky decomposition of the matrix \code{V}, obtained by
+#'   \code{\link[base]{chol}}.
+#'
+#' @export
+#'
+#' @return
+#' A matrix of size n x \code{length(mu)}.  Each row corresponds to a
+#'   separate replicate.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' x <- rmvn(100, c(1,2),matrix(c(1,1,1,4),ncol=2))
+#'
+#' @seealso
+#' \code{\link[stats]{rnorm}}
+#'
+#' @keywords
+#' datagen
 rmvn <-
 function(n, mu=0, V=matrix(1))
 {
@@ -37,5 +40,3 @@ function(n, mu=0, V=matrix(1))
   D <- chol(V)
   matrix(rnorm(n*p),ncol=p) %*% D + rep(mu,rep(n,p))
 }
-
-# end of rmvn.R

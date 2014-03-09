@@ -1,38 +1,33 @@
-######################################################################
-#
-# help.R
-#
-# copyright (c) 2007-9, Karl W Broman
-# Jan, 2007; Oct, 2009
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: h
-#
-######################################################################
-
-######################################################################
-#
-# h: get html version of help within ess
-#
-######################################################################
-
+#  h
+#'
+#' View html version of help file
+#'
+#' View the html version of a help file while running R via ESS within emacs.
+#'
+#' @param ... Help topics.
+#'
+#' @details
+#' This just calls the function \code{\link[utils]{help}} using the
+#'   argument \code{htmlhelp=TRUE}.
+#'
+#' @export
+#'
+#' @return
+#' No return value.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' h(read.cross)
+#'
+#' @seealso
+#' \code{\link[utils]{help}}, \code{\link[utils]{help.start}}
+#'
+#' @keywords
+#' documentation
 h <-
 function(...)
 {
   help(..., help_type="html")
 }
-
-# end of help.R
-

@@ -20,6 +20,8 @@ Version 0.45, 3/8/2014:
   Add function brocolors() returning vectors of colors I use in
   figures.
 
+  Convert package to use roxygen2 for documentation.
+
 
 Version 0.44, 10/29/2013:
 

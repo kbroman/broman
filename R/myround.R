@@ -1,28 +1,33 @@
-######################################################################
-#
-# myround.R
-#
-# copyright (c) 2002-2013, Karl W Broman
-# First written Aug, 2002
-# Last modified Mar, 2013
-#
-#     This program is free software; you can redistribute it and/or
-#     modify it under the terms of the GNU General Public License,
-#     version 3, as published by the Free Software Foundation.
-# 
-#     This program is distributed in the hope that it will be useful,
-#     but without any warranty; without even the implied warranty of
-#     merchantability or fitness for a particular purpose.  See the GNU
-#     General Public License, version 3, for more details.
-# 
-#     A copy of the GNU General Public License, version 3, is available
-#     at http://www.r-project.org/Licenses/GPL-3
-# 
-# Part of the R/broman package
-# Contains: myround
-#
-######################################################################
-
+#  myround
+#'
+#' Round a number, preserving extra 0's
+#'
+#' Round a number, preserving extra 0's.
+#'
+#' @param x Number to round.
+#'
+#' @param digits Number of digits past the decimal point to keep.
+#'
+#' @details
+#' Uses \code{\link[base]{sprintf}} to round a number, keeping extra 0's.
+#'
+#' @export
+#'
+#' @return
+#' A vector of character strings.
+#'
+#' @author
+#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#'
+#' @examples
+#' myround(51.01, 3)
+#' myround(0.199, 2)
+#'
+#' @seealso
+#' \code{\link[base]{round}}, \code{\link[base]{sprintf}}
+#'
+#' @keywords
+#' utilities
 myround <-
 function(x, digits=1)
 {
@@ -42,5 +47,3 @@ function(x, digits=1)
 
   tmp
 }
- 
-# end of myround.R
