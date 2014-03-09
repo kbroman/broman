@@ -15,7 +15,7 @@ copyright (c) 2001-2014, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.45, 3/8/2014:
+Version 0.45, 3/9/2014:
 
   Add function brocolors() returning vectors of colors I use in
   figures.
