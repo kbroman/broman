@@ -22,6 +22,7 @@
 #'   \code{\link{triarrow}}.
 #'
 #' @export
+#' @importFrom graphics arrows layout plot par text rect lines
 #'
 #' @return
 #' The (x,y) coordinates of the points plotted, if any.

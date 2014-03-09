@@ -3,8 +3,6 @@
 #'
 #' Calls \code{\link[base]{paste}} with \code{sep="."}.
 #'
-#' @aliases paste.. paste0. paste.0
-#'
 #' @param ...  Passed to paste.
 #'
 #' @details
@@ -44,6 +42,8 @@ paste.. <- function(...) paste(..., sep=".", collapse=".")
 #' Call \code{\link[base]{paste}} with \code{sep="."} or \code{sep=""}
 #'   and \code{collapse=""} or \code{collapse="."}.
 #'
+#' @aliases paste0. paste.0 paste..
+#' 
 #' @param ...  Passed to paste.
 #'
 #' @details

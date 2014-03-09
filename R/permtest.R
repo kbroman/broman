@@ -114,6 +114,7 @@ function(d, n.perm=NULL, pval=TRUE)
 #'   are perfomed to give an exact or approximate conditional p-value.
 #'
 #' @export
+#' @importFrom stats t.test
 #'
 #' @return
 #' If \code{pval=TRUE}, the output is a single number: the P-value

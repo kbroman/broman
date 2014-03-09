@@ -14,6 +14,7 @@
 #'   list of objects.
 #'
 #' @export
+#' @importFrom utils help
 #'
 #' @return
 #' A data frame with the only column being the size of each object in

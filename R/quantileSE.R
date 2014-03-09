@@ -26,6 +26,7 @@
 #'   kernel density estimate with the function \code{\link[stats]{density}}.
 #'
 #' @export
+#' @importFrom stats quantile density
 #'
 #' @return
 #' A matrix of size 2 x \code{length(p)}.  The first row contains the

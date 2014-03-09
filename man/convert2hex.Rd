@@ -2,7 +2,7 @@
 \name{convert2hex}
 \alias{convert2hex}
 \alias{dec2hex}
-\title{Convert to hex}
+\title{Convert decimal to hex}
 \usage{
 convert2hex(d)
 }

@@ -50,10 +50,12 @@
 #' data
 cf <- function(a, b) UseMethod("cf")
 
+#' @export
 cf.default <-
 function(a, b)
 ((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & a == b))
 
+#' @export
 cf.list <-
 function(a,b)
 {

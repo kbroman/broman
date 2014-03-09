@@ -11,6 +11,7 @@
 #'   argument \code{htmlhelp=TRUE}.
 #'
 #' @export
+#' @importFrom utils help
 #'
 #' @return
 #' No return value.

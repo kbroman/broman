@@ -15,6 +15,7 @@
 #'   \code{\link[base]{chol}}.
 #'
 #' @export
+#' @importFrom stats rnorm
 #'
 #' @return
 #' A matrix of size n x \code{length(mu)}.  Each row corresponds to a

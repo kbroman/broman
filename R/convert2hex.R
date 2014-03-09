@@ -1,5 +1,5 @@
 #  convert2hex
-#' Convert to hex
+#' Convert decimal to hex
 #'
 #' Convert a number to hexidecimal notation.
 #'
@@ -29,7 +29,7 @@
 #'
 #' @keywords
 #' manip
-convert2hex <- dec2hex <-
+convert2hex <-
 function(d)
 {
   if(length(d) > 1) {
@@ -57,6 +57,10 @@ function(d)
 
   paste(res, hex[(d %% 16) + 1], sep="")
 }
+
+#' @export
+dec2hex <- convert2hex
+
 
 #  hex2dec
 #'
