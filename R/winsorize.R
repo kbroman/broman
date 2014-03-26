@@ -2,7 +2,6 @@
 # winsorize a vector
 #
 # (move values above and below the alpha and 1-alpha quantiles
-# to those quantiles)
 ######################################################################
 #  winsorize
 #'
@@ -16,6 +15,7 @@
 #' @param q Lower quantile to use
 #'
 #' @export
+#' @import assertthat
 #'
 #' @return
 #' A vector like the input \code{x}, but with extreme values moved in to
@@ -30,12 +30,15 @@
 #'
 #' @keywords
 #' utilities
-winsorize <- 
+winsorize <-
 function(x, q=0.006)
 {
+  assert_that(is.numeric(x))
+  assert_that(is.number(q), q>=0, q<=1)
+
   lohi <- quantile(x, c(q, 1-q), na.rm=TRUE)
   if(diff(lohi) < 0) lohi <- rev(lohi)
-  
+
   x[!is.na(x) & x < lohi[1]] <- lohi[1]
   x[!is.na(x) & x > lohi[2]] <- lohi[2]
   x
