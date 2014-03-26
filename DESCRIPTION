@@ -10,6 +10,8 @@ Depends:
     utils,
     graphics,
     stats
+Imports:
+    assertthat
 Suggests:
     devtools,
     roxygen2
