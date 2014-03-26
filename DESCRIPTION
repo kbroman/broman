@@ -1,5 +1,5 @@
 Package: broman
-Version: 0.47-1
+Version: 0.47-2
 Date: 3/26/2014
 Title: Karl Broman's R code
 Author: Karl W Broman <kbroman@biostat.wisc.edu>, with contributions from Aimee
@@ -13,6 +13,7 @@ Depends:
 Imports:
     assertthat
 Suggests:
+    testthat,
     devtools,
     roxygen2
 Description: Miscellaneous R functions
