@@ -2,9 +2,9 @@
  *
  * runningmean.c
  *
- * copyright (c) 2006-2011, Karl W Broman
+ * copyright (c) 2006-2014, Karl W Broman
  *
- * last modified Dec, 2011
+ * last modified Mar, 2014
  * first written Dec, 2006
  *
  *     This program is free software; you can redistribute it and/or
@@ -100,8 +100,10 @@ void runningmean(int n, double *pos, double *value,
           result[i] = (work3[ns/2-1]+work3[ns/2])/2.0;
       }
 
-      if(method==4)
-        result[i] = sqrt((work4 - result[i]*result[i]/(double)ns)/((double)(ns-1)));
+      if(method==4) { /* SD */
+        result[i] = (work4 - result[i]*result[i]/(double)ns)/(double)(ns-1);
+        if(result[i] < 0) result[i] = 0.0; /* handle potential round-off error by just thresholding to 0 */
+        else result[i] = sqrt(result[i]);
       }
     }
   }
