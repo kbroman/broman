@@ -1,5 +1,5 @@
 
-context("winsorise")
+context("winsorize")
 
 test_that("winsorize works for small vectors", {
 
