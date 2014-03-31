@@ -53,14 +53,13 @@
  *
  **********************************************************************/
 void runningmean(int n, double *pos, double *value,
-		 int n_result,
-		 double *resultpos, double *result,
-		 double window, int method)
+                 int n_result,
+                 double *resultpos, double *result,
+                 double window, int method)
 {
   int lo, ns;
   int i, j;
   double *work3, work4;
-
 
   if(method==3)
     work3 = (double *)R_alloc(n, sizeof(double));
@@ -112,8 +111,8 @@ void runningmean(int n, double *pos, double *value,
 
 /* wrapper for R */
 void R_runningmean(int *n, double *pos, double *value,
-		   int *n_result, double *resultpos, double *result,
-		   double *window, int *method)
+                   int *n_result, double *resultpos, double *result,
+                   double *window, int *method)
 {
   runningmean(*n, pos, value, *n_result, resultpos, result, *window, *method);
 }
@@ -127,7 +126,7 @@ void R_runningmean(int *n, double *pos, double *value,
  * We assume that pos and resultpos are sorted (lo to high)
  **********************************************************************/
 void runningratio(int n, double *pos, double *numerator, double *denominator,
-		  int n_result, double *resultpos, double *result, double window)
+                  int n_result, double *resultpos, double *result, double window)
 {
   int lo, ns;
   int i, j;
@@ -160,7 +159,7 @@ void runningratio(int n, double *pos, double *numerator, double *denominator,
 
 /* wrapper for R */
 void R_runningratio(int *n, double *pos, double *numerator, double *denominator,
-		    int *n_result, double *resultpos, double *result, double *window)
+                    int *n_result, double *resultpos, double *result, double *window)
 {
   runningratio(*n, pos, numerator, denominator, *n_result, resultpos, result, *window);
 }
