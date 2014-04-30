@@ -7,20 +7,17 @@
 simp(f, a, b, tol = 0.00000001, max.step = 1000, ...)
 }
 \arguments{
-  \item{f}{The integrand; must be a vectorized function.}
+\item{f}{The integrand; must be a vectorized function.}
 
-  \item{a}{Lower limit of integration.}
+\item{a}{Lower limit of integration.}
 
-  \item{b}{Upper limit of integration.}
+\item{b}{Upper limit of integration.}
 
-  \item{tol}{Tolerance for choosing the number of grid
-  points.}
+\item{tol}{Tolerance for choosing the number of grid points.}
 
-  \item{max.step}{Log base 2 of the total number of grid
-  points.}
+\item{max.step}{Log base 2 of the total number of grid points.}
 
-  \item{...}{Other arguments passed to the integrand,
-  \code{f}.}
+\item{...}{Other arguments passed to the integrand, \code{f}.}
 }
 \value{
 The integral of \code{f} from \code{a} to \code{b}.

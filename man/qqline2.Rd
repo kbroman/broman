@@ -6,18 +6,16 @@
 qqline2(x, y, probs = c(0.25, 0.75), qtype = 7, ...)
 }
 \arguments{
-  \item{x}{The first sample}
+\item{x}{The first sample}
 
-  \item{y}{The second sample.}
+\item{y}{The second sample.}
 
-  \item{probs}{numeric vector of length two, representing
-  probabilities.  Corresponding quantile pairs define the
-  line drawn.}
+\item{probs}{numeric vector of length two, representing probabilities.
+    Corresponding quantile pairs define the line drawn.}
 
-  \item{qtype}{the \code{type} of quantile computation used
-  in \code{\link{quantile}}.}
+\item{qtype}{the \code{type} of quantile computation used in \code{\link{quantile}}.}
 
-  \item{...}{graphical parameters.}
+\item{...}{graphical parameters.}
 }
 \value{
 Intercept and slope of the line.

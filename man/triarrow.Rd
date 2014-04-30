@@ -6,11 +6,10 @@
 triarrow(x, ...)
 }
 \arguments{
-  \item{x}{A matrix with three rows and two columns, each
-  column being a trinomial distribution.  An arrow between
-  the two points is plotted.}
+\item{x}{A matrix with three rows and two columns, each column being a trinomial
+  distribution.  An arrow between the two points is plotted.}
 
-  \item{...}{Passed to \code{\link[graphics]{arrows}}.}
+\item{...}{Passed to \code{\link[graphics]{arrows}}.}
 }
 \value{
 The (x,y) coordinates of the endpoints of the arrows plotted.

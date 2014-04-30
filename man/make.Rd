@@ -6,14 +6,12 @@
 make(pkg = ".", makefile = "Makefile", quiet = FALSE)
 }
 \arguments{
-  \item{pkg}{package description, can be path or package
-  name. See \code{\link[devtools]{as.package}} for more
-  information}
+\item{pkg}{package description, can be path or package name.
+See \code{\link[devtools]{as.package}} for more information}
 
-  \item{makefile}{File name of makefile}
+\item{makefile}{File name of makefile}
 
-  \item{quiet}{If TRUE suppresses output from this
-  function}
+\item{quiet}{If TRUE suppresses output from this function}
 }
 \value{
 Exit value from \code{\link[base]{system}} with \code{intern=FALSE}

@@ -6,10 +6,9 @@
 mypairs(x, ...)
 }
 \arguments{
-  \item{x}{A numeric matrix or data frame.}
+\item{x}{A numeric matrix or data frame.}
 
-  \item{...}{Passed to the \code{\link[graphics]{plot}}
-  function.}
+\item{...}{Passed to the \code{\link[graphics]{plot}} function.}
 }
 \value{
 None.

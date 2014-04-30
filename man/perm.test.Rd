@@ -6,20 +6,20 @@
 perm.test(x, y, n.perm = NULL, var.equal = TRUE, pval = TRUE)
 }
 \arguments{
-  \item{x}{A numeric vector.}
+\item{x}{A numeric vector.}
 
-  \item{y}{A second numeric vector.}
+\item{y}{A second numeric vector.}
 
-  \item{n.perm}{Number of permutations to perform.  If
-  NULL, all possible permutations are considered, and an
-  exact p-value is calculated.}
+\item{n.perm}{Number of permutations to perform.  If NULL, all
+    possible permutations are considered, and an exact p-value is
+    calculated.}
 
-  \item{var.equal}{A logical variable indicating whether to
-  treat the two population variances as being equal.}
+\item{var.equal}{A logical variable indicating whether to treat the two
+    population variances as being equal.}
 
-  \item{pval}{If TRUE, return just the p-value.  If FALSE,
-  return the actual permutation results (with the observed
-  statistic as an attribute, \code{"tobs"}).}
+\item{pval}{If TRUE, return just the p-value.  If FALSE, return the
+ actual permutation results (with the observed statistic as an
+ attribute, \code{"tobs"}).}
 }
 \value{
 If \code{pval=TRUE}, the output is a single number: the P-value

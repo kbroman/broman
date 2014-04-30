@@ -7,7 +7,7 @@
 get0(...)
 }
 \arguments{
-  \item{...}{Vector of character strings.}
+\item{...}{Vector of character strings.}
 }
 \value{
 The object found.

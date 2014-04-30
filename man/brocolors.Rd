@@ -6,7 +6,7 @@
 brocolors(set = c("general", "bg", "bgpng", "CC", "f2", "sex", "main"))
 }
 \arguments{
-  \item{set}{Character string indicating a set of colors.}
+\item{set}{Character string indicating a set of colors.}
 }
 \value{
 Vector of character strings representing the chosen set of colors, in RGB.

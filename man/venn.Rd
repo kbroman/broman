@@ -7,19 +7,17 @@ venn(setA = 50, setB = 50, both = 25, method = c("circle", "square"),
   labels = c("A", "B"), col = c("blue", "red"))
 }
 \arguments{
-  \item{setA}{Total area of set A.}
+\item{setA}{Total area of set A.}
 
-  \item{setB}{Total area of set B.}
+\item{setB}{Total area of set B.}
 
-  \item{both}{Area of intersection of sets A and B.}
+\item{both}{Area of intersection of sets A and B.}
 
-  \item{method}{Indicates whether to plot circles or
-  squares.}
+\item{method}{Indicates whether to plot circles or squares.}
 
-  \item{labels}{Labels for the two sets.  (\code{NULL} for
-  no labels.)}
+\item{labels}{Labels for the two sets.  (\code{NULL} for no labels.)}
 
-  \item{col}{Colors of the two sets.}
+\item{col}{Colors of the two sets.}
 }
 \value{
 None.

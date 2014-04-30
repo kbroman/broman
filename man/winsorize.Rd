@@ -6,9 +6,9 @@
 winsorize(x, q = 0.006)
 }
 \arguments{
-  \item{x}{Numeric vector}
+\item{x}{Numeric vector}
 
-  \item{q}{Lower quantile to use}
+\item{q}{Lower quantile to use}
 }
 \value{
 A vector like the input \code{x}, but with extreme values moved in to

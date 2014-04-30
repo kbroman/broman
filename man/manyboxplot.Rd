@@ -7,18 +7,16 @@ manyboxplot(x, probs = c(0.05, 0.1, 0.25), dotcol = "blue",
   linecol = c("black", "red", "green", "orange"), ...)
 }
 \arguments{
-  \item{x}{Matrix of data, with columns indicating the
-  groups.}
+\item{x}{Matrix of data, with columns indicating the groups.}
 
-  \item{probs}{Numeric vecotr of probabilities with values
-  in [0,1).  Quantiles will be symmetric, and the median
-  will always be included.}
+\item{probs}{Numeric vecotr of probabilities with values in [0,1).
+    Quantiles will be symmetric, and the median will always be included.}
 
-  \item{dotcol}{Color for median}
+\item{dotcol}{Color for median}
 
-  \item{linecol}{Line colors, same length as \code{probs}}
+\item{linecol}{Line colors, same length as \code{probs}}
 
-  \item{...}{Additional graphics parameters}
+\item{...}{Additional graphics parameters}
 }
 \value{
 None.

@@ -6,12 +6,11 @@
 attachwork(i = "", dir = "Work", verbose = TRUE)
 }
 \arguments{
-  \item{i}{An integer or character string.}
+\item{i}{An integer or character string.}
 
-  \item{dir}{Directory name.}
+\item{dir}{Directory name.}
 
-  \item{verbose}{If true, print a message if the file can't
-  be loaded.}
+\item{verbose}{If true, print a message if the file can't be loaded.}
 }
 \value{
 TRUE/FALSE according to whether the file exists (and so the function worked).

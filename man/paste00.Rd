@@ -9,7 +9,7 @@
 paste00(...)
 }
 \arguments{
-  \item{...}{Passed to paste.}
+\item{...}{Passed to paste.}
 }
 \value{
 A character string or vector of character strings.

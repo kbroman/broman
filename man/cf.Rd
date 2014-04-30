@@ -8,9 +8,9 @@
 cf(a, b)
 }
 \arguments{
-  \item{a}{Some object.}
+\item{a}{Some object.}
 
-  \item{b}{Another object}
+\item{b}{Another object}
 }
 \value{
 Boolean object with \code{TRUE} indicating an element is the same.

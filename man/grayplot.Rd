@@ -8,37 +8,35 @@ grayplot(x, y, ..., type = "p", hlines, hlines.col = "white",
   vlines.lty = 1, vlines.lwd = 1, xat, yat, bgcolor = "gray80")
 }
 \arguments{
-  \item{x}{Coordinates of points in the plot}
+\item{x}{Coordinates of points in the plot}
 
-  \item{y}{Corrdinates of points in the plot (optional)}
+\item{y}{Corrdinates of points in the plot (optional)}
 
-  \item{...}{Optional graphics arguments}
+\item{...}{Optional graphics arguments}
 
-  \item{type}{Plot type (points, lines, etc.)}
+\item{type}{Plot type (points, lines, etc.)}
 
-  \item{hlines}{Locations of horizontal grid lines}
+\item{hlines}{Locations of horizontal grid lines}
 
-  \item{hlines.col}{Colors of horizontal grid lines}
+\item{hlines.col}{Colors of horizontal grid lines}
 
-  \item{hlines.lty}{Line type of horizontal grid lines}
+\item{hlines.lty}{Line type of horizontal grid lines}
 
-  \item{hlines.lwd}{Line width of horizontal grid lines}
+\item{hlines.lwd}{Line width of horizontal grid lines}
 
-  \item{vlines}{Locations of vertical grid lines}
+\item{vlines}{Locations of vertical grid lines}
 
-  \item{vlines.col}{Colors of vertical grid lines}
+\item{vlines.col}{Colors of vertical grid lines}
 
-  \item{vlines.lty}{Line type of vertical grid lines}
+\item{vlines.lty}{Line type of vertical grid lines}
 
-  \item{vlines.lwd}{Line width of vertical grid lines}
+\item{vlines.lwd}{Line width of vertical grid lines}
 
-  \item{xat}{Locations for x-axis labels; \code{xat=NA}
-  indicates no labels}
+\item{xat}{Locations for x-axis labels; \code{xat=NA} indicates no labels}
 
-  \item{yat}{Locations for y-axis labels; \code{yat=NA}
-  indicates no labels}
+\item{yat}{Locations for y-axis labels; \code{yat=NA} indicates no labels}
 
-  \item{bgcolor}{Background color}
+\item{bgcolor}{Background color}
 }
 \value{
 None.

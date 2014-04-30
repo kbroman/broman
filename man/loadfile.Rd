@@ -7,17 +7,15 @@ loadfile(i, stem = "perm", end = ".RData", fixdig = TRUE,
   verbose = TRUE)
 }
 \arguments{
-  \item{i}{An integer or character string.}
+\item{i}{An integer or character string.}
 
-  \item{stem}{Initial part of name.}
+\item{stem}{Initial part of name.}
 
-  \item{end}{Last part of name.}
+\item{end}{Last part of name.}
 
-  \item{fixdig}{If TRUE and \code{i} is an integer < 10,
-  append a 0 to i.}
+\item{fixdig}{If TRUE and \code{i} is an integer < 10, append a 0 to i.}
 
-  \item{verbose}{If true, print a message if the file can't
-  be loaded.}
+\item{verbose}{If true, print a message if the file can't be loaded.}
 }
 \value{
 TRUE/FALSE according to whether the file exists (and so the function worked).

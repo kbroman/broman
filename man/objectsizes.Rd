@@ -6,11 +6,10 @@
 objectsizes(obj, sortbysize = TRUE)
 }
 \arguments{
-  \item{obj}{Vector of object names.  If missing, we pull
-  out all object names.}
+\item{obj}{Vector of object names.  If missing, we pull out all object
+  names.}
 
-  \item{sortbysize}{If TRUE, sort the objects from smallest
-  to largest.}
+\item{sortbysize}{If TRUE, sort the objects from smallest to largest.}
 }
 \value{
 A data frame with the only column being the size of each object in

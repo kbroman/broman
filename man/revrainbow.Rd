@@ -6,9 +6,9 @@
 revrainbow(n = 256, ...)
 }
 \arguments{
-  \item{n}{Number of colors.}
+\item{n}{Number of colors.}
 
-  \item{...}{Passed to \code{\link[grDevices]{rainbow}}.}
+\item{...}{Passed to \code{\link[grDevices]{rainbow}}.}
 }
 \value{
 Vector of colors, from blue to red.

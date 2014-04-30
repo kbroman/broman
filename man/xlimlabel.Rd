@@ -6,20 +6,18 @@
 xlimlabel(x, xlabels, pos = 4, offset = 0.5, ...)
 }
 \arguments{
-  \item{x}{numeric vector of horizontal coordinates}
+\item{x}{numeric vector of horizontal coordinates}
 
-  \item{xlabels}{character vector, specifying text to be
-  written}
+\item{xlabels}{character vector, specifying text to be written}
 
-  \item{pos}{position specifier for text; values of
-  \code{1}, \code{2}, \code{3}, and \code{4}, respectively,
-  indicate positions below, to the left of, above, and to
-  the right of the coordinates}
+\item{pos}{position specifier for text; values of \code{1}, \code{2},
+ \code{3}, and \code{4}, respectively, indicate positions below, to
+ the left of, above, and to the right of the coordinates}
 
-  \item{offset}{offset of the label from the coordinate in
-  fractions of a character width}
+\item{offset}{offset of the label from the coordinate in fractions of
+    a character width}
 
-  \item{...}{Additional par arguments}
+\item{...}{Additional par arguments}
 }
 \value{
 Minimum and maximum x-axis limits for adding horizontal text

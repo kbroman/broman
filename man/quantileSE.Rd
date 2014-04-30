@@ -6,19 +6,17 @@
 quantileSE(x, p = 0.95, bw, na.rm = TRUE, names = TRUE)
 }
 \arguments{
-  \item{x}{Numeric vector whose sample quantiles are
-  wanted.}
+\item{x}{Numeric vector whose sample quantiles are wanted.}
 
-  \item{p}{Numeric vector with values in [0,1].}
+\item{p}{Numeric vector with values in [0,1].}
 
-  \item{bw}{Bandwidth to use in the density estimation.}
+\item{bw}{Bandwidth to use in the density estimation.}
 
-  \item{na.rm}{Logical; if true, and \code{NA} and
-  \code{NaN}'s are removed from \code{x} before the
-  quantiles are computed.}
+\item{na.rm}{Logical; if true, and \code{NA} and \code{NaN}'s are
+  removed from \code{x} before the quantiles are computed.}
 
-  \item{names}{Logical; if true, the column names of the
-  result is set to the values in \code{p}.}
+\item{names}{Logical; if true, the column names of the result is set to
+the values in \code{p}.}
 }
 \value{
 A matrix of size 2 x \code{length(p)}.  The first row contains the

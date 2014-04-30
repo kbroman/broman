@@ -6,10 +6,9 @@
 fisher(tab, n.sim = 1000)
 }
 \arguments{
-  \item{tab}{A matrix of counts.}
+\item{tab}{A matrix of counts.}
 
-  \item{n.sim}{Number of samples of permuted tables to
-  consider.}
+\item{n.sim}{Number of samples of permuted tables to consider.}
 }
 \value{
 A single number: the P-value testing independence of rows and columns

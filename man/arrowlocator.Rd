@@ -7,21 +7,19 @@ arrowlocator(reverse = FALSE, horizontal = FALSE, vertical = FALSE,
   length = 0.1, ...)
 }
 \arguments{
-  \item{reverse}{If FALSE, first indicate the tail of the
-  arrow and then the head; if TRUE, first indicate the head
-  of the arrow and then the tail.}
+\item{reverse}{If FALSE, first indicate the tail of the arrow and
+    then the head; if TRUE, first indicate the head of the arrow and then
+    the tail.}
 
-  \item{horizontal}{If TRUE, force the arrow to be
-  horizontal.  (Use the average y-axis value of the two
-  clicks for the vertical placement.)}
+\item{horizontal}{If TRUE, force the arrow to be horizontal.  (Use the
+  average y-axis value of the two clicks for the vertical placement.)}
 
-  \item{vertical}{If TRUE, force the arrow to be vertical.
-  (Use the average x-axis value of the two clicks for the
-  horizontal placement.)}
+\item{vertical}{If TRUE, force the arrow to be vertical.  (Use the
+  average x-axis value of the two clicks for the horizontal placement.)}
 
-  \item{length}{Length of the edges of the arrow head.}
+\item{length}{Length of the edges of the arrow head.}
 
-  \item{...}{Additional graphics parameters}
+\item{...}{Additional graphics parameters}
 }
 \value{
 The locations of the endpoints of the arrow, as a two-row

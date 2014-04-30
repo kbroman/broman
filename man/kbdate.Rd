@@ -6,9 +6,9 @@
 kbdate(format = c("dateonly", "standard"), date = Sys.time())
 }
 \arguments{
-  \item{format}{The format for the output}
+\item{format}{The format for the output}
 
-  \item{date}{The date/time to convert}
+\item{date}{The date/time to convert}
 }
 \value{
 A character string representation of the date/time

@@ -6,11 +6,10 @@
 strwidth2lines(s, ...)
 }
 \arguments{
-  \item{s}{A character or expression vector whose length is
-  to be calculated}
+\item{s}{A character or expression vector whose length is to be calculated}
 
-  \item{...}{additional information used by
-  \code{strwidth}, such as \code{cex}}
+\item{...}{additional information used by \code{strwidth}, such as
+   \code{cex}}
 }
 \value{
 Maximum string width in units of margin lines

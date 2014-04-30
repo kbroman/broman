@@ -7,7 +7,7 @@
 convert2hex(d)
 }
 \arguments{
-  \item{d}{A number.}
+\item{d}{A number.}
 }
 \value{
 A character string; the input in hex.

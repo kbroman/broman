@@ -6,9 +6,9 @@
 normalize(x, y)
 }
 \arguments{
-  \item{x}{Numeric vector or matrix}
+\item{x}{Numeric vector or matrix}
 
-  \item{y}{Optional second numeric vector}
+\item{y}{Optional second numeric vector}
 }
 \value{
 If two vectors, \code{x} and \code{y}, are provided, the output is a

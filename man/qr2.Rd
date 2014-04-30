@@ -6,11 +6,10 @@
 qr2(x, tol = 0.0000001)
 }
 \arguments{
-  \item{x}{A matrix whose QR decomposition is to be
-  computed.}
+\item{x}{A matrix whose QR decomposition is to be computed.}
 
-  \item{tol}{The tolerance for detecting linear
-  dependencies in the columns of \code{x}.}
+\item{tol}{The tolerance for detecting linear dependencies in the
+  columns of \code{x}.}
 }
 \value{
 A list of two matrices: Q and R.

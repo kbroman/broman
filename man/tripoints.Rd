@@ -6,10 +6,9 @@
 tripoints(x, ...)
 }
 \arguments{
-  \item{x}{A matrix with three rows, each column being a
-  trinomial distribution.}
+\item{x}{A matrix with three rows, each column being a trinomial distribution.}
 
-  \item{...}{Passed to \code{\link[graphics]{points}}.}
+\item{...}{Passed to \code{\link[graphics]{points}}.}
 }
 \value{
 The (x,y) coordinates of the points plotted.

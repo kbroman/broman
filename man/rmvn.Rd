@@ -6,11 +6,11 @@
 rmvn(n, mu = 0, V = matrix(1))
 }
 \arguments{
-  \item{n}{Number of simulation replicates.}
+\item{n}{Number of simulation replicates.}
 
-  \item{mu}{Mean vector.}
+\item{mu}{Mean vector.}
 
-  \item{V}{Variance-covariance matrix.}
+\item{V}{Variance-covariance matrix.}
 }
 \value{
 A matrix of size n x \code{length(mu)}.  Each row corresponds to a

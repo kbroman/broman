@@ -6,10 +6,9 @@
 myround(x, digits = 1)
 }
 \arguments{
-  \item{x}{Number to round.}
+\item{x}{Number to round.}
 
-  \item{digits}{Number of digits past the decimal point to
-  keep.}
+\item{digits}{Number of digits past the decimal point to keep.}
 }
 \value{
 A vector of character strings.

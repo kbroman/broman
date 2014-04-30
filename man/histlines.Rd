@@ -6,16 +6,14 @@
 histlines(x, y, breaks, use = c("counts", "density"))
 }
 \arguments{
-  \item{x}{Either vector of breaks or the data itself.}
+\item{x}{Either vector of breaks or the data itself.}
 
-  \item{y}{Optional vector of density/counts, with length =
-  \code{length(x)-1}.}
+\item{y}{Optional vector of density/counts, with length = \code{length(x)-1}.}
 
-  \item{breaks}{Breaks for histogram, if \code{y} is not
-  provided.}
+\item{breaks}{Breaks for histogram, if \code{y} is not provided.}
 
-  \item{use}{Whether to use \code{counts} or
-  \code{density}, if \code{y} is not provided.}
+\item{use}{Whether to use \code{counts} or \code{density}, if \code{y}
+ is not provided.}
 }
 \value{
 A data.frame with two columns: \code{x} and \code{y}.

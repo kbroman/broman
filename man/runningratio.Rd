@@ -6,16 +6,16 @@
 runningratio(pos, numerator, denominator, at, window = 1000)
 }
 \arguments{
-  \item{pos}{Positions for the values.}
+\item{pos}{Positions for the values.}
 
-  \item{numerator}{Values for numerator in ratio.}
+\item{numerator}{Values for numerator in ratio.}
 
-  \item{denominator}{Values for denominator in ratio.}
+\item{denominator}{Values for denominator in ratio.}
 
-  \item{at}{Positions at which running ratio is calculated.
-  If missing, \code{pos} is used.}
+\item{at}{Positions at which running ratio is
+calculated.  If missing, \code{pos} is used.}
 
-  \item{window}{Window width.}
+\item{window}{Window width.}
 }
 \value{
 A vector with the same length as the input \code{at} (or \code{pos},

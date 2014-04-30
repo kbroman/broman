@@ -6,7 +6,7 @@
 h(...)
 }
 \arguments{
-  \item{...}{Help topics.}
+\item{...}{Help topics.}
 }
 \value{
 No return value.

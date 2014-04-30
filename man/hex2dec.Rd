@@ -6,8 +6,7 @@
 hex2dec(h)
 }
 \arguments{
-  \item{h}{#' Character string with hexadecimal
-  representation of a number}
+\item{h}{#' Character string with hexadecimal representation of a number}
 }
 \value{
 The input converted from hexadecimal to decimal notation.

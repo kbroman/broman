@@ -6,11 +6,10 @@
 trilines(x, ...)
 }
 \arguments{
-  \item{x}{A matrix with three rows, each column being a
-  trinomial distribution.  Lines between these points are
-  plotted.}
+\item{x}{A matrix with three rows, each column being a trinomial
+  distribution.  Lines between these points are plotted.}
 
-  \item{...}{Passed to \code{\link[graphics]{lines}}.}
+\item{...}{Passed to \code{\link[graphics]{lines}}.}
 }
 \value{
 The (x,y) coordinates of the endpoints of the lines plotted.

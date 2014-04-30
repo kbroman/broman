@@ -6,10 +6,9 @@
 triplot(labels, ...)
 }
 \arguments{
-  \item{labels}{Labels for the three corners (lower-right,
-  top, lower-left).}
+\item{labels}{Labels for the three corners (lower-right, top, lower-left).}
 
-  \item{...}{Passed to \code{\link[graphics]{plot}}.}
+\item{...}{Passed to \code{\link[graphics]{plot}}.}
 }
 \value{
 The (x,y) coordinates of the points plotted, if any.
