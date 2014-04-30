@@ -1,21 +1,21 @@
 Package: broman
-Version: 0.47-4
-Date: 3/30/2014
+Version: 0.47-5
+Date: 4/30/2014
 Title: Karl Broman's R code
+Description: Miscellaneous R functions
 Author: Karl W Broman <kbroman@biostat.wisc.edu>, with contributions from Aimee
     Teo Broman
 Maintainer: Karl W Broman <kbroman@biostat.wisc.edu>
 Depends:
     R (>= 2.15.0),
+Imports:
     utils,
     graphics,
-    stats
-Imports:
+    stats,
     assertthat
 Suggests:
     testthat,
     devtools,
     roxygen2
-Description: Miscellaneous R functions
 License: GPL-3
 URL: http://www.biostat.wisc.edu/~kbroman/software
