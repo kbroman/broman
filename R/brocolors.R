@@ -242,17 +242,14 @@ function(cex=0.6)
   y <- (1:19)-1
   x <- rep(x, each=length(y))
   y <- rep(y, length(x))
+
   plot(0, 0, type="n", xlab="", ylab="", xaxs="i", yaxs="i",
-       xlim=c(0, max(x)+1), ylim=c(max(y)+0.5, -0.5))
-
-
+       xlim=c(0, max(x)+1), ylim=c(max(y)+0.5, -0.5),
+       xaxt="n", yaxt="n")
   
   dx <- 0.2
   dy <- 0.4
-  for(i in seq(along=ord)) {
-    rect(x[i]+dx/4, y[i]-dy, x[i]+dx, y[i]+dy, border="black",
-         col=col[ord[i]])
-    text(x[i]+dx*1.2, y[i], names(col)[ord[i]], cex=cex, adj=c(0, 0.5))
-  }
-  
+  rect(x+dx/4, y-dy, x+dx, y+dy, border="black",
+       col=col[ord])
+  text(x+dx*1.2, y, names(col)[ord], cex=cex, adj=c(0, 0.5))
 }
