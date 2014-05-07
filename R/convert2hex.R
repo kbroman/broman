@@ -104,6 +104,7 @@ function(h)
   hex <- c(0:9,LETTERS[1:6])
 
   if(!is.character(h)) h <- as.character(h)
+  h <- toupper(h)
 
   hspl <- rev(unlist(strsplit(h, "")))
   hc <- match(hspl, hex)-1
