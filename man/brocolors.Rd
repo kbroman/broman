@@ -3,7 +3,8 @@
 \alias{brocolors}
 \title{Vectors of colors for figures}
 \usage{
-brocolors(set = c("general", "bg", "bgpng", "CC", "f2", "sex", "main"))
+brocolors(set = c("general", "bg", "bgpng", "CC", "f2", "sex", "main",
+  "crayons"))
 }
 \arguments{
 \item{set}{Character string indicating a set of colors.}
@@ -42,6 +43,9 @@ points(1, 7, pch=21, bg=brocolors("main"), cex=4)
 }
 \author{
 Karl W Broman, \email{kbroman@biostat.wisc.edu}
+}
+\seealso{
+\code{\link{plot_crayons}}
 }
 \keyword{utilities}
 
