@@ -218,6 +218,7 @@ function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
 #' Illustraion of crayon colors
 #'
 #' Creates a plot of the crayon colors in \code{\link{brocolors}}
+#' @param method2order method for ordering the colors in the plot
 #' @param cex character expansion for the text
 #' @return None
 #' @export
@@ -227,15 +228,19 @@ function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
 #' @examples
 #' plot_crayons()
 plot_crayons <-
-function(cex=0.6)
+function(method2order=c("hclust", "cmdscale"), cex=0.6)
 {
+  method2order <- match.arg(method2order)
+
   crayons <- brocolors("crayons")
 
   # get rgb 
   colval <- t(col2rgb(crayons))
 
-  # hclust to order the colors
-  ord <- hclust(dist(colval))$order
+  # order the colors
+  ord <- switch(method2order,
+                hclust = hclust(dist(colval))$order,
+                cmdscale = order(cmdscale(dist(colval))[,1]))
 
   par(mar=rep(0.1,4))
   x <- (1:7)-1
