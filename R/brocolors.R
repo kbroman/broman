@@ -219,28 +219,40 @@ function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
 #'
 #' Creates a plot of the crayon colors in \code{\link{brocolors}}
 #' @param method2order method for ordering the colors in the plot
+#'   hierarchicical clustering (\code{"hclust"}), multi-dimensional scaling (\code{"mds"})
+#' @param colorspace Color space (LAB or RGB) to use for ordering colors
 #' @param cex character expansion for the text
 #' @return None
 #' @export
 #' @author Karl W Broman, \email{kbroman@@biostat.wisc.edu}
 #' @references \url{http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
 #' @seealso \code{\link{brocolors}}
+#' @importFrom stats cmdscale hclust
+#' @importFrom grDevices convertColor rgb2hsv
 #' @examples
 #' plot_crayons()
 plot_crayons <-
-function(method2order=c("hclust", "cmdscale"), cex=0.6)
+function(method2order=c("hclust", "mds", "svd"), colorspace=c("rgb", "lab", "hsv"), cex=0.6)
 {
   method2order <- match.arg(method2order)
+  colorspace <- match.arg(colorspace)
 
   crayons <- brocolors("crayons")
 
   # get rgb 
   colval <- t(col2rgb(crayons))
 
+  # maybe convert colors
+  colval <- switch(colorspace,
+                   rgb = colval,
+                   lab = convertColor(colval, from="sRGB", to="Lab"),
+                   hsv = t(rgb2hsv(t(colval)))[,1,drop=FALSE])
+
   # order the colors
   ord <- switch(method2order,
                 hclust = hclust(dist(colval))$order,
-                cmdscale = order(cmdscale(dist(colval))[,1]))
+                mds = order(cmdscale(dist(colval), k=1)),
+                svd = order(svd(dist(colval))$u[,1]))
 
   par(mar=rep(0.1,4))
   x <- (1:7)-1
