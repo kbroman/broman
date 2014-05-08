@@ -229,10 +229,10 @@ function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
 plot_crayons <-
 function(cex=0.6)
 {
-  col <- brocolors("crayons")
+  crayons <- brocolors("crayons")
 
   # get rgb 
-  colval <- t(col2rgb(col))
+  colval <- t(col2rgb(crayons))
 
   # hclust to order the colors
   ord <- hclust(dist(colval))$order
@@ -240,8 +240,8 @@ function(cex=0.6)
   par(mar=rep(0.1,4))
   x <- (1:7)-1
   y <- (1:19)-1
-  x <- rep(x, each=length(y))
-  y <- rep(y, length(x))
+  x <- rep(x, each=19)
+  y <- rep(y, 7)
 
   plot(0, 0, type="n", xlab="", ylab="", xaxs="i", yaxs="i",
        xlim=c(0, max(x)+1), ylim=c(max(y)+0.5, -0.5),
@@ -250,6 +250,7 @@ function(cex=0.6)
   dx <- 0.2
   dy <- 0.4
   rect(x+dx/4, y-dy, x+dx, y+dy, border="black",
-       col=col[ord])
-  text(x+dx*1.2, y, names(col)[ord], cex=cex, adj=c(0, 0.5))
+       col=crayons[ord])
+  
+  text(x+dx*1.2, y, names(crayons)[ord], cex=cex, adj=c(0, 0.5))
 }
