@@ -201,7 +201,7 @@ function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
               "Wisteria"="#cda4de",
               "Yellow"="#fce883",
               "Yellow Green"="#c5e384",
-              "Yellow Orange"="#ffb653")
+              "Yellow Orange"="#ffae42")
 
   switch(match.arg(set),
          general=general,
