@@ -218,43 +218,39 @@ function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
 #' Illustraion of crayon colors
 #'
 #' Creates a plot of the crayon colors in \code{\link{brocolors}}
-#' @param method2order method for ordering the colors in the plot
-#'   hierarchicical clustering (\code{"hclust"}), multi-dimensional scaling (\code{"mds"})
-#' @param colorspace Color space (LAB or RGB) to use for ordering colors
+#' @param method2order method to order colors (\code{"hsv"} or \code{"cluster"})
 #' @param cex character expansion for the text
+#' @param mar margin paramaters; vector of length 4 (see \code{\link[graphics]{par}})
 #' @return None
 #' @export
 #' @author Karl W Broman, \email{kbroman@@biostat.wisc.edu}
 #' @references \url{http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
 #' @seealso \code{\link{brocolors}}
-#' @importFrom stats cmdscale hclust
-#' @importFrom grDevices convertColor rgb2hsv
+#' @importFrom grDevices rgb2hsv
+#' @importFrom graphics par plot rect text
 #' @examples
 #' plot_crayons()
 plot_crayons <-
-function(method2order=c("hclust", "mds", "svd"), colorspace=c("rgb", "lab", "hsv"), cex=0.6)
+function(method2order=c("hsv", "cluster"), cex=0.6, mar=rep(0.1, 4))
 {
   method2order <- match.arg(method2order)
-  colorspace <- match.arg(colorspace)
 
   crayons <- brocolors("crayons")
 
   # get rgb 
-  colval <- t(col2rgb(crayons))
+  colval <- col2rgb(crayons)
 
-  # maybe convert colors
-  colval <- switch(colorspace,
-                   rgb = colval,
-                   lab = convertColor(colval, from="sRGB", to="Lab"),
-                   hsv = t(rgb2hsv(t(colval)))[,1,drop=FALSE])
+  if(method2order == "hsv") {
+    # convert to hsv
+    colval <- t(rgb2hsv(colval))
 
-  # order the colors
-  ord <- switch(method2order,
-                hclust = hclust(dist(colval))$order,
-                mds = order(cmdscale(dist(colval), k=1)),
-                svd = order(svd(dist(colval))$u[,1]))
+    # order the colors
+    ord <- order(colval[,1], colval[,2], colval[,3])
+  } else {
+    ord <- hclust(dist(t(colval)))$ord
+  }
 
-  par(mar=rep(0.1,4))
+  par(mar=mar)
   x <- (1:7)-1
   y <- (1:19)-1
   x <- rep(x, each=19)
