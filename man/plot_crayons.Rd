@@ -3,16 +3,15 @@
 \alias{plot_crayons}
 \title{Illustraion of crayon colors}
 \usage{
-plot_crayons(method2order = c("hclust", "mds", "svd"), colorspace = c("rgb",
-  "lab", "hsv"), cex = 0.6)
+plot_crayons(method2order = c("hsv", "cluster"), cex = 0.6, mar = rep(0.1,
+  4))
 }
 \arguments{
-\item{method2order}{method for ordering the colors in the plot
-hierarchicical clustering (\code{"hclust"}), multi-dimensional scaling (\code{"mds"})}
-
-\item{colorspace}{Color space (LAB or RGB) to use for ordering colors}
+\item{method2order}{method to order colors (\code{"hsv"} or \code{"cluster"})}
 
 \item{cex}{character expansion for the text}
+
+\item{mar}{margin paramaters; vector of length 4 (see \code{\link[graphics]{par}})}
 }
 \value{
 None

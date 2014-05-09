@@ -244,8 +244,11 @@ function(method2order=c("hsv", "cluster"), cex=0.6, mar=rep(0.1, 4))
     # convert to hsv
     colval <- t(rgb2hsv(colval))
 
-    # order the colors
-    ord <- order(colval[,1], colval[,2], colval[,3])
+    # order the colors; first two lines are to get black/gray/silver/white first
+    ord <- order(names(crayons)!="Black", names(crayons)!="Gray",
+                 names(crayons)!="Silver", names(crayons)!="White",
+                 colval[,1], colval[,2], colval[,3])
+
   } else {
     ord <- hclust(dist(t(colval)))$ord
   }
