@@ -15,6 +15,14 @@ copyright (c) 2001-2014, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.48, 5/12/2014:
+
+  Add crayon colors to brocolors(), and plot_crayons function to view
+  them. Change bg and bgpng for near-black background.
+
+  Add colwalpha function.
+
+
 Version 0.47, 3/30/2014:
 
   Added a simple utility function kbdate() for getting the date in
