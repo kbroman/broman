@@ -47,8 +47,8 @@ function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
                'yellow'     =rgb(254,203,102,maxColorValue=255),
                'darkblue'   =rgb(  0,128,128,maxColorValue=255))
 
-  bg <- rgb(0, 0, 80, maxColorValue=255)
-  bgpng <- rgb(0, 0, 98, maxColorValue=255)
+  bg <- rgb(24, 24, 24, maxColorValue=255)
+  bgpng <- rgb(32, 32, 32, maxColorValue=255)
 
   # text
   text <- c('yellow'   =rgb(255, 255, 102, maxColorValue=255),
