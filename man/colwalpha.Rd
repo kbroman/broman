@@ -16,5 +16,8 @@ A character string representing a color
 \description{
 Convert a color to RGB and then to RGB with alpha transparency
 }
+\examples{
+colwalpha(c("blue", "red"), 0.5)
+}
 \keyword{color}
 

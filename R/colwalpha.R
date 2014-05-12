@@ -12,6 +12,8 @@
 #' @importFrom grDevices col2rgb rgb
 #' @export
 #' @keywords color
+#' @examples
+#' colwalpha(c("blue", "red"), 0.5)
 colwalpha <-
 function(color, alpha=1)
 {
@@ -19,5 +21,5 @@ function(color, alpha=1)
   alpha <- alpha * 255
 
   rgbval <- col2rgb(color)
-  rgb(rgbval[1], rgbval[2], rgbval[3], alpha=alpha, maxColorValue=255)
+  rgb(rgbval[1,], rgbval[2,], rgbval[3,], alpha=alpha, maxColorValue=255)
 }
