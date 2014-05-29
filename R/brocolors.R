@@ -253,6 +253,9 @@ function(method2order=c("hsv", "cluster"), cex=0.6, mar=rep(0.1, 4))
     ord <- hclust(dist(t(colval)))$ord
   }
 
+  oldmar <- par("mar")
+  on.exit(par(mar=oldmar))
+
   par(mar=mar)
   x <- (1:7)-1
   y <- (1:19)-1
