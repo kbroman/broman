@@ -75,14 +75,14 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
          vlines, vlines.col="white", vlines.lty=1, vlines.lwd=1,
          xat, yat, bgcolor="gray80")
 {
-  if(missing(hlines)) hlines <- NULL
-  if(missing(hlines.col)) hlines.col <- "white"
-  if(missing(vlines)) vlines <- NULL
-  if(missing(vlines.col)) vlines.col
-  if(missing(xat)) xat <- NULL
-  if(missing(yat)) yat <- NULL
   if(missing(x)) stop("x unspecified")
   if(missing(y)) y <- NULL
+  if(missing(xat)) xat <- pretty(x)
+  if(missing(yat)) yat <- pretty(y)
+  if(missing(hlines)) hlines <- yat
+  if(missing(hlines.col)) hlines.col <- "white"
+  if(missing(vlines)) vlines <- xat
+  if(missing(vlines.col)) vlines.col
 
   # this is to deal with varying inputs (did "..." include xaxt or not?)
   hidegrayplot <-
