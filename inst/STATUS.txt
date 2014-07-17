@@ -22,8 +22,6 @@ Version 0.48, 7/16/2014:
 
   Add colwalpha function.
 
-  Add addborder function.
-
   grayplot: change defaults for xat, yat, vlines, hlines
 
 
