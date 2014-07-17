@@ -14,9 +14,9 @@
 #' @export
 #'
 #' @author
-#' Karl W Broman, \email{kbroman@biostat.wisc.edu}
+#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
 #'
-#' @example
+#' @examples
 #' x <- rnorm(100)
 #' y <- 5*x + rnorm(100)
 #' grayplot(x,y, pch=21, bg="slateblue")
