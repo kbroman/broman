@@ -19,4 +19,4 @@ Suggests:
     devtools,
     roxygen2
 License: GPL-3
-URL: http://www.biostat.wisc.edu/~kbroman/software
+URL: https://github.com/kbroman/broman

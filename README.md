@@ -1,6 +1,6 @@
 ## R/broman
 
-copyright (c) 2001-2014, [Karl W Broman](http://www.biostat.wisc.edu/~kbroman)
+copyright (c) 2001-2014, [Karl W Broman](http://kbroman.org)
 
 ---
 
