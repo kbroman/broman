@@ -23,15 +23,15 @@
 #' CC <- brocolors("CC")
 #' points(seq(along=CC), rep(4,length(CC)), pch=21, bg=CC, cex=4)
 #' text(seq(along=CC), rep(3+c(0.55, 0.7), length(CC))[seq(along=CC)], names(CC))
-#' 
+#'
 #' f2 <- brocolors("f2")
 #' points(seq(along=f2), rep(5,length(f2)), pch=21, bg=f2, cex=4)
 #' text(seq(along=f2), rep(4.7, length(f2)), names(f2))
-#' 
+#'
 #' sex <- brocolors("sex")
 #' points(seq(along=sex), rep(6,length(sex)), pch=21, bg=sex, cex=4)
 #' text(seq(along=sex), rep(5.7, length(sex)), names(sex))
-#' 
+#'
 #' points(1, 7, pch=21, bg=brocolors("main"), cex=4)
 
 #' @keywords utilities
@@ -237,7 +237,7 @@ function(method2order=c("hsv", "cluster"), cex=0.6, mar=rep(0.1, 4))
 
   crayons <- brocolors("crayons")
 
-  # get rgb 
+  # get rgb
   colval <- col2rgb(crayons)
 
   if(method2order == "hsv") {
@@ -265,11 +265,11 @@ function(method2order=c("hsv", "cluster"), cex=0.6, mar=rep(0.1, 4))
   plot(0, 0, type="n", xlab="", ylab="", xaxs="i", yaxs="i",
        xlim=c(0, max(x)+1), ylim=c(max(y)+0.5, -0.5),
        xaxt="n", yaxt="n")
-  
+
   dx <- 0.2
   dy <- 0.4
   rect(x+dx/4, y-dy, x+dx, y+dy, border="black",
        col=crayons[ord])
-  
+
   text(x+dx*1.2, y, names(crayons)[ord], cex=cex, adj=c(0, 0.5))
 }
