@@ -215,7 +215,7 @@ function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
 }
 
 
-#' Illustraion of crayon colors
+#' Illustration of crayon colors
 #'
 #' Creates a plot of the crayon colors in \code{\link{brocolors}}
 #' @param method2order method to order colors (\code{"hsv"} or \code{"cluster"})
