@@ -15,6 +15,12 @@ copyright (c) 2001-2014, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.49, 9/3/2014:
+
+  Add function errors2pushbullet() which sets options(error) to use
+  the RPushbullet package to send a push notification.
+
+
 Version 0.48, 7/16/2014:
 
   Add crayon colors to brocolors(), and plot_crayons function to view

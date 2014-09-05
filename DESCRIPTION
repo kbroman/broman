@@ -1,6 +1,6 @@
 Package: broman
-Version: 0.48-15
-Date: 8/27/2014
+Version: 0.49-1
+Date: 9/5/2014
 Title: Karl Broman's R code
 Description: Miscellaneous R functions
 Author: Karl W Broman <kbroman@biostat.wisc.edu>, with contributions from Aimee
@@ -15,6 +15,7 @@ Imports:
     stats,
     assertthat
 Suggests:
+    RPushbullet,
     testthat,
     devtools,
     roxygen2
