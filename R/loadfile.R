@@ -102,8 +102,8 @@ function(i,stem="perm",end=".RData",fixdig=TRUE, maxdig=5, verbose=TRUE,
 
   if(!is.null(file) && file.exists(file)) {
       switch(what,
-             attach=attachfile(file),
-             load=loadfile(file, .GlobalEnv))
+             attach=attach(file),
+             load=load(file, .GlobalEnv))
     result <- TRUE
   }
   else {
