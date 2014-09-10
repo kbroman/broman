@@ -3,8 +3,8 @@
 \alias{attachfile}
 \title{Attach a workspace}
 \usage{
-attachfile(i, stem = "perm", end = ".RData", fixdig = TRUE,
-  max_digits = 5, verbose = TRUE)
+attachfile(i, stem = "perm", end = ".RData", fixdig = TRUE, maxdig = 5,
+  verbose = TRUE)
 }
 \arguments{
 \item{i}{An integer or character string.}
@@ -13,24 +13,27 @@ attachfile(i, stem = "perm", end = ".RData", fixdig = TRUE,
 
 \item{end}{Last part of name.}
 
-\item{fixdig}{If TRUE, pad \code{i} with initial 0's until file name exists.}
+\item{fixdig}{If TRUE, pad \code{i} with 0's until file exists (up to maxdig)}
 
-\item{max_digits}{If \code{figdig=TRUE}, maximum number of 0's to pad}
+\item{maxdig}{Maximum number of 0's to add}
 
 \item{verbose}{If true, print a message if the file can't be loaded.}
 }
 \value{
-TRUE/FALSE according to whether the file exists (and so the function worked).
+TRUE/FALSE according to whether the file was attached.
 }
 \description{
 Attach a workspace for a directory name of a particular form.
 }
 \details{
 This function attaches the workspace \code{paste(stem,i,end,sep="")},
-  possibly adding 0's before i.
+  possibly adding 0's before i
 }
 \examples{
 \dontrun{for(i in 1:5) attachfile(i)}
+}
+\author{
+Karl W Broman \email{kbroman@biostat.wisc.edu}
 }
 \seealso{
 \code{\link{loadwork}},
