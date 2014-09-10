@@ -17,9 +17,6 @@
 #' @return
 #' Boolean object with \code{TRUE} indicating an element is the same.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' x <- c(5, 8, 9, NA, 3, NA)
 #' y <- c(5, 2, 9, 4, NA, NA)

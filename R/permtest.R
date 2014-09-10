@@ -14,7 +14,7 @@ function(n)
 # Function to perform a paired permutation test
 #     Input: differences, d
 #            no. permutations
-# Use paired.perm.test(d, n.perm=NULL) to 
+# Use paired.perm.test(d, n.perm=NULL) to
 #     do the exact test
 #  paired.perm.test
 #'
@@ -47,12 +47,9 @@ function(n)
 #'   the permutations.  An attributed \code{"tobs"} contains the t
 #'   statistic with the observed data.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' x <- c(43.3, 57.1, 35.0, 50.0, 38.2, 31.2)
-#' y <- c(51.9, 95.1, 90.0, 49.7, 101.5, 74.1) 
+#' y <- c(51.9, 95.1, 90.0, 49.7, 101.5, 74.1)
 #' paired.perm.test(x-y)
 #'
 #' @seealso
@@ -72,7 +69,7 @@ function(d, n.perm=NULL, pval=TRUE)
   }
   else { # do n.perm samples
     allt <- 1:n.perm
-    for(i in 1:n.perm) 
+    for(i in 1:n.perm)
       allt[i] <- t.test(d*sample(c(-1,1),n,replace=TRUE))$statistic
   }
   if(pval) return(mean(abs(allt) >= abs(tobs)))
@@ -124,12 +121,9 @@ function(d, n.perm=NULL, pval=TRUE)
 #'   the permutations.  An attributed \code{"tobs"} contains the t
 #'   statistic with the observed data.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' x <- c(43.3, 57.1, 35.0, 50.0, 38.2, 61.2)
-#' y <- c(51.9, 95.1, 90.0, 49.7, 101.5, 74.1) 
+#' y <- c(51.9, 95.1, 90.0, 49.7, 101.5, 74.1)
 #' perm.test(x,y)
 #'
 #' @seealso
@@ -153,7 +147,7 @@ function(x, y, n.perm=NULL, var.equal=TRUE, pval=TRUE)
 
   if(is.null(n.perm)) { # do exact permutation test
     o <- binary.v(n)  # indicator of all possible samples
-    o <- o[,apply(o,2,sum)==kx]  
+    o <- o[,apply(o,2,sum)==kx]
     nc <- choose(n,kx)
     allt <- 1:nc
     for(i in 1:nc) {

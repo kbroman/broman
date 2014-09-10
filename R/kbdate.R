@@ -8,12 +8,10 @@
 #' @param format The format for the output
 #'
 #' @param date The date/time to convert
-#' 
+#'
 #' @export
 #'
 #' @return A character string representation of the date/time
-#'
-#' @author Karl W Broman \email{kbroman@@biostat.wisc.edu}
 #'
 #' @examples
 #' kbdate()

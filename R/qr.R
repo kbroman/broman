@@ -20,9 +20,6 @@
 #' @return
 #' A list of two matrices: Q and R.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' hilbert <- function(n) { i <- 1:n; 1/outer(i-1,i,"+") }
 #' h5 <- hilbert(5);

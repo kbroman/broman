@@ -15,9 +15,6 @@
 #' @return
 #' A character string; the input in hex.
 #'
-#' @author
-#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' convert2hex(333)
 #' dec2hex(333)

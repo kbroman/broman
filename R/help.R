@@ -16,9 +16,6 @@
 #' @return
 #' No return value.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' h(read.cross)
 #'

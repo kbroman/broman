@@ -1,7 +1,7 @@
 ######################################################################
 # normalize:
 #  force a matrix of intensities to have columns with the same marginal
-#  distributions.  
+#  distributions.
 ######################################################################
 #'
 #' Quantile normalization
@@ -28,9 +28,6 @@
 #'   If \code{y} is missing, \code{x} should be a matrix, in which case the
 #'   output is a matrix of the same dimensions with the columns quantile
 #'   normalized with respect to each other.
-#'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
 #'
 #' @examples
 #' z <- rmvn(10000, mu=c(0,5,10), V = rbind(c(1,0.5,0.5),c(0.5,1,0.5),c(0.5,0.5,1)))

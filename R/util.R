@@ -13,9 +13,6 @@
 #' A character string with the version number of the currently installed
 #'   version of R/broman.
 #'
-#' @author
-#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' bromanversion()
 #'

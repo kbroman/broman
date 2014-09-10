@@ -16,19 +16,16 @@
 #' @return
 #' Vector of colors, from blue to red.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' x <- matrix(rnorm(100), ncol=10)
 #' image(x, col=revrainbow())
 #'
 #' @seealso
-#' \code{\link[base]{rev}}, 
+#' \code{\link[base]{rev}},
 #'   \code{\link[grDevices]{rainbow}}
 #'
 #' @keywords
 #' color
 revrainbow <-
 function(n=256, ...)
-rev(rainbow(start=0, end=2/3, n=n, ...))  
+rev(rainbow(start=0, end=2/3, n=n, ...))

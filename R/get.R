@@ -18,9 +18,6 @@
 #' @return
 #' The object found.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' xy <- 3
 #' x.y <- 18.3
@@ -28,8 +25,8 @@
 #' get.("x", "y")
 #'
 #' @seealso
-#' \code{\link[base]{get}}, 
-#'   \code{\link[base]{paste}}, 
+#' \code{\link[base]{get}},
+#'   \code{\link[base]{paste}},
 #'   \code{\link[base]{paste0}}
 #'
 #' @keywords

@@ -9,14 +9,14 @@
 #' @param labels Labels for the three corners (lower-right, top, lower-left).
 #'
 #' @param ... Passed to \code{\link[graphics]{plot}}.
-#' 
+#'
 #' @details
 #' Plot of an equilateral triangle, in order to depict trinomial
 #'   distributions.  A trinomial distribution (that is, a trio of
 #'   non-negative numbers that add to 1) is equated to a point in the
 #'   triangle through the distances to the three sides.  This makes use of
 #'   the fact that for any point in an equilateral triangle, the sum of the
-#'   distances to the three sides is constant.  
+#'   distances to the three sides is constant.
 #'   The \code{triplot} function creates an empty triangle for use with the
 #'   related functions \code{\link{tripoints}}, \code{\link{trilines}},
 #'   \code{\link{triarrow}}.
@@ -26,9 +26,6 @@
 #'
 #' @return
 #' The (x,y) coordinates of the points plotted, if any.
-#'
-#' @author
-#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
 #'
 #' @examples
 #' triplot()
@@ -59,9 +56,9 @@ function(labels, ...)
        xlim=lim[,1], ylim=lim[,2], xaxs="i", yaxs="i", ...)
 
   pin <- par("pin")
-  if(pin[2] > pin[1]) 
+  if(pin[2] > pin[1])
     pts[2,] <- pts[2,] / pin[2] * pin[1]*sqrt(3)/2
-  else 
+  else
     pts[1,] <- pts[1,] / pin[1] * pin[2]/sqrt(3)*2
 
   for(i in 1:2) pts[i,] <- pts[i,] - mean(range(pts[i,])) + mean(range(lim[,i]))
@@ -79,7 +76,7 @@ function(labels, ...)
   }
   invisible(pts)
 }
-  
+
 
 #  tripoints
 #'
@@ -91,23 +88,20 @@ function(labels, ...)
 #' @param x A matrix with three rows, each column being a trinomial distribution.
 #'
 #' @param ... Passed to \code{\link[graphics]{points}}.
-#' 
+#'
 #' @details
 #' Plot of an equilateral triangle, in order to depict trinomial
 #'   distributions.  A trinomial distribution (that is, a trio of
 #'   non-negative numbers that add to 1) is equated to a point in the
 #'   triangle through the distances to the three sides.  This makes use of
 #'   the fact that for any point in an equilateral triangle, the sum of the
-#'   distances to the three sides is constant.  
+#'   distances to the three sides is constant.
 #'   First use \code{\link{triplot}} to first plot the equilateral triangle.
 #'
 #' @export
 #'
 #' @return
 #' The (x,y) coordinates of the points plotted.
-#'
-#' @author
-#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
 #'
 #' @examples
 #' triplot()
@@ -168,23 +162,20 @@ function(x, ...)
 #'   distribution.  Lines between these points are plotted.
 #'
 #' @param ... Passed to \code{\link[graphics]{lines}}.
-#' 
+#'
 #' @details
 #' Plot of an equilateral triangle, in order to depict trinomial
 #'   distributions.  A trinomial distribution (that is, a trio of
 #'   non-negative numbers that add to 1) is equated to a point in the
 #'   triangle through the distances to the three sides.  This makes use of
 #'   the fact that for any point in an equilateral triangle, the sum of the
-#'   distances to the three sides is constant.  
+#'   distances to the three sides is constant.
 #'   First use \code{\link{triplot}} to first plot the equilateral triangle.
 #'
 #' @export
 #'
 #' @return
 #' The (x,y) coordinates of the endpoints of the lines plotted.
-#'
-#' @author
-#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
 #'
 #' @examples
 #' triplot()
@@ -245,23 +236,20 @@ function(x, ...)
 #'   distribution.  An arrow between the two points is plotted.
 #'
 #' @param ... Passed to \code{\link[graphics]{arrows}}.
-#' 
+#'
 #' @details
 #' Plot of an equilateral triangle, in order to depict trinomial
 #'   distributions.  A trinomial distribution (that is, a trio of
 #'   non-negative numbers that add to 1) is equated to a point in the
 #'   triangle through the distances to the three sides.  This makes use of
 #'   the fact that for any point in an equilateral triangle, the sum of the
-#'   distances to the three sides is constant.  
+#'   distances to the three sides is constant.
 #'   First use \code{\link{triplot}} to first plot the equilateral triangle.
 #'
 #' @export
 #'
 #' @return
 #' The (x,y) coordinates of the endpoints of the arrows plotted.
-#'
-#' @author
-#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
 #'
 #' @examples
 #' triplot()
@@ -280,11 +268,11 @@ function(x, ...)
 triarrow <-
 function(x, ...)
 {
-  if(nrow(x) == 2 && ncol(x) == 3) 
+  if(nrow(x) == 2 && ncol(x) == 3)
     x <- t(x)
   else if(!(nrow(x)==3 && ncol(x)==2))
     stop("x must be a 2x3 or 3x2 matrix")
-  
+
   m <- rbind(c(2/sqrt(3), 1/sqrt(3), 0), c(0,1,0))
 
   pts <- m %*% diag(rep(1,3))

@@ -14,20 +14,17 @@
 #' @return
 #' A character string or vector of character strings.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' x <- 3
 #' y <- 4
 #' paste.(x, y)
 #'
 #' @seealso
-#' \code{\link[base]{paste}}, 
+#' \code{\link[base]{paste}},
 #'   \code{\link[base]{paste0}},
-#'   \code{\link{paste00}}, 
-#'   \code{\link{paste..}}, 
-#'   \code{\link{paste0.}}, 
+#'   \code{\link{paste00}},
+#'   \code{\link{paste..}},
+#'   \code{\link{paste0.}},
 #'   \code{\link{paste.0}}
 #'
 #' @keywords
@@ -44,7 +41,7 @@ paste.. <- function(...) paste(..., sep=".", collapse=".")
 #'   and \code{collapse=""} or \code{collapse="."}.
 #'
 #' @aliases paste0. paste.0 paste..
-#' 
+#'
 #' @param ...  Passed to paste.
 #'
 #' @details
@@ -59,9 +56,6 @@ paste.. <- function(...) paste(..., sep=".", collapse=".")
 #' @return
 #' A character string or vector of character strings.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' x <- c(3, 4)
 #' y <- c(5, 6)
@@ -71,7 +65,7 @@ paste.. <- function(...) paste(..., sep=".", collapse=".")
 #' paste.0(x, y)
 #'
 #' @seealso
-#' \code{\link[base]{paste}}, 
+#' \code{\link[base]{paste}},
 #'   \code{\link[base]{paste0}},
 #'   \code{\link{paste.}}
 #'

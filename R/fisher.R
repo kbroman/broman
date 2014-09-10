@@ -22,9 +22,6 @@
 #' A single number: the P-value testing independence of rows and columns
 #'   in the table.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' TeaTasting <- matrix(c(3,1,1,3),nrow=2)
 #' fisher(TeaTasting,1000)
@@ -71,9 +68,6 @@ function(tab, n.sim=1000)
 #' @return
 #' A single number: the P-value testing independence of rows and columns
 #'   in the table.
-#'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
 #'
 #' @examples
 #' TeaTasting <- matrix(c(3,1,1,3),nrow=2)

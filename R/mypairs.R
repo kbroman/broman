@@ -12,7 +12,7 @@
 #' @param x A numeric matrix or data frame.
 #'
 #' @param ... Passed to the \code{\link[graphics]{plot}} function.
-#' 
+#'
 #' @details
 #' This is like the function \code{\link[graphics]{pairs}}, but
 #'   only the upper triangle is produced.
@@ -21,9 +21,6 @@
 #'
 #' @return
 #' None.
-#'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
 #'
 #' @examples
 #' v <- rbind(c(1,0.5,0.2),c(0.5,1,0.9),c(0.2,0.9,1))

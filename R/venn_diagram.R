@@ -14,7 +14,7 @@
 #' @param method Indicates whether to plot circles or squares.
 #'
 #' @param labels Labels for the two sets.  (\code{NULL} for no labels.)
-#' 
+#'
 #' @param col Colors of the two sets.
 #'
 #' @details
@@ -25,9 +25,6 @@
 #'
 #' @return
 #' None.
-#'
-#' @author
-#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
 #'
 #' @examples
 #' venn(setA=86, setB=1622, both=10)
@@ -102,7 +99,7 @@ function(setA=50, setB=50, both=25,
     }
   }
   else {
-  
+
 
     # radiuses of the circles
     rA <- sqrt((setAonly + both)/pi)
@@ -126,7 +123,7 @@ function(setA=50, setB=50, both=25,
       {
         if(d.betw.ctrs == rB-rA) return(pi*rA^2)
         if(d.betw.ctrs == rB+rA) return(0)
- 
+
         x <- (d.betw.ctrs^2 +rA^2 - rB^2)/(2*d.betw.ctrs)
         y <- sqrt(rA^2 - x^2)
 

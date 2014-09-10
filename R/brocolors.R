@@ -6,7 +6,6 @@
 #' @param set Character string indicating a set of colors.
 #' @return Vector of character strings representing the chosen set of colors, in RGB.
 #' @export
-#' @author Karl W Broman, \email{kbroman@@biostat.wisc.edu}
 #' @seealso \code{\link{plot_crayons}}
 #' @examples
 #' plot(0, 0, type="n", xlab="", ylab="", xlim=c(0, 9), ylim=c(7.5, 0), yaxs="i",
@@ -223,7 +222,6 @@ function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
 #' @param mar margin paramaters; vector of length 4 (see \code{\link[graphics]{par}})
 #' @return None
 #' @export
-#' @author Karl W Broman, \email{kbroman@@biostat.wisc.edu}
 #' @references \url{http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
 #' @seealso \code{\link{brocolors}}
 #' @importFrom grDevices rgb2hsv

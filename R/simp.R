@@ -52,9 +52,6 @@ function(f, a, b, tol=1e-8, max.step=1000, ...)
 #' @return
 #' The integral of \code{f} from \code{a} to \code{b}.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' f <- function(x) x*x*(1-x)*sin(x*x)
 #' I1 <- trap(f,0,2)

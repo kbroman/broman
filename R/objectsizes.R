@@ -20,9 +20,6 @@
 #' A data frame with the only column being the size of each object in
 #'   megabytes (Mb).  The row names are the names of the objects.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' print(output <- objectsizes())
 #' \dontrun{sum(output)}

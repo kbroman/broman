@@ -16,9 +16,6 @@
 #' @return
 #' A vector of character strings.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' myround(51.01, 3)
 #' myround(0.199, 2)
@@ -31,9 +28,9 @@
 myround <-
 function(x, digits=1)
 {
-  if(digits < 1) 
+  if(digits < 1)
     stop("This is intended for the case digits >= 1.")
-  
+
   if(length(digits) > 1) {
     digits <- digits[1]
     warning("Using only digits[1]")

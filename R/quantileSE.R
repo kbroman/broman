@@ -33,9 +33,6 @@
 #'   estimated quantiles; the second row contains the corresponding
 #'   estimated standard errors.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' quantileSE(rchisq(1000,4), c(0.9,0.95))
 #'
@@ -50,7 +47,7 @@ function(x, p=0.95, bw, na.rm=TRUE, names=TRUE)
   if(na.rm) x <- x[!is.na(x)]
   quant <- quantile(x,p)
   R <- sqrt(p*(1-p)/length(x))
-  if(missing(bw)) 
+  if(missing(bw))
     f <- sapply(quant, function(a,b) density(b,from=a,to=a,n=1)$y,x)
   else
     f <- sapply(quant, function(a,b) density(b,bw=bw,from=a,to=a,n=1)$y,x)

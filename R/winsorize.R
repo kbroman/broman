@@ -21,9 +21,6 @@
 #' A vector like the input \code{x}, but with extreme values moved in to
 #'   the \code{q} and \code{1-q} quantiles.
 #'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
-#'
 #' @examples
 #' x <- sample(c(1:10, rep(NA, 10), 21:30))
 #' winsorize(x, 0.2)

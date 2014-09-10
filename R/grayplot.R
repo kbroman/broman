@@ -32,7 +32,7 @@
 #' @param xat Locations for x-axis labels; \code{xat=NA} indicates no labels
 #'
 #' @param yat Locations for y-axis labels; \code{yat=NA} indicates no labels
-#' 
+#'
 #' @param bgcolor Background color
 #'
 #' @details
@@ -47,9 +47,6 @@
 #'
 #' @return
 #' None.
-#'
-#' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
 #'
 #' @examples
 #' \dontshow{set.seed(97536917)}
