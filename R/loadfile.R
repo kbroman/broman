@@ -32,8 +32,7 @@
 #' \dontrun{for(i in 1:5) attachfile(i)}
 #'
 #' @seealso
-#' \code{\link{loadwork}},
-#'   \code{\link{attachwork}}, \code{\link{loadfile}}
+#' \code{\link{loadfile}}
 #'
 #' @keywords
 #' IO
@@ -79,8 +78,7 @@ function(i,stem="perm",end=".RData",fixdig=TRUE, maxdig=5, verbose=TRUE)
 #' \dontrun{for(i in 1:5) loadfile(i)}
 #'
 #' @seealso
-#' \code{\link{loadwork}},
-#'   \code{\link{attachwork}}, \code{\link{attachfile}}
+#' \code{\link{attachfile}}
 #'
 #' @keywords
 #' IO

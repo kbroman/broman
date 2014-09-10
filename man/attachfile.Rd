@@ -36,8 +36,7 @@ This function attaches the workspace \code{paste(stem,i,end,sep="")},
 Karl W Broman \email{kbroman@biostat.wisc.edu}
 }
 \seealso{
-\code{\link{loadwork}},
-  \code{\link{attachwork}}, \code{\link{loadfile}}
+\code{\link{loadfile}}
 }
 \keyword{IO}
 
