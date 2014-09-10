@@ -12,7 +12,7 @@ test_that("attachfile and loadfile work", {
 
     loadfile(number, verbose=TRUE)
     expect_equal(z, savedz)
-    rm(z)
+    rm(z, envir=.GlobalEnv)
 
     attachfile(number)
     expect_equal(z, savedz)
@@ -35,7 +35,7 @@ test_that("attachfile and loadfile work with a different filename", {
 
     loadfile(number, stem, end)
     expect_equal(z, savedz)
-    rm(z)
+    rm(z, envir=.GlobalEnv)
 
     attachfile(number, stem, end)
     expect_equal(z, savedz)
