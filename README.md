@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/kbroman/broman.png?branch=master)](https://travis-ci.org/kbroman/broman)
 
-copyright (c) 2001-2014, [Karl W Broman](http://kbroman.org)
+[Karl W Broman](http://kbroman.org)
 
 ---
 
