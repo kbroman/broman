@@ -9,6 +9,7 @@
 #' @details It just does \code{names(attributes(object))}.
 #'
 #' @export
+#' @keywords utilities
 #' @examples
 #' x <- matrix(1:100, ncol=5)
 #' colnames(x) <- LETTERS[1:5]
