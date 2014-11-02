@@ -75,14 +75,12 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
          vlines, vlines.col="white", vlines.lty=1, vlines.lwd=1,
          xat, yat, bgcolor="gray80", v_over_h=FALSE)
 {
-  if(missing(x)) stop("x unspecified")
+  if(missing(x) || is.null(x)) stop("x unspecified")
   if(missing(y)) y <- NULL
-  if(missing(xat)) xat <- pretty(x)
-  if(missing(yat)) yat <- pretty(y)
-  if(missing(hlines)) hlines <- yat
-  if(missing(hlines.col)) hlines.col <- "white"
-  if(missing(vlines)) vlines <- xat
-  if(missing(vlines.col)) vlines.col
+  if(missing(xat)) xat <- NULL
+  if(missing(yat)) yat <- NULL
+  if(missing(hlines)) hlines <- NULL
+  if(missing(vlines)) vlines <- NULL
 
   # this is to deal with varying inputs (did "..." include xaxt or not?)
   hidegrayplot <-
@@ -90,7 +88,8 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
            vlines, vlines.col, vlines.lty, vlines.lwd,
            xat, yat, bgcolor="gray80", xaxt="n", yaxt="n",
            xlab, ylab, xname, yname,
-           las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0))
+           las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0),
+           v_over_h=FALSE)
   {
     dots <- list(...)
     if("mgp" %in% names(dots) && missing(mgp.x))
@@ -101,6 +100,8 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
     if(is.null(y)) {
       if(missing(xlab)) xlab <- "Index"
       if(missing(ylab)) ylab <- xname
+      y <- x
+      x <- seq(along=x)
     }
     else {
       if(missing(xlab)) xlab <- xname
@@ -109,7 +110,7 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
 
     # blank plot
     if(is.null(y))
-      plot(x, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
+      plot(seq(along=x), x, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
     else
       plot(x, y, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
 
@@ -160,7 +161,7 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
     if(!is.null(vlines) && v_over_h)
        abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
 
-    if(is.null(y)) points(x, ..., type=type)
+    if(is.null(y)) points(seq(along=x), x, ..., type=type)
     else points(x, y, ..., type=type)
 
     # add black border again
@@ -172,6 +173,7 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
                vlines=vlines, vlines.col=vlines.col,
                vlines.lty=vlines.lty, vlines.lwd=vlines.lwd,
                xat=xat, yat=yat, bgcolor=bgcolor,
-               xname=substitute(x), yname=substitute(y))
+               xname=substitute(x), yname=substitute(y),
+               v_over_h=v_over_h)
   invisible()
 }
