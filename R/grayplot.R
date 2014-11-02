@@ -35,6 +35,9 @@
 #'
 #' @param bgcolor Background color
 #'
+#' @param v_over_h If \code{TRUE}, place vertical grid lines on top of
+#' the horizontal ones.
+#'
 #' @details
 #' Calls \code{\link[graphics]{plot}} with \code{type="n"}, then
 #'   \code{\link[graphics]{rect}} to get the background, and then
@@ -70,7 +73,7 @@
 grayplot <-
 function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.lwd=1,
          vlines, vlines.col="white", vlines.lty=1, vlines.lwd=1,
-         xat, yat, bgcolor="gray80")
+         xat, yat, bgcolor="gray80", v_over_h=FALSE)
 {
   if(missing(x)) stop("x unspecified")
   if(missing(y)) y <- NULL
@@ -150,8 +153,12 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
       }
     }
 
-    if(!is.null(vlines)) abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
-    if(!is.null(hlines)) abline(h=hlines, col=hlines.col, lty=hlines.lty, lwd=hlines.lwd)
+    if(!is.null(vlines) && !v_over_h)
+        abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
+    if(!is.null(hlines))
+        abline(h=hlines, col=hlines.col, lty=hlines.lty, lwd=hlines.lwd)
+    if(!is.null(vlines) && v_over_h)
+       abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
 
     if(is.null(y)) points(x, ..., type=type)
     else points(x, y, ..., type=type)
