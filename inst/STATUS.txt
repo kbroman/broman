@@ -15,10 +15,13 @@ copyright (c) 2001-2014, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.49-5, 11/2/2014:
+Version 0.49-6, 11/3/2014:
 
   Added argument v_over_h to grayplot(), controlling whether
   horizontal gridlines are on top of the vertical ones or vice versa.
+
+  Revisions to grayplot for better treatment of case of missing y.
+  To avoid gridlines, use vlines=NA and/or hlines=NA.
 
 
 Version 0.49-3, 10/24/2014:

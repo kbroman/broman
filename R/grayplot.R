@@ -13,7 +13,7 @@
 #'
 #' @param type Plot type (points, lines, etc.)
 #'
-#' @param hlines Locations of horizontal grid lines
+#' @param hlines Locations of horizontal grid lines; use \code{hlines=NA} to prevent horizontal grid lines
 #'
 #' @param hlines.col Colors of horizontal grid lines
 #'
@@ -21,7 +21,7 @@
 #'
 #' @param hlines.lwd Line width of horizontal grid lines
 #'
-#' @param vlines Locations of vertical grid lines
+#' @param vlines Locations of vertical grid lines; use \code{vlines=NA} to prevent vertical grid lines
 #'
 #' @param vlines.col Colors of vertical grid lines
 #'
@@ -107,6 +107,23 @@ function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.l
       if(missing(xlab)) xlab <- xname
       if(missing(ylab)) ylab <- yname
     }
+
+    if(missing(hlines) || is.null(hlines)) {
+        if(!missing(yat) && !is.null(yat))
+            hlines <- yat
+        else
+            hlines <- pretty(y)
+    }
+    else if(length(hlines)==1 && is.na(hlines))
+        hlines <- NULL
+    if(missing(vlines) || is.null(vlines)) {
+        if(!missing(xat) && !is.null(xat))
+            vlines <- xat
+        else
+            vlines <- pretty(x)
+    }
+    else if(length(vlines)==1 && is.na(vlines))
+        vlines <- NULL
 
     # blank plot
     if(is.null(y))
