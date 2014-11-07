@@ -220,6 +220,9 @@ function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
 #' @param method2order method to order colors (\code{"hsv"} or \code{"cluster"})
 #' @param cex character expansion for the text
 #' @param mar margin paramaters; vector of length 4 (see \code{\link[graphics]{par}})
+#' @param bg Background color
+#' @param fg Foreground color (for text and box outlines)
+#' @param border If TRUE, plot a border around each rectangle
 #' @return None
 #' @export
 #' @references \url{http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
@@ -229,7 +232,8 @@ function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
 #' @examples
 #' plot_crayons()
 plot_crayons <-
-function(method2order=c("hsv", "cluster"), cex=0.6, mar=rep(0.1, 4))
+    function(method2order=c("hsv", "cluster"), cex=0.6, mar=rep(0.1, 4),
+             bg="white", fg="black", border=FALSE)
 {
   method2order <- match.arg(method2order)
 
@@ -252,9 +256,11 @@ function(method2order=c("hsv", "cluster"), cex=0.6, mar=rep(0.1, 4))
   }
 
   oldmar <- par("mar")
-  on.exit(par(mar=oldmar))
+  oldfg <- par("fg")
+  oldbg <- par("bg")
+  on.exit(par(mar=oldmar, fg=oldfg, bg=oldbg))
 
-  par(mar=mar)
+  par(mar=mar, fg=fg, bg=bg)
   x <- (1:7)-1
   y <- (1:19)-1
   x <- rep(x, each=19)
@@ -266,8 +272,10 @@ function(method2order=c("hsv", "cluster"), cex=0.6, mar=rep(0.1, 4))
 
   dx <- 0.2
   dy <- 0.4
-  rect(x+dx/4, y-dy, x+dx, y+dy, border="black",
-       col=crayons[ord])
+  if(border) border <- fg
+  else border <- crayons[ord]
+  rect(x+dx/4, y-dy, x+dx, y+dy,
+       border=border, col=crayons[ord])
 
   text(x+dx*1.2, y, names(crayons)[ord], cex=cex, adj=c(0, 0.5))
 }
