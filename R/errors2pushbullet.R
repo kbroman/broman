@@ -14,5 +14,5 @@
 errors2pushbullet <-
 function(deviceind=1) {
     library(RPushbullet)
-    options(error = function() pbPost("note", "Error", geterrmessage(), deviceind=deviceind) )
+    options(error = function() RPushbullet::pbPost("note", "Error", geterrmessage(), deviceind=deviceind) )
 }
