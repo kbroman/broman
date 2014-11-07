@@ -18,7 +18,7 @@ grayplot(x, y, ..., type = "p", hlines, hlines.col = "white",
 
 \item{type}{Plot type (points, lines, etc.)}
 
-\item{hlines}{Locations of horizontal grid lines}
+\item{hlines}{Locations of horizontal grid lines; use \code{hlines=NA} to prevent horizontal grid lines}
 
 \item{hlines.col}{Colors of horizontal grid lines}
 
@@ -26,7 +26,7 @@ grayplot(x, y, ..., type = "p", hlines, hlines.col = "white",
 
 \item{hlines.lwd}{Line width of horizontal grid lines}
 
-\item{vlines}{Locations of vertical grid lines}
+\item{vlines}{Locations of vertical grid lines; use \code{vlines=NA} to prevent vertical grid lines}
 
 \item{vlines.col}{Colors of vertical grid lines}
 
