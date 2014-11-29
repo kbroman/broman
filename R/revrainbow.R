@@ -27,5 +27,5 @@
 #' @keywords
 #' color
 revrainbow <-
-function(n=256, ...)
-rev(rainbow(start=0, end=2/3, n=n, ...))
+    function(n=256, ...)
+    rev(rainbow(start=0, end=2/3, n=n, ...))

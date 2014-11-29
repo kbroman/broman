@@ -33,159 +33,159 @@
 #' @keywords
 #' hplot
 venn <-
-function(setA=50, setB=50, both=25,
-         method=c("circle", "square"), labels=c("A","B"),
-         col=c("blue","red"))
+    function(setA=50, setB=50, both=25,
+             method=c("circle", "square"), labels=c("A","B"),
+             col=c("blue","red"))
 {
-  if(setA < 0 || setB < 0 || both < 0)
-    stop("The arguments must by non-negative.\n")
-  if(both > setA || both > setB)
-    stop("both must be < each of setA, setB.\n")
-  setAonly <- setA-both
-  setBonly <- setB-both
+    if(setA < 0 || setB < 0 || both < 0)
+        stop("The arguments must by non-negative.\n")
+    if(both > setA || both > setB)
+        stop("both must be < each of setA, setB.\n")
+    setAonly <- setA-both
+    setBonly <- setB-both
 
-  method <- match.arg(method)
+    method <- match.arg(method)
 
-  if(method=="square") {
-    # 1/2 lengths of the sides
-    rA <- sqrt(setAonly + both)/2
-    rB <- sqrt(setBonly + both)/2
+    if(method=="square") {
+        # 1/2 lengths of the sides
+        rA <- sqrt(setAonly + both)/2
+        rB <- sqrt(setBonly + both)/2
 
-    # y-axis location of centers of circles
-    yA <- yB <- 0
+        # y-axis location of centers of circles
+        yA <- yB <- 0
 
-    # x-axis location of centers of circles
-    xA <- 0
-    if(both==0) { # no overlap
-      xB <- rA+rB+min(c(rA,rB))/4
+        # x-axis location of centers of circles
+        xA <- 0
+        if(both==0) { # no overlap
+            xB <- rA+rB+min(c(rA,rB))/4
+        }
+        else {
+            if(setAonly == 0 || setBonly == 0) {
+                xB <- 0
+            }
+            else {
+                xB <- rA + rB - both/min(c(rA,rB))/2
+            }
+        }
+
+        # center at (0,0)
+        ctr <- (min(c(xA-rA,xB-rB)) + max(c(xA+rA,xB+rB)))/2
+        xA <- xA - ctr
+        xB <- xB - ctr
+
+        ctr <- (min(c(yA-rA,yB-rB)) + max(c(yA+rA,yB+rB)))/2
+        yA <- yA - ctr
+        yB <- yB - ctr
+
+        # x- and y-axis limits
+        xli <- c(xA-rA,xB+rB)
+        yli <- c(-1,1)*max(c(rA,rB))
+        xli <- yli <- c(min(c(xli[1],yli[1])),
+                        max(c(xli[2],yli[2])))
+
+        # create empty plot figure
+        par(pty="s",bty="n",mar=c(0.1,0.1,0.1,0.1))
+        plot(0, 0, type="n", xlab="", ylab="", xaxt="n", yaxt="n",
+             xlim=xli, ylim=yli)
+
+        # plot the rectangles
+        rect(xA-rA,yA-rA,xA+rA,yA+rA,lwd=2,border=col[1],angle=0)
+        rect(xB-rB,yB-rB,xB+rB,yB+rB,lwd=2,border=col[2],angle=0)
+
+        if(!is.null(labels)) {
+            gap <- ((xB+rB)-xA)*0.02
+            text(xA-rA+gap,yA,labels[1],adj=c(0,0), col=col[1])
+            text(xB+rB-gap,yB,labels[2],adj=c(1,0),col=col[2])
+        }
     }
     else {
-      if(setAonly == 0 || setBonly == 0) {
-        xB <- 0
-      }
-      else {
-        xB <- rA + rB - both/min(c(rA,rB))/2
-      }
+
+
+        # radiuses of the circles
+        rA <- sqrt((setAonly + both)/pi)
+        rB <- sqrt((setBonly + both)/pi)
+
+        # y-axis location of centers of circles
+        yA <- yB <- 0
+
+        ##############################
+        # the key subroutine
+        ##############################
+        # find distance between circle centers to give a particular area
+        #     we assume here that rB >= rA
+        find.distance <-
+            function(rA,rB,area)
+            {
+                # find area of overlap for two circles given radiuses
+                #     and given distance betwen their centers
+                find.overlap <-
+                    function(rA,rB,d.betw.ctrs)
+                    {
+                        if(d.betw.ctrs == rB-rA) return(pi*rA^2)
+                        if(d.betw.ctrs == rB+rA) return(0)
+
+                        x <- (d.betw.ctrs^2 +rA^2 - rB^2)/(2*d.betw.ctrs)
+                        y <- sqrt(rA^2 - x^2)
+
+                        if(x >= 0)
+                            return(asin(y/rA)*rA^2 - y*x +
+                                   asin(y/rB)*rB^2 - y*(d.betw.ctrs-x))
+                        else
+                            return(rA^2*pi - asin(y/rA)*rA^2 - y*x +
+                                   asin(y/rB)*rB^2 - y*(d.betw.ctrs-x))
+                    }
+
+                g <- function(d,rA,rB,area) find.overlap(rA,rB,d)-area
+                uniroot(g,lower=rB-rA,upper=rB+rA, rA=rA, rB=rB,area=area)$root
+            }
+        ##############################
+        # back to the venn() function
+        ##############################
+
+        # x-axis location of centers of circles
+        xA <- 0
+        if(both==0) { # no overlap
+            xB <- rA+rB+min(c(rA,rB))/4
+        }
+        else {
+            if(setAonly == 0 || setBonly == 0) {
+                xB <- abs(rB-rA)/2
+            }
+            else {
+                xB <- find.distance(min(c(rA,rB)),max(c(rA,rB)),both)
+            }
+        }
+
+        # x- and y-axis limits
+        xli <- yli <- c(min(c(xA-rA,yA-rA,xB-rB,yB-rB)),
+                        max(c(xA+rA,yA+rA,xB+rB,yB+rB)))
+
+        # adjust the centers to make picture symmetric
+        yB <- yA <- mean(yli)
+
+        left <- min(c(xA-rA,xB-rB)) - xli[1]
+        right <- xli[2] - max(c(xA+rA,xB+rB))
+        shift <- (left+right)/2 - left
+        xA <- xA + shift
+        xB <- xB + shift
+
+        # create empty plot figure
+        par(pty="s",bty="n",mar=c(0.1,0.1,0.1,0.1))
+        plot(0, 0, type="n", xlab="", ylab="", xaxt="n", yaxt="n",
+             xlim=xli, ylim=yli)
+
+        # plot the circles
+        z <- seq(0,2*pi,length=201)
+        lines(rA*cos(z)+xA,rA*sin(z)+yA,lwd=2,col=col[1])
+        lines(rB*cos(z)+xB,rB*sin(z)+yB,lwd=2,col=col[2])
+
+        if(!is.null(labels)) {
+            gap <- ((xB+rB)-xA)*0.02
+            text(xA-rA+gap,yA,labels[1],adj=c(0,0),col=col[1])
+            text(xB+rB-gap,yB,labels[2],adj=c(1,0),col=col[2])
+        }
     }
-
-    # center at (0,0)
-    ctr <- (min(c(xA-rA,xB-rB)) + max(c(xA+rA,xB+rB)))/2
-    xA <- xA - ctr
-    xB <- xB - ctr
-
-    ctr <- (min(c(yA-rA,yB-rB)) + max(c(yA+rA,yB+rB)))/2
-    yA <- yA - ctr
-    yB <- yB - ctr
-
-    # x- and y-axis limits
-    xli <- c(xA-rA,xB+rB)
-    yli <- c(-1,1)*max(c(rA,rB))
-    xli <- yli <- c(min(c(xli[1],yli[1])),
-                    max(c(xli[2],yli[2])))
-
-    # create empty plot figure
-    par(pty="s",bty="n",mar=c(0.1,0.1,0.1,0.1))
-    plot(0, 0, type="n", xlab="", ylab="", xaxt="n", yaxt="n",
-         xlim=xli, ylim=yli)
-
-    # plot the rectangles
-    rect(xA-rA,yA-rA,xA+rA,yA+rA,lwd=2,border=col[1],angle=0)
-    rect(xB-rB,yB-rB,xB+rB,yB+rB,lwd=2,border=col[2],angle=0)
-
-    if(!is.null(labels)) {
-      gap <- ((xB+rB)-xA)*0.02
-      text(xA-rA+gap,yA,labels[1],adj=c(0,0), col=col[1])
-      text(xB+rB-gap,yB,labels[2],adj=c(1,0),col=col[2])
-    }
-  }
-  else {
-
-
-    # radiuses of the circles
-    rA <- sqrt((setAonly + both)/pi)
-    rB <- sqrt((setBonly + both)/pi)
-
-    # y-axis location of centers of circles
-    yA <- yB <- 0
-
-    ##############################
-    # the key subroutine
-    ##############################
-    # find distance between circle centers to give a particular area
-    #     we assume here that rB >= rA
-    find.distance <-
-    function(rA,rB,area)
-    {
-      # find area of overlap for two circles given radiuses
-      #     and given distance betwen their centers
-      find.overlap <-
-      function(rA,rB,d.betw.ctrs)
-      {
-        if(d.betw.ctrs == rB-rA) return(pi*rA^2)
-        if(d.betw.ctrs == rB+rA) return(0)
-
-        x <- (d.betw.ctrs^2 +rA^2 - rB^2)/(2*d.betw.ctrs)
-        y <- sqrt(rA^2 - x^2)
-
-        if(x >= 0)
-          return(asin(y/rA)*rA^2 - y*x +
-                 asin(y/rB)*rB^2 - y*(d.betw.ctrs-x))
-        else
-         return(rA^2*pi - asin(y/rA)*rA^2 - y*x +
-                asin(y/rB)*rB^2 - y*(d.betw.ctrs-x))
-      }
-
-      g <- function(d,rA,rB,area) find.overlap(rA,rB,d)-area
-      uniroot(g,lower=rB-rA,upper=rB+rA, rA=rA, rB=rB,area=area)$root
-    }
-    ##############################
-    # back to the venn() function
-    ##############################
-
-    # x-axis location of centers of circles
-    xA <- 0
-    if(both==0) { # no overlap
-      xB <- rA+rB+min(c(rA,rB))/4
-    }
-    else {
-      if(setAonly == 0 || setBonly == 0) {
-        xB <- abs(rB-rA)/2
-      }
-      else {
-        xB <- find.distance(min(c(rA,rB)),max(c(rA,rB)),both)
-      }
-    }
-
-    # x- and y-axis limits
-    xli <- yli <- c(min(c(xA-rA,yA-rA,xB-rB,yB-rB)),
-                    max(c(xA+rA,yA+rA,xB+rB,yB+rB)))
-
-    # adjust the centers to make picture symmetric
-    yB <- yA <- mean(yli)
-
-    left <- min(c(xA-rA,xB-rB)) - xli[1]
-    right <- xli[2] - max(c(xA+rA,xB+rB))
-    shift <- (left+right)/2 - left
-    xA <- xA + shift
-    xB <- xB + shift
-
-    # create empty plot figure
-    par(pty="s",bty="n",mar=c(0.1,0.1,0.1,0.1))
-    plot(0, 0, type="n", xlab="", ylab="", xaxt="n", yaxt="n",
-         xlim=xli, ylim=yli)
-
-    # plot the circles
-    z <- seq(0,2*pi,length=201)
-    lines(rA*cos(z)+xA,rA*sin(z)+yA,lwd=2,col=col[1])
-    lines(rB*cos(z)+xB,rB*sin(z)+yB,lwd=2,col=col[2])
-
-    if(!is.null(labels)) {
-      gap <- ((xB+rB)-xA)*0.02
-      text(xA-rA+gap,yA,labels[1],adj=c(0,0),col=col[1])
-      text(xB+rB-gap,yB,labels[2],adj=c(1,0),col=col[2])
-    }
-  }
-  return(invisible())
+    return(invisible())
 }
 
 
@@ -255,6 +255,3 @@ function(setA=50, setB=50, both=25,
 #  text(x[2]+gap,y[6]-gap,labels[1],adj=c(0,1),col=col[3])
 #  invisible()
 #}
-
-
-

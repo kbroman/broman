@@ -71,126 +71,126 @@
 #' @keywords
 #' graphics
 grayplot <-
-function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.lwd=1,
-         vlines, vlines.col="white", vlines.lty=1, vlines.lwd=1,
-         xat, yat, bgcolor="gray80", v_over_h=FALSE)
+    function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.lwd=1,
+             vlines, vlines.col="white", vlines.lty=1, vlines.lwd=1,
+             xat, yat, bgcolor="gray80", v_over_h=FALSE)
 {
-  if(missing(x) || is.null(x)) stop("x unspecified")
-  if(missing(y)) y <- NULL
-  if(missing(xat)) xat <- NULL
-  if(missing(yat)) yat <- NULL
-  if(missing(hlines)) hlines <- NULL
-  if(missing(vlines)) vlines <- NULL
+    if(missing(x) || is.null(x)) stop("x unspecified")
+    if(missing(y)) y <- NULL
+    if(missing(xat)) xat <- NULL
+    if(missing(yat)) yat <- NULL
+    if(missing(hlines)) hlines <- NULL
+    if(missing(vlines)) vlines <- NULL
 
-  # this is to deal with varying inputs (did "..." include xaxt or not?)
-  hidegrayplot <-
-  function(x, y, ..., type="p", hlines, hlines.col, hlines.lty, hlines.lwd,
-           vlines, vlines.col, vlines.lty, vlines.lwd,
-           xat, yat, bgcolor="gray80", xaxt="n", yaxt="n",
-           xlab, ylab, xname, yname,
-           las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0),
-           v_over_h=FALSE)
-  {
-    dots <- list(...)
-    if("mgp" %in% names(dots) && missing(mgp.x))
-      mgp.x <- dots$mgp
-    if("mgp" %in% names(dots) && missing(mgp.y))
-      mgp.y <- dots$mgp
+    # this is to deal with varying inputs (did "..." include xaxt or not?)
+    hidegrayplot <-
+        function(x, y, ..., type="p", hlines, hlines.col, hlines.lty, hlines.lwd,
+                 vlines, vlines.col, vlines.lty, vlines.lwd,
+                 xat, yat, bgcolor="gray80", xaxt="n", yaxt="n",
+                 xlab, ylab, xname, yname,
+                 las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0),
+                 v_over_h=FALSE)
+        {
+            dots <- list(...)
+            if("mgp" %in% names(dots) && missing(mgp.x))
+                mgp.x <- dots$mgp
+            if("mgp" %in% names(dots) && missing(mgp.y))
+                mgp.y <- dots$mgp
 
-    if(is.null(y)) {
-      if(missing(xlab)) xlab <- "Index"
-      if(missing(ylab)) ylab <- xname
-      y <- x
-      x <- seq(along=x)
-    }
-    else {
-      if(missing(xlab)) xlab <- xname
-      if(missing(ylab)) ylab <- yname
-    }
+            if(is.null(y)) {
+                if(missing(xlab)) xlab <- "Index"
+                if(missing(ylab)) ylab <- xname
+                y <- x
+                x <- seq(along=x)
+            }
+            else {
+                if(missing(xlab)) xlab <- xname
+                if(missing(ylab)) ylab <- yname
+            }
 
-    if(missing(hlines) || is.null(hlines)) {
-        if(!missing(yat) && !is.null(yat))
-            hlines <- yat
-        else
-            hlines <- pretty(y)
-    }
-    else if(length(hlines)==1 && is.na(hlines))
-        hlines <- NULL
-    if(missing(vlines) || is.null(vlines)) {
-        if(!missing(xat) && !is.null(xat))
-            vlines <- xat
-        else
-            vlines <- pretty(x)
-    }
-    else if(length(vlines)==1 && is.na(vlines))
-        vlines <- NULL
+            if(missing(hlines) || is.null(hlines)) {
+                if(!missing(yat) && !is.null(yat))
+                    hlines <- yat
+                else
+                    hlines <- pretty(y)
+            }
+            else if(length(hlines)==1 && is.na(hlines))
+                hlines <- NULL
+            if(missing(vlines) || is.null(vlines)) {
+                if(!missing(xat) && !is.null(xat))
+                    vlines <- xat
+                else
+                    vlines <- pretty(x)
+            }
+            else if(length(vlines)==1 && is.na(vlines))
+                vlines <- NULL
 
-    # blank plot
-    if(is.null(y))
-      plot(seq(along=x), x, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
-    else
-      plot(x, y, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
+            # blank plot
+            if(is.null(y))
+                plot(seq(along=x), x, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
+            else
+                plot(x, y, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
 
-    # axis titles
-    title(xlab=xlab, mgp=mgp.x)
-    title(ylab=ylab, mgp=mgp.y)
+            # axis titles
+            title(xlab=xlab, mgp=mgp.x)
+            title(ylab=ylab, mgp=mgp.y)
 
-    # add gray rectangle
-    u <- par("usr")
-    rect(u[1], u[3], u[2], u[4], col=bgcolor, border="black")
+            # add gray rectangle
+            u <- par("usr")
+            rect(u[1], u[3], u[2], u[4], col=bgcolor, border="black")
 
-    # x axis: if adding white lines, skip the tick marks and move the numbers closer
-    if(!(!is.null(xat) && length(xat)==1 && is.na(xat))) { # if a single NA, skip x-axis
-      if(!is.null(xat)) {
-        if(!is.null(vlines))
-          axis(side=1, at=xat, mgp=mgp.x, tick=FALSE, las=las)
-        else
-          axis(side=1, at=xat, las=las)
-      }
-      else {
-        if(!is.null(vlines))
-          axis(side=1, mgp=mgp.x, tick=FALSE, las=las)
-        else
-          axis(side=1, las=las)
-      }
-    }
+            # x axis: if adding white lines, skip the tick marks and move the numbers closer
+            if(!(!is.null(xat) && length(xat)==1 && is.na(xat))) { # if a single NA, skip x-axis
+                if(!is.null(xat)) {
+                    if(!is.null(vlines))
+                        axis(side=1, at=xat, mgp=mgp.x, tick=FALSE, las=las)
+                    else
+                        axis(side=1, at=xat, las=las)
+                }
+                else {
+                    if(!is.null(vlines))
+                        axis(side=1, mgp=mgp.x, tick=FALSE, las=las)
+                    else
+                        axis(side=1, las=las)
+                }
+            }
 
-    # y axis: like the x-axis
-    if(!(!is.null(yat) && length(yat)==1 && is.na(yat))) { # if a single NA, skip y-axis
-      if(!is.null(yat)) {
-        if(!is.null(hlines))
-          axis(side=2, at=yat, mgp=mgp.y, tick=FALSE, las=las)
-        else
-          axis(side=2, at=yat, las=las)
-      }
-      else {
-        if(!is.null(hlines))
-          axis(side=2, mgp=mgp.y, tick=FALSE, las=las)
-        else
-          axis(side=2, las=las)
-      }
-    }
+            # y axis: like the x-axis
+            if(!(!is.null(yat) && length(yat)==1 && is.na(yat))) { # if a single NA, skip y-axis
+                if(!is.null(yat)) {
+                    if(!is.null(hlines))
+                        axis(side=2, at=yat, mgp=mgp.y, tick=FALSE, las=las)
+                    else
+                        axis(side=2, at=yat, las=las)
+                }
+                else {
+                    if(!is.null(hlines))
+                        axis(side=2, mgp=mgp.y, tick=FALSE, las=las)
+                    else
+                        axis(side=2, las=las)
+                }
+            }
 
-    if(!is.null(vlines) && !v_over_h)
-        abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
-    if(!is.null(hlines))
-        abline(h=hlines, col=hlines.col, lty=hlines.lty, lwd=hlines.lwd)
-    if(!is.null(vlines) && v_over_h)
-       abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
+            if(!is.null(vlines) && !v_over_h)
+                abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
+            if(!is.null(hlines))
+                abline(h=hlines, col=hlines.col, lty=hlines.lty, lwd=hlines.lwd)
+            if(!is.null(vlines) && v_over_h)
+                abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
 
-    if(is.null(y)) points(seq(along=x), x, ..., type=type)
-    else points(x, y, ..., type=type)
+            if(is.null(y)) points(seq(along=x), x, ..., type=type)
+            else points(x, y, ..., type=type)
 
-    # add black border again
-    abline(v=u[1:2], h=u[3:4])
-  }
+            # add black border again
+            abline(v=u[1:2], h=u[3:4])
+        }
 
-  hidegrayplot(x=x, y=y, ..., type=type, hlines=hlines, hlines.col=hlines.col,
-               hlines.lty=hlines.lty, hlines.lwd=hlines.lwd,
-               vlines=vlines, vlines.col=vlines.col,
-               vlines.lty=vlines.lty, vlines.lwd=vlines.lwd,
-               xat=xat, yat=yat, bgcolor=bgcolor,
-               xname=substitute(x), yname=substitute(y),
-               v_over_h=v_over_h)
-  invisible()
+    hidegrayplot(x=x, y=y, ..., type=type, hlines=hlines, hlines.col=hlines.col,
+                 hlines.lty=hlines.lty, hlines.lwd=hlines.lwd,
+                 vlines=vlines, vlines.col=vlines.col,
+                 vlines.lty=vlines.lty, vlines.lwd=vlines.lwd,
+                 xat=xat, yat=yat, bgcolor=bgcolor,
+                 xname=substitute(x), yname=substitute(y),
+                 v_over_h=v_over_h)
+    invisible()
 }

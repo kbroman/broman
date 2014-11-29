@@ -37,7 +37,7 @@
 #' @keywords
 #' IO
 attachfile <-
-function(i,stem="perm",end=".RData",fixdig=TRUE, maxdig=5, verbose=TRUE)
+    function(i,stem="perm",end=".RData",fixdig=TRUE, maxdig=5, verbose=TRUE)
 {
     if(missing(i) || is.null(i)) i <- ""
 
@@ -83,7 +83,7 @@ function(i,stem="perm",end=".RData",fixdig=TRUE, maxdig=5, verbose=TRUE)
 #' @keywords
 #' IO
 loadfile <-
-function(i,stem="perm",end=".RData",fixdig=TRUE, maxdig=5, verbose=TRUE)
+    function(i,stem="perm",end=".RData",fixdig=TRUE, maxdig=5, verbose=TRUE)
 {
     if(missing(i) || is.null(i)) i <- ""
 
@@ -91,30 +91,30 @@ function(i,stem="perm",end=".RData",fixdig=TRUE, maxdig=5, verbose=TRUE)
 }
 
 attach_or_load <-
-function(i,stem="perm",end=".RData",fixdig=TRUE, maxdig=5, verbose=TRUE,
-         what=c("attach", "load"))
+    function(i,stem="perm",end=".RData",fixdig=TRUE, maxdig=5, verbose=TRUE,
+             what=c("attach", "load"))
 {
-  if(missing(i)) i <- ""
-  what <- match.arg(what)
+    if(missing(i)) i <- ""
+    what <- match.arg(what)
 
-  if(fixdig) file <- find_filename_padding(i, stem, end, maxdig)
-  else file <- paste0(stem, i, end)
+    if(fixdig) file <- find_filename_padding(i, stem, end, maxdig)
+    else file <- paste0(stem, i, end)
 
-  if(!is.null(file) && file.exists(file)) {
-      switch(what,
-             attach=attach(file),
-             load=load(file, .GlobalEnv))
-    result <- TRUE
-  }
-  else {
-    if(verbose) warning("Couldn't attach ", file)
-    result <- FALSE
-  }
-  invisible(result)
+    if(!is.null(file) && file.exists(file)) {
+        switch(what,
+               attach=attach(file),
+               load=load(file, .GlobalEnv))
+        result <- TRUE
+    }
+    else {
+        if(verbose) warning("Couldn't attach ", file)
+        result <- FALSE
+    }
+    invisible(result)
 }
 
 find_filename_padding <-
-function(i, stem="perm", end=".RData", maxdig=5)
+    function(i, stem="perm", end=".RData", maxdig=5)
 {
     for(j in 0:maxdig) {
         file <- paste0(stem, i, end)

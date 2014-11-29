@@ -25,7 +25,7 @@
 #' @keywords
 #' documentation
 h <-
-function(...)
+    function(...)
 {
-  help(..., help_type="html")
+    help(..., help_type="html")
 }

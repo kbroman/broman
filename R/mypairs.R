@@ -33,25 +33,25 @@
 #' @keywords
 #' hplot
 mypairs <-
-function(x, ...)
+    function(x, ...)
 {
-  n <- ncol(x)
-  if(is.null(colnames(x)))
-    nam <- 1:n
-  else
-    nam <- colnames(x)
+    n <- ncol(x)
+    if(is.null(colnames(x)))
+        nam <- 1:n
+    else
+        nam <- colnames(x)
 
-  z <- matrix(n^2, n-1, n-1, byrow=TRUE)
-  m <- choose(n,2)
-  z[!upper.tri(t(z))] <- 1:m
-  z <- t(z)
-  z[z>m] <- m + 1:sum(z>m)
+    z <- matrix(n^2, n-1, n-1, byrow=TRUE)
+    m <- choose(n,2)
+    z[!upper.tri(t(z))] <- 1:m
+    z <- t(z)
+    z[z>m] <- m + 1:sum(z>m)
 
-  layout(z)
+    layout(z)
 
-  for(i in 1:(n-1)) {
-    for(j in (i+1):n) {
-      plot(x[,j], x[,i], xlab=nam[j], ylab=nam[i], ...)
+    for(i in 1:(n-1)) {
+        for(j in (i+1):n) {
+            plot(x[,j], x[,i], xlab=nam[j], ylab=nam[i], ...)
+        }
     }
-  }
 }

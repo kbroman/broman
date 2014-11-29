@@ -1,4 +1,3 @@
-
 #  strwidth2lines
 #'
 #' Calculate width of a character string in number of lines
@@ -37,7 +36,6 @@
 #'        mgp=c(mgp[1],nlines,mgp[3]),cex.axis=1.5)
 #' par(p)
 strwidth2lines <- function(s, ...){
-  (max(strwidth(s, units="inch", ...))/
-    par("cin")[2]+par("mgp")[2])*par("cex")
+    (max(strwidth(s, units="inch", ...))/
+     par("cin")[2]+par("mgp")[2])*par("cex")
 }
-

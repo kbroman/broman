@@ -21,11 +21,11 @@
 #'
 #' @keywords utilities
 kbdate <-
-function(format=c("dateonly", "standard"), date=Sys.time())
+    function(format=c("dateonly", "standard"), date=Sys.time())
 {
-  format <- match.arg(format)
-  base::format(date,
-               switch(format,
-                      dateonly="%Y-%m-%d",
-                      standard="%a %b %d %X %Y"))
+    format <- match.arg(format)
+    base::format(date,
+                 switch(format,
+                        dateonly="%Y-%m-%d",
+                        standard="%a %b %d %X %Y"))
 }

@@ -61,20 +61,19 @@
 #' @keywords
 #' graphics
 histlines <-
-function(x, y, breaks, use=c("counts", "density"))
+    function(x, y, breaks, use=c("counts", "density"))
 {
-  if(missing(y)) { # input doesn't count the count information
-    out <- hist(x, breaks=breaks, plot=FALSE)
-    x <- out$breaks
-    use <- match.arg(use)
-    y <- out[[use]]
-  }
+    if(missing(y)) { # input doesn't count the count information
+        out <- hist(x, breaks=breaks, plot=FALSE)
+        x <- out$breaks
+        use <- match.arg(use)
+        y <- out[[use]]
+    }
 
-  if(length(x) != length(y)+1)
-    stop("length(x) != length(y) + 1")
+    if(length(x) != length(y)+1)
+        stop("length(x) != length(y) + 1")
 
-  x <- as.numeric(rbind(x, x))
-  y <- c(0, as.numeric(rbind(y,y)), 0)
-  data.frame(x=x, y=y)
+    x <- as.numeric(rbind(x, x))
+    y <- c(0, as.numeric(rbind(y,y)), 0)
+    data.frame(x=x, y=y)
 }
-

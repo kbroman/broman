@@ -48,49 +48,49 @@
 #' @keywords
 #' univar
 runningmean <-
-function(pos, value, at, window=1000, what=c("mean","sum", "median", "sd"))
+    function(pos, value, at, window=1000, what=c("mean","sum", "median", "sd"))
 {
-  what <- which(c("sum","mean","median","sd")==match.arg(what))
-  
-  n <- length(pos)
-  if(length(value) != n)
-    stop("pos and value must have the same length\n")
+    what <- which(c("sum","mean","median","sd")==match.arg(what))
 
-  if(missing(at)) # if missing 'at', use input 'pos'
-    at <- pos
+    n <- length(pos)
+    if(length(value) != n)
+        stop("pos and value must have the same length\n")
 
-  # check that pos is sorted
-  if(any(diff(pos) < 0)) { # needs to be sorted
-    o <- order(pos)
-    pos <- pos[o]
-    value <- value[o]
-  }
-    
-  # check that pos is sorted
-  if(any(diff(at) < 0)) { # needs to be sorted
-    o.at <- order(at)
-    at <- at[o.at]
-    reorderresult <- TRUE
-  }
-  else reorderresult <- FALSE
-    
-  n.res <- length(at)
+    if(missing(at)) # if missing 'at', use input 'pos'
+        at <- pos
 
-  z <- .C("R_runningmean",
-          as.integer(n),
-          as.double(pos),
-          as.double(value),
-          as.integer(n.res),
-          as.double(at),
-          z=as.double(rep(0,n.res)),
-          as.double(window),
-          as.integer(what),
-          PACKAGE="broman")$z
-  
-  if(reorderresult) 
-    z <- z[match(1:length(at), o.at)]
-  
-  z
+    # check that pos is sorted
+    if(any(diff(pos) < 0)) { # needs to be sorted
+        o <- order(pos)
+        pos <- pos[o]
+        value <- value[o]
+    }
+
+    # check that pos is sorted
+    if(any(diff(at) < 0)) { # needs to be sorted
+        o.at <- order(at)
+        at <- at[o.at]
+        reorderresult <- TRUE
+    }
+    else reorderresult <- FALSE
+
+    n.res <- length(at)
+
+    z <- .C("R_runningmean",
+            as.integer(n),
+            as.double(pos),
+            as.double(value),
+            as.integer(n.res),
+            as.double(at),
+            z=as.double(rep(0,n.res)),
+            as.double(window),
+            as.integer(what),
+            PACKAGE="broman")$z
+
+    if(reorderresult)
+        z <- z[match(1:length(at), o.at)]
+
+    z
 }
 
 
@@ -139,45 +139,45 @@ function(pos, value, at, window=1000, what=c("mean","sum", "median", "sd"))
 #' @keywords
 #' univar
 runningratio <-
-function(pos, numerator, denominator, at, window=1000)
+    function(pos, numerator, denominator, at, window=1000)
 {
-  n <- length(pos)
-  if(length(numerator) != n || length(denominator) != n)
-    stop("pos, numerator and denominator must all be the same length\n")
+    n <- length(pos)
+    if(length(numerator) != n || length(denominator) != n)
+        stop("pos, numerator and denominator must all be the same length\n")
 
-  if(missing(at)) # if missing 'at', use input 'pos'
-    at <- pos
+    if(missing(at)) # if missing 'at', use input 'pos'
+        at <- pos
 
-  # check that pos is sorted
-  if(any(diff(pos) < 0)) { # needs to be sorted
-    o <- order(pos)
-    pos <- pos[o]
-    value <- value[o]
-  }
-    
-  # check that pos is sorted
-  if(any(diff(at) < 0)) { # needs to be sorted
-    o.at <- order(at)
-    at <- at[o.at]
-    reorderresult <- TRUE
-  }
-  else reorderresult <- FALSE
-    
-  n.res <- length(at)
+    # check that pos is sorted
+    if(any(diff(pos) < 0)) { # needs to be sorted
+        o <- order(pos)
+        pos <- pos[o]
+        value <- value[o]
+    }
 
-  z <- .C("R_runningratio",
-          as.integer(n),
-          as.double(pos),
-          as.double(numerator),
-          as.double(denominator),
-          as.integer(n.res),
-          as.double(at),
-          z=as.double(rep(0,n.res)),
-          as.double(window),
-          PACKAGE="broman")$z
+    # check that pos is sorted
+    if(any(diff(at) < 0)) { # needs to be sorted
+        o.at <- order(at)
+        at <- at[o.at]
+        reorderresult <- TRUE
+    }
+    else reorderresult <- FALSE
 
-  if(reorderresult)
-    z <- z[match(1:length(z), o.at)]
+    n.res <- length(at)
 
-  z
+    z <- .C("R_runningratio",
+            as.integer(n),
+            as.double(pos),
+            as.double(numerator),
+            as.double(denominator),
+            as.integer(n.res),
+            as.double(at),
+            z=as.double(rep(0,n.res)),
+            as.double(window),
+            PACKAGE="broman")$z
+
+    if(reorderresult)
+        z <- z[match(1:length(z), o.at)]
+
+    z
 }

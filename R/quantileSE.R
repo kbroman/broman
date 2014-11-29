@@ -42,17 +42,17 @@
 #' @keywords
 #' univar
 quantileSE <-
-function(x, p=0.95, bw, na.rm=TRUE, names=TRUE)
+    function(x, p=0.95, bw, na.rm=TRUE, names=TRUE)
 {
-  if(na.rm) x <- x[!is.na(x)]
-  quant <- quantile(x,p)
-  R <- sqrt(p*(1-p)/length(x))
-  if(missing(bw))
-    f <- sapply(quant, function(a,b) density(b,from=a,to=a,n=1)$y,x)
-  else
-    f <- sapply(quant, function(a,b) density(b,bw=bw,from=a,to=a,n=1)$y,x)
+    if(na.rm) x <- x[!is.na(x)]
+    quant <- quantile(x,p)
+    R <- sqrt(p*(1-p)/length(x))
+    if(missing(bw))
+        f <- sapply(quant, function(a,b) density(b,from=a,to=a,n=1)$y,x)
+    else
+        f <- sapply(quant, function(a,b) density(b,bw=bw,from=a,to=a,n=1)$y,x)
 
-  out <- rbind(quantile=quant,SE=R/f)
-  if(names) colnames(out) <- as.character(p)
-  out
+    out <- rbind(quantile=quant,SE=R/f)
+    if(names) colnames(out) <- as.character(p)
+    out
 }

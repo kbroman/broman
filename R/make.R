@@ -20,15 +20,15 @@
 #' @seealso \code{\link[devtools]{load_all}}
 #' @keywords utilities
 make <-
-function(pkg = ".", makefile="Makefile", quiet=FALSE)
+    function(pkg = ".", makefile="Makefile", quiet=FALSE)
 {
-  pkg <- devtools::as.package(pkg)
+    pkg <- devtools::as.package(pkg)
 
-  if(!quiet) message("Making ", pkg$package)
+    if(!quiet) message("Making ", pkg$package)
 
-  fileflag <- ifelse(makefile == "" || makefile=="Makefile" || makefile == "makefile", "", paste("-f", makefile))
+    fileflag <- ifelse(makefile == "" || makefile=="Makefile" || makefile == "makefile", "", paste("-f", makefile))
 
-  system(paste("cd", pkg$path, "; make", fileflag),
-         ignore.stdout=quiet, ignore.stderr=quiet,
-         intern=FALSE)
+    system(paste("cd", pkg$path, "; make", fileflag),
+           ignore.stdout=quiet, ignore.stderr=quiet,
+           intern=FALSE)
 }

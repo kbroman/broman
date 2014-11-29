@@ -44,16 +44,16 @@
 #' @keywords
 #' hplot
 arrowlocator <-
-function(reverse=FALSE, horizontal=FALSE, vertical=FALSE, length=0.1, ...)
+    function(reverse=FALSE, horizontal=FALSE, vertical=FALSE, length=0.1, ...)
 {
-  x <- locator(2)
-  if(reverse) x <- lapply(x, rev)
-  if(horizontal) x[[2]] <- rep(mean(x[[2]]), 2)
-  if(vertical) x[[1]] <- rep(mean(x[[1]]), 2)
+    x <- locator(2)
+    if(reverse) x <- lapply(x, rev)
+    if(horizontal) x[[2]] <- rep(mean(x[[2]]), 2)
+    if(vertical) x[[1]] <- rep(mean(x[[1]]), 2)
 
-  arrows(x[[1]][1], x[[2]][1], x[[1]][2], x[[2]][2], length=length, ...)
+    arrows(x[[1]][1], x[[2]][1], x[[1]][2], x[[2]][2], length=length, ...)
 
-  x <- matrix(unlist(x), ncol=2)
-  dimnames(x) <- list(c("tail","head"), c("x","y"))
-  invisible(x)
+    x <- matrix(unlist(x), ncol=2)
+    dimnames(x) <- list(c("tail","head"), c("x","y"))
+    invisible(x)
 }

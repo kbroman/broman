@@ -49,14 +49,13 @@ cf <- function(a, b) UseMethod("cf")
 
 #' @export
 cf.default <-
-function(a, b)
-((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & a == b))
+    function(a, b)
+    ((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & a == b))
 
 #' @export
 cf.list <-
-function(a,b)
+    function(a,b)
 {
-  for(i in seq(along=a)) a[[i]] <- cf(a[[i]], b[[i]])
-  a
+    for(i in seq(along=a)) a[[i]] <- cf(a[[i]], b[[i]])
+    a
 }
-

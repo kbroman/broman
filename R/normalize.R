@@ -48,27 +48,27 @@
 #'
 #' @useDynLib broman
 normalize <-
-function(x,y)
+    function(x,y)
 {
-  if(!missing(y)) x <- cbind(x,y)
-  if(is.data.frame(x)) x <- as.matrix(x)
+    if(!missing(y)) x <- cbind(x,y)
+    if(is.data.frame(x)) x <- as.matrix(x)
 
-  x[abs(x) == Inf] <- NA
-  maxval <- max(x, na.rm=TRUE) + 1
-  if(any(is.na(x))) x[is.na(x)] <- maxval+100
+    x[abs(x) == Inf] <- NA
+    maxval <- max(x, na.rm=TRUE) + 1
+    if(any(is.na(x))) x[is.na(x)] <- maxval+100
 
-  n <- nrow(x)
-  p <- ncol(x)
+    n <- nrow(x)
+    p <- ncol(x)
 
-  z <- .C("R_normalize",
-          as.integer(n),
-          as.integer(p),
-          x=as.double(x),
-          as.double(maxval),
-          as.integer(rep((1:n)-1,p)),
-          as.double(x),
-          PACKAGE="broman")$x
+    z <- .C("R_normalize",
+            as.integer(n),
+            as.integer(p),
+            x=as.double(x),
+            as.double(maxval),
+            as.integer(rep((1:n)-1,p)),
+            as.double(x),
+            PACKAGE="broman")$x
 
-  z[z > maxval] <- NA
-  matrix(z, ncol=p)
+    z[z > maxval] <- NA
+    matrix(z, ncol=p)
 }

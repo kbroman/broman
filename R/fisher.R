@@ -33,17 +33,17 @@
 #' @keywords
 #' htest
 fisher <-
-function(tab, n.sim=1000)
+    function(tab, n.sim=1000)
 {
-  bot0 <- sum(lgamma(tab+1))
-  bot <- 1:n.sim
-  a <- list(rep(row(tab),tab),rep(col(tab),tab))
-  for(i in 1:n.sim) {
-    a[[1]] <- sample(a[[1]])
-    tab2 <- table(a)
-    bot[i] <- sum(lgamma(tab2+1))
-  }
-  mean(bot0 <= bot)
+    bot0 <- sum(lgamma(tab+1))
+    bot <- 1:n.sim
+    a <- list(rep(row(tab),tab),rep(col(tab),tab))
+    for(i in 1:n.sim) {
+        a[[1]] <- sample(a[[1]])
+        tab2 <- table(a)
+        bot[i] <- sum(lgamma(tab2+1))
+    }
+    mean(bot0 <= bot)
 }
 
 ######################################################################
@@ -80,15 +80,15 @@ function(tab, n.sim=1000)
 #' @keywords
 #' htest
 chisq <-
-function(tab, n.sim=1000)
+    function(tab, n.sim=1000)
 {
-  observed <- suppressWarnings(chisq.test(tab)$stat)
-  sims <- 1:n.sim
-  a <- list(rep(row(tab),tab),rep(col(tab),tab))
-  for(i in 1:n.sim) {
-    a[[1]] <- sample(a[[1]])
-    tab2 <- table(a)
-    sims[i] <- suppressWarnings(chisq.test(tab2)$stat)
-  }
-  mean(sims >= observed)
+    observed <- suppressWarnings(chisq.test(tab)$stat)
+    sims <- 1:n.sim
+    a <- list(rep(row(tab),tab),rep(col(tab),tab))
+    for(i in 1:n.sim) {
+        a[[1]] <- sample(a[[1]])
+        tab2 <- table(a)
+        sims[i] <- suppressWarnings(chisq.test(tab2)$stat)
+    }
+    mean(sims >= observed)
 }

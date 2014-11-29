@@ -12,7 +12,7 @@
 #' \dontrun{errors2pushbullet()}
 #' @keywords utilities
 errors2pushbullet <-
-function(deviceind=1) {
-    library(RPushbullet)
-    options(error = function() RPushbullet::pbPost("note", "Error", geterrmessage(), deviceind=deviceind) )
-}
+    function(deviceind=1) {
+        library(RPushbullet)
+        options(error = function() RPushbullet::pbPost("note", "Error", geterrmessage(), deviceind=deviceind) )
+    }

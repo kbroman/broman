@@ -27,7 +27,7 @@
 #' @keywords
 #' manip
 convert2hex <-
-function(d)
+    function(d)
     as.character(as.hexmode(d))
 
 #' @export
@@ -64,7 +64,7 @@ dec2hex <- convert2hex
 #' @keywords
 #' manip
 hex2dec <-
-function(h)
+    function(h)
     strtoi(h, base=16)
 
 # end of convert2hex.R
