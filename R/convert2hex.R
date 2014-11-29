@@ -28,7 +28,7 @@
 #' manip
 convert2hex <-
 function(d)
-  as.hexmode(d)
+    as.character(as.hexmode(d))
 
 #' @export
 dec2hex <- convert2hex
@@ -65,8 +65,6 @@ dec2hex <- convert2hex
 #' manip
 hex2dec <-
 function(h)
-{
-  strtoi(h, base=16)
-}
+    strtoi(h, base=16)
 
 # end of convert2hex.R
