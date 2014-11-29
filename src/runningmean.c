@@ -57,55 +57,55 @@ void runningmean(int n, double *pos, double *value,
                  double *resultpos, double *result,
                  double window, int method)
 {
-  int lo, ns;
-  int i, j;
-  double *work3, work4;
+    int lo, ns;
+    int i, j;
+    double *work3, work4;
 
-  if(method==3)
-    work3 = (double *)R_alloc(n, sizeof(double));
+    if(method==3)
+        work3 = (double *)R_alloc(n, sizeof(double));
 
-  window /= 2.0;
+    window /= 2.0;
 
-  lo=0;
-  for(i=0; i<n_result; i++) {
+    lo=0;
+    for(i=0; i<n_result; i++) {
 
-    R_CheckUserInterrupt(); /* check for ^C */
+        R_CheckUserInterrupt(); /* check for ^C */
 
-    work4 = result[i] = 0.0; ns=0;
-    for(j=lo; j<n; j++) {
-      if(pos[j] < resultpos[i]-window) lo = j+1;
-      else if(pos[j] > resultpos[i]+window) break;
-      else {
+        work4 = result[i] = 0.0; ns=0;
+        for(j=lo; j<n; j++) {
+            if(pos[j] < resultpos[i]-window) lo = j+1;
+            else if(pos[j] > resultpos[i]+window) break;
+            else {
 
-        if(method==1 || method==2 || method==4)
-          result[i] += value[j];
-        if(method==3)
-          work3[ns] = value[j];
-        if(method==4)
-          work4 += (value[j]*value[j]);
+                if(method==1 || method==2 || method==4)
+                    result[i] += value[j];
+                if(method==3)
+                    work3[ns] = value[j];
+                if(method==4)
+                    work4 += (value[j]*value[j]);
 
-        ns++;
-      }
+                ns++;
+            }
+        }
+
+        if(ns==0 || (method==4 && ns==1)) result[i] = NA_REAL;
+        else {
+            if(method==2) result[i] /= (double)ns;
+            if(method==3) {
+                R_rsort(work3, ns);
+                if(ns % 2)
+                    result[i] = work3[(ns-1)/2];
+                else /* even */
+                    result[i] = (work3[ns/2-1]+work3[ns/2])/2.0;
+            }
+
+            if(method==4) { /* SD */
+                result[i] = (work4 - result[i]*result[i]/(double)ns)/(double)(ns-1);
+                if(result[i] < 0) result[i] = 0.0; /* handle potential round-off error by just thresholding to 0 */
+                else result[i] = sqrt(result[i]);
+            }
+        }
     }
-
-    if(ns==0 || (method==4 && ns==1)) result[i] = NA_REAL;
-    else {
-      if(method==2) result[i] /= (double)ns;
-      if(method==3) {
-        R_rsort(work3, ns);
-        if(ns % 2)
-          result[i] = work3[(ns-1)/2];
-        else /* even */
-          result[i] = (work3[ns/2-1]+work3[ns/2])/2.0;
-      }
-
-      if(method==4) { /* SD */
-        result[i] = (work4 - result[i]*result[i]/(double)ns)/(double)(ns-1);
-        if(result[i] < 0) result[i] = 0.0; /* handle potential round-off error by just thresholding to 0 */
-        else result[i] = sqrt(result[i]);
-      }
-    }
-  }
 
 }
 
@@ -114,7 +114,7 @@ void R_runningmean(int *n, double *pos, double *value,
                    int *n_result, double *resultpos, double *result,
                    double *window, int *method)
 {
-  runningmean(*n, pos, value, *n_result, resultpos, result, *window, *method);
+    runningmean(*n, pos, value, *n_result, resultpos, result, *window, *method);
 }
 
 
@@ -128,32 +128,32 @@ void R_runningmean(int *n, double *pos, double *value,
 void runningratio(int n, double *pos, double *numerator, double *denominator,
                   int n_result, double *resultpos, double *result, double window)
 {
-  int lo, ns;
-  int i, j;
-  double top, bottom;
+    int lo, ns;
+    int i, j;
+    double top, bottom;
 
-  window /= 2.0;
+    window /= 2.0;
 
-  lo=0;
-  for(i=0; i<n_result; i++) {
+    lo=0;
+    for(i=0; i<n_result; i++) {
 
-    R_CheckUserInterrupt(); /* check for ^C */
+        R_CheckUserInterrupt(); /* check for ^C */
 
-    top = bottom = 0.0;  ns=0;
-    for(j=lo; j<n; j++) {
-      if(pos[j] < resultpos[i]-window) lo = j+1;
-      else if(pos[j] > resultpos[i]+window) break;
-      else {
-        top += numerator[j];
-        bottom += denominator[j];
-        ns++;
-      }
+        top = bottom = 0.0;  ns=0;
+        for(j=lo; j<n; j++) {
+            if(pos[j] < resultpos[i]-window) lo = j+1;
+            else if(pos[j] > resultpos[i]+window) break;
+            else {
+                top += numerator[j];
+                bottom += denominator[j];
+                ns++;
+            }
+        }
+
+        if(ns==0) result[i] = NA_REAL;
+        else result[i] = (top / bottom);
+
     }
-
-    if(ns==0) result[i] = NA_REAL;
-    else result[i] = (top / bottom);
-
-  }
 
 }
 
@@ -161,7 +161,7 @@ void runningratio(int n, double *pos, double *numerator, double *denominator,
 void R_runningratio(int *n, double *pos, double *numerator, double *denominator,
                     int *n_result, double *resultpos, double *result, double *window)
 {
-  runningratio(*n, pos, numerator, denominator, *n_result, resultpos, result, *window);
+    runningratio(*n, pos, numerator, denominator, *n_result, resultpos, result, *window);
 }
 
 

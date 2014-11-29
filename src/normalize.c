@@ -44,74 +44,74 @@
 void normalize(int n, int p, double **X, double maxval,
                int **iX, double **tX)
 {
-  int i, j;
-  double *ave, fracpart, intpart;
-  int *nobs, max_nobs;
+    int i, j;
+    double *ave, fracpart, intpart;
+    int *nobs, max_nobs;
 
-  /* count number observed */
-  nobs = (int *)R_alloc(p, sizeof(int));
-  max_nobs = 0;
-  for(j=0; j<p; j++) {
-    nobs[j] = 0;
-    for(i=0; i<n; i++)
-      if(X[j][i] < maxval) nobs[j]++;
-    if(nobs[j] > max_nobs) max_nobs = nobs[j]; /* maximum number observed */
-  }
-  ave = (double *)R_alloc(max_nobs, sizeof(double));
-
-
-  /* sort the data */
-  for(j=0; j<p; j++)
-    rsort_with_index(tX[j], iX[j], n);
-
-  /* get averages of sorted data */
-  for(i=0; i<max_nobs; i++) {
-    ave[i] = 0.0;
-
+    /* count number observed */
+    nobs = (int *)R_alloc(p, sizeof(int));
+    max_nobs = 0;
     for(j=0; j<p; j++) {
-      if(nobs[j] == max_nobs)
-        ave[i] += tX[j][i];
-      else {
-        /* need to be a bit fancy to deal with varying numbers of observed values */
-        fracpart = modf((double)i * (double)(nobs[j]-1) / (double)(max_nobs-1), &intpart);
-
-        if(intpart > nobs[j]-1) { intpart = nobs[j]-1; fracpart = 0.0; }
-        ave[i] += (tX[j][(int)intpart]*(1.0-fracpart));
-        if(intpart <= nobs[j]-2)
-          ave[i] += (tX[j][(int)intpart+1]*fracpart);
-      }
+        nobs[j] = 0;
+        for(i=0; i<n; i++)
+            if(X[j][i] < maxval) nobs[j]++;
+        if(nobs[j] > max_nobs) max_nobs = nobs[j]; /* maximum number observed */
     }
-    ave[i] /= (double)p;
-  }
+    ave = (double *)R_alloc(max_nobs, sizeof(double));
 
-  /* substitute averages in place of original values */
-  for(j=0; j<p; j++) {
-    if(nobs[j] == max_nobs)
-      for(i=0; i<max_nobs; i++) X[j][iX[j][i]] = ave[i];
-    else {
-      for(i=0; i<nobs[j]; i++) {
-        /* need to be a bit fancy to deal with varying numbers of observed values */
-        fracpart = modf((double)i / (double)(nobs[j]-1) * (double)(max_nobs-1), &intpart);
-        if(intpart > max_nobs-1) { intpart = max_nobs-1; fracpart = 0.0; }
-        X[j][iX[j][i]] = ave[(int)intpart]*(1.0-fracpart);
-        if((int)intpart <= max_nobs-2)
-          X[j][iX[j][i]] += ave[(int)intpart+1]*fracpart;
-      }
+
+    /* sort the data */
+    for(j=0; j<p; j++)
+        rsort_with_index(tX[j], iX[j], n);
+
+    /* get averages of sorted data */
+    for(i=0; i<max_nobs; i++) {
+        ave[i] = 0.0;
+
+        for(j=0; j<p; j++) {
+            if(nobs[j] == max_nobs)
+                ave[i] += tX[j][i];
+            else {
+                /* need to be a bit fancy to deal with varying numbers of observed values */
+                fracpart = modf((double)i * (double)(nobs[j]-1) / (double)(max_nobs-1), &intpart);
+
+                if(intpart > nobs[j]-1) { intpart = nobs[j]-1; fracpart = 0.0; }
+                ave[i] += (tX[j][(int)intpart]*(1.0-fracpart));
+                if(intpart <= nobs[j]-2)
+                    ave[i] += (tX[j][(int)intpart+1]*fracpart);
+            }
+        }
+        ave[i] /= (double)p;
     }
-  }
+
+    /* substitute averages in place of original values */
+    for(j=0; j<p; j++) {
+        if(nobs[j] == max_nobs)
+            for(i=0; i<max_nobs; i++) X[j][iX[j][i]] = ave[i];
+        else {
+            for(i=0; i<nobs[j]; i++) {
+                /* need to be a bit fancy to deal with varying numbers of observed values */
+                fracpart = modf((double)i / (double)(nobs[j]-1) * (double)(max_nobs-1), &intpart);
+                if(intpart > max_nobs-1) { intpart = max_nobs-1; fracpart = 0.0; }
+                X[j][iX[j][i]] = ave[(int)intpart]*(1.0-fracpart);
+                if((int)intpart <= max_nobs-2)
+                    X[j][iX[j][i]] += ave[(int)intpart+1]*fracpart;
+            }
+        }
+    }
 }
 
 /* wrapper for R */
 void R_normalize(int *n, int *p, double *x, double *maxval, int *ix, double *tx)
 {
-  double **X, **tX;
-  int **iX;
+    double **X, **tX;
+    int **iX;
 
-  reorg_dmatrix(*n, *p, x, &X);
-  reorg_imatrix(*n, *p, ix, &iX);
-  reorg_dmatrix(*n, *p, tx, &tX);
+    reorg_dmatrix(*n, *p, x, &X);
+    reorg_imatrix(*n, *p, ix, &iX);
+    reorg_dmatrix(*n, *p, tx, &tX);
 
-  normalize(*n, *p, X, *maxval, iX, tX);
+    normalize(*n, *p, X, *maxval, iX, tX);
 }
 
 
@@ -123,13 +123,13 @@ void R_normalize(int *n, int *p, double *x, double *maxval, int *ix, double *tx)
  **********************************************************************/
 void reorg_dmatrix(int nr, int nc, double *x, double ***X)
 {
-  int i;
+    int i;
 
-  *X = (double **)R_alloc(nc, sizeof(double *));
+    *X = (double **)R_alloc(nc, sizeof(double *));
 
-  (*X)[0] = x;
-  for(i=1; i< nc; i++)
-    (*X)[i] = (*X)[i-1] + nr;
+    (*X)[0] = x;
+    for(i=1; i< nc; i++)
+        (*X)[i] = (*X)[i-1] + nr;
 }
 
 /**********************************************************************
@@ -140,13 +140,13 @@ void reorg_dmatrix(int nr, int nc, double *x, double ***X)
  **********************************************************************/
 void reorg_imatrix(int nr, int nc, int *x, int ***X)
 {
-  int i;
+    int i;
 
-  *X = (int **)R_alloc(nc, sizeof(int *));
+    *X = (int **)R_alloc(nc, sizeof(int *));
 
-  (*X)[0] = x;
-  for(i=1; i< nc; i++)
-    (*X)[i] = (*X)[i-1] + nr;
+    (*X)[0] = x;
+    for(i=1; i< nc; i++)
+        (*X)[i] = (*X)[i-1] + nr;
 }
 
 /* end of normalize.c */
