@@ -4,15 +4,21 @@
 #' Set options to use RPushbullet to use pushbullet to push
 #' notifications of any error messages.
 #'
-#' @param deviceind Numeric index for device to which errors will be
-#' pushed; passed to \code{\link[RPushbullet]{pbPost}}.
+#' @param recipients A character or numeric vector indicating the
+#' devices this post should go to. If missing, the default device is
+#' looked up from an optional setting, and if none has been set the
+#' push is sent to all devices. (passed to
+#' \code{\link[RPushbullet]{pbPost}}.)
 #'
 #' @export
+#' @import RPushbullet
 #' @examples
 #' \dontrun{errors2pushbullet()}
 #' @keywords utilities
 errors2pushbullet <-
-    function(deviceind=1) {
-        library(RPushbullet)
-        options(error = function() RPushbullet::pbPost("note", "Error", geterrmessage(), deviceind=deviceind) )
+    function(recipients) {
+        if(!missing(recipients) && !is.null(recipients))
+            options(error = function() RPushbullet::pbPost("note", "Error", geterrmessage(), recipients=recipients) )
+        else
+            options(error = function() RPushbullet::pbPost("note", "Error", geterrmessage()) )
     }

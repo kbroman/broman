@@ -4,11 +4,14 @@
 \alias{errors2pushbullet}
 \title{Send further errors to pushbullet}
 \usage{
-errors2pushbullet(deviceind = 1)
+errors2pushbullet(recipients)
 }
 \arguments{
-\item{deviceind}{Numeric index for device to which errors will be
-pushed; passed to \code{\link[RPushbullet]{pbPost}}.}
+\item{recipients}{A character or numeric vector indicating the
+devices this post should go to. If missing, the default device is
+looked up from an optional setting, and if none has been set the
+push is sent to all devices. (passed to
+\code{\link[RPushbullet]{pbPost}}.)}
 }
 \description{
 Set options to use RPushbullet to use pushbullet to push
