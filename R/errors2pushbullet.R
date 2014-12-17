@@ -18,7 +18,13 @@
 errors2pushbullet <-
     function(recipients) {
         if(!missing(recipients) && !is.null(recipients))
-            options(error = function() RPushbullet::pbPost("note", "Error", geterrmessage(), recipients=recipients) )
+            options(error = function() {
+                RPushbullet::pbPost("note", "Error", geterrmessage(), recipients=recipients)
+                if(!interactive()) stop(geterrmessage())
+            } )
         else
-            options(error = function() RPushbullet::pbPost("note", "Error", geterrmessage()) )
+            options(error = function()  {
+                RPushbullet::pbPost("note", "Error", geterrmessage())
+                if(!interactive()) stop(geterrmessage())
+            } )
     }
