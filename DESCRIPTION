@@ -1,20 +1,21 @@
 Package: broman
-Version: 0.51-1
-Date: 12/17/2014
+Version: 0.52-1
+Date: 2015-01-27
 Title: Karl Broman's R code
 Description: Miscellaneous R functions
 Author: Karl W Broman <kbroman@biostat.wisc.edu>, with contributions from Aimee
     Teo Broman
 Maintainer: Karl W Broman <kbroman@biostat.wisc.edu>
 Depends:
-    R (>= 2.15.0),
-    RPushbullet
+    R (>= 2.15.0)
 Imports:
     utils,
     graphics,
     grDevices,
     stats,
     assertthat,
+    RPushbullet,
+    jsonlite
 Suggests:
     testthat,
     devtools,
