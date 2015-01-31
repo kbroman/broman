@@ -68,3 +68,34 @@ load_pushbullet <-
         else stop("Cannot load ~/.rpushbullet.json")
     }
 }
+
+# done
+#' Send a short message via RPushbullet.
+#'
+#' Send a short message via RPushbullet, to be used to indicate that
+#' some R job is complete.
+#' #'
+#' @param message A character string with a message.
+#' (passed to \code{\link[RPushbullet]{pbPost}}.)
+#' @param recipients A character or numeric vector indicating the
+#' devices this post should go to. If missing, the default device is
+#' looked up from an optional setting, and if none has been set the
+#' push is sent to all devices. (passed to
+#' \code{\link[RPushbullet]{pbPost}}.)
+#'
+#' @export
+#' @import RPushbullet jsonlite
+#' @examples
+#' \dontrun{done("Your R job is complete.")}
+#' @keywords utilities
+# got this name from Ian Kyle; see http://bit.ly/IanKyle_systemdone
+done <-
+    function(message="R is done", recipients)
+{
+    load_pushbullet()
+
+    if(!missing(recipients) && !is.null(recipients))
+        RPushbullet::pbPost("note", message, recipients=recipients)
+    else
+        RPushbullet::pbPost("note", message)
+}
