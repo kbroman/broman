@@ -22,7 +22,7 @@ Even simpler interface for \code{\link[RPushbullet]{pbPost}}
 to send a bit of text to pushbullet.
 }
 \examples{
-\dontrun{errors2pushbullet()}
+\dontrun{note("Hello.")}
 }
 \keyword{utilities}
 

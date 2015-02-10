@@ -14,7 +14,7 @@
 #'
 #' @export
 #' @examples
-#' \dontrun{errors2pushbullet()}
+#' \dontrun{note("Hello.")}
 #' @keywords utilities
 note <-
     function(title, recipients, body="")
