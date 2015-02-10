@@ -15,9 +15,16 @@ copyright (c) 2001-2015, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.52-1, 2/9/2015:
+Version 0.54-1, 2015-02-10:
+
+  Add note() function, which is just a wrapper for
+  RPushbullet::pbPost.
+
+
+Version 0.53-1, 2/9/2015:
 
   Add exit() function, which is just the same as q("no").
+
 
 Version 0.50-1, 12/1/2014:
 
