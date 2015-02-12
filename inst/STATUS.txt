@@ -15,10 +15,12 @@ copyright (c) 2001-2015, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.54-1, 2015-02-10:
+Version 0.54-2, 2015-02-12:
 
   Add note() function, which is just a wrapper for
   RPushbullet::pbPost.
+
+  Revised make() to work with any directory (not just an R package).
 
 
 Version 0.53-1, 2/9/2015:
