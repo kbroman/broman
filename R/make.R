@@ -8,6 +8,8 @@
 #'
 #' @param makefile File name of makefile.
 #'
+#' @param target Optional character string specifying the target.
+#'
 #' @param quiet If TRUE suppresses output from this function.
 #'
 #' @export
@@ -21,7 +23,7 @@
 #' @seealso \code{\link[devtools]{load_all}}
 #' @keywords utilities
 make <-
-    function(pkg = ".", makefile="Makefile", quiet=FALSE)
+    function(pkg = ".", makefile="Makefile", target="", quiet=FALSE)
 {
     # try to treat pkg as devtools treats a package
     #     but if devtools throws an error, just treat it as a string
@@ -32,7 +34,7 @@ make <-
     # include -f argument only if makefile is not obvious
     fileflag <- ifelse(makefile == "" || makefile=="Makefile" || makefile == "makefile", "", paste("-f", makefile))
 
-    system(paste("cd", pkgpath, "; make", fileflag),
+    system(paste("cd", pkgpath, "; make", fileflag, target),
            ignore.stdout=quiet, ignore.stderr=quiet,
            intern=FALSE)
 }

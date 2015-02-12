@@ -4,15 +4,18 @@
 \alias{make}
 \title{Run make within a package directory}
 \usage{
-make(pkg = ".", makefile = "Makefile", quiet = FALSE)
+make(pkg = ".", makefile = "Makefile", target = "", quiet = FALSE)
 }
 \arguments{
-\item{pkg}{package description, can be path or package name.
-See \code{\link[devtools]{as.package}} for more information}
+\item{pkg}{Path to directory containing the GNU Make file, or an
+Rpackage description, which can be a path or a package name. (See
+\code{\link[devtools]{as.package}} for more information.)}
 
-\item{makefile}{File name of makefile}
+\item{makefile}{File name of makefile.}
 
-\item{quiet}{If TRUE suppresses output from this function}
+\item{target}{Optional character string specifying the target.}
+
+\item{quiet}{If TRUE suppresses output from this function.}
 }
 \value{
 Exit value from \code{\link[base]{system}} with \code{intern=FALSE}

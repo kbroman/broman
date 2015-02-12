@@ -21,6 +21,7 @@ Version 0.54-2, 2015-02-12:
   RPushbullet::pbPost.
 
   Revised make() to work with any directory (not just an R package).
+  Also added a "target" argument.
 
 
 Version 0.53-1, 2/9/2015:
