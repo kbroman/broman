@@ -15,6 +15,12 @@ copyright (c) 2001-2015, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.54-3, 2015-03-05:
+
+  Delete functions get0() and get.() since there's going to be a get0
+  function in base R 3.2.0.
+
+
 Version 0.54-2, 2015-02-12:
 
   Add note() function, which is just a wrapper for
