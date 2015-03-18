@@ -3,7 +3,7 @@ all: rmobj doc
 
 # build package documentation
 doc:
-	R -e 'library(devtools);document()'
+	R -e 'devtools::document()'
 
 # remove .o and .so files
 rmobj:
