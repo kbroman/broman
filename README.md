@@ -1,6 +1,6 @@
 ## R/broman
 
-[![Build Status](https://travis-ci.org/kbroman/broman.png?branch=master)](https://travis-ci.org/kbroman/broman)
+[![Build Status](https://travis-ci.org/kbroman/broman.svg?branch=master)](https://travis-ci.org/kbroman/broman)
 
 [Karl W Broman](http://kbroman.org)
 
