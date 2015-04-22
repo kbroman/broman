@@ -1,8 +1,8 @@
 Package: broman
-Version: 0.54-3
-Date: 2015-03-05
+Version: 0.55-1
+Date: 2015-04-22
 Title: Karl Broman's R code
-Description: Miscellaneous R functions
+Description: Miscellaneous R functions.
 Author: Karl W Broman <kbroman@biostat.wisc.edu>, with contributions from Aimee
     Teo Broman
 Maintainer: Karl W Broman <kbroman@biostat.wisc.edu>
@@ -15,7 +15,9 @@ Imports:
     stats,
     assertthat,
     RPushbullet,
-    jsonlite
+    jsonlite,
+    ggplot2,
+    grid
 Suggests:
     testthat,
     devtools,
