@@ -26,6 +26,7 @@ theme_karl <-
 
         ggplot2::theme(axis.ticks.length=grid::unit(0, "cm"),
                        panel.border=ggplot2::element_rect(fill=NA, color="black"),
+                       strip.background=ggplot2::element_rect(fill="gray80", color="black"),
                        ...)
         )
 }

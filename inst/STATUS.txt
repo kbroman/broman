@@ -15,7 +15,12 @@ copyright (c) 2001-2015, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.55, 2015-04-22:
+Version 0.55-3, 2015-04-27:
+
+  In theme_karl(), add black rectangle around the facet rectangles, too.
+
+
+Version 0.55-2, 2015-04-22:
 
   Add function theme_karl() (aka karl_theme()), with a ggplot2 theme
   that removes the tick boxes and adds a black border.
