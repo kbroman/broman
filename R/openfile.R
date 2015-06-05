@@ -22,6 +22,6 @@ openfile <-
     command <- switch(Sys.info()[1],
                       "Darwin"=paste("open", file),
                       "Windows"=paste("start", file),
-                      stop("openfile doesn't work with ", Sys.info()[1]))
+                      stop("Not sure what to do with OS ", Sys.info()[1], " OS"))
     system(command)
 }
