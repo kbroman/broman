@@ -2,11 +2,15 @@
 #'
 #' Open a file
 #'
-#' Open a file using \code{\link[base]{system}} and \code{open} (on
-#' Mac) or \code{start} (on Windows).
+#' Open a file using \code{\link[base]{system}} and \code{open}.
 #'
 #' @param file File name (character string)
 #'
+#' @details I'd thought that to open a file you'd use \code{open} in
+#' MacOS and \code{start} in Windows, but \code{system("start
+#' myfile.pdf")} doesn't work in Windows, but rather
+#' \code{system("open myfile.pdf")} does, so here we're just using
+
 #' @export
 #'
 #' @return None.
@@ -19,9 +23,5 @@
 openfile <-
     function(file)
 {
-    command <- switch(Sys.info()[1],
-                      "Darwin"=paste("open", file),
-                      "Windows"=paste("start", file),
-                      stop("Not sure what to do with OS ", Sys.info()[1], " OS"))
-    system(command)
+    system( paste("open", file) )
 }

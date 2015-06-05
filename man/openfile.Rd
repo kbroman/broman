@@ -13,8 +13,13 @@ openfile(file)
 None.
 }
 \description{
-Open a file using \code{\link[base]{system}} and \code{open} (on
-Mac) or \code{start} (on Windows).
+Open a file using \code{\link[base]{system}} and \code{open}.
+}
+\details{
+I'd thought that to open a file you'd use \code{open} in
+MacOS and \code{start} in Windows, but \code{system("start
+myfile.pdf")} doesn't work in Windows, but rather
+\code{system("open myfile.pdf")} does, so here we're just using
 }
 \examples{
 \dontrun{openfile("myplot.pdf")}
