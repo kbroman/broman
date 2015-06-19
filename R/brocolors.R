@@ -8,34 +8,39 @@
 #' @export
 #' @seealso \code{\link{plot_crayons}}
 #' @examples
-#' plot(0, 0, type="n", xlab="", ylab="", xlim=c(0, 9), ylim=c(7.5, 0), yaxs="i",
-#'      xaxt="n", yaxt="n", mar=c(0.6, 5.1, 0.6, 0.6), xaxs="i")
-#' axis(side=2, at=1:7, c("general", "bg", "bgpng", "CC", "f2", "sex", "main"), las=1)
+#' par(mar=c(0.6,5.1,0.6,0.6))
+#' plot(0, 0, type="n", xlab="", ylab="", xlim=c(0, 9), ylim=c(8.5, 0), yaxs="i",
+#'      xaxt="n", yaxt="n", xaxs="i")
+#' axis(side=2, at=1:8, c("general", "general2", "bg", "bgpng", "CC", "f2", "sex", "main"), las=1)
 #'
 #' gen <- brocolors("general")
 #' points(seq(along=gen), rep(1,length(gen)), pch=21, bg=gen, cex=4)
 #' text(seq(along=gen), rep(c(0.55, 0.7), length(gen))[seq(along=gen)], names(gen))
 #'
-#' points(1, 2, pch=21, bg=brocolors("bg"), cex=4)
-#' points(1, 3, pch=21, bg=brocolors("bgpng"), cex=4)
+#' gen2 <- brocolors("general2")
+#' points(seq(along=gen2), rep(2,length(gen2)), pch=21, bg=gen2, cex=4)
+#' text(seq(along=gen2), rep(1+c(0.55, 0.7), length(gen2))[seq(along=gen2)], names(gen2))
+#'
+#' points(1, 3, pch=21, bg=brocolors("bg"), cex=4)
+#' points(1, 4, pch=21, bg=brocolors("bgpng"), cex=4)
 #'
 #' CC <- brocolors("CC")
-#' points(seq(along=CC), rep(4,length(CC)), pch=21, bg=CC, cex=4)
-#' text(seq(along=CC), rep(3+c(0.55, 0.7), length(CC))[seq(along=CC)], names(CC))
+#' points(seq(along=CC), rep(5,length(CC)), pch=21, bg=CC, cex=4)
+#' text(seq(along=CC), rep(4+c(0.55, 0.7), length(CC))[seq(along=CC)], names(CC))
 #'
 #' f2 <- brocolors("f2")
-#' points(seq(along=f2), rep(5,length(f2)), pch=21, bg=f2, cex=4)
-#' text(seq(along=f2), rep(4.7, length(f2)), names(f2))
+#' points(seq(along=f2), rep(6,length(f2)), pch=21, bg=f2, cex=4)
+#' text(seq(along=f2), rep(5.7, length(f2)), names(f2))
 #'
 #' sex <- brocolors("sex")
-#' points(seq(along=sex), rep(6,length(sex)), pch=21, bg=sex, cex=4)
-#' text(seq(along=sex), rep(5.7, length(sex)), names(sex))
+#' points(seq(along=sex), rep(7,length(sex)), pch=21, bg=sex, cex=4)
+#' text(seq(along=sex), rep(6.7, length(sex)), names(sex))
 #'
-#' points(1, 7, pch=21, bg=brocolors("main"), cex=4)
+#' points(1, 8, pch=21, bg=brocolors("main"), cex=4)
 
 #' @keywords utilities
 brocolors <-
-    function(set=c("general", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
+    function(set=c("general", "general2", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
 {
     general <- c('lightblue'  =rgb(102,203,254,maxColorValue=255),
                  'hotpink'    =rgb(254,  0,128,maxColorValue=255),
@@ -45,6 +50,11 @@ brocolors <-
                  'lightpurple'=rgb(203,102,254,maxColorValue=255),
                  'yellow'     =rgb(254,203,102,maxColorValue=255),
                  'darkblue'   =rgb(  0,128,128,maxColorValue=255))
+
+    general2 <- c(blue="#7B68ED",
+                  green="#1B9E78",
+                  orange="#E59E00",
+                  red="#ca3767")
 
     bg <- rgb(24, 24, 24, maxColorValue=255)
     bgpng <- rgb(32, 32, 32, maxColorValue=255)
@@ -204,6 +214,7 @@ brocolors <-
 
     switch(match.arg(set),
            general=general,
+           general2=general2,
            bg=bg,
            bgpng=bgpng,
            CC=CC,
