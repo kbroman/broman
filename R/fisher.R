@@ -77,6 +77,8 @@ fisher <-
 #' \code{\link[stats]{chisq.test}},
 #'   \code{\link[stats]{fisher.test}}, \code{\link{fisher}}
 #'
+#' @importFrom stats chisq.test
+#'
 #' @keywords
 #' htest
 chisq <-

@@ -13,6 +13,8 @@
 #'
 #' @export
 #'
+#' @importFrom grDevices rainbow
+#'
 #' @return
 #' Vector of colors, from blue to red.
 #'

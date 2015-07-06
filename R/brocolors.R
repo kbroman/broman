@@ -240,6 +240,7 @@ brocolors <-
 #' @seealso \code{\link{brocolors}}
 #' @importFrom grDevices rgb2hsv
 #' @importFrom graphics par plot rect text
+#' @importFrom stats hclust dist
 #' @examples
 #' plot_crayons()
 plot_crayons <-

@@ -24,6 +24,8 @@
 #'
 #' @export
 #'
+#' @importFrom graphics strwidth
+#'
 #' @return
 #' Minimum and maximum x-axis limits for adding horizontal text
 #'

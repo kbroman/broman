@@ -21,7 +21,7 @@
 #'   \code{\link{triarrow}}.
 #'
 #' @export
-#' @importFrom graphics arrows layout plot par text rect lines
+#' @importFrom graphics arrows layout plot par text rect lines segments
 #'
 #' @return
 #' The (x,y) coordinates of the points plotted, if any.
@@ -98,6 +98,8 @@ triplot <-
 #'   First use \code{\link{triplot}} to first plot the equilateral triangle.
 #'
 #' @export
+#'
+#' @importFrom graphics points
 #'
 #' @return
 #' The (x,y) coordinates of the points plotted.

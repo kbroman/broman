@@ -15,10 +15,12 @@
 #'     Corresponding quantile pairs define the line drawn.
 #'
 #' @param qtype the \code{type} of quantile computation used in \code{\link{quantile}}.
-#' 
+#'
 #' @param ...  graphical parameters.
 #'
 #' @export
+#'
+#' @importFrom graphics abline
 #'
 #' @return
 #' Intercept and slope of the line.

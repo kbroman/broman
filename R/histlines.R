@@ -58,6 +58,8 @@
 #' \code{\link[graphics]{hist}},
 #'   \code{\link[graphics]{lines}}
 #'
+#' @importFrom graphics hist
+#'
 #' @keywords
 #' graphics
 histlines <-

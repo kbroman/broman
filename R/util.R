@@ -16,6 +16,8 @@
 #' @examples
 #' bromanversion()
 #'
+#' @importFrom utils packageVersion
+#'
 #' @keywords
 #' print
 bromanversion <-

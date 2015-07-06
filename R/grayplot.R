@@ -68,6 +68,8 @@
 #'   \code{\link[graphics]{rect}},
 #'   \code{\link[graphics]{points}}
 #'
+#' @importFrom graphics title axis abline points
+#'
 #' @keywords
 #' graphics
 grayplot <-

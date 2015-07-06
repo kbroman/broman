@@ -41,6 +41,8 @@
 #' \code{\link[graphics]{arrows}},
 #'   \code{\link[graphics]{locator}}
 #'
+#' @importFrom graphics locator arrows
+#'
 #' @keywords
 #' hplot
 arrowlocator <-
