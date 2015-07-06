@@ -11,7 +11,6 @@
 #' \code{\link[RPushbullet]{pbPost}}.)
 #'
 #' @export
-#' @import RPushbullet jsonlite
 #' @examples
 #' \dontrun{errors2pushbullet()}
 #' @keywords utilities
@@ -84,7 +83,7 @@ load_pushbullet <-
 #' \code{\link[RPushbullet]{pbPost}}.)
 #'
 #' @export
-#' @import RPushbullet jsonlite
+#'
 #' @examples
 #' \dontrun{done("Your R job is complete.")}
 #' @keywords utilities
