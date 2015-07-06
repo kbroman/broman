@@ -77,20 +77,18 @@ fisher <-
 #' \code{\link[stats]{chisq.test}},
 #'   \code{\link[stats]{fisher.test}}, \code{\link{fisher}}
 #'
-#' @importFrom stats chisq.test
-#'
 #' @keywords
 #' htest
 chisq <-
     function(tab, n.sim=1000)
 {
-    observed <- suppressWarnings(chisq.test(tab)$stat)
+    observed <- suppressWarnings(stats::chisq.test(tab)$stat)
     sims <- 1:n.sim
     a <- list(rep(row(tab),tab),rep(col(tab),tab))
     for(i in 1:n.sim) {
         a[[1]] <- sample(a[[1]])
         tab2 <- table(a)
-        sims[i] <- suppressWarnings(chisq.test(tab2)$stat)
+        sims[i] <- suppressWarnings(stats::chisq.test(tab2)$stat)
     }
     mean(sims >= observed)
 }

@@ -20,8 +20,6 @@
 #'
 #' @export
 #'
-#' @importFrom graphics abline
-#'
 #' @return
 #' Intercept and slope of the line.
 #'
@@ -43,6 +41,6 @@ qqline2 <- function(x, y, probs = c(0.25, 0.75), qtype = 7, ...)
     y <- quantile(y, probs, names=FALSE, type=qtype, na.rm = TRUE)
     slope <- diff(y)/diff(x)
     int <- y[1L] - slope*x[1L]
-    abline(int, slope, ...)
+    graphics::abline(int, slope, ...)
     invisible(c(intercept=int, slope=slope))
 }

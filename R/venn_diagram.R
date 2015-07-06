@@ -23,8 +23,6 @@
 #'
 #' @export
 #'
-#' @importFrom stats uniroot
-#'
 #' @return
 #' None.
 #'
@@ -138,7 +136,7 @@ venn <-
                     }
 
                 g <- function(d,rA,rB,area) find.overlap(rA,rB,d)-area
-                uniroot(g,lower=rB-rA,upper=rB+rA, rA=rA, rB=rB,area=area)$root
+                stats::uniroot(g,lower=rB-rA,upper=rB+rA, rA=rA, rB=rB,area=area)$root
             }
         ##############################
         # back to the venn() function

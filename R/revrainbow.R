@@ -13,8 +13,6 @@
 #'
 #' @export
 #'
-#' @importFrom grDevices rainbow
-#'
 #' @return
 #' Vector of colors, from blue to red.
 #'
@@ -30,4 +28,4 @@
 #' color
 revrainbow <-
     function(n=256, ...)
-    rev(rainbow(start=0, end=2/3, n=n, ...))
+    rev(grDevices::rainbow(start=0, end=2/3, n=n, ...))

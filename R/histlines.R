@@ -58,15 +58,13 @@
 #' \code{\link[graphics]{hist}},
 #'   \code{\link[graphics]{lines}}
 #'
-#' @importFrom graphics hist
-#'
 #' @keywords
 #' graphics
 histlines <-
     function(x, y, breaks, use=c("counts", "density"))
 {
     if(missing(y)) { # input doesn't count the count information
-        out <- hist(x, breaks=breaks, plot=FALSE)
+        out <- graphics::hist(x, breaks=breaks, plot=FALSE)
         x <- out$breaks
         use <- match.arg(use)
         y <- out[[use]]

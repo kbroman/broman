@@ -111,7 +111,6 @@ paired.perm.test <-
 #'   are perfomed to give an exact or approximate conditional p-value.
 #'
 #' @export
-#' @importFrom stats t.test
 #'
 #' @return
 #' If \code{pval=TRUE}, the output is a single number: the P-value
@@ -143,7 +142,7 @@ perm.test <-
     X <- c(x,y)
     z <- rep(1:0,c(kx,ky))
 
-    tobs <- t.test(x,y,var.equal=var.equal)$statistic
+    tobs <- stats::t.test(x,y,var.equal=var.equal)$statistic
 
     if(is.null(n.perm)) { # do exact permutation test
         o <- binary.v(n)  # indicator of all possible samples
@@ -153,7 +152,7 @@ perm.test <-
         for(i in 1:nc) {
             xn <- X[o[,i]==1]
             yn <- X[o[,i]==0]
-            allt[i] <- t.test(xn,yn,var.equal=var.equal)$statistic
+            allt[i] <- stats::t.test(xn,yn,var.equal=var.equal)$statistic
         }
     }
     else { # do 1000 permutations of the data
@@ -162,7 +161,7 @@ perm.test <-
             z <- sample(z)
             xn <- X[z==1]
             yn <- X[z==0]
-            allt[i] <- t.test(xn,yn,var.equal=var.equal)$statistic
+            allt[i] <- stats::t.test(xn,yn,var.equal=var.equal)$statistic
         }
     }
     if(pval) return(mean( abs(allt) >= abs(tobs) ))

@@ -22,8 +22,6 @@
 #'
 #' @export
 #'
-#' @importFrom graphics strwidth
-#'
 #' @return
 #' Minimum and maximum x-axis limits for adding horizontal text
 #'
@@ -46,7 +44,7 @@
 #' @seealso
 #' \code{text}
 strwidth2xlim <- function(x,xstring, pos=4, offset=0.5,...){
-    xwid <- (strwidth(xstring,units="inches", ...)+
+    xwid <- (graphics::strwidth(xstring,units="inches", ...)+
              offset*par("cin")[1])/par("pin")[1]
     xmax <- max(x,na.rm=TRUE)
     xmin <- min(x,na.rm=TRUE)

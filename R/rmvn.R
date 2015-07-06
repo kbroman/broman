@@ -15,7 +15,6 @@
 #'   \code{\link[base]{chol}}.
 #'
 #' @export
-#' @importFrom stats rnorm
 #'
 #' @return
 #' A matrix of size n x \code{length(mu)}.  Each row corresponds to a
@@ -36,5 +35,5 @@ rmvn <-
     if(any(is.na(match(dim(V),p))))
         stop("Dimension problem!")
     D <- chol(V)
-    matrix(rnorm(n*p),ncol=p) %*% D + rep(mu,rep(n,p))
+    matrix(stats::rnorm(n*p),ncol=p) %*% D + rep(mu,rep(n,p))
 }

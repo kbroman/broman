@@ -21,7 +21,6 @@
 #'   \code{\link{triarrow}}.
 #'
 #' @export
-#' @importFrom graphics arrows layout plot par text rect lines segments
 #'
 #' @return
 #' The (x,y) coordinates of the points plotted, if any.
@@ -51,10 +50,10 @@ triplot <-
     lim[1,] <- lim[1,] - rlim*0.15
     lim[2,] <- lim[2,] + rlim*0.15
 
-    plot(0, 0, type="n", xlab="", ylab="", xaxt="n", yaxt="n",
-         xlim=lim[,1], ylim=lim[,2], xaxs="i", yaxs="i", ...)
+    graphics::plot(0, 0, type="n", xlab="", ylab="", xaxt="n", yaxt="n",
+                   xlim=lim[,1], ylim=lim[,2], xaxs="i", yaxs="i", ...)
 
-    pin <- par("pin")
+    pin <- graphics::par("pin")
     if(pin[2] > pin[1])
         pts[2,] <- pts[2,] / pin[2] * pin[1]*sqrt(3)/2
     else
@@ -68,10 +67,10 @@ triplot <-
     ya <- c(0,rlim[2]*0.06,0)
     xa <- c(rlim[1],0,-rlim[1])*0.06
     for(i in 1:3)
-        text(pts[1,i]+xa[i], pts[2,i]+ya[i], labels[i])
+        graphics::text(pts[1,i]+xa[i], pts[2,i]+ya[i], labels[i])
     for(i in 1:2) {
         for(j in (i+1):3)
-            segments(pts[1,i], pts[2,i], pts[1,j], pts[2,j], lwd=2)
+            graphics::segments(pts[1,i], pts[2,i], pts[1,j], pts[2,j], lwd=2)
     }
     invisible(pts)
 }
@@ -98,8 +97,6 @@ triplot <-
 #'   First use \code{\link{triplot}} to first plot the equilateral triangle.
 #'
 #' @export
-#'
-#' @importFrom graphics points
 #'
 #' @return
 #' The (x,y) coordinates of the points plotted.
@@ -137,7 +134,7 @@ tripoints <-
     }
 
     x <- t(m %*% x)
-    pin <- par("pin")
+    pin <- graphics::par("pin")
     if(pin[2] > pin[1]) {
         pts[2,] <- pts[2,] / pin[2] * pin[1]*sqrt(3)/2
         x[,2] <- x[,2] / pin[2] * pin[1]*sqrt(3)/2
@@ -148,7 +145,7 @@ tripoints <-
     }
     for(i in 1:2) x[,i] <- x[,i] - mean(range(pts[i,])) + mean(range(lim[,i]))
 
-    points(x, ...)
+    graphics::points(x, ...)
     invisible(x)
 }
 
@@ -211,7 +208,7 @@ trilines <-
     }
 
     x <- t(m %*% x)
-    pin <- par("pin")
+    pin <- graphics::par("pin")
     if(pin[2] > pin[1]) {
         pts[2,] <- pts[2,] / pin[2] * pin[1]*sqrt(3)/2
         x[,2] <- x[,2] / pin[2] * pin[1]*sqrt(3)/2
@@ -222,7 +219,7 @@ trilines <-
     }
     for(i in 1:2) x[,i] <- x[,i] - mean(range(pts[i,])) + mean(range(lim[,i]))
 
-    lines(x, ...)
+    graphics::lines(x, ...)
     invisible(x)
 }
 
@@ -289,7 +286,7 @@ triarrow <-
     }
 
     x <- t(m %*% x)
-    pin <- par("pin")
+    pin <- graphics::par("pin")
     if(pin[2] > pin[1]) {
         pts[2,] <- pts[2,] / pin[2] * pin[1]*sqrt(3)/2
         x[,2] <- x[,2] / pin[2] * pin[1]*sqrt(3)/2
@@ -300,6 +297,6 @@ triarrow <-
     }
     for(i in 1:2) x[,i] <- x[,i] - mean(range(pts[i,])) + mean(range(lim[,i]))
 
-    arrows(x[1,1], x[1,2], x[2,1], x[2,2], ...)
+    graphics::arrows(x[1,1], x[1,2], x[2,1], x[2,2], ...)
     invisible(x)
 }

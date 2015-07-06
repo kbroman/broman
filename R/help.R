@@ -11,7 +11,6 @@
 #'   argument \code{htmlhelp=TRUE}.
 #'
 #' @export
-#' @importFrom utils help
 #'
 #' @return
 #' No return value.
@@ -27,5 +26,5 @@
 h <-
     function(...)
 {
-    help(..., help_type="html")
+    utils::help(..., help_type="html")
 }

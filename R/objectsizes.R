@@ -14,7 +14,6 @@
 #'   list of objects.
 #'
 #' @export
-#' @importFrom utils help object.size
 #'
 #' @return
 #' A data frame with the only column being the size of each object in
@@ -37,7 +36,7 @@ objectsizes <-
     result <- data.frame(Mb=rep(0, length(obj)))
     rownames(result) <- obj
     for(i in seq(along=obj))
-        result[i,1] <- object.size(get(obj[i], pos=1))/1024^2
+        result[i,1] <- utils::object.size(get(obj[i], pos=1))/1024^2
     if(sortbysize) result <- result[order(result[,1], decreasing=FALSE),,drop=FALSE]
     result
 }

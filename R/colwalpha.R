@@ -9,7 +9,6 @@
 #'
 #' @return A character string representing a color
 #'
-#' @importFrom grDevices col2rgb rgb
 #' @export
 #' @keywords color
 #' @examples
@@ -20,6 +19,6 @@ colwalpha <-
     stopifnot(alpha >=0, alpha <= 1)
     alpha <- alpha * 255
 
-    rgbval <- col2rgb(color)
-    rgb(rgbval[1,], rgbval[2,], rgbval[3,], alpha=alpha, maxColorValue=255)
+    rgbval <- grDevices::col2rgb(color)
+    grDevices::rgb(rgbval[1,], rgbval[2,], rgbval[3,], alpha=alpha, maxColorValue=255)
 }

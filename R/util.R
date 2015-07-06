@@ -16,14 +16,12 @@
 #' @examples
 #' bromanversion()
 #'
-#' @importFrom utils packageVersion
-#'
 #' @keywords
 #' print
 bromanversion <-
     function()
 {
-    version <- unlist(packageVersion("broman"))
+    version <- unlist(utils::packageVersion("broman"))
 
     # make it like #.#-#
     paste(c(version,".","-")[c(1,4,2,5,3)], collapse="")
