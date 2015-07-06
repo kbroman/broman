@@ -20,5 +20,8 @@ notifications of any error messages.
 \examples{
 \dontrun{errors2pushbullet()}
 }
+\seealso{
+\code{\link{stop_sending_errors}}
+}
 \keyword{utilities}
 

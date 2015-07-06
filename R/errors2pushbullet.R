@@ -14,6 +14,7 @@
 #' @examples
 #' \dontrun{errors2pushbullet()}
 #' @keywords utilities
+#' @seealso \code{\link{stop_sending_errors}}
 errors2pushbullet <-
     function(recipients) {
         load_pushbullet()
@@ -29,6 +30,24 @@ errors2pushbullet <-
                 if(!interactive()) stop(geterrmessage())
             } )
     }
+
+# errors2pushbullet
+#' Stop sending errors to pushbullet
+#'
+#' Clear the \code{error} option, so that error notifications are no
+#' longer sent to pushbullet.
+#'
+#' @export
+#' @examples
+#' \dontrun{stop_sending_errors()}
+#' @keywords utilities
+#' @seealso \code{\link{errors2pushbullet}}
+stop_sending_errors <-
+    function()
+{
+    options(error = NULL)
+}
+
 
 is_pushbullet_loaded <-
     function()

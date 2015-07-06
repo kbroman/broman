@@ -15,6 +15,11 @@ copyright (c) 2001-2015, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.57-5, 2015-07-06:
+
+  Add function stop_sending_errors(), the reverse of errors2pushbullet().
+
+
 Version 0.57-3, 2015-06-25:
 
   Allow use of col.lab in grayplot(), for coloring the axis titles.
