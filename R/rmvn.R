@@ -14,6 +14,7 @@
 #' Uses the Cholesky decomposition of the matrix \code{V}, obtained by
 #'   \code{\link[base]{chol}}.
 #'
+#' @importFrom stats rnorm
 #' @export
 #'
 #' @return
@@ -35,5 +36,5 @@ rmvn <-
     if(any(is.na(match(dim(V),p))))
         stop("Dimension problem!")
     D <- chol(V)
-    matrix(stats::rnorm(n*p),ncol=p) %*% D + rep(mu,rep(n,p))
+    matrix(rnorm(n*p),ncol=p) %*% D + rep(mu,rep(n,p))
 }

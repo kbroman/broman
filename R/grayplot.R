@@ -47,6 +47,7 @@
 #'   separate for x- and y-axis).
 #'
 #' @export
+#' @importFrom graphics plot title rect axis abline points
 #'
 #' @return
 #' None.
@@ -128,31 +129,31 @@ grayplot <-
 
             # blank plot
             if(is.null(y))
-                graphics::plot(seq(along=x), x, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
+                plot(seq(along=x), x, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
             else
-                graphics::plot(x, y, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
+                plot(x, y, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
 
             # axis titles
-            graphics::title(xlab=xlab, mgp=mgp.x, col.lab=col.lab)
-            graphics::title(ylab=ylab, mgp=mgp.y, col.lab=col.lab)
+            title(xlab=xlab, mgp=mgp.x, col.lab=col.lab)
+            title(ylab=ylab, mgp=mgp.y, col.lab=col.lab)
 
             # add gray rectangle
             u <- par("usr")
-            graphics::rect(u[1], u[3], u[2], u[4], col=bgcolor, border="black")
+            rect(u[1], u[3], u[2], u[4], col=bgcolor, border="black")
 
             # x axis: if adding white lines, skip the tick marks and move the numbers closer
             if(!(!is.null(xat) && length(xat)==1 && is.na(xat))) { # if a single NA, skip x-axis
                 if(!is.null(xat)) {
                     if(!is.null(vlines))
-                        graphics::axis(side=1, at=xat, mgp=mgp.x, tick=FALSE, las=las)
+                        axis(side=1, at=xat, mgp=mgp.x, tick=FALSE, las=las)
                     else
-                        graphics::axis(side=1, at=xat, las=las)
+                        axis(side=1, at=xat, las=las)
                 }
                 else {
                     if(!is.null(vlines))
-                        graphics::axis(side=1, mgp=mgp.x, tick=FALSE, las=las)
+                        axis(side=1, mgp=mgp.x, tick=FALSE, las=las)
                     else
-                        graphics::axis(side=1, las=las)
+                        axis(side=1, las=las)
                 }
             }
 
@@ -160,30 +161,30 @@ grayplot <-
             if(!(!is.null(yat) && length(yat)==1 && is.na(yat))) { # if a single NA, skip y-axis
                 if(!is.null(yat)) {
                     if(!is.null(hlines))
-                        graphics::axis(side=2, at=yat, mgp=mgp.y, tick=FALSE, las=las)
+                        axis(side=2, at=yat, mgp=mgp.y, tick=FALSE, las=las)
                     else
-                        graphics::axis(side=2, at=yat, las=las)
+                        axis(side=2, at=yat, las=las)
                 }
                 else {
                     if(!is.null(hlines))
-                        graphics::axis(side=2, mgp=mgp.y, tick=FALSE, las=las)
+                        axis(side=2, mgp=mgp.y, tick=FALSE, las=las)
                     else
-                        graphics::axis(side=2, las=las)
+                        axis(side=2, las=las)
                 }
             }
 
             if(!is.null(vlines) && !v_over_h)
-                graphics::abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
+                abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
             if(!is.null(hlines))
-                graphics::abline(h=hlines, col=hlines.col, lty=hlines.lty, lwd=hlines.lwd)
+                abline(h=hlines, col=hlines.col, lty=hlines.lty, lwd=hlines.lwd)
             if(!is.null(vlines) && v_over_h)
-                graphics::abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
+                abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
 
-            if(is.null(y)) graphics::points(seq(along=x), x, ..., type=type)
-            else graphics::points(x, y, ..., type=type)
+            if(is.null(y)) points(seq(along=x), x, ..., type=type)
+            else points(x, y, ..., type=type)
 
             # add black border again
-            graphics::abline(v=u[1:2], h=u[3:4])
+            abline(v=u[1:2], h=u[3:4])
         }
 
     hidegrayplot(x=x, y=y, ..., type=type, hlines=hlines, hlines.col=hlines.col,

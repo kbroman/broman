@@ -16,6 +16,7 @@
 #'   calculates an approximate P-value rather than performing a complete
 #'   enumeration.  This will be better for large, sparse tables.
 #'
+#' @importFrom stats chisq.test
 #' @export
 #'
 #' @return
@@ -82,13 +83,13 @@ fisher <-
 chisq <-
     function(tab, n.sim=1000)
 {
-    observed <- suppressWarnings(stats::chisq.test(tab)$stat)
+    observed <- suppressWarnings(chisq.test(tab)$stat)
     sims <- 1:n.sim
     a <- list(rep(row(tab),tab),rep(col(tab),tab))
     for(i in 1:n.sim) {
         a[[1]] <- sample(a[[1]])
         tab2 <- table(a)
-        sims[i] <- suppressWarnings(stats::chisq.test(tab2)$stat)
+        sims[i] <- suppressWarnings(chisq.test(tab2)$stat)
     }
     mean(sims >= observed)
 }

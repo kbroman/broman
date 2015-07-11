@@ -23,6 +23,7 @@
 #' See \code{text} for details on \code{pos} and \code{offset}.
 #'
 #' @export
+#' @importFrom graphics strwidth
 #'
 #' @return
 #' Minimum and maximum x-axis limits for adding horizontal text
@@ -49,7 +50,7 @@
 xlimlabel <- function(x,xlabels, pos=4, offset=0.5,...){
     dots <- list(...)
     cex <- if(!is.na(match("cex",names(dots)))) dots$cex else 1
-    xwid <- (graphics::strwidth(xlabels,units="inches",cex=cex)+
+    xwid <- (strwidth(xlabels,units="inches",cex=cex)+
              offset*par("cin")[1])/par("pin")[1]
     xmax <- max(x,na.rm=TRUE)
     xmin <- min(x,na.rm=TRUE)

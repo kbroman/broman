@@ -26,6 +26,7 @@
 #'   kernel density estimate with the function \code{\link[stats]{density}}.
 #'
 #' @export
+#' @importFrom stats density quantile
 #'
 #' @return
 #' A matrix of size 2 x \code{length(p)}.  The first row contains the
@@ -44,12 +45,12 @@ quantileSE <-
     function(x, p=0.95, bw, na.rm=TRUE, names=TRUE)
 {
     if(na.rm) x <- x[!is.na(x)]
-    quant <- stats::quantile(x,p)
+    quant <- quantile(x,p)
     R <- sqrt(p*(1-p)/length(x))
     if(missing(bw))
-        f <- sapply(quant, function(a,b) stats::density(b,from=a,to=a,n=1)$y,x)
+        f <- sapply(quant, function(a,b) density(b,from=a,to=a,n=1)$y,x)
     else
-        f <- sapply(quant, function(a,b) stats::density(b,bw=bw,from=a,to=a,n=1)$y,x)
+        f <- sapply(quant, function(a,b) density(b,bw=bw,from=a,to=a,n=1)$y,x)
 
     out <- rbind(quantile=quant,SE=R/f)
     if(names) colnames(out) <- as.character(p)

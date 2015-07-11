@@ -20,6 +20,7 @@
 #' @details
 #' See \code{text} for details on \code{pos} and \code{offset}.
 #'
+#' @importFrom graphics strwidth
 #' @export
 #'
 #' @return
@@ -44,7 +45,7 @@
 #' @seealso
 #' \code{text}
 strwidth2xlim <- function(x,xstring, pos=4, offset=0.5,...){
-    xwid <- (graphics::strwidth(xstring,units="inches", ...)+
+    xwid <- (strwidth(xstring,units="inches", ...)+
              offset*par("cin")[1])/par("pin")[1]
     xmax <- max(x,na.rm=TRUE)
     xmin <- min(x,na.rm=TRUE)

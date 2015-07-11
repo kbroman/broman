@@ -29,6 +29,7 @@
 #'   case \code{\link[graphics]{hist}} is called with \code{breaks=breaks}, and
 #'   either the \code{counts} or \code{density} are used as \code{y}.
 #'
+#' @importFrom graphics hist
 #' @export
 #'
 #' @return
@@ -64,7 +65,7 @@ histlines <-
     function(x, y, breaks, use=c("counts", "density"))
 {
     if(missing(y)) { # input doesn't count the count information
-        out <- graphics::hist(x, breaks=breaks, plot=FALSE)
+        out <- hist(x, breaks=breaks, plot=FALSE)
         x <- out$breaks
         use <- match.arg(use)
         y <- out[[use]]

@@ -21,6 +21,7 @@
 #' Plots a to-scale Venn diagram with two sets, so that the relative
 #'   areas of the two sets and their intersection are exact.
 #'
+#' @importFrom stats uniroot
 #' @export
 #'
 #' @return
@@ -136,7 +137,7 @@ venn <-
                     }
 
                 g <- function(d,rA,rB,area) find.overlap(rA,rB,d)-area
-                stats::uniroot(g,lower=rB-rA,upper=rB+rA, rA=rA, rB=rB,area=area)$root
+                uniroot(g,lower=rB-rA,upper=rB+rA, rA=rA, rB=rB,area=area)$root
             }
         ##############################
         # back to the venn() function

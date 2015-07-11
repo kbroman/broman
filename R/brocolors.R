@@ -6,6 +6,9 @@
 #' @param set Character string indicating a set of colors.
 #' @return Vector of character strings representing the chosen set of colors, in RGB.
 #' @export
+#' @importFrom grDevices rgb2hsv
+#' @importFrom stats hclust dist
+#' @importFrom graphics par plot rect text
 #' @seealso \code{\link{plot_crayons}}
 #' @examples
 #' par(mar=c(0.6,5.1,0.6,0.6))
@@ -253,7 +256,7 @@ plot_crayons <-
 
     if(method2order == "hsv") {
         # convert to hsv
-        colval <- t(grDevices::rgb2hsv(colval))
+        colval <- t(rgb2hsv(colval))
 
         # order the colors; first two lines are to get black/gray/silver/white first
         ord <- order(names(crayons)!="Black", names(crayons)!="Gray",
@@ -261,30 +264,30 @@ plot_crayons <-
                      colval[,1], colval[,2], colval[,3])
 
     } else {
-        ord <- stats::hclust(stats::dist(t(colval)))$ord
+        ord <- hclust(dist(t(colval)))$ord
     }
 
-    oldmar <- graphics::par("mar")
-    oldfg <- graphics::par("fg")
-    oldbg <- graphics::par("bg")
-    on.exit(graphics::par(mar=oldmar, fg=oldfg, bg=oldbg))
+    oldmar <- par("mar")
+    oldfg <- par("fg")
+    oldbg <- par("bg")
+    on.exit(par(mar=oldmar, fg=oldfg, bg=oldbg))
 
-    graphics::par(mar=mar, fg=fg, bg=bg)
+    par(mar=mar, fg=fg, bg=bg)
     x <- (1:7)-1
     y <- (1:19)-1
     x <- rep(x, each=19)
     y <- rep(y, 7)
 
-    graphics::plot(0, 0, type="n", xlab="", ylab="", xaxs="i", yaxs="i",
-                   xlim=c(0, max(x)+1), ylim=c(max(y)+0.5, -0.5),
-                   xaxt="n", yaxt="n")
+    plot(0, 0, type="n", xlab="", ylab="", xaxs="i", yaxs="i",
+         xlim=c(0, max(x)+1), ylim=c(max(y)+0.5, -0.5),
+         xaxt="n", yaxt="n")
 
     dx <- 0.2
     dy <- 0.4
     if(border) border <- fg
     else border <- crayons[ord]
-    graphics::rect(x+dx/4, y-dy, x+dx, y+dy,
-                   border=border, col=crayons[ord])
+    rect(x+dx/4, y-dy, x+dx, y+dy,
+         border=border, col=crayons[ord])
 
-    graphics::text(x+dx*1.2, y, names(crayons)[ord], cex=cex, adj=c(0, 0.5))
+    text(x+dx*1.2, y, names(crayons)[ord], cex=cex, adj=c(0, 0.5))
 }
