@@ -47,7 +47,7 @@ mypairs <-
     z <- t(z)
     z[z>m] <- m + 1:sum(z>m)
 
-    layout(z)
+    graphics::layout(z)
 
     for(i in 1:(n-1)) {
         for(j in (i+1):n) {
