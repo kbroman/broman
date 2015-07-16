@@ -15,10 +15,13 @@ copyright (c) 2001-2015, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.58-1, 2015-07-16:
+Version 0.58-2, 2015-07-16:
 
   Add function compare_rows(), for comparing rows in a numeric matrix,
   either by proportion mismatches or RMS difference.
+
+  Add function add_commas(), for adding commas in large numbers,
+  like 91310 -> "91,310"
 
 
 Version 0.57-5, 2015-07-06:

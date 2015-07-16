@@ -2,6 +2,7 @@
 
 S3method(cf,default)
 S3method(cf,list)
+export(add_commas)
 export(arrowlocator)
 export(attachfile)
 export(attrnames)
