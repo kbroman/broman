@@ -16,6 +16,6 @@ Character string with numbers written like \code{"7,547,085"}.
 Convert a number to a string, with commas every 3rd digit
 }
 \examples{
-add_commas(c(231.3, 91310.2, 2123.8, 9911001020, 999723285))
+add_commas(c(231, 91310, 2123, 9911001020, 999723285))
 }
 
