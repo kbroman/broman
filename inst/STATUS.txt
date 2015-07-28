@@ -15,10 +15,13 @@ copyright (c) 2001-2015, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.59-1, 2015-07-28:
+Version 0.59-2, 2015-07-28:
 
   Add function excel_fig() for making a figure that shows the contents
   of a matrix, as it might appear in Excel.
+
+  Add function pushbullet_devices() for getting list of active
+  pushbullet devices.
 
 
 Version 0.58-2, 2015-07-16:

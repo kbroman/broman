@@ -117,3 +117,24 @@ done <-
     else
         RPushbullet::pbPost("note", message)
 }
+
+# pushbullet_devices
+#' Grab info on Pushbullet devices.
+#'
+#' Get names and identifiers of Pushbullet devices.
+#'
+#' @export
+#'
+#' @return
+#' data frame with nickname, model, and iden for active devices.
+pushbullet_devices <-
+    function(json=FALSE)
+{
+    dev <- RPushbullet::pbGetDevices()$devices
+    dev <- dev[vapply(dev, '[[', TRUE, 'active')]
+
+    data.frame(nickname=vapply(dev, '[[', 'string', 'nickname'),
+               iden=vapply(dev, '[[', 'string', 'iden'),
+               model=vapply(dev, '[[', 'string', 'model'),
+               stringsAsFactors=FALSE)
+}
