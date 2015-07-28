@@ -15,6 +15,12 @@ copyright (c) 2001-2015, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.59-1, 2015-07-28:
+
+  Add function excel_fig() for making a figure that shows the contents
+  of a matrix, as it might appear in Excel.
+
+
 Version 0.58-2, 2015-07-16:
 
   Add function compare_rows(), for comparing rows in a numeric matrix,
