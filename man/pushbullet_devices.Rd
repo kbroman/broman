@@ -4,7 +4,7 @@
 \alias{pushbullet_devices}
 \title{Grab info on Pushbullet devices.}
 \usage{
-pushbullet_devices(json = FALSE)
+pushbullet_devices()
 }
 \value{
 data frame with nickname, model, and iden for active devices.

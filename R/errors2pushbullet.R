@@ -128,7 +128,7 @@ done <-
 #' @return
 #' data frame with nickname, model, and iden for active devices.
 pushbullet_devices <-
-    function(json=FALSE)
+    function()
 {
     dev <- RPushbullet::pbGetDevices()$devices
     dev <- dev[vapply(dev, '[[', TRUE, 'active')]
