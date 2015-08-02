@@ -6,7 +6,7 @@
 \usage{
 excel_fig(mat, file, cellwidth = 100, cellheight = 20, pointsize = 14,
   border = "#CECECE", headcol = "#E9E9E9", headborder = "#969696",
-  row_names = FALSE, col_names = TRUE)
+  row_names = FALSE, col_names = TRUE, hilitcells, hilitcolor = "#F0DCDB")
 }
 \arguments{
 \item{mat}{A matrix}
@@ -28,6 +28,10 @@ excel_fig(mat, file, cellwidth = 100, cellheight = 20, pointsize = 14,
 \item{row_names}{If TRUE, and row names are present, include them as a first column}
 
 \item{col_names}{If TRUE, and column names are present, include them as a first row}
+
+\item{hilitcells}{Character vector of cells to highlight, like \code{"A1"} or \code{"D4"}}
+
+\item{hilitcolor}{Color to highlight cells, a vector of length 1 or the same length as \code{hilitcells}}
 }
 \description{
 Turn a matrix of data into an SVG of how it might look in Excel
