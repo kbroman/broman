@@ -44,8 +44,19 @@ excel_fig <-
 
     n_row <- nrow(mat)
     n_col <- ncol(mat)
-    height <- cellheight * (n_row + 1)
-    width <- cellwidth * (n_col + 1)
+    if(length(cellheight)==1)
+        cellheight <- rep(cellheight, n_row + 1)
+    if(length(cellheight) != n_row+1)
+        stop("cellheight should have length 1 or ", n_row+1)
+    if(length(cellwidth)==1)
+        cellwidth <- rep(cellwidth, n_col + 1)
+    if(length(cellwidth) != n_col+1)
+        stop("cellwidth should have length 1 or ", n_col+1)
+
+    height <- sum(cellheight)
+    width <- sum(cellwidth)
+    celly <- cumsum(c(0,cellheight))
+    cellx <- cumsum(c(0,cellwidth))
 
     if(!missing(file)) {
         if(grepl("\\.svg$", file))
@@ -113,17 +124,17 @@ excel_fig <-
     for(i in n_row:0) {
         for(j in n_col:0) {
             # rectangles
-            rect(j*cellwidth, i*cellheight, (j+1)*cellwidth, (i+1)*cellheight,
+            rect(cellx[j+1], celly[i+1], cellx[j+2], celly[i+2],
                  border=ifelse(i==0 || j==0, headborder, border),
                  col=ifelse(i==0 || j==0, headcol, colormat[i,j]))
 
             # text
             if(i==0 && j>0)
-                text(cellwidth*(j+0.5), cellheight/2, LETTERS[j], col=headtextcol, font=2)
+                text(mean(cellx[j+1:2]), mean(celly[1:2]), LETTERS[j], col=headtextcol, font=2)
             if(i>0 && j==0)
-                text(cellwidth/2, cellheight*(i+0.5), i, col=headtextcol, font=2)
+                text(mean(cellx[1:2]), mean(celly[i+1:2]), i, col=headtextcol, font=2)
             if(i>0 && j>0)
-                text(cellwidth*(j+0.5), cellheight*(i+0.5), mat[i,j], col=textcol)
+                text(mean(cellx[j+1:2]), mean(celly[i+1:2]), mat[i,j], col=textcol)
         }
     }
 
