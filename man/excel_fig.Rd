@@ -4,9 +4,11 @@
 \alias{excel_fig}
 \title{Excel-style figure displaying contents of a matrix}
 \usage{
-excel_fig(mat, file, cellwidth = 100, cellheight = 20, pointsize = 14,
-  border = "#CECECE", headcol = "#E9E9E9", headborder = "#969696",
-  row_names = FALSE, col_names = TRUE, hilitcells, hilitcolor = "#F0DCDB")
+excel_fig(mat, file, cellwidth = 80, cellheight = 26, textsize = 16,
+  fig_width, fig_height, border = "#CECECE", headcol = "#E9E9E9",
+  headborder = "#969696", headtextcol = "#626262", textcol = "black",
+  row_names = FALSE, col_names = TRUE, hilitcells, hilitcolor = "#F0DCDB",
+  lwd = 1, direct2svg = FALSE)
 }
 \arguments{
 \item{mat}{A matrix}
@@ -17,13 +19,21 @@ excel_fig(mat, file, cellwidth = 100, cellheight = 20, pointsize = 14,
 
 \item{cellheight}{Height of each cell, in pixels}
 
-\item{pointsize}{Pointsize for text (if \code{file} is provided)}
+\item{textsize}{Size for text (if \code{file} is provided or \code{direct2svg=TRUE})}
+
+\item{fig_width}{Width of figure, in pixels (if missing, taken from \code{cellwidth}); ignored when \code{direct2svg=FALSE}}
+
+\item{fig_height}{Height of figure, in pixels (if missing, taken from \code{cellheight}); ignored when \code{direct2svg=FALSE}}
 
 \item{border}{Color of border of cells for the body of the matrix}
 
 \item{headcol}{Background color of cells on the top and left border}
 
 \item{headborder}{Color of border of cells on the top and left border}
+
+\item{headtextcol}{Color of text in cells on the top and left border}
+
+\item{textcol}{Color of text in in cells in body of the matrix}
 
 \item{row_names}{If TRUE, and row names are present, include them as a first column}
 
@@ -32,6 +42,10 @@ excel_fig(mat, file, cellwidth = 100, cellheight = 20, pointsize = 14,
 \item{hilitcells}{Character vector of cells to highlight, like \code{"A1"} or \code{"D4"}}
 
 \item{hilitcolor}{Color to highlight cells, a vector of length 1 or the same length as \code{hilitcells}}
+
+\item{lwd}{Line width for rectangles}
+
+\item{direct2svg}{If TRUE, rather than R graphics, just print an SVG directly with \code{\link[base]{cat}}.}
 }
 \description{
 Turn a matrix of data into an SVG of how it might look in Excel
