@@ -88,7 +88,7 @@ grayplot <-
         function(x, y, ..., type="p", hlines, hlines.col, hlines.lty, hlines.lwd,
                  vlines, vlines.col, vlines.lty, vlines.lwd,
                  xat, yat, bgcolor="gray80", xaxt="n", yaxt="n",
-                 col.lab="black",
+                 col.lab=par("col.lab"),
                  xlab, ylab, xname, yname,
                  las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0),
                  v_over_h=FALSE)
