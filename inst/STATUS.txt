@@ -15,6 +15,11 @@ copyright (c) 2001-2015, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.60-1, 2015-09-24:
+
+  Add function fac2num() for converting a factor to numeric.
+
+
 Version 0.59-5, 2015-08-04:
 
   Add function excel_fig() for making a figure that shows the contents
