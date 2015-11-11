@@ -18,7 +18,6 @@
 #'
 #' @importFrom stats chisq.test
 #' @export
-#'
 #' @return
 #' A single number: the P-value testing independence of rows and columns
 #'   in the table.
@@ -65,7 +64,6 @@ fisher <-
 #'   asymptotics.  This will be better for large, sparse tables.
 #'
 #' @export
-#'
 #' @return
 #' A single number: the P-value testing independence of rows and columns
 #'   in the table.

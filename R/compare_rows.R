@@ -8,7 +8,6 @@
 #' RMS difference. Missing values are omitted.
 #'
 #' @export
-#'
 #' @return A square matrix of dimension \code{nrow(mat)} with
 #' \code{NA}s on the diagonal and the calculated statistic in the
 #' body.

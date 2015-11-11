@@ -13,7 +13,6 @@
 #' It's not very complicated: \code{((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & a == b))}
 #'
 #' @export
-#'
 #' @return
 #' Boolean object with \code{TRUE} indicating an element is the same.
 #'

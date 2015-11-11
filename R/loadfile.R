@@ -21,7 +21,6 @@
 #'   possibly adding 0's before i
 #'
 #' @export
-#'
 #' @return
 #' TRUE/FALSE according to whether the file was attached.
 #'
@@ -67,7 +66,6 @@ attachfile <-
 #'   possibly adding 0's before i
 #'
 #' @export
-#'
 #' @return
 #' TRUE/FALSE according to whether the file was loaded.
 #'

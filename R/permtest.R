@@ -38,7 +38,6 @@ binary.v <-
 #'   are perfomed to give an exact or approximate conditional p-value.
 #'
 #' @export
-#'
 #' @return
 #' If \code{pval=TRUE}, the output is a single number: the P-value
 #'   testing for the symmetry about 0 of the distribution of the population

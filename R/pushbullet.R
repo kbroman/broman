@@ -102,7 +102,6 @@ load_pushbullet <-
 #' \code{\link[RPushbullet]{pbPost}}.)
 #'
 #' @export
-#'
 #' @examples
 #' \dontrun{done("Your R job is complete.")}
 #' @keywords utilities
@@ -153,7 +152,6 @@ note <-
 #' Get names and identifiers of Pushbullet devices.
 #'
 #' @export
-#'
 #' @return
 #' data frame with nickname, model, and iden for active devices.
 pushbullet_devices <-

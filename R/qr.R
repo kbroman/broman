@@ -16,7 +16,6 @@
 #'   less compact but more understandable output.
 #'
 #' @export
-#'
 #' @return
 #' A list of two matrices: Q and R.
 #'

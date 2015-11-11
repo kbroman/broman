@@ -5,7 +5,6 @@
 #' @details This just calls \code{q("no")}
 #'
 #' @export
-#'
 #' @return None.
 #' @keywords utilities
 

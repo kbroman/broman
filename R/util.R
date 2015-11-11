@@ -8,7 +8,6 @@
 #' Print the version number of the currently installed version of R/broman.
 #'
 #' @export
-#'
 #' @return
 #' A character string with the version number of the currently installed
 #'   version of R/broman.

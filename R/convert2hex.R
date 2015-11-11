@@ -11,7 +11,6 @@
 #' Nothing important to say here.
 #'
 #' @export
-#'
 #' @return
 #' A character string; the input in hex.
 #'
@@ -46,7 +45,6 @@ dec2hex <- convert2hex
 #' Nothing important to say here.
 #'
 #' @export
-#'
 #' @return
 #' The input converted from hexadecimal to decimal notation.
 #'

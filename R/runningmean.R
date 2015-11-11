@@ -22,7 +22,6 @@
 #' @param what  Statistic to use.
 #'
 #' @export
-#'
 #' @return
 #' A vector with the same length as the input \code{at} (or \code{pos},
 #'   if \code{at} is missing), containing the running
@@ -117,7 +116,6 @@ runningmean <-
 #' @param window Window width.
 #'
 #' @export
-#'
 #' @return
 #' A vector with the same length as the input \code{at} (or \code{pos},
 #'   if \code{at} is missing), containing the running ratio.

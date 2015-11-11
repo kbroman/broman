@@ -10,7 +10,6 @@
 #'   \code{\link[base]{paste}} with \code{sep=""}, 'cause I'm lazy.
 #'
 #' @export
-#'
 #' @return
 #' A character string or vector of character strings.
 #'
@@ -52,7 +51,6 @@ paste.. <- function(...) paste(..., sep=".", collapse=".")
 #'   \code{paste.0(\dots)} is like \code{paste(\dots, sep=".", collapse="")}
 #'
 #' @export
-#'
 #' @return
 #' A character string or vector of character strings.
 #'

@@ -12,7 +12,6 @@
 #' There's not much to this. It's just \code{rev(rainbow(start=0, end=2/3, ...))}.
 #'
 #' @export
-#'
 #' @return
 #' Vector of colors, from blue to red.
 #'

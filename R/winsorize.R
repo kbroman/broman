@@ -15,7 +15,6 @@
 #' @param q Lower quantile to use
 #'
 #' @export
-#'
 #' @importFrom assertthat assert_that is.number
 #'
 #' @return

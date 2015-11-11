@@ -12,7 +12,6 @@
 #' Uses \code{\link[base]{sprintf}} to round a number, keeping extra 0's.
 #'
 #' @export
-#'
 #' @return
 #' A vector of character strings.
 #'

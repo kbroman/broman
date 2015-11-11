@@ -22,7 +22,6 @@
 #'   \code{\link{grayplot}} for the actual plot.
 #'
 #' @export
-#'
 #' @return
 #' None.
 #'

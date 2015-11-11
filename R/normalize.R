@@ -20,7 +20,6 @@
 #'   values per column, are dealt with by linear interpolation.
 #'
 #' @export
-#'
 #' @return
 #' If two vectors, \code{x} and \code{y}, are provided, the output is a
 #'   matrix with two columns, with the quantile normalized versions of

@@ -18,7 +18,6 @@
 #'   only the upper triangle is produced.
 #'
 #' @export
-#'
 #' @return
 #' None.
 #'

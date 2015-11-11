@@ -1,6 +1,6 @@
 Package: broman
-Version: 0.60-1
-Date: 2015-09-24
+Version: 0.60-2
+Date: 2015-11-10
 Title: Karl Broman's R Code
 Description: Miscellaneous R functions.
 Author: Karl W Broman <kbroman@biostat.wisc.edu>, with contributions from Aimee
@@ -24,3 +24,4 @@ Suggests:
     roxygen2
 License: GPL-3
 URL: https://github.com/kbroman/broman
+RoxygenNote: 5.0.0

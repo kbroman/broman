@@ -6,7 +6,6 @@
 #' @param numbers Vector of non-negative numbers (will be rounded to integers)
 #'
 #' @export
-#'
 #' @return Character string with numbers written like \code{"7,547,085"}.
 #'
 #' @examples

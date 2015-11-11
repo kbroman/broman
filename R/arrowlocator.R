@@ -25,7 +25,6 @@
 #'
 #' @importFrom graphics locator arrows
 #' @export
-#'
 #' @return
 #' The locations of the endpoints of the arrow, as a two-row
 #'   matrix.  The first row indicates the location of the tail of the

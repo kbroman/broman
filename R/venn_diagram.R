@@ -23,7 +23,6 @@
 #'
 #' @importFrom stats uniroot
 #' @export
-#'
 #' @return
 #' None.
 #'

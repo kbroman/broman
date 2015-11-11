@@ -10,7 +10,6 @@
 #' @param date The date/time to convert
 #'
 #' @export
-#'
 #' @return A character string representation of the date/time
 #'
 #' @examples

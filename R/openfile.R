@@ -10,9 +10,8 @@
 #' MacOS and \code{start} in Windows, but \code{system("start
 #' myfile.pdf")} doesn't work in Windows, but rather
 #' \code{system("open myfile.pdf")} does, so here we're just using
-
-#' @export
 #'
+#' @export
 #' @return None.
 #'
 #' @examples

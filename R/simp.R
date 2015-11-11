@@ -48,7 +48,6 @@ trap <-
 #'   \code{tol}.
 #'
 #' @export
-#'
 #' @return
 #' The integral of \code{f} from \code{a} to \code{b}.
 #'

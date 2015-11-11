@@ -22,7 +22,6 @@
 #'
 #' @importFrom graphics plot par text segments points lines arrows
 #' @export
-#'
 #' @return
 #' The (x,y) coordinates of the points plotted, if any.
 #'
@@ -98,7 +97,6 @@ triplot <-
 #'   First use \code{\link{triplot}} to first plot the equilateral triangle.
 #'
 #' @export
-#'
 #' @return
 #' The (x,y) coordinates of the points plotted.
 #'
@@ -172,7 +170,6 @@ tripoints <-
 #'   First use \code{\link{triplot}} to first plot the equilateral triangle.
 #'
 #' @export
-#'
 #' @return
 #' The (x,y) coordinates of the endpoints of the lines plotted.
 #'
@@ -246,7 +243,6 @@ trilines <-
 #'   First use \code{\link{triplot}} to first plot the equilateral triangle.
 #'
 #' @export
-#'
 #' @return
 #' The (x,y) coordinates of the endpoints of the arrows plotted.
 #'

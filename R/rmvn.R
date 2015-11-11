@@ -16,7 +16,6 @@
 #'
 #' @importFrom stats rnorm
 #' @export
-#'
 #' @return
 #' A matrix of size n x \code{length(mu)}.  Each row corresponds to a
 #'   separate replicate.

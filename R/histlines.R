@@ -31,7 +31,6 @@
 #'
 #' @importFrom graphics hist
 #' @export
-#'
 #' @return
 #' A data.frame with two columns: \code{x} and \code{y}.
 #'
