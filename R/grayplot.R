@@ -89,6 +89,7 @@ grayplot <-
                  vlines, vlines.col, vlines.lty, vlines.lwd,
                  xat, yat, bgcolor="gray80", xaxt="n", yaxt="n",
                  col.lab=par("col.lab"),
+                 xlim, ylim,
                  xlab, ylab, xname, yname,
                  las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0),
                  v_over_h=FALSE)
@@ -114,7 +115,7 @@ grayplot <-
                 if(!missing(yat) && !is.null(yat))
                     hlines <- yat
                 else
-                    hlines <- pretty(y)
+                    hlines <- if(missing(ylim) && is.null(ylim)) pretty(y) else pretty(ylim)
             }
             else if(length(hlines)==1 && is.na(hlines))
                 hlines <- NULL
@@ -122,16 +123,18 @@ grayplot <-
                 if(!missing(xat) && !is.null(xat))
                     vlines <- xat
                 else
-                    vlines <- pretty(x)
+                    vlines <- if(missing(xlim) && is.null(xlim)) pretty(x) else pretty(xlim)
             }
             else if(length(vlines)==1 && is.na(vlines))
                 vlines <- NULL
 
             # blank plot
             if(is.null(y))
-                plot(seq(along=x), x, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
+                plot(seq(along=x), x, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="",
+                     xlim=xlim, ylim=ylim)
             else
-                plot(x, y, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="")
+                plot(x, y, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="",
+                     xlim=xlim, ylim=ylim)
 
             # axis titles
             title(xlab=xlab, mgp=mgp.x, col.lab=col.lab)

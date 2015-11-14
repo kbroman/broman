@@ -15,6 +15,12 @@ copyright (c) 2001-2015, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.60-3, 2015-11-14:
+
+  In grayplot(), have vlines and hlines follow from xlim and ylim,
+  respectively, if they're provided.
+
+
 Version 0.60-1, 2015-09-24:
 
   Add function fac2num() for converting a factor to numeric.
