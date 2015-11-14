@@ -7,7 +7,7 @@
 #'
 #' @param x Coordinates of points in the plot
 #'
-#' @param y Corrdinates of points in the plot (optional)
+#' @param y Coordinates of points in the plot (optional)
 #'
 #' @param ... Optional graphics arguments
 #'

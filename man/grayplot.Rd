@@ -12,7 +12,7 @@ grayplot(x, y, ..., type = "p", hlines, hlines.col = "white",
 \arguments{
 \item{x}{Coordinates of points in the plot}
 
-\item{y}{Corrdinates of points in the plot (optional)}
+\item{y}{Coordinates of points in the plot (optional)}
 
 \item{...}{Optional graphics arguments}
 
