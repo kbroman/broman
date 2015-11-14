@@ -87,7 +87,7 @@ grayplot <-
     hidegrayplot <-
         function(x, y, ..., type="p", hlines, hlines.col, hlines.lty, hlines.lwd,
                  vlines, vlines.col, vlines.lty, vlines.lwd,
-                 xat, yat, bgcolor="gray80", xaxt="n", yaxt="n",
+                 xat=pretty(x), yat=pretty(y), bgcolor="gray80", xaxt="n", yaxt="n",
                  col.lab=par("col.lab"),
                  xlim, ylim,
                  xlab, ylab, xname, yname,
@@ -111,19 +111,24 @@ grayplot <-
                 if(missing(ylab)) ylab <- yname
             }
 
+            if(missing(ylim) || is.null(ylim))
+                ylim <- range(y, na.rm=TRUE)
             if(missing(hlines) || is.null(hlines)) {
                 if(!missing(yat) && !is.null(yat))
                     hlines <- yat
                 else
-                    hlines <- if(missing(ylim) && is.null(ylim)) pretty(y) else pretty(ylim)
+                    hlines <- pretty(ylim)
             }
             else if(length(hlines)==1 && is.na(hlines))
                 hlines <- NULL
+
+            if(missing(xlim) || is.null(xlim))
+                xlim <- range(x, na.rm=TRUE)
             if(missing(vlines) || is.null(vlines)) {
                 if(!missing(xat) && !is.null(xat))
                     vlines <- xat
                 else
-                    vlines <- if(missing(xlim) && is.null(xlim)) pretty(x) else pretty(xlim)
+                    vlines <- pretty(xlim)
             }
             else if(length(vlines)==1 && is.na(vlines))
                 vlines <- NULL
