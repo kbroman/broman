@@ -29,7 +29,7 @@
 #' dotplot(g, x, pch=21, bg="slateblue")
 #'
 #' @seealso
-#' \code{\link[graphics]{grayplot}},
+#' \code{\link{grayplot}},
 #'
 #' @keywords
 #' graphics
