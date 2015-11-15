@@ -29,7 +29,7 @@ graphics parameters for the case of categorical x.
 \examples{
 \dontshow{set.seed(97536917)}
 x <- rnorm(40, c(1,3))
-g <- rep(c("control", "treatment"), 20)
+g <- rep(c("A", "B"), 20)
 dotplot(g, x, pch=21, bg="slateblue")
 
 }
