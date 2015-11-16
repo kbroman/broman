@@ -34,7 +34,9 @@ graphics parameters for the case of categorical x.
 \dontshow{set.seed(97536917)}
 x <- rnorm(40, c(1,3))
 g <- rep(c("A", "B"), 20)
-dotplot(g, x, pch=21, bg="slateblue")
+dotplot(g, x)
+dotplot(g, x, "random")
+dotplot(g, x, runif(length(g), -0.25, 0.25))
 
 }
 \seealso{
