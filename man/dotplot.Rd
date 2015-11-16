@@ -4,12 +4,16 @@
 \alias{dotplot}
 \title{Dot chart with a gray background}
 \usage{
-dotplot(group, y, rotate = FALSE, ...)
+dotplot(group, y, jiggle, rotate = FALSE, ...)
 }
 \arguments{
 \item{group}{Categorical coordinates for the plot}
 
 \item{y}{Coordinates of points in the plot}
+
+\item{jiggle}{Vector of amounts to jiggle the points horizontally,
+or a character string (\code{"fixed"} or \code{"random"})
+indicating the jiggling method; see \code{\link{jiggle}}.}
 
 \item{rotate}{If TRUE, have group as y-axis; default (FALSE) has
 group on x-axis.}

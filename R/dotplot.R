@@ -11,7 +11,9 @@
 #' group on x-axis.
 #'
 #' @param ... Optional graphics arguments
-#'
+#' @param jiggle Vector of amounts to jiggle the points horizontally,
+#' or a character string (\code{"fixed"} or \code{"random"})
+#' indicating the jiggling method; see \code{\link{jiggle}}.
 #'
 #' @details Calls \code{\link{grayplot}} with special choices of
 #' graphics parameters for the case of categorical x.
@@ -34,23 +36,30 @@
 #' @keywords
 #' graphics
 dotplot <-
-    function(group, y, rotate=FALSE, ...)
+    function(group, y, jiggle, rotate=FALSE, ...)
 {
     stopifnot(length(y) == length(group))
     if(length(unique(y)) < length(unique(group)))
         warning('Seems like maybe "group" and "y" got switched.')
 
+    # horizontal jiggling
+    if(missing(jiggle) || is.null(jiggle))
+        jiggle <- broman::jiggle(group, y, "fixed")
+    else if(is.character(jiggle))
+        jiggle <- broman::jiggle(group, y, jiggle)
+    else # otherwise, numeric vector
+        stopifnot(length(jiggle) == length(y))
+
     # turn group into numbers 1, 2, ..., n_group
     if(is.factor(group)) {
         ugroup <- levels(group)
-        group <- as.numeric(ugroup)
+        group <- as.numeric(group)
     }
     else {
-        ugroup <- unique(group)
+        ugroup <- sort(unique(group))
         group <- match(group, ugroup)
     }
     n_group <- length(ugroup)
-    jit <- runif(length(y), -0.25, 0.25)
 
     # this is to deal with varying inputs
     hidedotplot <-
@@ -59,8 +68,7 @@ dotplot <-
                  hlines=NULL, hlines.col="white", hlines.lwd=1,
                  xat=NULL, xlim=NULL, xaxs="r", xlab=NULL,
                  yat=NULL, ylim=NULL, yaxs="r", ylab=NULL,
-                 las=1,
-                 ...)
+                 las=1, pch=21, bg="slateblue", ...)
 
         {
             if(!rotate) {
@@ -69,15 +77,16 @@ dotplot <-
                 vlines.col <- "gray70"
                 vlines.lwd <- 4
                 xat <- NA
-                if(is.null(xlab)) xlab <- "Group"
+                if(is.null(xlab)) xlab <- ""
 
                 # deal with vlines/lines ** FIX ME **
 
-                grayplot(group+jit, y,
+                grayplot(group+jiggle, y,
                          vlines=vlines, vlines.col=vlines.col, vlines.lwd=vlines.lwd,
                          hlines=hlines, hlines.col=hlines.col, hlines.lwd=hlines.lwd,
                          xat=xat, xlim=xlim, xaxs=xaxs, xlab=xlab,
-                         yat=yat, ylim=ylim, yaxs=yaxs, ylab=ylab, las=las, ...)
+                         yat=yat, ylim=ylim, yaxs=yaxs, ylab=ylab, las=las,
+                         pch=pch, bg=bg, ...)
                 axis(side=1, at=vlines, ugroup, las=las)
 
             }
@@ -89,12 +98,12 @@ dotplot <-
                 yat <- NA
                 if(is.null(ylab)) ylab <- "Group"
 
-                grayplot(y, group + jit,
+                grayplot(y, group + jiggle,
                          vlines=vlines, vlines.col=vlines.col, vlines.lwd=vlines.lwd,
                          hlines=hlines, hlines.col=hlines.col, hlines.lwd=hlines.lwd,
                          xat=xat, xlim=xlim, xaxs=xaxs, xlab=xlab,
                          yat=yat, ylim=ylim, yaxs=yaxs, ylab=ylab,
-                         v_over_h=TRUE, las=las, ...)
+                         v_over_h=TRUE, las=las, pch=pch, bg=bg, ...)
                 axis(side=2, at=hlines, ugroup, las=las)
             }
 
