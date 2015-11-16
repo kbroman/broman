@@ -15,7 +15,7 @@ copyright (c) 2001-2015, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.61-1, 2015-11-15:
+Version 0.61-2, 2015-11-15:
 
   Add function dotplot() which is a simplified version of grayplot()
   for categorical x.

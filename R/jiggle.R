@@ -11,12 +11,13 @@
 #' @param method What method to use for horizontal jiggling.
 #'
 #' @param hnum Number of horizontal bins for the jiggling.
-#' @param vnum Number of vertical bins for the jiggling (for method \code{"fixed"}).
+#' @param vnum Number of vertical bins for the jiggling.
 #'
 #' @details The \code{"random"} method is similar to
-#' \code{\link[base]{jitter}}; the \code{"fixed"} method is similar to
-#' the \href{http://www.cbs.dtu.dk/~eklund/beeswarm/}{beeswarm
-#' package}
+#' \code{\link[base]{jitter}} but with amount of jiggling proportional
+#' to the number of nearby points. The \code{"fixed"} method is
+#' similar to the
+#' \href{http://www.cbs.dtu.dk/~eklund/beeswarm/}{beeswarm package}
 #'
 #' @return Numeric vector with amounts to jiggle the points horizontally
 #'
@@ -42,20 +43,32 @@ jiggle <-
     if(length(unique(y)) < length(unique(group)))
         warning('Seems like maybe "group" and "y" got switched.')
 
+    if(missing(hnum) || is.null(hnum)) hnum <- 35
+    hamount <- n_group/hnum
+    if(missing(vnum) || is.null(vnum)) vnum <- 40
+    vamount <- diff(range(y, na.rm=TRUE))/vnum
+
     if(method=="random") {
-        if(missing(hnum) || is.null(hnum))
-            hamount <- 0.25
-        else hamount <- n_group/hnum
+        hamount <- 0.25
+        yspl <- split(y, group)
+        yspli <- split(seq(along=y), group)
+
+        # for each value, count number of values in group that are within hamount
+        nclose <- seq(along=y)
+        for(i in 1:n_group) {
+            nclose[yspli[[i]]] <-
+                .C("R_count_close",
+                   as.double(yspl[[i]]),
+                   as.integer(length(yspl[[i]])),
+                   as.double(vamount),
+                   counts=as.integer(rep(0, length(yspl[[i]]))),
+                   PACKAGE="broman")$counts
+        }
+        hamount <- nclose*hamount/max(c(nclose, 5))
 
         return(runif(length(y), -hamount, hamount))
     }
     else if(method=="fixed") {
-
-        if(missing(hnum) || is.null(hnum)) hnum <- 35
-        hamount <- n_group/hnum
-        if(missing(vnum) || is.null(vnum)) vnum <- 40
-        vamount <- diff(range(y, na.rm=TRUE))/vnum
-
         ## break y-axis into categories
         if(missing(vamount) || is.null(vamount))
             vamount <- diff(range(y, na.rm=TRUE))/50
