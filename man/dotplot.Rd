@@ -24,7 +24,7 @@ group on x-axis.}
 None.
 }
 \description{
-Like the \code{\link{grayplot}} function, but with one axis assumed to be a group.
+Like the \code{\link{grayplot}} function, but with one axis assumed to be categorical.
 }
 \details{
 Calls \code{\link{grayplot}} with special choices of

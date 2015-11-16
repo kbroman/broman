@@ -2,7 +2,7 @@
 #'
 #' Dot chart with a gray background
 #'
-#' Like the \code{\link{grayplot}} function, but with one axis assumed to be a group.
+#' Like the \code{\link{grayplot}} function, but with one axis assumed to be categorical.
 #'
 #' @param group Categorical coordinates for the plot
 #' @param y Coordinates of points in the plot
