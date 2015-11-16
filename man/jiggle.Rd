@@ -16,7 +16,7 @@ character, or numeric vector}
 
 \item{hnum}{Number of horizontal bins for the jiggling.}
 
-\item{vamount}{Number of vertical bins for the jiggling (for method \code{"fixed"}).}
+\item{vnum}{Number of vertical bins for the jiggling (for method \code{"fixed"}).}
 }
 \value{
 Numeric vector with amounts to jiggle the points horizontally
@@ -32,6 +32,6 @@ the \href{http://www.cbs.dtu.dk/~eklund/beeswarm/}{beeswarm
 package}
 }
 \seealso{
-\code{\link[graphics]{jitter}}, \code{\link{dotplot}}
+\code{\link[base]{jitter}}, \code{\link{dotplot}}
 }
 

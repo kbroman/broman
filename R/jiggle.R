@@ -11,7 +11,7 @@
 #' @param method What method to use for horizontal jiggling.
 #'
 #' @param hnum Number of horizontal bins for the jiggling.
-#' @param vamount Number of vertical bins for the jiggling (for method \code{"fixed"}).
+#' @param vnum Number of vertical bins for the jiggling (for method \code{"fixed"}).
 #'
 #' @details The \code{"random"} method is similar to
 #' \code{\link[base]{jitter}}; the \code{"fixed"} method is similar to
@@ -20,7 +20,7 @@
 #'
 #' @return Numeric vector with amounts to jiggle the points horizontally
 #'
-#' @seealso \code{\link[graphics]{jitter}}, \code{\link{dotplot}}
+#' @seealso \code{\link[base]{jitter}}, \code{\link{dotplot}}
 #' @export
 jiggle <-
     function(group, y, method=c("fixed", "random"), hnum, vnum)
