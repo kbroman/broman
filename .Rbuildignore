@@ -1,5 +1,5 @@
 \.git
-$README.md
+^README\.md$
 \.gitignore
 Makefile
 ^\.travis\.yml$
