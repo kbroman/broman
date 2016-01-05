@@ -22,6 +22,7 @@
 #' @return Numeric vector with amounts to jiggle the points horizontally
 #'
 #' @seealso \code{\link[base]{jitter}}, \code{\link{dotplot}}
+#' @importFrom stats runif median
 #' @export
 jiggle <-
     function(group, y, method=c("fixed", "random"), hnum, vnum)
