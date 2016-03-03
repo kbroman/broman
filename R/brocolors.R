@@ -43,7 +43,7 @@
 
 #' @keywords utilities
 brocolors <-
-    function(set=c("general", "general2", "bg", "bgpng", "CC", "f2", "sex", "main", "crayons"))
+    function(set=c("general", "general2", "bg", "bgpng", "CC", "CCalt", "f2", "sex", "main", "crayons"))
 {
     general <- c('lightblue'  =rgb(102,203,254,maxColorValue=255),
                  'hotpink'    =rgb(254,  0,128,maxColorValue=255),
@@ -67,6 +67,7 @@ brocolors <-
               'lightblue'=rgb(102, 204, 255, maxColorValue=255),
               'pink'    =rgb(255, 102, 255, maxColorValue=255))
 
+    # http://compgen.unc.edu/wp/?page_id=577
     CC <- c("AJ"  =rgb(240,240,  0,maxColorValue=255),
             "B6"  =rgb(128,128,128,maxColorValue=255),
             "129" =rgb(240,128,128,maxColorValue=255),
@@ -75,6 +76,16 @@ brocolors <-
             "CAST"=rgb(  0,160,  0,maxColorValue=255),
             "PWK" =rgb(240,  0,  0,maxColorValue=255),
             "WSB" =rgb(144,  0,224,maxColorValue=255))
+
+    # improved CC colors, after http://clrs.cc/
+    CCalt <- c("AJ"  = "#FFDC00",
+               "B6"  = "#888888",
+               "129" = "#F08080",
+               "NOD" = "#0064C9",
+               "NZO" = "#7FDBFF",
+               "CAST"= "#2ECC40",
+               "PWK" = "#FF4136",
+               "WSB" = "#B10DC9")
 
     f2 <- c(AA=as.character(CC[1]), AB=rgb(0, 200, 0, maxColorValue=255), BB=as.character(CC[5]))
     sex <- c(female=rgb(255,80,80, maxColorValue=255), male=as.character(CC[5]))
@@ -221,6 +232,7 @@ brocolors <-
            bg=bg,
            bgpng=bgpng,
            CC=CC,
+           CCalt=CCalt,
            f2=f2,
            sex=sex,
            main=main,
