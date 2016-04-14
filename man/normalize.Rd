@@ -4,7 +4,7 @@
 \alias{normalize}
 \title{Quantile normalization}
 \usage{
-normalize(x, y)
+normalize(x, y = NULL)
 }
 \arguments{
 \item{x}{Numeric vector or matrix}

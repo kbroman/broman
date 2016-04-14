@@ -4,7 +4,7 @@
 \alias{runningratio}
 \title{Running ratio}
 \usage{
-runningratio(pos, numerator, denominator, at, window = 1000)
+runningratio(pos, numerator, denominator, at = NULL, window = 1000)
 }
 \arguments{
 \item{pos}{Positions for the values.}
@@ -14,13 +14,13 @@ runningratio(pos, numerator, denominator, at, window = 1000)
 \item{denominator}{Values for denominator in ratio.}
 
 \item{at}{Positions at which running ratio is
-calculated.  If missing, \code{pos} is used.}
+calculated.  If NULL, \code{pos} is used.}
 
 \item{window}{Window width.}
 }
 \value{
 A vector with the same length as the input \code{at} (or \code{pos},
-  if \code{at} is missing), containing the running ratio.
+  if \code{at} is NULL), containing the running ratio.
 }
 \description{
 Calculates a running ratio; a ratio sum(top)/sum(bottom) in a sliding window.

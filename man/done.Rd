@@ -4,14 +4,14 @@
 \alias{done}
 \title{Send a short message via RPushbullet.}
 \usage{
-done(message = "R is done", recipients)
+done(message = "R is done", recipients = NULL)
 }
 \arguments{
 \item{message}{A character string with a message.
 (passed to \code{\link[RPushbullet]{pbPost}}.)}
 
 \item{recipients}{A character or numeric vector indicating the
-devices this post should go to. If missing, the default device is
+devices this post should go to. If NULL, the default device is
 looked up from an optional setting, and if none has been set the
 push is sent to all devices. (passed to
 \code{\link[RPushbullet]{pbPost}}.)}

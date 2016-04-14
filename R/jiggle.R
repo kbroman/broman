@@ -25,7 +25,7 @@
 #' @importFrom stats runif median
 #' @export
 jiggle <-
-    function(group, y, method=c("fixed", "random"), hnum, vnum)
+    function(group, y, method=c("fixed", "random"), hnum=35, vnum=40)
 {
     method <- match.arg(method)
     stopifnot(length(group) == length(y))
@@ -44,9 +44,7 @@ jiggle <-
     if(length(unique(y)) < length(unique(group)))
         warning('Seems like maybe "group" and "y" got switched.')
 
-    if(missing(hnum) || is.null(hnum)) hnum <- 35
     hamount <- n_group/hnum
-    if(missing(vnum) || is.null(vnum)) vnum <- 40
     vamount <- diff(range(y, na.rm=TRUE))/vnum
 
     if(method=="random") {
@@ -70,9 +68,6 @@ jiggle <-
         return(runif(length(y), -hamount, hamount))
     }
     else if(method=="fixed") {
-        ## break y-axis into categories
-        if(missing(vamount) || is.null(vamount))
-            vamount <- diff(range(y, na.rm=TRUE))/50
         # breaks between intervals (intervals centered at median)
         br <- c(rev(seq(median(y, na.rm=TRUE)+vamount/2,
                         min(y, na.rm=TRUE)-vamount,

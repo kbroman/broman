@@ -4,13 +4,13 @@
 \alias{note}
 \title{Send a note to pushbullet}
 \usage{
-note(title, recipients, body = "")
+note(title, recipients = NULL, body = "")
 }
 \arguments{
 \item{title}{The title of the note (could be the whole thing).}
 
 \item{recipients}{A character or numeric vector indicating the
-devices this post should go to. If missing, the default device is
+devices this post should go to. If NULL, the default device is
 looked up from an optional setting, and if none has been set the
 push is sent to all devices. (passed to
 \code{\link[RPushbullet]{pbPost}}.)}

@@ -60,12 +60,12 @@ manyboxplot <-
     manyboxplot.sub <-
         function(xqu, dotcol, xlab="", xaxs="i", ylab="quantiles",
                  xlim=c(0.25, ncol(xqu)+.75), linecol, type="p",
-                 xat, lwd=2, lty=1, pch=16, ylim=range(xqu), ...)
+                 xat=NULL, lwd=2, lty=1, pch=16, ylim=range(xqu), ...)
         {
             medrow <- (nrow(xqu)-1)/2+1
             ncolx <- ncol(xqu)
 
-            if(missing(xat)) {
+            if(is.null(xat)) {
                 xat <- pretty(1:ncolx)
                 xat <- c(1, xat[xat > 0])
             }

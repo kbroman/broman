@@ -72,24 +72,19 @@
 #' @keywords
 #' graphics
 grayplot <-
-    function(x, y, ..., type="p", hlines, hlines.col="white", hlines.lty=1, hlines.lwd=1,
-             vlines, vlines.col="white", vlines.lty=1, vlines.lwd=1,
-             xat, yat, bgcolor="gray80", v_over_h=FALSE)
+    function(x, y=NULL, ..., type="p", hlines=NULL, hlines.col="white", hlines.lty=1, hlines.lwd=1,
+             vlines=NULL, vlines.col="white", vlines.lty=1, vlines.lwd=1,
+             xat=NULL, yat=NULL, bgcolor="gray80", v_over_h=FALSE)
 {
     if(missing(x) || is.null(x)) stop("x unspecified")
-    if(missing(y)) y <- NULL
-    if(missing(xat)) xat <- NULL
-    if(missing(yat)) yat <- NULL
-    if(missing(hlines)) hlines <- NULL
-    if(missing(vlines)) vlines <- NULL
 
     # this is to deal with varying inputs (did "..." include xaxt or not?)
     hidegrayplot <-
-        function(x, y, ..., type="p", hlines, hlines.col, hlines.lty, hlines.lwd,
-                 vlines, vlines.col, vlines.lty, vlines.lwd,
+        function(x, y, ..., type="p", hlines=NULL, hlines.col, hlines.lty, hlines.lwd,
+                 vlines=NULL, vlines.col, vlines.lty, vlines.lwd,
                  xat=pretty(x), yat=pretty(y), bgcolor="gray80", xaxt="n", yaxt="n",
                  col.lab=par("col.lab"),
-                 xlim, ylim,
+                 xlim=NULL, ylim=NULL,
                  xlab, ylab, xname, yname,
                  las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0),
                  v_over_h=FALSE)
@@ -111,9 +106,9 @@ grayplot <-
                 if(missing(ylab)) ylab <- yname
             }
 
-            if(missing(ylim) || is.null(ylim))
+            if(is.null(ylim))
                 ylim <- range(y, na.rm=TRUE)
-            if(missing(hlines) || is.null(hlines)) {
+            if(is.null(hlines)) {
                 if(!missing(yat) && !is.null(yat))
                     hlines <- yat
                 else
@@ -122,9 +117,9 @@ grayplot <-
             else if(length(hlines)==1 && is.na(hlines))
                 hlines <- NULL
 
-            if(missing(xlim) || is.null(xlim))
+            if(is.null(xlim))
                 xlim <- range(x, na.rm=TRUE)
-            if(missing(vlines) || is.null(vlines)) {
+            if(is.null(vlines)) {
                 if(!missing(xat) && !is.null(xat))
                     vlines <- xat
                 else

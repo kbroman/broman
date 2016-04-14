@@ -15,7 +15,7 @@
 #'    applied.
 #'
 #' @param at Positions at which running mean (or sum or median or sd) is
-#' calculated.  If missing, \code{pos} is used.
+#' calculated.  If NULL, \code{pos} is used.
 #'
 #' @param window  Window width.
 #'
@@ -24,7 +24,7 @@
 #' @export
 #' @return
 #' A vector with the same length as the input \code{at} (or \code{pos},
-#'   if \code{at} is missing), containing the running
+#'   if \code{at} is NULL), containing the running
 #'   statistic.
 #'
 #' @author
@@ -47,7 +47,7 @@
 #' @keywords
 #' univar
 runningmean <-
-    function(pos, value, at, window=1000, what=c("mean","sum", "median", "sd"))
+    function(pos, value, at=NULL, window=1000, what=c("mean","sum", "median", "sd"))
 {
     what <- which(c("sum","mean","median","sd")==match.arg(what))
 
@@ -55,7 +55,7 @@ runningmean <-
     if(length(value) != n)
         stop("pos and value must have the same length\n")
 
-    if(missing(at)) # if missing 'at', use input 'pos'
+    if(is.null(at)) # if missing 'at', use input 'pos'
         at <- pos
 
     # check that pos is sorted
@@ -111,14 +111,14 @@ runningmean <-
 #' @param denominator Values for denominator in ratio.
 #'
 #' @param at Positions at which running ratio is
-#' calculated.  If missing, \code{pos} is used.
+#' calculated.  If NULL, \code{pos} is used.
 #'
 #' @param window Window width.
 #'
 #' @export
 #' @return
 #' A vector with the same length as the input \code{at} (or \code{pos},
-#'   if \code{at} is missing), containing the running ratio.
+#'   if \code{at} is NULL), containing the running ratio.
 #'
 #' @author
 #' Karl W Broman \email{kbroman@@biostat.wisc.edu}
@@ -137,13 +137,13 @@ runningmean <-
 #' @keywords
 #' univar
 runningratio <-
-    function(pos, numerator, denominator, at, window=1000)
+    function(pos, numerator, denominator, at=NULL, window=1000)
 {
     n <- length(pos)
     if(length(numerator) != n || length(denominator) != n)
         stop("pos, numerator and denominator must all be the same length\n")
 
-    if(missing(at)) # if missing 'at', use input 'pos'
+    if(is.null(at)) # if missing 'at', use input 'pos'
         at <- pos
 
     # check that pos is sorted

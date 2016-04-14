@@ -4,7 +4,7 @@
 \alias{triplot}
 \title{Plot Holmans triangle}
 \usage{
-triplot(labels, ...)
+triplot(labels = c("(1,0,0)", "(0,1,0)", "(0,0,1)"), ...)
 }
 \arguments{
 \item{labels}{Labels for the three corners (lower-right, top, lower-left).}

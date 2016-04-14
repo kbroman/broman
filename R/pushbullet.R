@@ -5,7 +5,7 @@
 #' notifications of any error messages.
 #'
 #' @param recipients A character or numeric vector indicating the
-#' devices this post should go to. If missing, the default device is
+#' devices this post should go to. If NULL, the default device is
 #' looked up from an optional setting, and if none has been set the
 #' push is sent to all devices. (passed to
 #' \code{\link[RPushbullet]{pbPost}}.)
@@ -16,10 +16,10 @@
 #' @keywords utilities
 #' @seealso \code{\link{stop_sending_errors}}
 errors2pushbullet <-
-    function(recipients) {
+    function(recipients=NULL) {
         load_pushbullet()
 
-        if(!missing(recipients) && !is.null(recipients))
+        if(!is.null(recipients))
             options(error = function() {
                 RPushbullet::pbPost("note", "Error", geterrmessage(), recipients=recipients)
                 if(!interactive()) stop(geterrmessage())
@@ -96,7 +96,7 @@ load_pushbullet <-
 #' @param message A character string with a message.
 #' (passed to \code{\link[RPushbullet]{pbPost}}.)
 #' @param recipients A character or numeric vector indicating the
-#' devices this post should go to. If missing, the default device is
+#' devices this post should go to. If NULL, the default device is
 #' looked up from an optional setting, and if none has been set the
 #' push is sent to all devices. (passed to
 #' \code{\link[RPushbullet]{pbPost}}.)
@@ -107,11 +107,11 @@ load_pushbullet <-
 #' @keywords utilities
 # got this name from Ian Kyle; see http://bit.ly/IanKyle_systemdone
 done <-
-    function(message="R is done", recipients)
+    function(message="R is done", recipients=NULL)
 {
     load_pushbullet()
 
-    if(!missing(recipients) && !is.null(recipients))
+    if(!is.null(recipients))
         RPushbullet::pbPost("note", message, recipients=recipients)
     else
         RPushbullet::pbPost("note", message)
@@ -125,7 +125,7 @@ done <-
 #'
 #' @param title The title of the note (could be the whole thing).
 #' @param recipients A character or numeric vector indicating the
-#' devices this post should go to. If missing, the default device is
+#' devices this post should go to. If NULL, the default device is
 #' looked up from an optional setting, and if none has been set the
 #' push is sent to all devices. (passed to
 #' \code{\link[RPushbullet]{pbPost}}.)
@@ -136,11 +136,11 @@ done <-
 #' \dontrun{note("Hello.")}
 #' @keywords utilities
 note <-
-    function(title, recipients, body="")
+    function(title, recipients=NULL, body="")
 {
     load_pushbullet()
 
-    if(!missing(recipients) && !is.null(recipients))
+    if(!is.null(recipients))
         RPushbullet::pbPost("note", title=title, body=body, recipients=recipients)
     else
         RPushbullet::pbPost("note", title=title, body=body)

@@ -4,11 +4,12 @@
 \alias{excel_fig}
 \title{Excel-style figure displaying contents of a matrix}
 \usage{
-excel_fig(mat, file, cellwidth = 80, cellheight = 26, textsize = 16,
-  fig_width, fig_height, border = "#CECECE", headcol = "#E9E9E9",
-  headborder = "#969696", headtextcol = "#626262", textcol = "black",
-  row_names = FALSE, col_names = TRUE, hilitcells, hilitcolor = "#F0DCDB",
-  lwd = 1, direct2svg = FALSE)
+excel_fig(mat, file = NULL, cellwidth = 80, cellheight = 26,
+  textsize = 16, fig_width = NULL, fig_height = NULL,
+  border = "#CECECE", headcol = "#E9E9E9", headborder = "#969696",
+  headtextcol = "#626262", textcol = "black", row_names = FALSE,
+  col_names = TRUE, hilitcells = NULL, hilitcolor = "#F0DCDB", lwd = 1,
+  direct2svg = FALSE)
 }
 \arguments{
 \item{mat}{A matrix}
@@ -21,9 +22,9 @@ excel_fig(mat, file, cellwidth = 80, cellheight = 26, textsize = 16,
 
 \item{textsize}{Size for text (if \code{file} is provided or \code{direct2svg=TRUE})}
 
-\item{fig_width}{Width of figure, in pixels (if missing, taken from \code{cellwidth}); ignored when \code{direct2svg=FALSE}}
+\item{fig_width}{Width of figure, in pixels (if NULL, taken from \code{cellwidth}); ignored when \code{direct2svg=FALSE}}
 
-\item{fig_height}{Height of figure, in pixels (if missing, taken from \code{cellheight}); ignored when \code{direct2svg=FALSE}}
+\item{fig_height}{Height of figure, in pixels (if NULL, taken from \code{cellheight}); ignored when \code{direct2svg=FALSE}}
 
 \item{border}{Color of border of cells for the body of the matrix}
 
@@ -39,7 +40,7 @@ excel_fig(mat, file, cellwidth = 80, cellheight = 26, textsize = 16,
 
 \item{col_names}{If TRUE, and column names are present, include them as a first row}
 
-\item{hilitcells}{Character vector of cells to highlight, like \code{"A1"} or \code{"D4"}}
+\item{hilitcells}{Optional character vector of cells to highlight, like \code{"A1"} or \code{"D4"}}
 
 \item{hilitcolor}{Color to highlight cells, a vector of length 1 or the same length as \code{hilitcells}}
 

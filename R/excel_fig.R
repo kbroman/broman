@@ -7,8 +7,8 @@
 #' @param cellwidth Width of each cell, in pixels
 #' @param cellheight Height of each cell, in pixels
 #' @param textsize Size for text (if \code{file} is provided or \code{direct2svg=TRUE})
-#' @param fig_width Width of figure, in pixels (if missing, taken from \code{cellwidth}); ignored when \code{direct2svg=FALSE}
-#' @param fig_height Height of figure, in pixels (if missing, taken from \code{cellheight}); ignored when \code{direct2svg=FALSE}
+#' @param fig_width Width of figure, in pixels (if NULL, taken from \code{cellwidth}); ignored when \code{direct2svg=FALSE}
+#' @param fig_height Height of figure, in pixels (if NULL, taken from \code{cellheight}); ignored when \code{direct2svg=FALSE}
 #' @param border Color of border of cells for the body of the matrix
 #' @param headcol Background color of cells on the top and left border
 #' @param headborder Color of border of cells on the top and left border
@@ -16,7 +16,7 @@
 #' @param textcol Color of text in in cells in body of the matrix
 #' @param row_names If TRUE, and row names are present, include them as a first column
 #' @param col_names If TRUE, and column names are present, include them as a first row
-#' @param hilitcells Character vector of cells to highlight, like \code{"A1"} or \code{"D4"}
+#' @param hilitcells Optional character vector of cells to highlight, like \code{"A1"} or \code{"D4"}
 #' @param hilitcolor Color to highlight cells, a vector of length 1 or the same length as \code{hilitcells}
 #' @param lwd Line width for rectangles
 #' @param direct2svg If TRUE, rather than R graphics, just print an SVG directly with \code{\link[base]{cat}}.
@@ -33,12 +33,12 @@
 #'                  stringsAsFactors=FALSE)
 #' excel_fig(df, col_names=TRUE)
 excel_fig <-
-    function(mat, file, cellwidth=80, cellheight=26, textsize=16,
-             fig_width, fig_height,
+    function(mat, file=NULL, cellwidth=80, cellheight=26, textsize=16,
+             fig_width=NULL, fig_height=NULL,
              border="#CECECE", headcol="#E9E9E9", headborder="#969696",
              headtextcol="#626262", textcol="black",
              row_names=FALSE, col_names=TRUE,
-             hilitcells, hilitcolor="#F0DCDB", lwd=1,
+             hilitcells=NULL, hilitcolor="#F0DCDB", lwd=1,
              direct2svg=FALSE)
 
 {
@@ -61,12 +61,12 @@ excel_fig <-
 
     height <- sum(cellheight)
     width <- sum(cellwidth)
-    if(missing(fig_height)) fig_height <- height
-    if(missing(fig_width)) fig_width <- width
+    if(is.null(fig_height)) fig_height <- height
+    if(is.null(fig_width)) fig_width <- width
     celly <- cumsum(c(0,cellheight))
     cellx <- cumsum(c(0,cellwidth))
 
-    if(!missing(file) && !is.null(file)) {
+    if(!is.null(file)) {
         if(grepl("\\.svg$", file))
             svg(file, width=width/72, height=height/72, pointsize=textsize)
         else if(grepl("\\.png$", file))
@@ -77,15 +77,12 @@ excel_fig <-
             jpeg(file, width=width, height=height, pointsize=textsize)
         else
             stop("file must have extension .svg, .png, .jpg, or .pdf")
-    } else { # if missing, make it NULL
-        file <- NULL
     }
-
 
     # matrix containing color of cells
     colormat <- matrix("white", nrow=nrow(mat), ncol=ncol(mat))
 
-    if(!missing(hilitcells) && !is.null(hilitcells)) {
+    if(!is.null(hilitcells)) {
 
         # make sure hilitcolor is a vector of same length as hilitcells
         if(length(hilitcolor) == 1)
@@ -162,7 +159,7 @@ excel_fig <-
         }
     }
 
-    if(!missing(file) && !is.null(file))
+    if(!is.null(file))
         grDevices::dev.off()
 }
 
@@ -211,7 +208,7 @@ excel_fig_direct <-
 svg_cat <-
     function(..., file=NULL, append=TRUE)
 {
-    if(missing(file) || is.null(file))
+    if(is.null(file))
         cat(..., sep="")
     else
         cat(..., file=file, append=append, sep="")

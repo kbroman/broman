@@ -40,7 +40,7 @@
 #' @keywords
 #' hplot
 triplot <-
-    function(labels, ...)
+    function(labels=c("(1,0,0)", "(0,1,0)", "(0,0,1)"), ...)
 {
     m <- rbind(c(2/sqrt(3), 1/sqrt(3), 0), c(0,1,0))
 
@@ -60,9 +60,6 @@ triplot <-
         pts[1,] <- pts[1,] / pin[1] * pin[2]/sqrt(3)*2
 
     for(i in 1:2) pts[i,] <- pts[i,] - mean(range(pts[i,])) + mean(range(lim[,i]))
-
-    if(missing(labels))
-        labels <- c("(1,0,0)", "(0,1,0)", "(0,0,1)")
 
     ya <- c(0,rlim[2]*0.06,0)
     xa <- c(rlim[1],0,-rlim[1])*0.06

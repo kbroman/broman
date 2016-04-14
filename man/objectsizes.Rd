@@ -4,7 +4,7 @@
 \alias{objectsizes}
 \title{Calculate sizes of all objects in workspace}
 \usage{
-objectsizes(obj, sortbysize = TRUE)
+objectsizes(obj = NULL, sortbysize = TRUE)
 }
 \arguments{
 \item{obj}{Vector of object names.  If missing, we pull out all object

@@ -4,7 +4,7 @@
 \alias{quantileSE}
 \title{Sample quantiles and their standard errors}
 \usage{
-quantileSE(x, p = 0.95, bw, na.rm = TRUE, names = TRUE)
+quantileSE(x, p = 0.95, bw = NULL, na.rm = TRUE, names = TRUE)
 }
 \arguments{
 \item{x}{Numeric vector whose sample quantiles are wanted.}

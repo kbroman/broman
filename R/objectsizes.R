@@ -29,9 +29,9 @@
 #' @keywords
 #' utilities
 objectsizes <-
-    function(obj, sortbysize=TRUE)
+    function(obj=NULL, sortbysize=TRUE)
 {
-    if(missing(obj)) obj <- objects(pos=1)
+    if(is.null(obj)) obj <- objects(pos=1)
     result <- data.frame(Mb=rep(0, length(obj)))
     rownames(result) <- obj
     for(i in seq(along=obj))

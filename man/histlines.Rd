@@ -4,7 +4,7 @@
 \alias{histlines}
 \title{Utility to create line-based histogram}
 \usage{
-histlines(x, y, breaks, use = c("counts", "density"))
+histlines(x, y = NULL, breaks, use = c("counts", "density"))
 }
 \arguments{
 \item{x}{Either vector of breaks or the data itself.}
@@ -27,7 +27,7 @@ If \code{x} and \code{y} are both provided, \code{x} is interpreted to
   be the breaks for a histogram, and \code{y} is a vector of counts or
   density values for each interval.  These are then revised so that they
   may be plotted with \code{\link[graphics]{lines}}.
-  If \code{y} is missing, \code{x} is taken to be the data.  In this
+  If \code{y} is NULL, \code{x} is taken to be the data.  In this
   case \code{\link[graphics]{hist}} is called with \code{breaks=breaks}, and
   either the \code{counts} or \code{density} are used as \code{y}.
 }

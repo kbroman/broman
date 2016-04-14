@@ -47,9 +47,9 @@
 #'
 #' @useDynLib broman
 normalize <-
-    function(x,y)
+    function(x,y=NULL)
 {
-    if(!missing(y)) x <- cbind(x,y)
+    if(!is.null(y)) x <- cbind(x,y)
     if(is.data.frame(x)) x <- as.matrix(x)
 
     x[abs(x) == Inf] <- NA

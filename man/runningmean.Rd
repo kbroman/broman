@@ -4,8 +4,8 @@
 \alias{runningmean}
 \title{Running mean, sum, or median}
 \usage{
-runningmean(pos, value, at, window = 1000, what = c("mean", "sum", "median",
-  "sd"))
+runningmean(pos, value, at = NULL, window = 1000, what = c("mean", "sum",
+  "median", "sd"))
 }
 \arguments{
 \item{pos}{Positions for the values.}
@@ -14,7 +14,7 @@ runningmean(pos, value, at, window = 1000, what = c("mean", "sum", "median",
 applied.}
 
 \item{at}{Positions at which running mean (or sum or median or sd) is
-calculated.  If missing, \code{pos} is used.}
+calculated.  If NULL, \code{pos} is used.}
 
 \item{window}{Window width.}
 
@@ -22,7 +22,7 @@ calculated.  If missing, \code{pos} is used.}
 }
 \value{
 A vector with the same length as the input \code{at} (or \code{pos},
-  if \code{at} is missing), containing the running
+  if \code{at} is NULL), containing the running
   statistic.
 }
 \description{

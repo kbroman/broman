@@ -4,10 +4,10 @@
 \alias{grayplot}
 \title{Plot with a gray background}
 \usage{
-grayplot(x, y, ..., type = "p", hlines, hlines.col = "white",
-  hlines.lty = 1, hlines.lwd = 1, vlines, vlines.col = "white",
-  vlines.lty = 1, vlines.lwd = 1, xat, yat, bgcolor = "gray80",
-  v_over_h = FALSE)
+grayplot(x, y = NULL, ..., type = "p", hlines = NULL,
+  hlines.col = "white", hlines.lty = 1, hlines.lwd = 1, vlines = NULL,
+  vlines.col = "white", vlines.lty = 1, vlines.lwd = 1, xat = NULL,
+  yat = NULL, bgcolor = "gray80", v_over_h = FALSE)
 }
 \arguments{
 \item{x}{Coordinates of points in the plot}

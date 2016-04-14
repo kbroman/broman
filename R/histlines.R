@@ -25,7 +25,7 @@
 #'   be the breaks for a histogram, and \code{y} is a vector of counts or
 #'   density values for each interval.  These are then revised so that they
 #'   may be plotted with \code{\link[graphics]{lines}}.
-#'   If \code{y} is missing, \code{x} is taken to be the data.  In this
+#'   If \code{y} is NULL, \code{x} is taken to be the data.  In this
 #'   case \code{\link[graphics]{hist}} is called with \code{breaks=breaks}, and
 #'   either the \code{counts} or \code{density} are used as \code{y}.
 #'
@@ -61,9 +61,9 @@
 #' @keywords
 #' graphics
 histlines <-
-    function(x, y, breaks, use=c("counts", "density"))
+    function(x, y=NULL, breaks, use=c("counts", "density"))
 {
-    if(missing(y)) { # input doesn't count the count information
+    if(is.null(y)) { # input doesn't count the count information
         out <- hist(x, breaks=breaks, plot=FALSE)
         x <- out$breaks
         use <- match.arg(use)

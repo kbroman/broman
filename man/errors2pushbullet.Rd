@@ -4,11 +4,11 @@
 \alias{errors2pushbullet}
 \title{Send further errors to pushbullet}
 \usage{
-errors2pushbullet(recipients)
+errors2pushbullet(recipients = NULL)
 }
 \arguments{
 \item{recipients}{A character or numeric vector indicating the
-devices this post should go to. If missing, the default device is
+devices this post should go to. If NULL, the default device is
 looked up from an optional setting, and if none has been set the
 push is sent to all devices. (passed to
 \code{\link[RPushbullet]{pbPost}}.)}

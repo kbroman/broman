@@ -38,14 +38,14 @@
 #' @keywords
 #' graphics
 dotplot <-
-    function(group, y, jiggle, rotate=FALSE, ...)
+    function(group, y, jiggle=NULL, rotate=FALSE, ...)
 {
     stopifnot(length(y) == length(group))
     if(length(unique(y)) < length(unique(group)))
         warning('Seems like maybe "group" and "y" got switched.')
 
     # horizontal jiggling
-    if(missing(jiggle) || is.null(jiggle))
+    if(is.null(jiggle))
         jiggle <- broman::jiggle(group, y, "fixed")
     else if(is.character(jiggle))
         jiggle <- broman::jiggle(group, y, jiggle)
