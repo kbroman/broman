@@ -87,8 +87,10 @@ brocolors <-
                "PWK" = "#FF4136",
                "WSB" = "#B10DC9")
 
-    f2 <- c(AA=as.character(CC[1]), AB=rgb(0, 200, 0, maxColorValue=255), BB=as.character(CC[5]))
-    sex <- c(female=rgb(255,80,80, maxColorValue=255), male=as.character(CC[5]))
+    f2 <- c(AA=as.character(CCalt[1]), AB=rgb(0, 200, 0, maxColorValue=255), BB=as.character(CCalt[4]),
+            error="#cdc5c2")
+
+    sex <- c(female=rgb(255,80,80, maxColorValue=255), male=as.character(CCalt[4]))
 
     main <- rgb(0, 64, 128, maxColorValue=255)
 
