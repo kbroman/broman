@@ -43,7 +43,7 @@
 
 #' @keywords utilities
 brocolors <-
-    function(set=c("general", "general2", "bg", "bgpng", "CC", "CCalt", "f2", "sex", "main", "crayons"))
+    function(set=c("general", "general2", "bg", "bgpng", "CC", "CCalt", "f2", "sex", "main", "crayons", "web"))
 {
     general <- c('lightblue'  =rgb(102,203,254,maxColorValue=255),
                  'hotpink'    =rgb(254,  0,128,maxColorValue=255),
@@ -226,6 +226,23 @@ brocolors <-
     "Yellow Green"="#c5e384",
     "Yellow Orange"="#ffae42")
 
+    web <- c(navy="#001f3f",  # from http://clrs.cc
+             blue="#0074d9",
+             aqua="#7fdbff",
+             teal="#39cccc",
+             olive="#3d9970",
+             green="#2ecc40",
+             lime="#01ff70",
+             yellow="#ffdc00",
+             orange="#ff851b",
+             red="#ff4136",
+             maroon="#85144b",
+             fuchsia="#f012be",
+             purple="#b10dc9",
+             black="#111111",
+             gray="#aaaaaa",
+             silver="#dddddd")
+
     switch(match.arg(set),
            general=general,
            general2=general2,
@@ -236,7 +253,8 @@ brocolors <-
            f2=f2,
            sex=sex,
            main=main,
-           crayons=crayons)
+           crayons=crayons,
+           web=web)
 }
 
 
