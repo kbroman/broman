@@ -89,7 +89,7 @@ dotplot <-
                          xat=xat, xlim=xlim, xaxs=xaxs, xlab=xlab,
                          yat=yat, ylim=ylim, yaxs=yaxs, ylab=ylab, las=las,
                          pch=pch, bg=bg, ...)
-                axis(side=1, at=vlines, ugroup, las=las)
+                axis(side=1, at=vlines, ugroup, las=las, tick=FALSE, mgp=c(0,0.2,0))
 
             }
             else {
@@ -106,7 +106,7 @@ dotplot <-
                          xat=xat, xlim=xlim, xaxs=xaxs, xlab=xlab,
                          yat=yat, ylim=ylim, yaxs=yaxs, ylab=ylab,
                          v_over_h=TRUE, las=las, pch=pch, bg=bg, ...)
-                axis(side=2, at=hlines, ugroup, las=las)
+                axis(side=2, at=hlines, ugroup, las=las, tick=FALSE, mgp=c(0,0.3,0))
             }
 
         }
