@@ -2,7 +2,7 @@
 
    Karl W Broman
 
-   last modified 16 July 2015
+   last modified 25 May 2016
    first written 16 July 2015
 
 */
@@ -21,6 +21,8 @@ void compare_rows_mismatch(int **Mat, int nrow, int ncol, double **D)
 
     for(i=0; i< nrow-1; i++) {
         for(j=i+1; j<nrow; j++) {
+            R_CheckUserInterrupt(); /* check for ^C */
+
             D[i][j] = 0.0;
             n = 0;
             for(k=0; k<ncol; k++) {
@@ -47,6 +49,8 @@ void compare_rows_rmsd(double **Mat, int nrow, int ncol, double **D)
 
     for(i=0; i< nrow-1; i++) {
         for(j=i+1; j<nrow; j++) {
+            R_CheckUserInterrupt(); /* check for ^C */
+
             D[i][j] = 0.0;
             n = 0;
             for(k=0; k<ncol; k++) {

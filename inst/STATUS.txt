@@ -15,10 +15,12 @@ copyright (c) 2001-2016, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.63-1, 2015-05-19:
+Version 0.63-3, 2015-05-25:
 
   Add "web" colors option (from http://clrs.cc) and an alternative set
   of Collaborative Cross colors to brocolors()
+
+  Add checks for ^C (user interrupt) in compare_rows().
 
 
 Version 0.62-1, 2015-01-05:
