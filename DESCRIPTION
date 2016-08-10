@@ -1,6 +1,6 @@
 Package: broman
-Version: 0.63-4
-Date: 2016-06-20
+Version: 0.64-1
+Date: 2016-08-10
 Title: Karl Broman's R Code
 Description: Miscellaneous R functions.
 Author: Karl W Broman <kbroman@biostat.wisc.edu>, with contributions from Aimee
