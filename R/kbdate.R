@@ -1,7 +1,7 @@
 ## kbdate
 ## Karl Broman
 
-#' My only little date facility
+#' My little date facility
 #'
 #' Sys.Date as a string, in a few different formats
 #'

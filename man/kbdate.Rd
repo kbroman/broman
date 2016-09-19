@@ -2,7 +2,7 @@
 % Please edit documentation in R/kbdate.R
 \name{kbdate}
 \alias{kbdate}
-\title{My only little date facility}
+\title{My little date facility}
 \usage{
 kbdate(format = c("dateonly", "standard"), date = Sys.time())
 }
