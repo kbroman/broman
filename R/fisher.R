@@ -50,7 +50,7 @@ fisher <-
 # chisq: approximate chi-square test
 ######################################################################
 #'
-#' Chi-square test by simuation for a two-way table
+#' Chi-square test by simulation for a two-way table
 #'
 #' Calculate a p-value for a chi-square test by Monte Carlo simulation.
 #'

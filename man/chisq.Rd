@@ -2,7 +2,7 @@
 % Please edit documentation in R/fisher.R
 \name{chisq}
 \alias{chisq}
-\title{Chi-square test by simuation for a two-way table}
+\title{Chi-square test by simulation for a two-way table}
 \usage{
 chisq(tab, n.sim = 1000)
 }
