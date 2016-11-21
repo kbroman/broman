@@ -20,6 +20,7 @@
 #' @param hilitcolor Color to highlight cells, a vector of length 1 or the same length as \code{hilitcells}
 #' @param lwd Line width for rectangles
 #' @param direct2svg If TRUE, rather than R graphics, just print an SVG directly with \code{\link[base]{cat}}.
+#' @param mar Plot margins, passed to \code{\link[graphics]{par}}
 #'
 #' @export
 #' @importFrom grDevices svg png jpeg pdf
@@ -39,7 +40,7 @@ excel_fig <-
              headtextcol="#626262", textcol="black",
              row_names=FALSE, col_names=TRUE,
              hilitcells=NULL, hilitcolor="#F0DCDB", lwd=1,
-             direct2svg=FALSE)
+             direct2svg=FALSE, mar=rep(0.1, 4))
 
 {
 
@@ -135,7 +136,7 @@ excel_fig <-
 
 
     # plot region
-    par(mar=rep(0.1, 4))
+    par(mar=mar)
     plot(0,0,type="n", xlab="", ylab="", xaxt="n", yaxt="n",
          xlim=c(0, width), ylim=c(height, 0), xaxs="i", yaxs="i")
 
