@@ -7,7 +7,7 @@
 
 ---
 
-R/broman is an [R](http://www.r-project.org) package with miscellaneous R functions that are
+R/broman is an [R](https://www.r-project.org) package with miscellaneous R functions that are
 useful to me.
 
 ---
@@ -24,4 +24,4 @@ merchantability or fitness for a particular purpose.  See the GNU
 General Public License for more details.
 
 A copy of the GNU General Public License, version 3, is available at
-<http://www.r-project.org/Licenses/GPL-3>
+<https://www.r-project.org/Licenses/GPL-3>
