@@ -158,10 +158,5 @@ pushbullet_devices <-
     function()
 {
     dev <- RPushbullet::pbGetDevices()$devices
-    dev <- dev[vapply(dev, '[[', TRUE, 'active')]
-
-    data.frame(nickname=vapply(dev, '[[', 'string', 'nickname'),
-               iden=vapply(dev, '[[', 'string', 'iden'),
-               model=vapply(dev, '[[', 'string', 'model'),
-               stringsAsFactors=FALSE)
+    dev[dev$active, c("nickname", "model", "iden"),drop=FALSE]
 }
