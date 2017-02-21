@@ -24,4 +24,3 @@ unsetRNGparallel()
 RNGkind()
 }
 \keyword{utilities}
-

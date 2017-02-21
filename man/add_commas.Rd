@@ -18,4 +18,3 @@ Convert a number to a string, with commas every 3rd digit
 \examples{
 add_commas(c(231, 91310, 2123, 9911001020, 999723285))
 }
-

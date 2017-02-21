@@ -61,4 +61,3 @@ df <- data.frame(id=    c(101,  102,  103),
 excel_fig(df, col_names=TRUE)
 }
 \keyword{hplot}
-

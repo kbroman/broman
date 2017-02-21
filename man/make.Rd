@@ -33,4 +33,3 @@ make("/path/to/mypackage") # run make within /path/to/mypackage
 \code{\link[devtools]{load_all}}
 }
 \keyword{utilities}
-

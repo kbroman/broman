@@ -29,4 +29,3 @@ myround(0.199, 2)
 \code{\link[base]{round}}, \code{\link[base]{sprintf}}
 }
 \keyword{utilities}
-

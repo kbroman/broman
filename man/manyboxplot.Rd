@@ -45,4 +45,3 @@ manyboxplot(x, c(0.05, 0.25), ylim=range(x),
 \code{\link{grayplot}}
 }
 \keyword{graphics}
-

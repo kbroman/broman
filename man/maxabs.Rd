@@ -21,4 +21,3 @@ Take the maximum of the absolute values of the input
 x <- c(5, -2, 8, -20, 2.3)
 maxabs(x)
 }
-

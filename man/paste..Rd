@@ -34,4 +34,3 @@ paste.(x, y)
   \code{\link{paste.0}}
 }
 \keyword{character}
-

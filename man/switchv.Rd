@@ -25,4 +25,3 @@ switchv(c("horse", "fish", "cat", "bug"),
         "what?")
 
 }
-

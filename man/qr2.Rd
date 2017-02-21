@@ -32,4 +32,3 @@ qr2(h5)
 \code{\link[base]{qr}}
 }
 \keyword{algebra}
-

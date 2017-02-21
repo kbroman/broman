@@ -30,4 +30,3 @@ image(x, col=revrainbow())
   \code{\link[grDevices]{rainbow}}
 }
 \keyword{color}
-

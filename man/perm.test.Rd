@@ -48,4 +48,3 @@ perm.test(x,y)
 \code{\link[stats]{t.test}}, \code{\link{paired.perm.test}}
 }
 \keyword{htest}
-

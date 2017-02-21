@@ -41,4 +41,3 @@ triarrow(y, col="blue", lwd=2, len=0.1)
   \code{\link{triarrow}}
 }
 \keyword{hplot}
-

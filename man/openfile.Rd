@@ -26,4 +26,3 @@ myfile.pdf")} doesn't work in Windows, but rather
 
 }
 \keyword{IO}
-

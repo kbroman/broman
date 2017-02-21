@@ -20,4 +20,3 @@ x <- factor(c(3, 4, 9, 4, 9), levels=c(3,4,9))
 fac2num(x)
 
 }
-

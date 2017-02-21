@@ -16,4 +16,3 @@ exit R without saving workspace.
 This just calls \code{q("no")}
 }
 \keyword{utilities}
-

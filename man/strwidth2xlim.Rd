@@ -43,10 +43,9 @@ plot(x,1:length(x),xlim=xlims)
 text(x,1:length(x),xlabs,pos=4,cex=0.7)
 
 }
-\author{
-Aimee Teo Broman
-}
 \seealso{
 \code{text}
 }
-
+\author{
+Aimee Teo Broman
+}

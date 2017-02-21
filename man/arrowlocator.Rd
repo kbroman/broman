@@ -48,4 +48,3 @@ arrowlocator(col="blue", lwd=2)
   \code{\link[graphics]{locator}}
 }
 \keyword{hplot}
-

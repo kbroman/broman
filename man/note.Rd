@@ -25,4 +25,3 @@ to send a bit of text to pushbullet.
 \dontrun{note("Hello.")}
 }
 \keyword{utilities}
-

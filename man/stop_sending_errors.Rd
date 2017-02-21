@@ -17,4 +17,3 @@ longer sent to pushbullet.
 \code{\link{errors2pushbullet}}
 }
 \keyword{utilities}
-

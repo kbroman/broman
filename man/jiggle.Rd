@@ -35,4 +35,3 @@ similar to the
 \seealso{
 \code{\link[base]{jitter}}, \code{\link{dotplot}}
 }
-

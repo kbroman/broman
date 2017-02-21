@@ -24,4 +24,3 @@ colnames(x) <- LETTERS[1:5]
 attrnames(x)
 }
 \keyword{utilities}
-

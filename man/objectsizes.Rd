@@ -33,4 +33,3 @@ print(output <- objectsizes())
   \code{\link[base]{objects}}
 }
 \keyword{utilities}
-

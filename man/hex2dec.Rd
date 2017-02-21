@@ -24,11 +24,10 @@ hex2dec("14D") == 333
 hex2dec(0:30)
 
 }
-\author{
-Karl W Broman, \email{kbroman@biostat.wisc.edu}
-}
 \seealso{
 \code{\link{dec2hex}}
 }
+\author{
+Karl W Broman, \email{kbroman@biostat.wisc.edu}
+}
 \keyword{manip}
-

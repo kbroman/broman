@@ -21,4 +21,3 @@ Convert a color to RGB and then to RGB with alpha transparency
 colwalpha(c("blue", "red"), 0.5)
 }
 \keyword{color}
-

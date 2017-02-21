@@ -43,4 +43,3 @@ dotplot(g, x, runif(length(g), -0.25, 0.25))
 \code{\link{grayplot}},
 }
 \keyword{graphics}
-

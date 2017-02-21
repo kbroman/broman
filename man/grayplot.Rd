@@ -77,4 +77,3 @@ grayplot(x, col="violet", pch=16, bgcolor="gray90",
   \code{\link[graphics]{points}}
 }
 \keyword{graphics}
-

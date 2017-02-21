@@ -34,4 +34,3 @@ fisher(TeaTasting,1000)
   \code{\link[stats]{fisher.test}}, \code{\link{chisq}}
 }
 \keyword{htest}
-

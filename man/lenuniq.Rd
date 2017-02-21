@@ -28,4 +28,3 @@ lenuniq(x)
 lenuniq(x, na.rm=FALSE)
 }
 \keyword{utilities}
-

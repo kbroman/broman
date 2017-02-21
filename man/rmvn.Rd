@@ -32,4 +32,3 @@ x <- rmvn(100, c(1,2),matrix(c(1,1,1,4),ncol=2))
 \code{\link[stats]{rnorm}}
 }
 \keyword{datagen}
-

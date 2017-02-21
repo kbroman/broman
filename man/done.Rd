@@ -25,4 +25,3 @@ some R job is complete.
 \dontrun{done("Your R job is complete.")}
 }
 \keyword{utilities}
-

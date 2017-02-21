@@ -50,4 +50,3 @@ sapply(cf(x,y), function(a) sum(!a))
 
 }
 \keyword{data}
-

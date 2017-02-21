@@ -33,4 +33,3 @@ mypairs(x, col=sample(c("blue","red"), 500, repl=TRUE))
 \code{\link[graphics]{pairs}}
 }
 \keyword{hplot}
-

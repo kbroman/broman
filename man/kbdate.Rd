@@ -26,4 +26,3 @@ kbdate("standard")
 \code{\link[base]{Sys.time}}, \code{\link[base]{date}}
 }
 \keyword{utilities}
-

@@ -51,4 +51,3 @@ points(1, 8, pch=21, bg=brocolors("main"), cex=4)
 \code{\link{plot_crayons}}
 }
 \keyword{utilities}
-

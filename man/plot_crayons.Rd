@@ -35,4 +35,3 @@ plot_crayons()
 \seealso{
 \code{\link{brocolors}}
 }
-

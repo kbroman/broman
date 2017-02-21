@@ -42,4 +42,3 @@ quantileSE(rchisq(1000,4), c(0.9,0.95))
 \code{\link[stats]{quantile}}, \code{\link[stats]{density}}
 }
 \keyword{univar}
-

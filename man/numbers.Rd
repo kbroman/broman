@@ -2,8 +2,9 @@
 % Please edit documentation in R/numbers.R
 \docType{data}
 \name{numbers}
-\alias{Numbers}
 \alias{numbers}
+\alias{Numbers}
+\alias{Numbers}
 \title{Numbers spelled out in English}
 \format{A vector of character strings}
 \description{
@@ -20,4 +21,3 @@ numbers[5]
 Numbers[5]
 }
 \keyword{datasets}
-

@@ -37,4 +37,3 @@ qqline2(x, y)
 \code{\link[stats]{qqline}}, \code{\link[stats]{qqplot}}
 }
 \keyword{hplot}
-

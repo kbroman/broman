@@ -42,4 +42,3 @@ I2 <- simp(f,0,2)
 \code{\link[stats]{integrate}}
 }
 \keyword{math}
-

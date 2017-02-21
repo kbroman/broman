@@ -30,4 +30,3 @@ dec2hex(0:30)
 \code{\link{hex2dec}}
 }
 \keyword{manip}
-

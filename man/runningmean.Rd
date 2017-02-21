@@ -40,11 +40,10 @@ lines(x, runningmean(x, y, window=100, what="sd"),
       col="green", lwd=2)
 
 }
-\author{
-Karl W Broman \email{kbroman@biostat.wisc.edu}
-}
 \seealso{
 \code{\link{runningratio}}
 }
+\author{
+Karl W Broman \email{kbroman@biostat.wisc.edu}
+}
 \keyword{univar}
-

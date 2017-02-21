@@ -24,4 +24,3 @@ notifications of any error messages.
 \code{\link{stop_sending_errors}}
 }
 \keyword{utilities}
-
