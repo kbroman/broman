@@ -15,6 +15,15 @@ copyright (c) 2001-2017, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
+Version 0.65-3, 2017-05-02:
+
+  Added the function crayons() which is shorthand for
+  brocolors("crayons"), but also can take a subset of color names, and
+  uses grep to find partial matches. So you can use
+  crayons("purple mountain") rather than
+  brocolors("crayons")["Purple Mountain's Majesty"]
+
+
 Version 0.65-2, 2017-02-21:
 
   Fix problem with pushbullet_devices(); output of
