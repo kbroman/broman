@@ -15,7 +15,14 @@ copyright (c) 2001-2017, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.65-3, 2017-05-04:
+Version 0.65-4, 2017-05-04:
+
+  Added viridis(), which returns a vector of colors from the viridis
+  color scheme, based on code from Simon Garnier,
+  <https://github.com/sjmgarnier/viridis>
+
+
+Version 0.65-3, 2017-05-02:
 
   Added the function crayons() which is shorthand for
   brocolors("crayons"), but also can take a subset of color names, and
