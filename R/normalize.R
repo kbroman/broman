@@ -42,10 +42,7 @@
 #'   hist(zn[,i], xlab="normalized z", main=i, breaks=br)
 #' pairs(zn)
 #'
-#' @keywords
-#' utilities
-#'
-#' @useDynLib broman
+#' @keywords utilities
 normalize <-
     function(x,y=NULL)
 {
