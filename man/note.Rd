@@ -4,7 +4,7 @@
 \alias{note}
 \title{Send a note to pushbullet}
 \usage{
-note(title, recipients = NULL, body = "")
+note(title, recipients = NULL, body = NULL)
 }
 \arguments{
 \item{title}{The title of the note (could be the whole thing).}

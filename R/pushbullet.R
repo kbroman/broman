@@ -21,12 +21,12 @@ errors2pushbullet <-
 
         if(!is.null(recipients))
             options(error = function() {
-                RPushbullet::pbPost("note", "Error", geterrmessage(), recipients=recipients)
+                RPushbullet::pbPost("note", "R error", geterrmessage(), recipients=recipients)
                 if(!interactive()) stop(geterrmessage())
             } )
         else
             options(error = function()  {
-                RPushbullet::pbPost("note", "Error", geterrmessage())
+                RPushbullet::pbPost("note", "R error", geterrmessage())
                 if(!interactive()) stop(geterrmessage())
             } )
     }
@@ -111,10 +111,13 @@ done <-
 {
     load_pushbullet()
 
+    if(!is.null(message) && message=="") message <- NULL
+    print(message)
+
     if(!is.null(recipients))
-        RPushbullet::pbPost("note", message, recipients=recipients)
+        RPushbullet::pbPost("note", title=message, recipients=recipients, body=NULL)
     else
-        RPushbullet::pbPost("note", message)
+        RPushbullet::pbPost("note", title=message, body=NULL)
 }
 
 # note
@@ -136,9 +139,12 @@ done <-
 #' \dontrun{note("Hello.")}
 #' @keywords utilities
 note <-
-    function(title, recipients=NULL, body="")
+    function(title, recipients=NULL, body=NULL)
 {
     load_pushbullet()
+
+    if(!is.null(title) && title=="") title <- NULL
+    if(!is.null(body) && body=="") body <- NULL
 
     if(!is.null(recipients))
         RPushbullet::pbPost("note", title=title, body=body, recipients=recipients)
