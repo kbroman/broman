@@ -4,10 +4,17 @@
 \alias{triplot}
 \title{Plot Holmans triangle}
 \usage{
-triplot(labels = c("(1,0,0)", "(0,1,0)", "(0,0,1)"), ...)
+triplot(labels = c("(1,0,0)", "(0,1,0)", "(0,0,1)"), col = "black",
+  lwd = 2, bgcolor = "gray90", ...)
 }
 \arguments{
 \item{labels}{Labels for the three corners (lower-right, top, lower-left).}
+
+\item{col}{Color of edges of triangle}
+
+\item{lwd}{Line width for edges of triangle}
+
+\item{bgcolor}{Background color for triangle}
 
 \item{...}{Passed to \code{\link[graphics]{plot}}.}
 }

@@ -7,6 +7,12 @@
 #'
 #' @param labels Labels for the three corners (lower-right, top, lower-left).
 #'
+#' @param col Color of edges of triangle
+#'
+#' @param lwd Line width for edges of triangle
+#'
+#' @param bgcolor Background color for triangle
+#'
 #' @param ... Passed to \code{\link[graphics]{plot}}.
 #'
 #' @details
@@ -20,7 +26,7 @@
 #'   related functions \code{\link{tripoints}}, \code{\link{trilines}},
 #'   \code{\link{triarrow}}.
 #'
-#' @importFrom graphics plot par text segments points lines arrows
+#' @importFrom graphics plot par text polygon points lines arrows
 #' @export
 #' @return
 #' The (x,y) coordinates of the points plotted, if any.
@@ -40,7 +46,8 @@
 #' @keywords
 #' hplot
 triplot <-
-    function(labels=c("(1,0,0)", "(0,1,0)", "(0,0,1)"), ...)
+    function(labels=c("(1,0,0)", "(0,1,0)", "(0,0,1)"),
+             col="black", lwd=2, bgcolor="gray90", ...)
 {
     m <- rbind(c(2/sqrt(3), 1/sqrt(3), 0), c(0,1,0))
 
@@ -65,10 +72,10 @@ triplot <-
     xa <- c(rlim[1],0,-rlim[1])*0.06
     for(i in 1:3)
         text(pts[1,i]+xa[i], pts[2,i]+ya[i], labels[i])
-    for(i in 1:2) {
-        for(j in (i+1):3)
-            segments(pts[1,i], pts[2,i], pts[1,j], pts[2,j], lwd=2)
-    }
+
+    polygon(c(pts[1,], pts[1,1]), c(pts[2,], pts[2,1]),
+            border=col, col=bgcolor, lwd=lwd)
+
     invisible(pts)
 }
 
