@@ -59,7 +59,7 @@
 #' grayplot(x, y, col="blue", pch=16)
 #' at <- seq(-3, 3)
 #' grayplot(x, y, col="blue", pch=16, hlines=at, vlines=at)
-#' grayplot(x, col="violet", pch=16, bgcolor="gray90",
+#' grayplot(x, col="violet", pch=16, bgcolor="gray80",
 #'          hlines=seq(-4, 4, by=0.5), hlines.lwd=c(3,1),
 #'          vlines=seq(0, 100, by=5), vlines.lwd=c(3,1,1,1))
 #'
@@ -74,7 +74,7 @@
 grayplot <-
     function(x, y=NULL, ..., type="p", hlines=NULL, hlines.col="white", hlines.lty=1, hlines.lwd=1,
              vlines=NULL, vlines.col="white", vlines.lty=1, vlines.lwd=1,
-             xat=NULL, yat=NULL, bgcolor="gray80", v_over_h=FALSE)
+             xat=NULL, yat=NULL, bgcolor="gray90", v_over_h=FALSE)
 {
     if(missing(x) || is.null(x)) stop("x unspecified")
 
@@ -82,7 +82,7 @@ grayplot <-
     hidegrayplot <-
         function(x, y, ..., type="p", hlines=NULL, hlines.col, hlines.lty, hlines.lwd,
                  vlines=NULL, vlines.col, vlines.lty, vlines.lwd,
-                 xat=pretty(x), yat=pretty(y), bgcolor="gray80", xaxt="n", yaxt="n",
+                 xat=pretty(x), yat=pretty(y), bgcolor="gray90", xaxt="n", yaxt="n",
                  col.lab=par("col.lab"),
                  xlim=NULL, ylim=NULL,
                  xlab, ylab, xname, yname,

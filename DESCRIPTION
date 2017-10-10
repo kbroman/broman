@@ -1,6 +1,6 @@
 Package: broman
-Version: 0.65-4
-Date: 2017-05-07
+Version: 0.66-1
+Date: 2017-10-10
 Title: Karl Broman's R Code
 Description: Miscellaneous R functions, including functions related to
     graphics (mostly for base graphics), permutation tests, running

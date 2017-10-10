@@ -7,7 +7,7 @@
 grayplot(x, y = NULL, ..., type = "p", hlines = NULL,
   hlines.col = "white", hlines.lty = 1, hlines.lwd = 1, vlines = NULL,
   vlines.col = "white", vlines.lty = 1, vlines.lwd = 1, xat = NULL,
-  yat = NULL, bgcolor = "gray80", v_over_h = FALSE)
+  yat = NULL, bgcolor = "gray90", v_over_h = FALSE)
 }
 \arguments{
 \item{x}{Coordinates of points in the plot}
@@ -65,7 +65,7 @@ y <- x+rnorm(100, 0, 0.7)
 grayplot(x, y, col="blue", pch=16)
 at <- seq(-3, 3)
 grayplot(x, y, col="blue", pch=16, hlines=at, vlines=at)
-grayplot(x, col="violet", pch=16, bgcolor="gray90",
+grayplot(x, col="violet", pch=16, bgcolor="gray80",
          hlines=seq(-4, 4, by=0.5), hlines.lwd=c(3,1),
          vlines=seq(0, 100, by=5), vlines.lwd=c(3,1,1,1))
 
