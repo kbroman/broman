@@ -44,6 +44,12 @@ dotplot <-
     if(length(unique(y)) < length(unique(group)))
         warning('Seems like maybe "group" and "y" got switched.')
 
+    # omit missing values
+    if(any(is.na(y))) {
+        group <- group[!is.na(y)]
+        y <- y[!is.na(y)]
+    }
+
     # horizontal jiggling
     if(is.null(jiggle))
         jiggle <- broman::jiggle(group, y, "fixed")
