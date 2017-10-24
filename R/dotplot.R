@@ -45,13 +45,17 @@ dotplot <-
         warning('Seems like maybe "group" and "y" got switched.')
 
     # omit missing values
-    if(any(is.na(y))) {
-        group <- group[!is.na(y)]
+    if(any(is.na(group) | is.na(y))) {
+        keep <- !is.na(y) & !is.na(group)
+        if(sum(keep) == 0)
+            stop("All data are missing")
+
+        group <- group[keep]
         if(!is.null(jiggle) && !is.character(jiggle)) {
             stopifnot(length(jiggle) == length(y))
-            jiggle <- jiggle[!is.na(y)]
+            jiggle <- jiggle[keep]
         }
-        y <- y[!is.na(y)]
+        y <- y[keep]
     }
 
     # horizontal jiggling
