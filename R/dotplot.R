@@ -47,6 +47,10 @@ dotplot <-
     # omit missing values
     if(any(is.na(y))) {
         group <- group[!is.na(y)]
+        if(!is.null(jiggle) && !is.character(jiggle)) {
+            stopifnot(length(jiggle) == length(y))
+            jiggle <- jiggle[!is.na(y)]
+        }
         y <- y[!is.na(y)]
     }
 
