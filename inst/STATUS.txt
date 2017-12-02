@@ -15,11 +15,16 @@ copyright (c) 2001-2017, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.67-1, 2017-11-09:
+Version 0.67-2, 2017-12-02:
 
   Added function vec2string() for turning a vector into a string with
   the items separated by commas and an "and". This is for use in
   R Markdown documents, to list a series of items.
+
+  Added function get_precision() for determining the precision of a
+  number (the number of digits past the decimal point). I want to use
+  this to compare two data sets with different amounts of rounding, to
+  pick the more precise values.
 
 
 Version 0.66-2, 2017-10-24:
