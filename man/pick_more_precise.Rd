@@ -4,12 +4,14 @@
 \alias{pick_more_precise}
 \title{Pick the more precise value for each element in two related vectors}
 \usage{
-pick_more_precise(x, y, tol = 6)
+pick_more_precise(x, y, tol = 0.000001)
 }
 \arguments{
 \item{x}{A numeric vector}
 
 \item{y}{A second numeric vector}
+
+\item{tol}{Tolerance for differences between the values}
 }
 \value{
 A vector of combined values

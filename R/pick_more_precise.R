@@ -8,6 +8,7 @@
 #'
 #' @param x A numeric vector
 #' @param y A second numeric vector
+#' @param tol Tolerance for differences between the values
 #'
 #' @return A vector of combined values
 #'
@@ -21,8 +22,11 @@
 #'
 #' @export
 pick_more_precise <-
-    function(x, y, tol=6)
+    function(x, y, tol=1e-6)
 {
+    # turn tol into integer
+    tol <- floor(-log10(tol))
+
     xn <- names(x)
     yn <- names(y)
 
@@ -41,6 +45,7 @@ pick_more_precise <-
         y <- aligned$y
     }
 
+    # paste in x (with names)
     result <- x
 
     # get number of digits in each
