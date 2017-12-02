@@ -26,6 +26,9 @@ Version 0.67-2, 2017-12-02:
   this to compare two data sets with different amounts of rounding, to
   pick the more precise values.
 
+  Added function align_vectors() for aligning two vectors using their
+  names attributes.
+
 
 Version 0.66-2, 2017-10-24:
 

@@ -3,6 +3,7 @@
 S3method(cf,default)
 S3method(cf,list)
 export(add_commas)
+export(align_vectors)
 export(arrowlocator)
 export(attrnames)
 export(brocolors)
