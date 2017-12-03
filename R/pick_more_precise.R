@@ -52,6 +52,7 @@ pick_more_precise <-
     dx <- get_precision(x)
     dy <- get_precision(y)
 
+    n_made_na <- 0
     for(i in seq_along(x)) {
         if(is.na(x[i]) || is.na(y[i])) { # one or the other is missing
             # keep the non-missing value, if there is one
@@ -60,15 +61,20 @@ pick_more_precise <-
         } else {
             # are the results more different than from rounding?
             d <- abs(round(x[i], dy[i]) - round(y[i], dx[i]))
-            if(d > 0 && floor(-log10(d)) > min(c(tol, dx[i], dy[i])+1)) {
-                cat(x[i], y[i], x[i]-y[i], d, floor(-log10(abs(x[i]-y[i]))),
-                    tol, dx[i], dy[i], min(c(tol, dx[i], dy[i])+1), "\n")
+            if(d > 0 && floor(-log10(d)) < min(c(tol, dx[i], dy[i])+1)) {
+                n_made_na <- n_made_na + 1
                 result[i] <- NA
             }
             else if(dy[i] > dx[i]) { # pick the y value if it's more precise
                 result[i] <- y[i]
             }
         }
+    }
+
+    if(n_made_na > 0) { # issue warning if some values were omitted
+        warning("Omitted ", n_made_na,
+                ifelse(n_made_na==1, " value ", " values "),
+                "due to large differences between x and y")
     }
 
     result
