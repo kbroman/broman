@@ -17,6 +17,7 @@
 get_precision <-
     function(x, ...)
 {
+
     # a bit of contortion here to control the scipen and digits options and have them returned to their initial values
     dots <- list("...")
     if(is.null(dots$set_digits) || dots$set_digits) {
@@ -26,9 +27,13 @@ get_precision <-
         options(scipen=100, digits=21)
     }
 
-    if(length(x) > 1) {
+    if(length(x) > 1) { # deal with vector input
         return(setNames(vapply(x, get_precision, 1, set_digits=FALSE), NULL))
     }
+
+    ### here down, x is a single value
+
+    if(is.na(x)) return(NA) # NA -> NA
 
     x <- as.character(x)
     if(!grepl(".", x, fixed=TRUE)) return(0)
