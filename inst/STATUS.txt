@@ -15,7 +15,7 @@ copyright (c) 2001-2017, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.67-2, 2017-12-02:
+Version 0.67-2, 2017-12-03:
 
   Added function vec2string() for turning a vector into a string with
   the items separated by commas and an "and". This is for use in
@@ -28,6 +28,9 @@ Version 0.67-2, 2017-12-02:
 
   Added function align_vectors() for aligning two vectors using their
   names attributes.
+
+  In grayplot(), have default be pch=21 and bg="lightblue" (that is,
+  points that are lightblue with a black circle around them).
 
 
 Version 0.66-2, 2017-10-24:

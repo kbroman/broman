@@ -87,6 +87,7 @@ grayplot <-
                  xlim=NULL, ylim=NULL,
                  xlab, ylab, xname, yname,
                  las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0),
+                 pch=21, bg="lightblue",
                  v_over_h=FALSE)
         {
             dots <- list(...)
@@ -183,8 +184,8 @@ grayplot <-
             if(!is.null(vlines) && v_over_h)
                 abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
 
-            if(is.null(y)) points(seq(along=x), x, ..., type=type)
-            else points(x, y, ..., type=type)
+            if(is.null(y)) points(seq(along=x), x, ..., pch=pch, bg=bg, type=type)
+            else points(x, y, ..., pch=pch, bg=bg, type=type)
 
             # add black border again
             abline(v=u[1:2], h=u[3:4])
