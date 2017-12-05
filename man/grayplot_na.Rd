@@ -5,7 +5,8 @@
 \title{Scatterplot with missing values indicated}
 \usage{
 grayplot_na(x, y = NULL, type = "p", hlines = NULL, bgcolor = "gray90",
-  v_over_h = FALSE, force = c("none", "x", "y", "both"), ...)
+  v_over_h = FALSE, pch = 21, bg = "lightblue", col = "black",
+  force = c("none", "x", "y", "both"), ...)
 }
 \arguments{
 \item{x}{Coordinates of points in the plot}
@@ -18,6 +19,12 @@ grayplot_na(x, y = NULL, type = "p", hlines = NULL, bgcolor = "gray90",
 
 \item{v_over_h}{If \code{TRUE}, place vertical grid lines on top of
 the horizontal ones.}
+
+\item{pch}{point type}
+
+\item{bg}{Background color in points}
+
+\item{col}{Color of outer circle in points}
 
 \item{force}{Indicates whether to force the NA box (on the x-axis,
 y-axis, or both) even when there are no missing values.}

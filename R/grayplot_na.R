@@ -18,6 +18,10 @@
 #' @param v_over_h If `TRUE`, place vertical grid lines on top of
 #' the horizontal ones.
 #'
+#' @param pch point type
+#' @param bg Background color in points
+#' @param col Color of outer circle in points
+#'
 #' @param force Indicates whether to force the NA box (on the x-axis,
 #' y-axis, or both) even when there are no missing values.
 #'
@@ -64,6 +68,7 @@
 #' graphics
 grayplot_na <-
     function(x, y=NULL, type="p", hlines=NULL, bgcolor="gray90", v_over_h=FALSE,
+             pch=21, bg="lightblue", col="black",
              force=c("none", "x", "y", "both"), ...)
 {
     if(missing(x) || is.null(x)) stop("x unspecified")
@@ -79,8 +84,9 @@ grayplot_na <-
                  xlim=NULL, ylim=NULL,
                  xlab=NULL, ylab=NULL, xname, yname,
                  xaxs="i", yaxs="i",
+                 pch=21, bg="lightblue", col="black",
                  las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0),
-                 pch=21, bg="lightblue", force=c("none", "x", "y", "both"),
+                 force=c("none", "x", "y", "both"),
                  v_over_h=FALSE, na.width=0.06, na.gap=0.01)
         {
             force <- match.arg(force)
@@ -221,13 +227,13 @@ grayplot_na <-
             if(!is.null(vlines) && v_over_h)
                 abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
 
-            points(x, y, pch=pch, bg=bg, type=type, ...)
+            points(x, y, pch=pch, bg=bg, col=col, type=type, ...)
             if(x_na) {
                 n_na <- sum(is.na(x) & !is.na(y))
                 if(n_na > 0) {
                     xnapos <- runif(n_na, xlim_na[1]+diff(xlim_na)*0.2, xlim_na[2]-diff(xlim_na)*0.2)
                     points(xnapos, y[is.na(x) & !is.na(y)],
-                           pch=pch, bg=bg, ...)
+                           pch=pch, bg=bg, col=col, ...)
                 }
             }
             if(y_na) {
@@ -235,7 +241,7 @@ grayplot_na <-
                 if(n_na > 0) {
                     ynapos <- runif(n_na, ylim_na[1]+diff(ylim_na)*0.2, ylim_na[2]-diff(ylim_na)*0.2)
                     points(x[!is.na(x) & is.na(y)], ynapos,
-                           pch=pch, bg=bg, ...)
+                           pch=pch, bg=bg, col=col, ...)
                 }
             }
             if(x_na & y_na) {
@@ -243,7 +249,7 @@ grayplot_na <-
                 if(n_na > 0) {
                     xnapos <- runif(n_na, xlim_na[1]+diff(xlim_na)*0.2, xlim_na[2]-diff(xlim_na)*0.2)
                     ynapos <- runif(n_na, ylim_na[1]+diff(ylim_na)*0.2, ylim_na[2]-diff(ylim_na)*0.2)
-                    points(xnapos, ynapos, pch=pch, bg=bg, ...)
+                    points(xnapos, ynapos, pch=pch, bg=bg, col=col, ...)
                 }
 
             }
@@ -260,6 +266,7 @@ grayplot_na <-
 
     hidegrayplot_na(x=x, y=y, type=type, bgcolor=bgcolor,
                     xname=substitute(x), yname=substitute(y),
+                    pch=pch, bg=bg, col=col,
                     v_over_h=v_over_h, force=force, ...)
     invisible()
 }

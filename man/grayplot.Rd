@@ -7,7 +7,8 @@
 grayplot(x, y = NULL, ..., type = "p", hlines = NULL,
   hlines.col = "white", hlines.lty = 1, hlines.lwd = 1, vlines = NULL,
   vlines.col = "white", vlines.lty = 1, vlines.lwd = 1, xat = NULL,
-  yat = NULL, bgcolor = "gray90", v_over_h = FALSE)
+  yat = NULL, bgcolor = "gray90", pch = 21, bg = "lightblue",
+  col = "black", v_over_h = FALSE)
 }
 \arguments{
 \item{x}{Coordinates of points in the plot}
@@ -39,6 +40,12 @@ grayplot(x, y = NULL, ..., type = "p", hlines = NULL,
 \item{yat}{Locations for y-axis labels; \code{yat=NA} indicates no labels}
 
 \item{bgcolor}{Background color}
+
+\item{pch}{point type}
+
+\item{bg}{Background color in points}
+
+\item{col}{Color of outer circle in points}
 
 \item{v_over_h}{If \code{TRUE}, place vertical grid lines on top of
 the horizontal ones.}

@@ -37,6 +37,10 @@
 #'
 #' @param bgcolor Background color
 #'
+#' @param pch point type
+#' @param bg Background color in points
+#' @param col Color of outer circle in points
+#'
 #' @param v_over_h If `TRUE`, place vertical grid lines on top of
 #' the horizontal ones.
 #'
@@ -72,7 +76,9 @@
 grayplot <-
     function(x, y=NULL, ..., type="p", hlines=NULL, hlines.col="white", hlines.lty=1, hlines.lwd=1,
              vlines=NULL, vlines.col="white", vlines.lty=1, vlines.lwd=1,
-             xat=NULL, yat=NULL, bgcolor="gray90", v_over_h=FALSE)
+             xat=NULL, yat=NULL, bgcolor="gray90",
+             pch=21, bg="lightblue", col="black",
+             v_over_h=FALSE)
 {
     if(missing(x) || is.null(x)) stop("x unspecified")
 
@@ -85,7 +91,7 @@ grayplot <-
                  xlim=NULL, ylim=NULL,
                  xlab, ylab, xname, yname,
                  las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0),
-                 pch=21, bg="lightblue",
+                 pch=21, bg="lightblue", col="black",
                  v_over_h=FALSE)
         {
             dots <- list(...)
@@ -178,7 +184,7 @@ grayplot <-
             if(!is.null(vlines) && v_over_h)
                 abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
 
-            points(x, y, ..., pch=pch, bg=bg, type=type)
+            points(x, y, ..., pch=pch, bg=bg, col=col, type=type)
 
             # add black border again
             abline(v=u[1:2], h=u[3:4])
@@ -189,6 +195,7 @@ grayplot <-
                  vlines=vlines, vlines.col=vlines.col,
                  vlines.lty=vlines.lty, vlines.lwd=vlines.lwd,
                  xat=xat, yat=yat, bgcolor=bgcolor,
+                 pch=pch, bg=bg, col=col,
                  xname=substitute(x), yname=substitute(y),
                  v_over_h=v_over_h)
     invisible()
