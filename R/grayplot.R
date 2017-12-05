@@ -1,9 +1,11 @@
 #  grayplot
 #'
-#' Plot with a gray background
+#' Scatterplot with a gray background
 #'
 #' Like the plot function, but using a gray background just
-#'   for the plot regin.
+#'   for the plot region.
+#'
+#' @md
 #'
 #' @param x Coordinates of points in the plot
 #'
@@ -13,7 +15,7 @@
 #'
 #' @param type Plot type (points, lines, etc.)
 #'
-#' @param hlines Locations of horizontal grid lines; use \code{hlines=NA} to prevent horizontal grid lines
+#' @param hlines Locations of horizontal grid lines; use `hlines=NA` to prevent horizontal grid lines
 #'
 #' @param hlines.col Colors of horizontal grid lines
 #'
@@ -21,7 +23,7 @@
 #'
 #' @param hlines.lwd Line width of horizontal grid lines
 #'
-#' @param vlines Locations of vertical grid lines; use \code{vlines=NA} to prevent vertical grid lines
+#' @param vlines Locations of vertical grid lines; use `vlines=NA` to prevent vertical grid lines
 #'
 #' @param vlines.col Colors of vertical grid lines
 #'
@@ -29,22 +31,21 @@
 #'
 #' @param vlines.lwd Line width of vertical grid lines
 #'
-#' @param xat Locations for x-axis labels; \code{xat=NA} indicates no labels
+#' @param xat Locations for x-axis labels; `xat=NA` indicates no labels
 #'
-#' @param yat Locations for y-axis labels; \code{yat=NA} indicates no labels
+#' @param yat Locations for y-axis labels; `yat=NA` indicates no labels
 #'
 #' @param bgcolor Background color
 #'
-#' @param v_over_h If \code{TRUE}, place vertical grid lines on top of
+#' @param v_over_h If `TRUE`, place vertical grid lines on top of
 #' the horizontal ones.
 #'
 #' @details
-#' Calls \code{\link[graphics]{plot}} with \code{type="n"}, then
-#'   \code{\link[graphics]{rect}} to get the background, and then
-#'   \code{\link[graphics]{points}}.
-#'   Additional arguments you can include: \code{mgp.x} and \code{mgp.y}
-#'   (like \code{mgp}, for controlling parameters of axis labels, but
-#'   separate for x- and y-axis).
+#' Calls [graphics:plot()] with `type="n"`, then [graphics:rect()] to
+#' get the background, and then [graphics::points()]. Additional
+#' arguments you can include: `mgp.x` and `mgp.y` (like `mgp`, for
+#' controlling parameters of axis labels, but separate for x- and
+#' y-axis).
 #'
 #' @export
 #' @importFrom graphics plot title rect axis abline points
@@ -64,10 +65,7 @@
 #'          vlines=seq(0, 100, by=5), vlines.lwd=c(3,1,1,1))
 #'
 #' @seealso
-#' \code{\link[graphics]{plot}},
-#'   \code{\link[graphics]{par}},
-#'   \code{\link[graphics]{rect}},
-#'   \code{\link[graphics]{points}}
+#' [graphics::plot()], [graphics::par()], [graphics::rect()], [graphics::points()]
 #'
 #' @keywords
 #' graphics

@@ -2,7 +2,7 @@
 % Please edit documentation in R/grayplot.R
 \name{grayplot}
 \alias{grayplot}
-\title{Plot with a gray background}
+\title{Scatterplot with a gray background}
 \usage{
 grayplot(x, y = NULL, ..., type = "p", hlines = NULL,
   hlines.col = "white", hlines.lty = 1, hlines.lwd = 1, vlines = NULL,
@@ -48,15 +48,14 @@ None.
 }
 \description{
 Like the plot function, but using a gray background just
-  for the plot regin.
+for the plot region.
 }
 \details{
-Calls \code{\link[graphics]{plot}} with \code{type="n"}, then
-  \code{\link[graphics]{rect}} to get the background, and then
-  \code{\link[graphics]{points}}.
-  Additional arguments you can include: \code{mgp.x} and \code{mgp.y}
-  (like \code{mgp}, for controlling parameters of axis labels, but
-  separate for x- and y-axis).
+Calls \code{\link[=graphics:plot]{graphics:plot()}} with \code{type="n"}, then \code{\link[=graphics:rect]{graphics:rect()}} to
+get the background, and then \code{\link[graphics:points]{graphics::points()}}. Additional
+arguments you can include: \code{mgp.x} and \code{mgp.y} (like \code{mgp}, for
+controlling parameters of axis labels, but separate for x- and
+y-axis).
 }
 \examples{
 \dontshow{set.seed(97536917)}
@@ -71,9 +70,6 @@ grayplot(x, col="violet", pch=16, bgcolor="gray80",
 
 }
 \seealso{
-\code{\link[graphics]{plot}},
-  \code{\link[graphics]{par}},
-  \code{\link[graphics]{rect}},
-  \code{\link[graphics]{points}}
+\code{\link[graphics:plot]{graphics::plot()}}, \code{\link[graphics:par]{graphics::par()}}, \code{\link[graphics:rect]{graphics::rect()}}, \code{\link[graphics:points]{graphics::points()}}
 }
 \keyword{graphics}
