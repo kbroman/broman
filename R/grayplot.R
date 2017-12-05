@@ -108,7 +108,7 @@ grayplot <-
             if(is.null(ylim))
                 ylim <- range(y, na.rm=TRUE)
             if(is.null(hlines)) {
-                if(!missing(yat) && !is.null(yat))
+                if(!is.null(yat))
                     hlines <- yat
                 else
                     hlines <- pretty(ylim)
@@ -119,7 +119,7 @@ grayplot <-
             if(is.null(xlim))
                 xlim <- range(x, na.rm=TRUE)
             if(is.null(vlines)) {
-                if(!missing(xat) && !is.null(xat))
+                if(!is.null(xat))
                     vlines <- xat
                 else
                     vlines <- pretty(xlim)
@@ -128,12 +128,8 @@ grayplot <-
                 vlines <- NULL
 
             # blank plot
-            if(is.null(y))
-                plot(seq(along=x), x, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="",
-                     xlim=xlim, ylim=ylim)
-            else
-                plot(x, y, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="",
-                     xlim=xlim, ylim=ylim)
+            plot(x, y, ..., type="n", xaxt="n", yaxt="n", xlab="", ylab="",
+                 xlim=xlim, ylim=ylim)
 
             # axis titles
             title(xlab=xlab, mgp=mgp.x, col.lab=col.lab)
@@ -182,8 +178,7 @@ grayplot <-
             if(!is.null(vlines) && v_over_h)
                 abline(v=vlines, col=vlines.col, lty=vlines.lty, lwd=vlines.lwd)
 
-            if(is.null(y)) points(seq(along=x), x, ..., pch=pch, bg=bg, type=type)
-            else points(x, y, ..., pch=pch, bg=bg, type=type)
+            points(x, y, ..., pch=pch, bg=bg, type=type)
 
             # add black border again
             abline(v=u[1:2], h=u[3:4])
