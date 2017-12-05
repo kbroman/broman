@@ -15,7 +15,10 @@ copyright (c) 2001-2017, Karl W Broman
     at http://www.r-project.org/Licenses/GPL-3
 ----------------------------------------------------------------------
 
-Version 0.67-2, 2017-12-03:
+Version 0.67-3, 2017-12-05:
+
+  Added function grayplot_na(). It's like grayplot, but includes boxes
+  near the margins to show points that are missing x or y or both.
 
   Added function vec2string() for turning a vector into a string with
   the items separated by commas and an "and". This is for use in
