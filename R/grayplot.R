@@ -45,7 +45,7 @@
 #' the horizontal ones.
 #'
 #' @details
-#' Calls [graphics:plot()] with `type="n"`, then [graphics:rect()] to
+#' Calls [graphics::plot()] with `type="n"`, then [graphics::rect()] to
 #' get the background, and then [graphics::points()]. Additional
 #' arguments you can include: `mgp.x` and `mgp.y` (like `mgp`, for
 #' controlling parameters of axis labels, but separate for x- and

@@ -58,7 +58,7 @@ Like the plot function, but using a gray background just
 for the plot region.
 }
 \details{
-Calls \code{\link[=graphics:plot]{graphics:plot()}} with \code{type="n"}, then \code{\link[=graphics:rect]{graphics:rect()}} to
+Calls \code{\link[graphics:plot]{graphics::plot()}} with \code{type="n"}, then \code{\link[graphics:rect]{graphics::rect()}} to
 get the background, and then \code{\link[graphics:points]{graphics::points()}}. Additional
 arguments you can include: \code{mgp.x} and \code{mgp.y} (like \code{mgp}, for
 controlling parameters of axis labels, but separate for x- and

@@ -4,7 +4,7 @@
 \alias{grayplot_na}
 \title{Scatterplot with missing values indicated}
 \usage{
-grayplot_na(x, y = NULL, type = "p", hlines = NULL, bgcolor = "gray90",
+grayplot_na(x, y = NULL, type = "p", bgcolor = "gray90",
   v_over_h = FALSE, pch = 21, bg = "lightblue", col = "black",
   force = c("none", "x", "y", "both"), ...)
 }
