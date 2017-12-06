@@ -120,6 +120,8 @@ grayplot_na <-
 
             if(is.null(ylim)) {
                 ylim <- range(y, na.rm=TRUE)
+                # make sure ylim[1] < ylim[2]
+                if(diff(ylim) < 2e-6) ylim <- ylim + c(-1,1)*1e-6
                 ylim[1] <- ylim[1]-diff(ylim)*0.02
                 ylim[2] <- ylim[2]+diff(ylim)*0.02
             }
@@ -134,6 +136,8 @@ grayplot_na <-
 
             if(is.null(xlim)) {
                 xlim <- range(x, na.rm=TRUE)
+                # make sure xlim[1] < xlim[2]
+                if(diff(xlim) < 2e-6) xlim <- xlim + c(-1,1)*1e-6
                 xlim[1] <- xlim[1]-diff(xlim)*0.02
                 xlim[2] <- xlim[2]+diff(xlim)*0.02
             }
