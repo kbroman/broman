@@ -91,7 +91,8 @@ grayplot_na <-
                  pch=21, bg="lightblue", col="black",
                  las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0),
                  force=c("none", "x", "y", "both"),
-                 v_over_h=FALSE, na.width=0.06, na.gap=0.01)
+                 v_over_h=FALSE, na.width=0.06, na.gap=0.01,
+                 main="")
         {
             force <- match.arg(force)
             dots <- list(...)
@@ -189,7 +190,8 @@ grayplot_na <-
             }
 
             plot(x, y, type="n", xaxt="n", yaxt="n", xlab="", ylab="",
-                 xlim=xlim_expand, ylim=ylim_expand, xaxs="i", yaxs="i", bty="n")
+                 xlim=xlim_expand, ylim=ylim_expand, xaxs="i", yaxs="i", bty="n",
+                 main=main)
             rect(xlim[1], ylim[1], xlim[2], ylim[2], col=bgcolor, border="black")
             if(x_na) rect(xlim_na[1], ylim[1], xlim_na[2], ylim[2],
                           col=bgcolor, border="black", xpd=TRUE)
