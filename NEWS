@@ -1,19 +1,5 @@
 Revision history for the R/broman package
-----------------------------------------------------------------------
-copyright (c) 2001-2017, Karl W Broman
-
-    The R/broman package is free software; you can redistribute it
-    and/or modify it under the terms of the GNU General Public
-    License, version 3, as published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but without any warranty; without even the implied warranty of
-    merchantability or fitness for a particular purpose.  See the GNU
-    General Public License for more details.
-
-    A copy of the GNU General Public License, version 3, is available
-    at http://www.r-project.org/Licenses/GPL-3
-----------------------------------------------------------------------
+-----------------------------------------
 
 Version 0.67-3, 2017-12-05:
 
@@ -492,6 +478,3 @@ Version 0.10, 11/21/2001:
     a sampling version of fisher.test, a re-parse of the output of
     qr(), simulation from a multivariate normal distribution, and
     numerical integration by Simpson's rule.
-
-----------------------------------------------------------------------
-end of STATUS.txt
