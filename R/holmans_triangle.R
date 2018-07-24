@@ -5,6 +5,8 @@
 #' Plot Holmans triangle (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
+#' @md
+#'
 #' @param labels Labels for the three corners (lower-right, top, lower-left).
 #'
 #' @param col Color of edges of triangle
@@ -13,7 +15,7 @@
 #'
 #' @param bgcolor Background color for triangle
 #'
-#' @param ... Passed to \code{\link[graphics]{plot}}.
+#' @param ... Passed to [graphics::plot()].
 #'
 #' @details
 #' Plot of an equilateral triangle, in order to depict trinomial
@@ -22,9 +24,9 @@
 #'   triangle through the distances to the three sides.  This makes use of
 #'   the fact that for any point in an equilateral triangle, the sum of the
 #'   distances to the three sides is constant.
-#'   The \code{triplot} function creates an empty triangle for use with the
-#'   related functions \code{\link{tripoints}}, \code{\link{trilines}},
-#'   \code{\link{triarrow}}.
+#'   The `triplot` function creates an empty triangle for use with the
+#'   related functions [tripoints()], [trilines()],
+#'   [triarrow()].
 #'
 #' @importFrom graphics plot par text polygon points lines arrows
 #' @export
@@ -40,8 +42,8 @@
 #' triarrow(y, col="blue", lwd=2, len=0.1)
 #'
 #' @seealso
-#' \code{\link{tripoints}}, \code{\link{trilines}},
-#'   \code{\link{triarrow}}, \code{\link{tritext}}
+#' [tripoints()], [trilines()],
+#'   [triarrow()], [tritext()]
 #'
 #' @keywords
 #' hplot
@@ -87,9 +89,11 @@ triplot <-
 #' Plot points within a Holmans triangle (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
+#' @md
+#'
 #' @param x A matrix with three rows, each column being a trinomial distribution.
 #'
-#' @param ... Passed to \code{\link[graphics]{points}}.
+#' @param ... Passed to [graphics::points()].
 #'
 #' @details
 #' Plot of an equilateral triangle, in order to depict trinomial
@@ -98,7 +102,7 @@ triplot <-
 #'   triangle through the distances to the three sides.  This makes use of
 #'   the fact that for any point in an equilateral triangle, the sum of the
 #'   distances to the three sides is constant.
-#'   First use \code{\link{triplot}} to first plot the equilateral triangle.
+#'   First use [triplot()] to first plot the equilateral triangle.
 #'
 #' @export
 #' @return
@@ -113,8 +117,8 @@ triplot <-
 #' triarrow(y, col="blue", lwd=2, len=0.1)
 #'
 #' @seealso
-#' \code{\link{triplot}}, \code{\link{trilines}},
-#'   \code{\link{triarrow}}, \code{\link{tritext}}
+#' [triplot()], [trilines()],
+#'   [triarrow()], [tritext()]
 #'
 #' @keywords
 #' hplot
@@ -159,10 +163,12 @@ tripoints <-
 #' Plot lines within a Holmans triangle (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
+#' @md
+#'
 #' @param x A matrix with three rows, each column being a trinomial
 #'   distribution.  Lines between these points are plotted.
 #'
-#' @param ... Passed to \code{\link[graphics]{lines}}.
+#' @param ... Passed to [graphics::lines()].
 #'
 #' @details
 #' Plot of an equilateral triangle, in order to depict trinomial
@@ -171,7 +177,7 @@ tripoints <-
 #'   triangle through the distances to the three sides.  This makes use of
 #'   the fact that for any point in an equilateral triangle, the sum of the
 #'   distances to the three sides is constant.
-#'   First use \code{\link{triplot}} to first plot the equilateral triangle.
+#'   First use [triplot()] to first plot the equilateral triangle.
 #'
 #' @export
 #' @return
@@ -186,8 +192,8 @@ tripoints <-
 #' triarrow(y, col="blue", lwd=2, len=0.1)
 #'
 #' @seealso
-#' \code{\link{triplot}}, \code{\link{tripoints}},
-#'   \code{\link{triarrow}}, \code{\link{tritext}}
+#' [triplot()], [tripoints()],
+#'   [triarrow()], [tritext()]
 #'
 #' @keywords
 #' hplot
@@ -232,10 +238,12 @@ trilines <-
 #' Plot an arrow within a Holmans triangle (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
+#' @md
+#'
 #' @param x A matrix with three rows and two columns, each column being a trinomial
 #'   distribution.  An arrow between the two points is plotted.
 #'
-#' @param ... Passed to \code{\link[graphics]{arrows}}.
+#' @param ... Passed to [graphics::arrows()].
 #'
 #' @details
 #' Plot of an equilateral triangle, in order to depict trinomial
@@ -244,7 +252,7 @@ trilines <-
 #'   triangle through the distances to the three sides.  This makes use of
 #'   the fact that for any point in an equilateral triangle, the sum of the
 #'   distances to the three sides is constant.
-#'   First use \code{\link{triplot}} to first plot the equilateral triangle.
+#'   First use [triplot()] to first plot the equilateral triangle.
 #'
 #' @export
 #' @return
@@ -259,8 +267,8 @@ trilines <-
 #' triarrow(y, col="blue", lwd=2, len=0.1)
 #'
 #' @seealso
-#' \code{\link{triplot}}, \code{\link{tripoints}},
-#'   \code{\link{trilines}}, \code{\link{tritext}}
+#' [triplot()], [tripoints()],
+#'   [trilines()], [tritext()]
 #'
 #' @keywords
 #' hplot
@@ -310,10 +318,13 @@ triarrow <-
 #' Plot text within a Holmans triangle (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
-#' @param x A matrix with three rows, each column being a trinomial distribution.
-#' @param labels A vector of character strings, with length equal to the number of columns of \code{x}.
+#' @md
 #'
-#' @param ... Passed to \code{\link[graphics]{text}}.
+#' @param x A matrix with three rows, each column being a trinomial distribution.
+#'
+#' @param labels A vector of character strings, with length equal to the number of columns of `x`.
+#'
+#' @param ... Passed to [graphics::text()].
 #'
 #' @details
 #' Plot of an equilateral triangle, in order to depict trinomial
@@ -322,7 +333,7 @@ triarrow <-
 #' triangle through the distances to the three sides.  This makes use of
 #' the fact that for any point in an equilateral triangle, the sum of the
 #' distances to the three sides is constant.
-#' First use \code{\link{triplot}} to first plot the equilateral triangle.
+#' First use [triplot()] to first plot the equilateral triangle.
 #'
 #' @export
 #' @return
@@ -336,8 +347,8 @@ triarrow <-
 #' tritext(xp, c("(1/4,1/2,1/4)", "(1/3,1/3,1/3)"), adj=c(0, 0.5))
 #'
 #' @seealso
-#' \code{\link{triplot}}, \code{\link{trilines}},
-#'   \code{\link{triarrow}}, \code{\link{tripoints}}
+#' [triplot()], [trilines()],
+#'   [triarrow()], [tripoints()]
 #'
 #' @keywords
 #' hplot

@@ -16,25 +16,25 @@ triplot(labels = c("(1,0,0)", "(0,1,0)", "(0,0,1)"), col = "black",
 
 \item{bgcolor}{Background color for triangle}
 
-\item{...}{Passed to \code{\link[graphics]{plot}}.}
+\item{...}{Passed to \code{\link[graphics:plot]{graphics::plot()}}.}
 }
 \value{
 The (x,y) coordinates of the points plotted, if any.
 }
 \description{
 Plot Holmans triangle (an equilateral triangle used to depict
-  trinomial distributions).
+trinomial distributions).
 }
 \details{
 Plot of an equilateral triangle, in order to depict trinomial
-  distributions.  A trinomial distribution (that is, a trio of
-  non-negative numbers that add to 1) is equated to a point in the
-  triangle through the distances to the three sides.  This makes use of
-  the fact that for any point in an equilateral triangle, the sum of the
-  distances to the three sides is constant.
-  The \code{triplot} function creates an empty triangle for use with the
-  related functions \code{\link{tripoints}}, \code{\link{trilines}},
-  \code{\link{triarrow}}.
+distributions.  A trinomial distribution (that is, a trio of
+non-negative numbers that add to 1) is equated to a point in the
+triangle through the distances to the three sides.  This makes use of
+the fact that for any point in an equilateral triangle, the sum of the
+distances to the three sides is constant.
+The \code{triplot} function creates an empty triangle for use with the
+related functions \code{\link[=tripoints]{tripoints()}}, \code{\link[=trilines]{trilines()}},
+\code{\link[=triarrow]{triarrow()}}.
 }
 \examples{
 triplot()
@@ -46,7 +46,7 @@ triarrow(y, col="blue", lwd=2, len=0.1)
 
 }
 \seealso{
-\code{\link{tripoints}}, \code{\link{trilines}},
-  \code{\link{triarrow}}, \code{\link{tritext}}
+\code{\link[=tripoints]{tripoints()}}, \code{\link[=trilines]{trilines()}},
+\code{\link[=triarrow]{triarrow()}}, \code{\link[=tritext]{tritext()}}
 }
 \keyword{hplot}

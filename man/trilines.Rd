@@ -10,23 +10,23 @@ trilines(x, ...)
 \item{x}{A matrix with three rows, each column being a trinomial
 distribution.  Lines between these points are plotted.}
 
-\item{...}{Passed to \code{\link[graphics]{lines}}.}
+\item{...}{Passed to \code{\link[graphics:lines]{graphics::lines()}}.}
 }
 \value{
 The (x,y) coordinates of the endpoints of the lines plotted.
 }
 \description{
 Plot lines within a Holmans triangle (an equilateral triangle used to depict
-  trinomial distributions).
+trinomial distributions).
 }
 \details{
 Plot of an equilateral triangle, in order to depict trinomial
-  distributions.  A trinomial distribution (that is, a trio of
-  non-negative numbers that add to 1) is equated to a point in the
-  triangle through the distances to the three sides.  This makes use of
-  the fact that for any point in an equilateral triangle, the sum of the
-  distances to the three sides is constant.
-  First use \code{\link{triplot}} to first plot the equilateral triangle.
+distributions.  A trinomial distribution (that is, a trio of
+non-negative numbers that add to 1) is equated to a point in the
+triangle through the distances to the three sides.  This makes use of
+the fact that for any point in an equilateral triangle, the sum of the
+distances to the three sides is constant.
+First use \code{\link[=triplot]{triplot()}} to first plot the equilateral triangle.
 }
 \examples{
 triplot()
@@ -38,7 +38,7 @@ triarrow(y, col="blue", lwd=2, len=0.1)
 
 }
 \seealso{
-\code{\link{triplot}}, \code{\link{tripoints}},
-  \code{\link{triarrow}}, \code{\link{tritext}}
+\code{\link[=triplot]{triplot()}}, \code{\link[=tripoints]{tripoints()}},
+\code{\link[=triarrow]{triarrow()}}, \code{\link[=tritext]{tritext()}}
 }
 \keyword{hplot}

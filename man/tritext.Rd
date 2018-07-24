@@ -11,14 +11,14 @@ tritext(x, labels, ...)
 
 \item{labels}{A vector of character strings, with length equal to the number of columns of \code{x}.}
 
-\item{...}{Passed to \code{\link[graphics]{text}}.}
+\item{...}{Passed to \code{\link[graphics:text]{graphics::text()}}.}
 }
 \value{
 Text is plotted at the (x,y) coordinates of the points.
 }
 \description{
 Plot text within a Holmans triangle (an equilateral triangle used to depict
-  trinomial distributions).
+trinomial distributions).
 }
 \details{
 Plot of an equilateral triangle, in order to depict trinomial
@@ -27,7 +27,7 @@ non-negative numbers that add to 1) is equated to a point in the
 triangle through the distances to the three sides.  This makes use of
 the fact that for any point in an equilateral triangle, the sum of the
 distances to the three sides is constant.
-First use \code{\link{triplot}} to first plot the equilateral triangle.
+First use \code{\link[=triplot]{triplot()}} to first plot the equilateral triangle.
 }
 \examples{
 triplot()
@@ -38,7 +38,7 @@ tritext(xp, c("(1/4,1/2,1/4)", "(1/3,1/3,1/3)"), adj=c(0, 0.5))
 
 }
 \seealso{
-\code{\link{triplot}}, \code{\link{trilines}},
-  \code{\link{triarrow}}, \code{\link{tripoints}}
+\code{\link[=triplot]{triplot()}}, \code{\link[=trilines]{trilines()}},
+\code{\link[=triarrow]{triarrow()}}, \code{\link[=tripoints]{tripoints()}}
 }
 \keyword{hplot}
