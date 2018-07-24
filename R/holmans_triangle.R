@@ -41,7 +41,7 @@
 #'
 #' @seealso
 #' \code{\link{tripoints}}, \code{\link{trilines}},
-#'   \code{\link{triarrow}}
+#'   \code{\link{triarrow}}, \code{\link{tritext}}
 #'
 #' @keywords
 #' hplot
@@ -114,7 +114,7 @@ triplot <-
 #'
 #' @seealso
 #' \code{\link{triplot}}, \code{\link{trilines}},
-#'   \code{\link{triarrow}}
+#'   \code{\link{triarrow}}, \code{\link{tritext}}
 #'
 #' @keywords
 #' hplot
@@ -187,7 +187,7 @@ tripoints <-
 #'
 #' @seealso
 #' \code{\link{triplot}}, \code{\link{tripoints}},
-#'   \code{\link{triarrow}}
+#'   \code{\link{triarrow}}, \code{\link{tritext}}
 #'
 #' @keywords
 #' hplot
@@ -260,7 +260,7 @@ trilines <-
 #'
 #' @seealso
 #' \code{\link{triplot}}, \code{\link{tripoints}},
-#'   \code{\link{trilines}}
+#'   \code{\link{trilines}}, \code{\link{tritext}}
 #'
 #' @keywords
 #' hplot
@@ -299,5 +299,80 @@ triarrow <-
     for(i in 1:2) x[,i] <- x[,i] - mean(range(pts[i,])) + mean(range(lim[,i]))
 
     arrows(x[1,1], x[1,2], x[2,1], x[2,2], ...)
+    invisible(x)
+}
+
+
+#  tritext
+#'
+#' Plot text within a Holmans triangle
+#'
+#' Plot text within a Holmans triangle (an equilateral triangle used to depict
+#'   trinomial distributions).
+#'
+#' @param x A matrix with three rows, each column being a trinomial distribution.
+#' @param labels A vector of character strings, with length equal to the number of columns of \code{x}.
+#'
+#' @param ... Passed to \code{\link[graphics]{text}}.
+#'
+#' @details
+#' Plot of an equilateral triangle, in order to depict trinomial
+#' distributions.  A trinomial distribution (that is, a trio of
+#' non-negative numbers that add to 1) is equated to a point in the
+#' triangle through the distances to the three sides.  This makes use of
+#' the fact that for any point in an equilateral triangle, the sum of the
+#' distances to the three sides is constant.
+#' First use \code{\link{triplot}} to first plot the equilateral triangle.
+#'
+#' @export
+#' @return
+#' Text is plotted at the (x,y) coordinates of the points.
+#'
+#' @examples
+#' triplot()
+#' x <- cbind(c(0.25, 0.5, 0.25), c(1/3, 1/3, 1/3))
+#' tripoints(x, lwd=2, pch=21, bg="lightblue")
+#' xp <- x + c(0.02, 0, -0.02)
+#' tritext(xp, c("(1/4,1/2,1/4)", "(1/3,1/3,1/3)"), adj=c(0, 0.5))
+#'
+#' @seealso
+#' \code{\link{triplot}}, \code{\link{trilines}},
+#'   \code{\link{triarrow}}, \code{\link{tripoints}}
+#'
+#' @keywords
+#' hplot
+tritext <-
+    function(x, labels, ...)
+{
+
+    m <- rbind(c(2/sqrt(3), 1/sqrt(3), 0), c(0,1,0))
+
+    pts <- m %*% diag(rep(1,3))
+    lim <- apply(pts,1,range)
+    rlim <- apply(lim,2,diff)
+    lim[1,] <- lim[1,] - rlim*0.12
+    lim[2,] <- lim[2,] + rlim*0.12
+
+    x <- as.matrix(x)
+    if(is.matrix(x) && nrow(x) != 3) x <- t(x)
+    stopifnot(ncol(x) == length(labels))
+    if(any(abs(colSums(x) - 1) > 1e-6)) {
+        x <- x / colSums(x)
+        warning("Some columns do not sum to 1; rescaling.")
+    }
+
+    x <- t(m %*% x)
+    pin <- par("pin")
+    if(pin[2] > pin[1]) {
+        pts[2,] <- pts[2,] / pin[2] * pin[1]*sqrt(3)/2
+        x[,2] <- x[,2] / pin[2] * pin[1]*sqrt(3)/2
+    }
+    else {
+        x[,1] <- x[,1] / pin[1] * pin[2]/sqrt(3)*2
+        pts[1,] <- pts[1,] / pin[1] * pin[2]/sqrt(3)*2
+    }
+    for(i in 1:2) x[,i] <- x[,i] - mean(range(pts[i,])) + mean(range(lim[,i]))
+
+    text(x, labels, ...)
     invisible(x)
 }

@@ -39,6 +39,6 @@ triarrow(y, col="blue", lwd=2, len=0.1)
 }
 \seealso{
 \code{\link{triplot}}, \code{\link{tripoints}},
-  \code{\link{triarrow}}
+  \code{\link{triarrow}}, \code{\link{tritext}}
 }
 \keyword{hplot}
