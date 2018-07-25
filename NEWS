@@ -1,10 +1,12 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.68-1, 2018-07-24:
+Version 0.68-2, 2018-07-24:
 
   Added function tritext(), to go with triplot(), tripoints(),
   trilines(), and triarrows(), but to add text annotations.
+
+  Revised openfile() so that it works on Linux.
 
 
 Version 0.67-4, 2017-12-08:
