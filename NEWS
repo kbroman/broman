@@ -1,7 +1,10 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.68-2, 2018-07-24:
+Version 0.68-3, 2018-08-13:
+
+  Added function spell_out() for spelling out numbers provided they are
+  smallish integers. Goes with the datasets numbers and Numbers.
 
   Added function tritext(), to go with triplot(), tripoints(),
   trilines(), and triarrows(), but to add text annotations.
