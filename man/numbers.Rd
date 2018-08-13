@@ -4,7 +4,6 @@
 \name{numbers}
 \alias{numbers}
 \alias{Numbers}
-\alias{Numbers}
 \title{Numbers spelled out in English}
 \format{A vector of character strings}
 \description{
