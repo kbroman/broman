@@ -1,7 +1,12 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.68-3, 2018-08-13:
+Version 0.68-4, 2018-08-17:
+
+  Added operators %nin%, %win%, and %wnin%.
+  a %nin% b   is like !(a %in% b)
+  a %win% b   is like a[a %in% b]
+  a %wnin% b  is like a[a %nin% b]
 
   Added function spell_out() for spelling out numbers provided they are
   smallish integers. Goes with the datasets numbers and Numbers.
