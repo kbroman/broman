@@ -28,7 +28,7 @@
 #'   statistic.
 #'
 #' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#' Karl W Broman \email{broman@@wisc.edu}
 #'
 #' @examples
 #' x <- 1:10000
@@ -121,7 +121,7 @@ runningmean <-
 #'   if \code{at} is NULL), containing the running ratio.
 #'
 #' @author
-#' Karl W Broman \email{kbroman@@biostat.wisc.edu}
+#' Karl W Broman \email{broman@@wisc.edu}
 #'
 #' @examples
 #' x <- 1:1000

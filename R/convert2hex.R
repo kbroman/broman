@@ -49,7 +49,7 @@ dec2hex <- convert2hex
 #' The input converted from hexadecimal to decimal notation.
 #'
 #' @author
-#' Karl W Broman, \email{kbroman@@biostat.wisc.edu}
+#' Karl W Broman, \email{broman@@wisc.edu}
 #'
 #' @examples
 #' hex2dec("14D")

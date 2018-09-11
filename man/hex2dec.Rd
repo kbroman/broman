@@ -28,6 +28,6 @@ hex2dec(0:30)
 \code{\link{dec2hex}}
 }
 \author{
-Karl W Broman, \email{kbroman@biostat.wisc.edu}
+Karl W Broman, \email{broman@wisc.edu}
 }
 \keyword{manip}

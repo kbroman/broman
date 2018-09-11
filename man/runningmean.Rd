@@ -44,6 +44,6 @@ lines(x, runningmean(x, y, window=100, what="sd"),
 \code{\link{runningratio}}
 }
 \author{
-Karl W Broman \email{kbroman@biostat.wisc.edu}
+Karl W Broman \email{broman@wisc.edu}
 }
 \keyword{univar}

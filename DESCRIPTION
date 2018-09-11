@@ -5,9 +5,9 @@ Title: Karl Broman's R Code
 Description: Miscellaneous R functions, including functions related to
     graphics (mostly for base graphics), permutation tests, running
     mean/median, and general utilities.
-Author: Karl W Broman <kbroman@biostat.wisc.edu>, with contributions from Aimee
+Author: Karl W Broman <broman@wisc.edu>, with contributions from Aimee
     Teo Broman
-Maintainer: Karl W Broman <kbroman@biostat.wisc.edu>
+Maintainer: Karl W Broman <broman@wisc.edu>
 Depends:
     R (>= 2.15.0)
 Imports:
