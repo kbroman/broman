@@ -30,4 +30,4 @@ BugReports: https://github.com/kbroman/broman/issues
 Encoding: UTF-8
 ByteCompile: true
 LazyData: true
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
