@@ -14,7 +14,8 @@
 #' @examples
 #' \dontrun{errors2pushbullet()}
 #' @keywords utilities
-#' @seealso \code{\link{stop_sending_errors}}
+#' @seealso \code{\link{stop_sending_errors}}, \code{\link{note}}, \code{\link{done}},
+#'     \code{\link{pushbullet_devices}}
 errors2pushbullet <-
     function(recipients=NULL) {
         load_pushbullet()
@@ -31,7 +32,7 @@ errors2pushbullet <-
             } )
     }
 
-# errors2pushbullet
+# stop_sending_errors
 #' Stop sending errors to pushbullet
 #'
 #' Clear the \code{error} option, so that error notifications are no
@@ -41,7 +42,8 @@ errors2pushbullet <-
 #' @examples
 #' \dontrun{stop_sending_errors()}
 #' @keywords utilities
-#' @seealso \code{\link{errors2pushbullet}}
+#' @seealso \code{\link{errors2pushbullet}},
+#'     \code{\link{pushbullet_devices}}
 stop_sending_errors <-
     function()
 {
@@ -101,6 +103,9 @@ load_pushbullet <-
 #' push is sent to all devices. (passed to
 #' \code{\link[RPushbullet]{pbPost}}.)
 #'
+#' @seealso \code{\link{errors2pushbullet}}, \code{\link{note}},
+#'     \code{\link{pushbullet_devices}}
+#'
 #' @export
 #' @examples
 #' \dontrun{done("Your R job is complete.")}
@@ -134,6 +139,9 @@ done <-
 #' \code{\link[RPushbullet]{pbPost}}.)
 #' @param body The body of the note (by default, empty)
 #'
+#' @seealso \code{\link{errors2pushbullet}}, \code{\link{done}},
+#'     \code{\link{pushbullet_devices}}
+#'
 #' @export
 #' @examples
 #' \dontrun{note("Hello.")}
@@ -156,6 +164,8 @@ note <-
 #' Grab info on Pushbullet devices.
 #'
 #' Get names and identifiers of Pushbullet devices.
+#'
+#' @seealso \code{\link{errors2pushbullet}}, \code{\link{done}}, \code{\link{note}}
 #'
 #' @export
 #' @return

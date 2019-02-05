@@ -21,6 +21,7 @@ notifications of any error messages.
 \dontrun{errors2pushbullet()}
 }
 \seealso{
-\code{\link{stop_sending_errors}}
+\code{\link{stop_sending_errors}}, \code{\link{note}}, \code{\link{done}},
+    \code{\link{pushbullet_devices}}
 }
 \keyword{utilities}

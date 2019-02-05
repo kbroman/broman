@@ -24,4 +24,8 @@ to send a bit of text to pushbullet.
 \examples{
 \dontrun{note("Hello.")}
 }
+\seealso{
+\code{\link{errors2pushbullet}}, \code{\link{done}},
+    \code{\link{pushbullet_devices}}
+}
 \keyword{utilities}

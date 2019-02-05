@@ -24,4 +24,8 @@ some R job is complete.
 \examples{
 \dontrun{done("Your R job is complete.")}
 }
+\seealso{
+\code{\link{errors2pushbullet}}, \code{\link{note}},
+    \code{\link{pushbullet_devices}}
+}
 \keyword{utilities}
