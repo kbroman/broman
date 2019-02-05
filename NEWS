@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.69-1, 2018-12-21:
+Version 0.69-1, 2019-02-05:
 
   Added operators %nin%, %win%, and %wnin%.
   a %nin% b   is like !(a %in% b)
@@ -12,7 +12,7 @@ Version 0.69-1, 2018-12-21:
   smallish integers. Goes with the datasets numbers and Numbers.
 
 
-Version 0.68-2, 2018-07-24:
+Version 0.68-2, 2018-07-25:
 
   Added function tritext(), to go with triplot(), tripoints(),
   trilines(), and triarrows(), but to add text annotations.
