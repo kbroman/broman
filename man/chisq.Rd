@@ -13,15 +13,15 @@ chisq(tab, n.sim = 1000)
 }
 \value{
 A single number: the P-value testing independence of rows and columns
-  in the table.
+in the table.
 }
 \description{
 Calculate a p-value for a chi-square test by Monte Carlo simulation.
 }
 \details{
-This is like the function \code{\link[stats]{chisq.test}}, but
-  calculates an approximate P-value rather than refering to
-  asymptotics.  This will be better for large, sparse tables.
+This is like the function \code{\link[stats:chisq.test]{stats::chisq.test()}}, but
+calculates an approximate P-value rather than refering to
+asymptotics.  This will be better for large, sparse tables.
 }
 \examples{
 TeaTasting <- matrix(c(3,1,1,3),nrow=2)
@@ -29,7 +29,6 @@ chisq(TeaTasting,1000)
 
 }
 \seealso{
-\code{\link[stats]{chisq.test}},
-  \code{\link[stats]{fisher.test}}, \code{\link{fisher}}
+\code{\link[stats:chisq.test]{stats::chisq.test()}}, \code{\link[stats:fisher.test]{stats::fisher.test()}}, \code{\link[=fisher]{fisher()}}
 }
 \keyword{htest}

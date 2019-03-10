@@ -2,12 +2,12 @@
 #'
 #' Calculate width of a character string in number of lines
 #'
-#' Convert \code{stringwidth} units to number of (margin) lines
+#' Convert `stringwidth` units to number of (margin) lines
 #'
 #' @param s A character or expression vector whose length is to be calculated
 #'
-#' @param ... additional information used by \code{strwidth}, such as
-#'    \code{cex}
+#' @param ... additional information used by `strwidth`, such as
+#'    `cex`
 #'
 #' @export
 #' @importFrom graphics strwidth

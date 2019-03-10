@@ -15,8 +15,8 @@ switchv(EXPR, ...)
 Vector of returned values.
 }
 \description{
-Vectorized version of \code{\link[base]{switch}}: just loops over
-input and calls \code{\link[base]{switch}}.
+Vectorized version of \code{\link[base:switch]{base::switch()}}: just loops over
+input and calls \code{\link[base:switch]{base::switch()}}.
 }
 \examples{
 switchv(c("horse", "fish", "cat", "bug"),

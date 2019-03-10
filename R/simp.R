@@ -40,16 +40,16 @@ trap <-
 #'
 #' @param max.step Log base 2 of the total number of grid points.
 #'
-#' @param ... Other arguments passed to the integrand, \code{f}.
+#' @param ... Other arguments passed to the integrand, `f`.
 #'
 #' @details
 #' Iterately doubles the number of grid points for the numerical
 #'   integral, stopping when the integral decreases by less than
-#'   \code{tol}.
+#'   `tol`.
 #'
 #' @export
 #' @return
-#' The integral of \code{f} from \code{a} to \code{b}.
+#' The integral of `f` from `a` to `b`.
 #'
 #' @examples
 #' f <- function(x) x*x*(1-x)*sin(x*x)
@@ -57,7 +57,7 @@ trap <-
 #' I2 <- simp(f,0,2)
 #'
 #' @seealso
-#' \code{\link[stats]{integrate}}
+#' [stats::integrate()]
 #'
 #' @keywords
 #' math

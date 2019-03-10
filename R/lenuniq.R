@@ -3,13 +3,13 @@
 #' Get the number of unique values in a vector
 #'
 #' @param vec A vector
-#' @param na.rm If \code{TRUE}, remove any missing values
+#' @param na.rm If `TRUE`, remove any missing values
 #'
 #' @return Number of unique values.
 #'
-#' @details It just does \code{length(unique(vec))} or, if
-#' \code{na.rm=TRUE} (the default)
-#' \code{length(unique(vec[!is.na(vec)]))}
+#' @details It just does `length(unique(vec))` or, if
+#' `na.rm=TRUE` (the default)
+#' `length(unique(vec[!is.na(vec)]))`
 #'
 #' @export
 #' @keywords utilities

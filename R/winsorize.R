@@ -18,8 +18,8 @@
 #' @importFrom assertthat assert_that is.number
 #'
 #' @return
-#' A vector like the input \code{x}, but with extreme values moved in to
-#'   the \code{q} and \code{1-q} quantiles.
+#' A vector like the input `x`, but with extreme values moved in to
+#'   the `q` and `1-q` quantiles.
 #'
 #' @examples
 #' x <- sample(c(1:10, rep(NA, 10), 21:30))

@@ -9,7 +9,7 @@ make(pkg = ".", makefile = "Makefile", target = "", quiet = FALSE)
 \arguments{
 \item{pkg}{Path to directory containing the GNU Make file, or an
 Rpackage description, which can be a path or a package name. (See
-\code{\link[devtools]{as.package}} for more information.)}
+\code{\link[devtools:as.package]{devtools::as.package()}} for more information.)}
 
 \item{makefile}{File name of makefile.}
 
@@ -18,7 +18,7 @@ Rpackage description, which can be a path or a package name. (See
 \item{quiet}{If TRUE suppresses output from this function.}
 }
 \value{
-Exit value from \code{\link[base]{system}} with \code{intern=FALSE}
+Exit value from \code{\link[base:system]{base::system()}} with \code{intern=FALSE}
 }
 \description{
 Run make within a package directory
@@ -30,6 +30,6 @@ make("/path/to/mypackage") # run make within /path/to/mypackage
 
 }
 \seealso{
-\code{\link[devtools]{load_all}}
+\code{\link[devtools:load_all]{devtools::load_all()}}
 }
 \keyword{utilities}

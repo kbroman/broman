@@ -13,7 +13,7 @@ dotplot(group, y, jiggle = NULL, rotate = FALSE, ...)
 
 \item{jiggle}{Vector of amounts to jiggle the points horizontally,
 or a character string (\code{"fixed"} or \code{"random"})
-indicating the jiggling method; see \code{\link{jiggle}}.}
+indicating the jiggling method; see \code{\link[=jiggle]{jiggle()}}.}
 
 \item{rotate}{If TRUE, have group as y-axis; default (FALSE) has
 group on x-axis.}
@@ -24,10 +24,10 @@ group on x-axis.}
 None.
 }
 \description{
-Like the \code{\link{grayplot}} function, but with one axis assumed to be categorical.
+Like the \code{\link[=grayplot]{grayplot()}} function, but with one axis assumed to be categorical.
 }
 \details{
-Calls \code{\link{grayplot}} with special choices of
+Calls \code{\link[=grayplot]{grayplot()}} with special choices of
 graphics parameters for the case of categorical x.
 }
 \examples{
@@ -40,6 +40,6 @@ dotplot(g, x, runif(length(g), -0.25, 0.25))
 
 }
 \seealso{
-\code{\link{grayplot}},
+\code{\link[=grayplot]{grayplot()}}
 }
 \keyword{graphics}

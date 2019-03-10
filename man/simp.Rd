@@ -25,12 +25,12 @@ The integral of \code{f} from \code{a} to \code{b}.
 }
 \description{
 Perform numerical integration by Simpson's rule or the trapezoidal
-  rule.
+rule.
 }
 \details{
 Iterately doubles the number of grid points for the numerical
-  integral, stopping when the integral decreases by less than
-  \code{tol}.
+integral, stopping when the integral decreases by less than
+\code{tol}.
 }
 \examples{
 f <- function(x) x*x*(1-x)*sin(x*x)
@@ -39,6 +39,6 @@ I2 <- simp(f,0,2)
 
 }
 \seealso{
-\code{\link[stats]{integrate}}
+\code{\link[stats:integrate]{stats::integrate()}}
 }
 \keyword{math}

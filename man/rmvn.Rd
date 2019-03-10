@@ -15,20 +15,20 @@ rmvn(n, mu = 0, V = matrix(1))
 }
 \value{
 A matrix of size n x \code{length(mu)}.  Each row corresponds to a
-  separate replicate.
+separate replicate.
 }
 \description{
 Simulate from a multivariate normal distribution.
 }
 \details{
 Uses the Cholesky decomposition of the matrix \code{V}, obtained by
-  \code{\link[base]{chol}}.
+\code{\link[base:chol]{base::chol()}}.
 }
 \examples{
 x <- rmvn(100, c(1,2),matrix(c(1,1,1,4),ncol=2))
 
 }
 \seealso{
-\code{\link[stats]{rnorm}}
+\code{\link[stats:rnorm]{stats::rnorm()}}
 }
 \keyword{datagen}

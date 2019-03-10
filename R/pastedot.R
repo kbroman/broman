@@ -1,13 +1,13 @@
 #  paste.
 #' paste with dot separator
 #'
-#' Calls \code{\link[base]{paste}} with \code{sep="."}.
+#' Calls [base::paste()] with `sep="."`.
 #'
 #' @param ...  Passed to paste.
 #'
 #' @details
 #' There's not much to this function.  It just is
-#'   \code{\link[base]{paste}} with \code{sep=""}, 'cause I'm lazy.
+#'   [base::paste()] with `sep=""`, 'cause I'm lazy.
 #'
 #' @export
 #' @return
@@ -19,12 +19,12 @@
 #' paste.(x, y)
 #'
 #' @seealso
-#' \code{\link[base]{paste}},
-#'   \code{\link[base]{paste0}},
-#'   \code{\link{paste00}},
-#'   \code{\link{paste..}},
-#'   \code{\link{paste0.}},
-#'   \code{\link{paste.0}}
+#' [base::paste()],
+#'   [base::paste0()],
+#'   [paste00()],
+#'   [paste..()],
+#'   [paste0.()],
+#'   [paste.0()]
 #'
 #' @keywords
 #' character
@@ -36,8 +36,8 @@ paste.. <- function(...) paste(..., sep=".", collapse=".")
 #  paste00
 #' paste with null or dot as separator and with collapse
 #'
-#' Call \code{\link[base]{paste}} with \code{sep="."} or \code{sep=""}
-#'   and \code{collapse=""} or \code{collapse="."}.
+#' Call [base::paste()] with `sep="."` or `sep=""`
+#'   and `collapse=""` or `collapse="."`.
 #'
 #' @aliases paste0. paste.0 paste..
 #'
@@ -45,10 +45,10 @@ paste.. <- function(...) paste(..., sep=".", collapse=".")
 #'
 #' @details
 #' There's not much to these functions.
-#'   \code{paste00(\dots)} is like \code{paste(\dots, sep="", collapse="")}
-#'   \code{paste..(\dots)} is like \code{paste(\dots, sep=".", collapse=".")}
-#'   \code{paste0.(\dots)} is like \code{paste(\dots, sep="", collapse=".")}
-#'   \code{paste.0(\dots)} is like \code{paste(\dots, sep=".", collapse="")}
+#'   `paste00(...)` is like `paste(..., sep="", collapse="")`
+#'   `paste..(...)` is like `paste(..., sep=".", collapse=".")`
+#'   `paste0.(...)` is like `paste(..., sep="", collapse=".")`
+#'   `paste.0(...)` is like `paste(..., sep=".", collapse="")`
 #'
 #' @export
 #' @return
@@ -63,9 +63,9 @@ paste.. <- function(...) paste(..., sep=".", collapse=".")
 #' paste.0(x, y)
 #'
 #' @seealso
-#' \code{\link[base]{paste}},
-#'   \code{\link[base]{paste0}},
-#'   \code{\link{paste.}}
+#' [base::paste()],
+#'   [base::paste0()],
+#'   [paste.()]
 #'
 #' @keywords
 #' character

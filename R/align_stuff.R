@@ -2,8 +2,6 @@
 #'
 #' Align two vectors using their names attributes, either expanding with NAs or reducing to the common values.
 #'
-#' @md
-#'
 #' @param x A vector
 #' @param y Another vector
 #' @param expand If TRUE, expand each to the same length using NAs. If FALSE, remove elements not in common.

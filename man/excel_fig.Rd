@@ -46,9 +46,9 @@ excel_fig(mat, file = NULL, cellwidth = 80, cellheight = 26,
 
 \item{lwd}{Line width for rectangles}
 
-\item{direct2svg}{If TRUE, rather than R graphics, just print an SVG directly with \code{\link[base]{cat}}.}
+\item{direct2svg}{If TRUE, rather than R graphics, just print an SVG directly with \code{\link[base:cat]{base::cat()}}.}
 
-\item{mar}{Plot margins, passed to \code{\link[graphics]{par}}}
+\item{mar}{Plot margins, passed to \code{\link[graphics:par]{graphics::par()}}.}
 }
 \description{
 Turn a matrix of data into an SVG of how it might look in Excel

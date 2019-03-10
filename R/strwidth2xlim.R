@@ -8,17 +8,17 @@
 #'
 #' @param xstring character vector, specifying text to be written
 #'
-#' @param pos position specifier for text; values of \code{1}, \code{2},
-#'   \code{3}, and \code{4}, respectively, indicate positions below, to
+#' @param pos position specifier for text; values of `1`, `2`,
+#'   `3`, and `4`, respectively, indicate positions below, to
 #'   the left of, above, and to the right of the coordinates
 #'
 #' @param offset offset of the label from the coordinate in fractions of
 #'     a character width
 #'
-#' @param ... additional text parameters from \code{par}, such as \code{cex}
+#' @param ... additional text parameters from `par`, such as `cex`
 #'
 #' @details
-#' See \code{text} for details on \code{pos} and \code{offset}.
+#' See `text` for details on `pos` and `offset`.
 #'
 #' @importFrom graphics strwidth
 #' @export
@@ -41,8 +41,7 @@
 #' plot(x,1:length(x),xlim=xlims)
 #' text(x,1:length(x),xlabs,pos=4,cex=0.7)
 #'
-#' @seealso
-#' \code{text}
+#' @seealso [graphics::text()]
 strwidth2xlim <- function(x,xstring, pos=4, offset=0.5,...){
     xwid <- (strwidth(xstring,units="inches", ...)+
              offset*par("cin")[1])/par("pin")[1]

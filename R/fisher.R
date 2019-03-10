@@ -12,7 +12,7 @@
 #' @param n.sim Number of samples of permuted tables to consider.
 #'
 #' @details
-#' This is like the function \code{\link[stats]{fisher.test}}, but
+#' This is like the function [stats::fisher.test()], but
 #'   calculates an approximate P-value rather than performing a complete
 #'   enumeration.  This will be better for large, sparse tables.
 #'
@@ -26,9 +26,7 @@
 #' TeaTasting <- matrix(c(3,1,1,3),nrow=2)
 #' fisher(TeaTasting,1000)
 #'
-#' @seealso
-#' \code{\link[stats]{chisq.test}},
-#'   \code{\link[stats]{fisher.test}}, \code{\link{chisq}}
+#' @seealso [stats::chisq.test()], [stats::fisher.test()], [chisq()]
 #'
 #' @keywords
 #' htest
@@ -59,7 +57,7 @@ fisher <-
 #' @param n.sim Number of samples of permuted tables to consider.
 #'
 #' @details
-#' This is like the function \code{\link[stats]{chisq.test}}, but
+#' This is like the function [stats::chisq.test()], but
 #'   calculates an approximate P-value rather than refering to
 #'   asymptotics.  This will be better for large, sparse tables.
 #'
@@ -72,9 +70,7 @@ fisher <-
 #' TeaTasting <- matrix(c(3,1,1,3),nrow=2)
 #' chisq(TeaTasting,1000)
 #'
-#' @seealso
-#' \code{\link[stats]{chisq.test}},
-#'   \code{\link[stats]{fisher.test}}, \code{\link{fisher}}
+#' @seealso [stats::chisq.test()], [stats::fisher.test()], [fisher()]
 #'
 #' @keywords
 #' htest

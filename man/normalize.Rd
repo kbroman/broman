@@ -13,21 +13,21 @@ normalize(x, y = NULL)
 }
 \value{
 If two vectors, \code{x} and \code{y}, are provided, the output is a
-  matrix with two columns, with the quantile normalized versions of
-  \code{x} and \code{y}.
-  If \code{y} is missing, \code{x} should be a matrix, in which case the
-  output is a matrix of the same dimensions with the columns quantile
-  normalized with respect to each other.
+matrix with two columns, with the quantile normalized versions of
+\code{x} and \code{y}.
+If \code{y} is missing, \code{x} should be a matrix, in which case the
+output is a matrix of the same dimensions with the columns quantile
+normalized with respect to each other.
 }
 \description{
 Quantile normalizes two vectors or a matrix.
 }
 \details{
 We sort the columns, take averages across rows, and then plug the
-  averages back into the respective positions.  The marginal
-  distributions in the columns are thus forced to be the same.
-  Missing values, which can result in differing numbers of observed
-  values per column, are dealt with by linear interpolation.
+averages back into the respective positions.  The marginal
+distributions in the columns are thus forced to be the same.
+Missing values, which can result in differing numbers of observed
+values per column, are dealt with by linear interpolation.
 }
 \examples{
 z <- rmvn(10000, mu=c(0,5,10), V = rbind(c(1,0.5,0.5),c(0.5,1,0.5),c(0.5,0.5,1)))

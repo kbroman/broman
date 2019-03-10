@@ -12,24 +12,24 @@
 #'
 #' @param bw Bandwidth to use in the density estimation.
 #'
-#' @param na.rm Logical; if true, and \code{NA} and \code{NaN}'s are
-#'   removed from \code{x} before the quantiles are computed.
+#' @param na.rm Logical; if true, and `NA` and `NaN`'s are
+#'   removed from `x` before the quantiles are computed.
 #'
 #' @param names Logical; if true, the column names of the result is set to
-#' the values in \code{p}.
+#' the values in `p`.
 #'
 #' @details
 #' The sample quantiles are calculated with the function
-#'   \code{\link[stats]{quantile}}.
+#'   [stats::quantile()].
 #'   Standard errors are obtained by the asymptotic approximation described
 #'   in Cox and Hinkley (1974).  Density values are estimated using a
-#'   kernel density estimate with the function \code{\link[stats]{density}}.
+#'   kernel density estimate with the function [stats::density()].
 #'
 #' @export
 #' @importFrom stats density quantile
 #'
 #' @return
-#' A matrix of size 2 x \code{length(p)}.  The first row contains the
+#' A matrix of size 2 x `length(p)`.  The first row contains the
 #'   estimated quantiles; the second row contains the corresponding
 #'   estimated standard errors.
 #'
@@ -37,7 +37,7 @@
 #' quantileSE(rchisq(1000,4), c(0.9,0.95))
 #'
 #' @seealso
-#' \code{\link[stats]{quantile}}, \code{\link[stats]{density}}
+#' [stats::quantile()], [stats::density()]
 #'
 #' @keywords
 #' univar

@@ -2,8 +2,8 @@
 #'
 #' Set random number generation to L'Ecuyer-CMRG, for use in parallel calculations.
 #'
-#' @details I can never remember the command \code{RNGkind("L'Ecuyer-CMRG")}; this is a shortcut.
-#' \code{unsetRNG4parallel} sets the random number generator back to the default type.
+#' @details I can never remember the command `RNGkind("L'Ecuyer-CMRG")`; this is a shortcut.
+#' `unsetRNG4parallel` sets the random number generator back to the default type.
 #'
 #' @export
 #' @keywords utilities

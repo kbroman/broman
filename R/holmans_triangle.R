@@ -5,8 +5,6 @@
 #' Plot Holmans triangle (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
-#' @md
-#'
 #' @param labels Labels for the three corners (lower-right, top, lower-left).
 #'
 #' @param col Color of edges of triangle
@@ -89,8 +87,6 @@ triplot <-
 #' Plot points within a Holmans triangle (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
-#' @md
-#'
 #' @param x A matrix with three rows, each column being a trinomial distribution.
 #'
 #' @param ... Passed to [graphics::points()].
@@ -162,8 +158,6 @@ tripoints <-
 #'
 #' Plot lines within a Holmans triangle (an equilateral triangle used to depict
 #'   trinomial distributions).
-#'
-#' @md
 #'
 #' @param x A matrix with three rows, each column being a trinomial
 #'   distribution.  Lines between these points are plotted.
@@ -237,8 +231,6 @@ trilines <-
 #'
 #' Plot an arrow within a Holmans triangle (an equilateral triangle used to depict
 #'   trinomial distributions).
-#'
-#' @md
 #'
 #' @param x A matrix with three rows and two columns, each column being a trinomial
 #'   distribution.  An arrow between the two points is plotted.
@@ -317,8 +309,6 @@ triarrow <-
 #'
 #' Plot text within a Holmans triangle (an equilateral triangle used to depict
 #'   trinomial distributions).
-#'
-#' @md
 #'
 #' @param x A matrix with three rows, each column being a trinomial distribution.
 #'

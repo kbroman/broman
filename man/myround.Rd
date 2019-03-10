@@ -18,7 +18,7 @@ A vector of character strings.
 Round a number, preserving extra 0's.
 }
 \details{
-Uses \code{\link[base]{sprintf}} to round a number, keeping extra 0's.
+Uses \code{\link[base:sprintf]{base::sprintf()}} to round a number, keeping extra 0's.
 }
 \examples{
 myround(51.01, 3)
@@ -26,6 +26,6 @@ myround(0.199, 2)
 
 }
 \seealso{
-\code{\link[base]{round}}, \code{\link[base]{sprintf}}
+\code{\link[base:round]{base::round()}}, \code{\link[base:sprintf]{base::sprintf()}}
 }
 \keyword{utilities}

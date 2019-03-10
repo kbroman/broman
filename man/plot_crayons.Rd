@@ -12,7 +12,7 @@ plot_crayons(method2order = c("hsv", "cluster"), cex = 0.6,
 
 \item{cex}{character expansion for the text}
 
-\item{mar}{margin paramaters; vector of length 4 (see \code{\link[graphics]{par}})}
+\item{mar}{margin paramaters; vector of length 4 (see \code{\link[graphics:par]{graphics::par()}})}
 
 \item{bg}{Background color}
 
@@ -24,7 +24,7 @@ plot_crayons(method2order = c("hsv", "cluster"), cex = 0.6,
 None
 }
 \description{
-Creates a plot of the crayon colors in \code{\link{brocolors}}
+Creates a plot of the crayon colors in \code{\link[=brocolors]{brocolors()}}
 }
 \examples{
 plot_crayons()
@@ -33,5 +33,5 @@ plot_crayons()
 \url{http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
 }
 \seealso{
-\code{\link{brocolors}}
+\code{\link[=brocolors]{brocolors()}}
 }

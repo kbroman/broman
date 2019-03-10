@@ -13,16 +13,16 @@ fisher(tab, n.sim = 1000)
 }
 \value{
 A single number: the P-value testing independence of rows and columns
-  in the table.
+in the table.
 }
 \description{
 Performs a sampling version of Fisher's exact test for a two-way
-  contingency table.
+contingency table.
 }
 \details{
-This is like the function \code{\link[stats]{fisher.test}}, but
-  calculates an approximate P-value rather than performing a complete
-  enumeration.  This will be better for large, sparse tables.
+This is like the function \code{\link[stats:fisher.test]{stats::fisher.test()}}, but
+calculates an approximate P-value rather than performing a complete
+enumeration.  This will be better for large, sparse tables.
 }
 \examples{
 TeaTasting <- matrix(c(3,1,1,3),nrow=2)
@@ -30,7 +30,6 @@ fisher(TeaTasting,1000)
 
 }
 \seealso{
-\code{\link[stats]{chisq.test}},
-  \code{\link[stats]{fisher.test}}, \code{\link{chisq}}
+\code{\link[stats:chisq.test]{stats::chisq.test()}}, \code{\link[stats:fisher.test]{stats::fisher.test()}}, \code{\link[=chisq]{chisq()}}
 }
 \keyword{htest}

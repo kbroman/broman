@@ -9,10 +9,10 @@
 #' @param x A matrix whose QR decomposition is to be computed.
 #'
 #' @param tol The tolerance for detecting linear dependencies in the
-#'   columns of \code{x}.
+#'   columns of `x`.
 #'
 #' @details
-#' Calls the function \code{\link[base]{qr}} and returns
+#' Calls the function [base::qr()] and returns
 #'   less compact but more understandable output.
 #'
 #' @export
@@ -24,8 +24,7 @@
 #' h5 <- hilbert(5);
 #' qr2(h5)
 #'
-#' @seealso
-#' \code{\link[base]{qr}}
+#' @seealso [base::qr()]
 #'
 #' @keywords
 #' algebra

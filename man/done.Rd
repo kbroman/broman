@@ -8,24 +8,23 @@ done(message = "R is done", recipients = NULL)
 }
 \arguments{
 \item{message}{A character string with a message.
-(passed to \code{\link[RPushbullet]{pbPost}}.)}
+(passed to \code{\link[RPushbullet:pbPost]{RPushbullet::pbPost()}}.)}
 
 \item{recipients}{A character or numeric vector indicating the
 devices this post should go to. If NULL, the default device is
 looked up from an optional setting, and if none has been set the
 push is sent to all devices. (passed to
-\code{\link[RPushbullet]{pbPost}}.)}
+\code{\link[RPushbullet:pbPost]{RPushbullet::pbPost()}}.)}
 }
 \description{
 Send a short message via RPushbullet, to be used to indicate that
 some R job is complete.
-#'
 }
 \examples{
 \dontrun{done("Your R job is complete.")}
 }
 \seealso{
-\code{\link{errors2pushbullet}}, \code{\link{note}},
-    \code{\link{pushbullet_devices}}
+\code{\link[=errors2pushbullet]{errors2pushbullet()}}, \code{\link[=note]{note()}},
+\code{\link[=pushbullet_devices]{pushbullet_devices()}}
 }
 \keyword{utilities}

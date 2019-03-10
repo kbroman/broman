@@ -13,11 +13,11 @@ winsorize(x, q = 0.006)
 }
 \value{
 A vector like the input \code{x}, but with extreme values moved in to
-  the \code{q} and \code{1-q} quantiles.
+the \code{q} and \code{1-q} quantiles.
 }
 \description{
 For a numeric vector, move values below and above the q and 1-q
-  quantiles to those quantiles.
+quantiles to those quantiles.
 }
 \examples{
 x <- sample(c(1:10, rep(NA, 10), 21:30))

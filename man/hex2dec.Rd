@@ -25,7 +25,7 @@ hex2dec(0:30)
 
 }
 \seealso{
-\code{\link{dec2hex}}
+\code{\link[=dec2hex]{dec2hex()}}
 }
 \author{
 Karl W Broman, \email{broman@wisc.edu}

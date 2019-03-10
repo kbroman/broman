@@ -16,15 +16,15 @@ paste00(...)
 A character string or vector of character strings.
 }
 \description{
-Call \code{\link[base]{paste}} with \code{sep="."} or \code{sep=""}
-  and \code{collapse=""} or \code{collapse="."}.
+Call \code{\link[base:paste]{base::paste()}} with \code{sep="."} or \code{sep=""}
+and \code{collapse=""} or \code{collapse="."}.
 }
 \details{
 There's not much to these functions.
-  \code{paste00(\dots)} is like \code{paste(\dots, sep="", collapse="")}
-  \code{paste..(\dots)} is like \code{paste(\dots, sep=".", collapse=".")}
-  \code{paste0.(\dots)} is like \code{paste(\dots, sep="", collapse=".")}
-  \code{paste.0(\dots)} is like \code{paste(\dots, sep=".", collapse="")}
+\code{paste00(...)} is like \code{paste(..., sep="", collapse="")}
+\code{paste..(...)} is like \code{paste(..., sep=".", collapse=".")}
+\code{paste0.(...)} is like \code{paste(..., sep="", collapse=".")}
+\code{paste.0(...)} is like \code{paste(..., sep=".", collapse="")}
 }
 \examples{
 x <- c(3, 4)
@@ -36,8 +36,8 @@ paste.0(x, y)
 
 }
 \seealso{
-\code{\link[base]{paste}},
-  \code{\link[base]{paste0}},
-  \code{\link{paste.}}
+\code{\link[base:paste]{base::paste()}},
+\code{\link[base:paste0]{base::paste0()}},
+\code{\link[=paste.]{paste.()}}
 }
 \keyword{character}

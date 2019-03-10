@@ -5,8 +5,6 @@
 #' Scatterplot with a gray background and with points with missing
 #' values shown in separate panels near the margins.
 #'
-#' @md
-#'
 #' @param x Coordinates of points in the plot
 #'
 #' @param y Coordinates of points in the plot (optional)

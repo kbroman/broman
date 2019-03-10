@@ -27,6 +27,6 @@ dec2hex(0:30)
 
 }
 \seealso{
-\code{\link{hex2dec}}
+\code{\link[=hex2dec]{hex2dec()}}
 }
 \keyword{manip}

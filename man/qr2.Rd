@@ -19,8 +19,8 @@ A list of two matrices: Q and R.
 Computes the QR decomposition of a matrix.
 }
 \details{
-Calls the function \code{\link[base]{qr}} and returns
-  less compact but more understandable output.
+Calls the function \code{\link[base:qr]{base::qr()}} and returns
+less compact but more understandable output.
 }
 \examples{
 hilbert <- function(n) { i <- 1:n; 1/outer(i-1,i,"+") }
@@ -29,6 +29,6 @@ qr2(h5)
 
 }
 \seealso{
-\code{\link[base]{qr}}
+\code{\link[base:qr]{base::qr()}}
 }
 \keyword{algebra}

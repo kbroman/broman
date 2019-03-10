@@ -13,19 +13,19 @@ note(title, recipients = NULL, body = NULL)
 devices this post should go to. If NULL, the default device is
 looked up from an optional setting, and if none has been set the
 push is sent to all devices. (passed to
-\code{\link[RPushbullet]{pbPost}}.)}
+\code{\link[RPushbullet:pbPost]{RPushbullet::pbPost()}}.)}
 
 \item{body}{The body of the note (by default, empty)}
 }
 \description{
-Even simpler interface for \code{\link[RPushbullet]{pbPost}}
+Even simpler interface for \code{\link[RPushbullet:pbPost]{RPushbullet::pbPost()}}
 to send a bit of text to pushbullet.
 }
 \examples{
 \dontrun{note("Hello.")}
 }
 \seealso{
-\code{\link{errors2pushbullet}}, \code{\link{done}},
-    \code{\link{pushbullet_devices}}
+\code{\link[=errors2pushbullet]{errors2pushbullet()}}, \code{\link[=done]{done()}},
+\code{\link[=pushbullet_devices]{pushbullet_devices()}}
 }
 \keyword{utilities}

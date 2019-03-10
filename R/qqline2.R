@@ -3,9 +3,9 @@
 #'
 #' qqline for qqplot
 #'
-#' Adds a line to a quantile-quantile plot for two datasets, from \code{\link{stats}[qqplot]}.
-#'   (The available \code{\link[stats]{qqline}} function works mainly for
-#'   \code{\link[stats]{qqnorm}}, with one sample being theoretical quantiles.)
+#' Adds a line to a quantile-quantile plot for two datasets, from [stats::qqplot()].
+#'   (The available [stats::qqline()] function works mainly for
+#'   [stats::qqnorm()], with one sample being theoretical quantiles.)
 #'
 #' @param x The first sample
 #'
@@ -14,7 +14,7 @@
 #' @param probs numeric vector of length two, representing probabilities.
 #'     Corresponding quantile pairs define the line drawn.
 #'
-#' @param qtype the \code{type} of quantile computation used in \code{\link{quantile}}.
+#' @param qtype the `type` of quantile computation used in [stats::quantile()].
 #'
 #' @param ...  graphical parameters.
 #'
@@ -31,7 +31,7 @@
 #' qqline2(x, y)
 #'
 #' @seealso
-#' \code{\link[stats]{qqline}}, \code{\link[stats]{qqplot}}
+#' [stats::qqline()], [stats::qqplot()]
 #'
 #' @keywords
 #' hplot

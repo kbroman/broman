@@ -3,8 +3,6 @@
 #' Determine the precision of a number, as the number of digits past
 #' the decimal point.
 #'
-#' @md
-#'
 #' @param x A numeric vector
 #' @param ... Ignore this
 #'

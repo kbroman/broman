@@ -7,8 +7,8 @@
 #' @param ... Help topics.
 #'
 #' @details
-#' This just calls the function \code{\link[utils]{help}} using the
-#'   argument \code{htmlhelp=TRUE}.
+#' This just calls the function [utils::help()] using the
+#'   argument `htmlhelp=TRUE`.
 #'
 #' @export
 #' @return
@@ -17,8 +17,7 @@
 #' @examples
 #' h(read.cross)
 #'
-#' @seealso
-#' \code{\link[utils]{help}}, \code{\link[utils]{help.start}}
+#' @seealso [utils::help()], [utils::help.start()]
 #'
 #' @keywords
 #' documentation

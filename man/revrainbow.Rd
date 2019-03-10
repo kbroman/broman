@@ -9,13 +9,13 @@ revrainbow(n = 256, ...)
 \arguments{
 \item{n}{Number of colors.}
 
-\item{...}{Passed to \code{\link[grDevices]{rainbow}}.}
+\item{...}{Passed to \code{\link[grDevices:rainbow]{grDevices::rainbow()}}.}
 }
 \value{
 Vector of colors, from blue to red.
 }
 \description{
-Calls \code{\link[grDevices]{rainbow}} then \code{\link[base]{rev}}
+Calls \code{\link[grDevices:rainbow]{grDevices::rainbow()}} then \code{\link[base:rev]{base::rev()}}
 }
 \details{
 There's not much to this. It's just \code{rev(rainbow(start=0, end=2/3, ...))}.
@@ -26,7 +26,7 @@ image(x, col=revrainbow())
 
 }
 \seealso{
-\code{\link[base]{rev}},
-  \code{\link[grDevices]{rainbow}}
+\code{\link[base:rev]{base::rev()}},
+\code{\link[grDevices:rainbow]{grDevices::rainbow()}}
 }
 \keyword{color}

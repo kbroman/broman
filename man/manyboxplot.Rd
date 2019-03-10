@@ -24,12 +24,12 @@ None.
 }
 \description{
 Boxplot-like figure for many groups, with lines connecting
-  selected quantiles.
+selected quantiles.
 }
 \details{
 Calculates quantiles of the columns of \code{x} and then plots dots or
-  lines at median plus lines at a series of quantiles, using
-  \code{\link{grayplot}} for the actual plot.
+lines at median plus lines at a series of quantiles, using
+\code{\link[=grayplot]{grayplot()}} for the actual plot.
 }
 \examples{
 \dontshow{set.seed(8422668)}
@@ -42,6 +42,6 @@ manyboxplot(x, c(0.05, 0.25), ylim=range(x),
 
 }
 \seealso{
-\code{\link{grayplot}}
+\code{\link[=grayplot]{grayplot()}}
 }
 \keyword{graphics}

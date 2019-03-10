@@ -23,6 +23,6 @@ kbdate("standard")
 
 }
 \seealso{
-\code{\link[base]{Sys.time}}, \code{\link[base]{date}}
+\code{\link[base:Sys.time]{base::Sys.time()}}, \code{\link[base:date]{base::date()}}
 }
 \keyword{utilities}

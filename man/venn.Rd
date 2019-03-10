@@ -25,11 +25,11 @@ None.
 }
 \description{
 Plot a Venn diagram (with two groups), to scale, either with circles
-  or with squares.
+or with squares.
 }
 \details{
 Plots a to-scale Venn diagram with two sets, so that the relative
-  areas of the two sets and their intersection are exact.
+areas of the two sets and their intersection are exact.
 }
 \examples{
 venn(setA=86, setB=1622, both=10)

@@ -14,7 +14,7 @@ qqline2(x, y, probs = c(0.25, 0.75), qtype = 7, ...)
 \item{probs}{numeric vector of length two, representing probabilities.
 Corresponding quantile pairs define the line drawn.}
 
-\item{qtype}{the \code{type} of quantile computation used in \code{\link{quantile}}.}
+\item{qtype}{the \code{type} of quantile computation used in \code{\link[stats:quantile]{stats::quantile()}}.}
 
 \item{...}{graphical parameters.}
 }
@@ -22,9 +22,9 @@ Corresponding quantile pairs define the line drawn.}
 Intercept and slope of the line.
 }
 \description{
-Adds a line to a quantile-quantile plot for two datasets, from \code{\link{stats}[qqplot]}.
-  (The available \code{\link[stats]{qqline}} function works mainly for
-  \code{\link[stats]{qqnorm}}, with one sample being theoretical quantiles.)
+Adds a line to a quantile-quantile plot for two datasets, from \code{\link[stats:qqplot]{stats::qqplot()}}.
+(The available \code{\link[stats:qqline]{stats::qqline()}} function works mainly for
+\code{\link[stats:qqnorm]{stats::qqnorm()}}, with one sample being theoretical quantiles.)
 }
 \examples{
 x <- rchisq(500, 3)
@@ -34,6 +34,6 @@ qqline2(x, y)
 
 }
 \seealso{
-\code{\link[stats]{qqline}}, \code{\link[stats]{qqplot}}
+\code{\link[stats:qqline]{stats::qqline()}}, \code{\link[stats:qqplot]{stats::qqplot()}}
 }
 \keyword{hplot}

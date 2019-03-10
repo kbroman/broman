@@ -5,8 +5,6 @@
 #' Like the plot function, but using a gray background just
 #'   for the plot region.
 #'
-#' @md
-#'
 #' @param x Coordinates of points in the plot
 #'
 #' @param y Coordinates of points in the plot (optional)

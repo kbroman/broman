@@ -20,8 +20,7 @@
 #' dec2hex(333) == "14D"
 #' dec2hex(0:30)
 #'
-#' @seealso
-#' \code{\link{hex2dec}}
+#' @seealso [hex2dec()]
 #'
 #' @keywords
 #' manip
@@ -56,8 +55,7 @@ dec2hex <- convert2hex
 #' hex2dec("14D") == 333
 #' hex2dec(0:30)
 #'
-#' @seealso
-#' \code{\link{dec2hex}}
+#' @seealso [dec2hex()]
 #'
 #' @keywords
 #' manip

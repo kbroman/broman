@@ -14,14 +14,14 @@ names.}
 }
 \value{
 A data frame with the only column being the size of each object in
-  megabytes (Mb).  The row names are the names of the objects.
+megabytes (Mb).  The row names are the names of the objects.
 }
 \description{
 Calculate the sizes of all of the objects in one's workspace.
 }
 \details{
-Calls \code{\link[utils]{object.size}} repeated to get the size of a
-  list of objects.
+Calls \code{\link[utils:object.size]{utils::object.size()}} repeated to get the size of a
+list of objects.
 }
 \examples{
 print(output <- objectsizes())
@@ -29,7 +29,6 @@ print(output <- objectsizes())
 
 }
 \seealso{
-\code{\link[utils]{object.size}},
-  \code{\link[base]{objects}}
+\code{\link[utils:object.size]{utils::object.size()}}, \code{\link[base:objects]{base::objects()}}
 }
 \keyword{utilities}

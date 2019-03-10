@@ -11,7 +11,7 @@ errors2pushbullet(recipients = NULL)
 devices this post should go to. If NULL, the default device is
 looked up from an optional setting, and if none has been set the
 push is sent to all devices. (passed to
-\code{\link[RPushbullet]{pbPost}}.)}
+\code{\link[RPushbullet:pbPost]{RPushbullet::pbPost()}}.)}
 }
 \description{
 Set options to use RPushbullet to use pushbullet to push
@@ -21,7 +21,7 @@ notifications of any error messages.
 \dontrun{errors2pushbullet()}
 }
 \seealso{
-\code{\link{stop_sending_errors}}, \code{\link{note}}, \code{\link{done}},
-    \code{\link{pushbullet_devices}}
+\code{\link[=stop_sending_errors]{stop_sending_errors()}}, \code{\link[=note]{note()}}, \code{\link[=done]{done()}},
+\code{\link[=pushbullet_devices]{pushbullet_devices()}}
 }
 \keyword{utilities}

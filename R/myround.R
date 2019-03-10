@@ -9,7 +9,7 @@
 #' @param digits Number of digits past the decimal point to keep.
 #'
 #' @details
-#' Uses \code{\link[base]{sprintf}} to round a number, keeping extra 0's.
+#' Uses [base::sprintf()] to round a number, keeping extra 0's.
 #'
 #' @export
 #' @return
@@ -19,8 +19,7 @@
 #' myround(51.01, 3)
 #' myround(0.199, 2)
 #'
-#' @seealso
-#' \code{\link[base]{round}}, \code{\link[base]{sprintf}}
+#' @seealso [base::round()], [base::sprintf()]
 #'
 #' @keywords
 #' utilities

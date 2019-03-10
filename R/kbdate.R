@@ -16,7 +16,7 @@
 #' kbdate()
 #' kbdate("standard")
 #'
-#' @seealso \code{\link[base]{Sys.time}}, \code{\link[base]{date}}
+#' @seealso [base::Sys.time()], [base::date()]
 #'
 #' @keywords utilities
 kbdate <-

@@ -21,6 +21,6 @@ Vector of colors corresponding to Crayola crayons
 \url{http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
 }
 \seealso{
-\code{\link{plot_crayons}}, \code{\link{brocolors}}
+\code{\link[=plot_crayons]{plot_crayons()}}, \code{\link[=brocolors]{brocolors()}}
 }
 \keyword{utilities}

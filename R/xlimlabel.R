@@ -10,8 +10,8 @@
 #'
 #' @param xlabels character vector, specifying text to be written
 #'
-#' @param pos position specifier for text; values of \code{1}, \code{2},
-#'  \code{3}, and \code{4}, respectively, indicate positions below, to
+#' @param pos position specifier for text; values of `1`, `2`,
+#'  `3`, and `4`, respectively, indicate positions below, to
 #'  the left of, above, and to the right of the coordinates
 #'
 #' @param offset  offset of the label from the coordinate in fractions of
@@ -20,7 +20,7 @@
 #' @param ... Additional par arguments
 #'
 #' @details
-#' See \code{text} for details on \code{pos} and \code{offset}.
+#' See [graphics::text()] for details on `pos` and `offset`.
 #'
 #' @export
 #' @importFrom graphics strwidth
@@ -45,8 +45,7 @@
 #' plot(x, 1:length(x), xlim=xlims, ylab="Index")
 #' text(x, 1:length(x), xlabs, pos=4, cex=0.7)
 #'
-#' @seealso
-#' \code{\link[graphics]{text}}
+#' @seealso [graphics::text()]
 xlimlabel <- function(x,xlabels, pos=4, offset=0.5,...){
     dots <- list(...)
     cex <- if(!is.na(match("cex",names(dots)))) dots$cex else 1

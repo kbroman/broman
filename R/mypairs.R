@@ -6,15 +6,15 @@
 #' My scatterplot matrix
 #'
 #' A matrix of scatterplots is produced; it's similar to
-#'   \code{\link[graphics]{pairs}}, but with only the upper triangle is
+#'   [graphics::pairs()], but with only the upper triangle is
 #'   made.
 #'
 #' @param x A numeric matrix or data frame.
 #'
-#' @param ... Passed to the \code{\link[graphics]{plot}} function.
+#' @param ... Passed to the [graphics::plot()] function.
 #'
 #' @details
-#' This is like the function \code{\link[graphics]{pairs}}, but
+#' This is like the function [graphics::pairs()], but
 #'   only the upper triangle is produced.
 #'
 #' @export
@@ -26,8 +26,7 @@
 #' x <- rmvn(500, rep(5,3), v)
 #' mypairs(x, col=sample(c("blue","red"), 500, repl=TRUE))
 #'
-#' @seealso
-#' \code{\link[graphics]{pairs}}
+#' @seealso [graphics::pairs()]
 #'
 #' @keywords
 #' hplot

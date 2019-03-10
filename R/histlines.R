@@ -9,30 +9,30 @@
 #'
 #' Utility to create line-based histogram
 #'
-#' Utility function to plot histogram with \code{\link[graphics]{lines}}.
+#' Utility function to plot histogram with [graphics::lines()].
 #'
 #' @param x Either vector of breaks or the data itself.
 #'
-#' @param y Optional vector of density/counts, with length = \code{length(x)-1}.
+#' @param y Optional vector of density/counts, with length = `length(x)-1`.
 #'
-#' @param breaks Breaks for histogram, if \code{y} is not provided.
+#' @param breaks Breaks for histogram, if `y` is not provided.
 #'
-#' @param use Whether to use \code{counts} or \code{density}, if \code{y}
+#' @param use Whether to use `counts` or `density`, if `y`
 #'  is not provided.
 #'
 #' @details
-#' If \code{x} and \code{y} are both provided, \code{x} is interpreted to
-#'   be the breaks for a histogram, and \code{y} is a vector of counts or
+#' If `x` and `y` are both provided, `x` is interpreted to
+#'   be the breaks for a histogram, and `y` is a vector of counts or
 #'   density values for each interval.  These are then revised so that they
-#'   may be plotted with \code{\link[graphics]{lines}}.
-#'   If \code{y} is NULL, \code{x} is taken to be the data.  In this
-#'   case \code{\link[graphics]{hist}} is called with \code{breaks=breaks}, and
-#'   either the \code{counts} or \code{density} are used as \code{y}.
+#'   may be plotted with [graphics::lines()].
+#'   If `y` is NULL, `x` is taken to be the data.  In this
+#'   case [graphics::hist()] is called with `breaks=breaks`, and
+#'   either the `counts` or `density` are used as `y`.
 #'
 #' @importFrom graphics hist
 #' @export
 #' @return
-#' A data.frame with two columns: \code{x} and \code{y}.
+#' A data.frame with two columns: `x` and `y`.
 #'
 #' @examples
 #' x <- rnorm(1000, mean=20, sd=5)
@@ -54,9 +54,7 @@
 #'      col="blue")
 #' lines(zlines, lwd=2 , col="red")
 #'
-#' @seealso
-#' \code{\link[graphics]{hist}},
-#'   \code{\link[graphics]{lines}}
+#' @seealso [graphics::hist()], [graphics::lines()]
 #'
 #' @keywords
 #' graphics

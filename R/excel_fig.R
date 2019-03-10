@@ -6,9 +6,9 @@
 #' @param file Optional file name (must have extension .svg, .png, .jpg, or .pdf)
 #' @param cellwidth Width of each cell, in pixels
 #' @param cellheight Height of each cell, in pixels
-#' @param textsize Size for text (if \code{file} is provided or \code{direct2svg=TRUE})
-#' @param fig_width Width of figure, in pixels (if NULL, taken from \code{cellwidth}); ignored when \code{direct2svg=FALSE}
-#' @param fig_height Height of figure, in pixels (if NULL, taken from \code{cellheight}); ignored when \code{direct2svg=FALSE}
+#' @param textsize Size for text (if `file` is provided or `direct2svg=TRUE`)
+#' @param fig_width Width of figure, in pixels (if NULL, taken from `cellwidth`); ignored when `direct2svg=FALSE`
+#' @param fig_height Height of figure, in pixels (if NULL, taken from `cellheight`); ignored when `direct2svg=FALSE`
 #' @param border Color of border of cells for the body of the matrix
 #' @param headcol Background color of cells on the top and left border
 #' @param headborder Color of border of cells on the top and left border
@@ -16,11 +16,11 @@
 #' @param textcol Color of text in in cells in body of the matrix
 #' @param row_names If TRUE, and row names are present, include them as a first column
 #' @param col_names If TRUE, and column names are present, include them as a first row
-#' @param hilitcells Optional character vector of cells to highlight, like \code{"A1"} or \code{"D4"}
-#' @param hilitcolor Color to highlight cells, a vector of length 1 or the same length as \code{hilitcells}
+#' @param hilitcells Optional character vector of cells to highlight, like `"A1"` or `"D4"`
+#' @param hilitcolor Color to highlight cells, a vector of length 1 or the same length as `hilitcells`
 #' @param lwd Line width for rectangles
-#' @param direct2svg If TRUE, rather than R graphics, just print an SVG directly with \code{\link[base]{cat}}.
-#' @param mar Plot margins, passed to \code{\link[graphics]{par}}
+#' @param direct2svg If TRUE, rather than R graphics, just print an SVG directly with [base::cat()].
+#' @param mar Plot margins, passed to [graphics::par()].
 #'
 #' @export
 #' @importFrom grDevices svg png jpeg pdf

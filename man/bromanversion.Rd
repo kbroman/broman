@@ -8,7 +8,7 @@ bromanversion()
 }
 \value{
 A character string with the version number of the currently installed
-  version of R/broman.
+version of R/broman.
 }
 \description{
 Print the version number of the currently installed version of R/broman.

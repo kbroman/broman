@@ -9,7 +9,7 @@
 #' @importFrom grDevices rgb2hsv
 #' @importFrom stats hclust dist
 #' @importFrom graphics par plot rect text
-#' @seealso \code{\link{plot_crayons}}
+#' @seealso [plot_crayons()]
 #' @examples
 #' par(mar=c(0.6,5.1,0.6,0.6))
 #' plot(0, 0, type="n", xlab="", ylab="", xlim=c(0, 9), ylim=c(8.5, 0), yaxs="i",
@@ -262,17 +262,17 @@ brocolors <-
 
 #' Illustration of crayon colors
 #'
-#' Creates a plot of the crayon colors in \code{\link{brocolors}}
-#' @param method2order method to order colors (\code{"hsv"} or \code{"cluster"})
+#' Creates a plot of the crayon colors in [brocolors()]
+#' @param method2order method to order colors (`"hsv"` or `"cluster"`)
 #' @param cex character expansion for the text
-#' @param mar margin paramaters; vector of length 4 (see \code{\link[graphics]{par}})
+#' @param mar margin paramaters; vector of length 4 (see [graphics::par()])
 #' @param bg Background color
 #' @param fg Foreground color (for text and box outlines)
 #' @param border If TRUE, plot a border around each rectangle
 #' @return None
 #' @export
-#' @references \url{http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
-#' @seealso \code{\link{brocolors}}
+#' @references <http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors>
+#' @seealso [brocolors()]
 #' @examples
 #' plot_crayons()
 plot_crayons <-
@@ -333,9 +333,9 @@ plot_crayons <-
 #'
 #' @return Vector of named RGB colors
 #'
-#' @references \url{http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
+#' @references <http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors>
 #'
-#' @seealso \code{\link{plot_crayons}}, \code{\link{brocolors}}
+#' @seealso [plot_crayons()], [brocolors()]
 #' @export
 #' @keywords utilities
 crayons <-

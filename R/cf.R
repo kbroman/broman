@@ -1,7 +1,7 @@
 #  cf
 #' Compare objects, including missing data pattern
 #'
-#' Check whether two objects are the same, including their patterns of \code{NA}s.
+#' Check whether two objects are the same, including their patterns of `NA`s.
 #'
 #' @aliases cf.default cf.list
 #'
@@ -10,11 +10,11 @@
 #' @param b Another object
 #'
 #' @details
-#' It's not very complicated: \code{((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & a == b))}
+#' It's not very complicated: `((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & a == b))`
 #'
 #' @export
 #' @return
-#' Boolean object with \code{TRUE} indicating an element is the same.
+#' Boolean object with `TRUE` indicating an element is the same.
 #'
 #' @examples
 #' x <- c(5, 8, 9, NA, 3, NA)

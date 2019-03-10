@@ -30,20 +30,20 @@ binary.v <-
 #'
 #' @param pval If TRUE, return just the p-value.  If FALSE, return the
 #'  actual permutation results (with the observed statistic as an
-#'  attribute, \code{"tobs"}).
+#'  attribute, `"tobs"`).
 #'
 #' @details
-#' This calls the function \code{\link[stats]{t.test}} to calculate a
-#'   t-statistic comparing the mean of \code{d} to 0.  Permutations
+#' This calls the function [stats::t.test()] to calculate a
+#'   t-statistic comparing the mean of `d` to 0.  Permutations
 #'   are perfomed to give an exact or approximate conditional p-value.
 #'
 #' @export
 #' @return
-#' If \code{pval=TRUE}, the output is a single number: the P-value
+#' If `pval=TRUE`, the output is a single number: the P-value
 #'   testing for the symmetry about 0 of the distribution of the population
-#'   from which \code{d} was drawn.
-#'   If \code{pval=FALSE}, the output is a vector of the t statistics from
-#'   the permutations.  An attributed \code{"tobs"} contains the t
+#'   from which `d` was drawn.
+#'   If `pval=FALSE`, the output is a vector of the t statistics from
+#'   the permutations.  An attributed `"tobs"` contains the t
 #'   statistic with the observed data.
 #'
 #' @examples
@@ -52,7 +52,7 @@ binary.v <-
 #' paired.perm.test(x-y)
 #'
 #' @seealso
-#' \code{\link[stats]{t.test}}, \code{\link{perm.test}}
+#' [stats::t.test()], [perm.test()]
 #'
 #' @keywords
 #' htest
@@ -102,22 +102,22 @@ paired.perm.test <-
 #'
 #' @param pval If TRUE, return just the p-value.  If FALSE, return the
 #'  actual permutation results (with the observed statistic as an
-#'  attribute, \code{"tobs"}).
+#'  attribute, `"tobs"`).
 #'
 #' @details
-#' This calls the function \code{\link[stats]{t.test}} to calculate a
-#'   t-statistic comparing the vectors \code{x} and \code{y}.  Permutations
+#' This calls the function [stats::t.test()] to calculate a
+#'   t-statistic comparing the vectors `x` and `y`.  Permutations
 #'   are perfomed to give an exact or approximate conditional p-value.
 #'
 #' @export
 #' @importFrom stats t.test
 #'
 #' @return
-#' If \code{pval=TRUE}, the output is a single number: the P-value
+#' If `pval=TRUE`, the output is a single number: the P-value
 #'   testing for a difference in the distributions of the populations from
-#'   which \code{x} and \code{y} were drawn.
-#'   If \code{pval=FALSE}, the output is a vector of the t statistics from
-#'   the permutations.  An attributed \code{"tobs"} contains the t
+#'   which `x` and `y` were drawn.
+#'   If `pval=FALSE`, the output is a vector of the t statistics from
+#'   the permutations.  An attributed `"tobs"` contains the t
 #'   statistic with the observed data.
 #'
 #' @examples
@@ -126,7 +126,7 @@ paired.perm.test <-
 #' perm.test(x,y)
 #'
 #' @seealso
-#' \code{\link[stats]{t.test}}, \code{\link{paired.perm.test}}
+#' [stats::t.test()], [paired.perm.test()]
 #'
 #' @keywords
 #' htest

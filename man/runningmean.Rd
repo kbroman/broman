@@ -22,8 +22,8 @@ calculated.  If NULL, \code{pos} is used.}
 }
 \value{
 A vector with the same length as the input \code{at} (or \code{pos},
-  if \code{at} is NULL), containing the running
-  statistic.
+if \code{at} is NULL), containing the running
+statistic.
 }
 \description{
 Calculates a running mean, sum or median with a specified window.
@@ -41,7 +41,7 @@ lines(x, runningmean(x, y, window=100, what="sd"),
 
 }
 \seealso{
-\code{\link{runningratio}}
+\code{\link[=runningratio]{runningratio()}}
 }
 \author{
 Karl W Broman \email{broman@wisc.edu}

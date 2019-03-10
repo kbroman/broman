@@ -12,14 +12,14 @@
 #'
 #' @param dotcol Color for median
 #'
-#' @param linecol Line colors, same length as \code{probs}
+#' @param linecol Line colors, same length as `probs`
 #'
 #' @param ... Additional graphics parameters
 #'
 #' @details
-#' Calculates quantiles of the columns of \code{x} and then plots dots or
+#' Calculates quantiles of the columns of `x` and then plots dots or
 #'   lines at median plus lines at a series of quantiles, using
-#'   \code{\link{grayplot}} for the actual plot.
+#'   [grayplot()] for the actual plot.
 #'
 #' @export
 #' @return
@@ -34,8 +34,7 @@
 #'            hlines=seq(-4, 6, by=2),
 #'            vlines=c(1, seq(20, 100, by=20)))
 #'
-#' @seealso
-#' \code{\link{grayplot}}
+#' @seealso [grayplot()]
 #'
 #' @keywords
 #' graphics

@@ -2,7 +2,7 @@
 #'
 #' Dot chart with a gray background
 #'
-#' Like the \code{\link{grayplot}} function, but with one axis assumed to be categorical.
+#' Like the [grayplot()] function, but with one axis assumed to be categorical.
 #'
 #' @param group Categorical coordinates for the plot
 #' @param y Coordinates of points in the plot
@@ -12,10 +12,10 @@
 #'
 #' @param ... Optional graphics arguments
 #' @param jiggle Vector of amounts to jiggle the points horizontally,
-#' or a character string (\code{"fixed"} or \code{"random"})
-#' indicating the jiggling method; see \code{\link{jiggle}}.
+#' or a character string (`"fixed"` or `"random"`)
+#' indicating the jiggling method; see [jiggle()].
 #'
-#' @details Calls \code{\link{grayplot}} with special choices of
+#' @details Calls [grayplot()] with special choices of
 #' graphics parameters for the case of categorical x.
 #'
 #' @export
@@ -32,8 +32,7 @@
 #' dotplot(g, x, "random")
 #' dotplot(g, x, runif(length(g), -0.25, 0.25))
 #'
-#' @seealso
-#' \code{\link{grayplot}},
+#' @seealso [grayplot()]
 #'
 #' @keywords
 #' graphics

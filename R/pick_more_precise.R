@@ -4,8 +4,6 @@
 #' value from each, favoring the more precise one. If the two values
 #' differ by more than round-off error, treat the value as missing.
 #'
-#' @md
-#'
 #' @param x A numeric vector
 #' @param y A second numeric vector
 #' @param tol Tolerance for differences between the values

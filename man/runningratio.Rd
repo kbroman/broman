@@ -20,7 +20,7 @@ calculated.  If NULL, \code{pos} is used.}
 }
 \value{
 A vector with the same length as the input \code{at} (or \code{pos},
-  if \code{at} is NULL), containing the running ratio.
+if \code{at} is NULL), containing the running ratio.
 }
 \description{
 Calculates a running ratio; a ratio sum(top)/sum(bottom) in a sliding window.
@@ -35,7 +35,7 @@ lines(x, runningratio(x, y, z, window=100), lwd=2, col="red")
 
 }
 \seealso{
-\code{\link{runningmean}}
+\code{\link[=runningmean]{runningmean()}}
 }
 \author{
 Karl W Broman \email{broman@wisc.edu}

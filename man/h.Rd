@@ -16,14 +16,14 @@ No return value.
 View the html version of a help file while running R via ESS within emacs.
 }
 \details{
-This just calls the function \code{\link[utils]{help}} using the
-  argument \code{htmlhelp=TRUE}.
+This just calls the function \code{\link[utils:help]{utils::help()}} using the
+argument \code{htmlhelp=TRUE}.
 }
 \examples{
 h(read.cross)
 
 }
 \seealso{
-\code{\link[utils]{help}}, \code{\link[utils]{help.start}}
+\code{\link[utils:help]{utils::help()}}, \code{\link[utils:help.start]{utils::help.start()}}
 }
 \keyword{documentation}

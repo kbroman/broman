@@ -2,14 +2,14 @@
 #'
 #' Create vector of colors from blue to red
 #'
-#' Calls \code{\link[grDevices]{rainbow}} then \code{\link[base]{rev}}
+#' Calls [grDevices::rainbow()] then [base::rev()]
 #'
 #' @param n Number of colors.
 #'
-#' @param ... Passed to \code{\link[grDevices]{rainbow}}.
+#' @param ... Passed to [grDevices::rainbow()].
 #'
 #' @details
-#' There's not much to this. It's just \code{rev(rainbow(start=0, end=2/3, ...))}.
+#' There's not much to this. It's just `rev(rainbow(start=0, end=2/3, ...))`.
 #'
 #' @export
 #' @return
@@ -20,8 +20,8 @@
 #' image(x, col=revrainbow())
 #'
 #' @seealso
-#' \code{\link[base]{rev}},
-#'   \code{\link[grDevices]{rainbow}}
+#' [base::rev()],
+#'   [grDevices::rainbow()]
 #'
 #' @keywords
 #' color

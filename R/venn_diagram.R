@@ -13,7 +13,7 @@
 #'
 #' @param method Indicates whether to plot circles or squares.
 #'
-#' @param labels Labels for the two sets.  (\code{NULL} for no labels.)
+#' @param labels Labels for the two sets.  (`NULL` for no labels.)
 #'
 #' @param col Colors of the two sets.
 #'

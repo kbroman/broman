@@ -4,7 +4,6 @@
 #' `%win%` returns a vector of the values that have a match.
 #' `%wnin%` returns a vector of the values that do not have a match.
 #'
-#' @md
 #' @rdname notin
 #'
 #' @param x Vector of values to be matched.

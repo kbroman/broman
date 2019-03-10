@@ -2,7 +2,7 @@
 #'
 #' Use the locator function to plot an arrow
 #'
-#' Use the \code{\link[graphics]{locator}} function to indicate the
+#' Use the [graphics::locator()] function to indicate the
 #'   endpoints of an arrow and then plot it.
 #'
 #' @param reverse If FALSE, first indicate the tail of the arrow and
@@ -20,7 +20,7 @@
 #' @param ... Additional graphics parameters
 #'
 #' @details
-#' Use \code{\link[graphics]{locator}} to indicate the two endpoints of
+#' Use [graphics::locator()] to indicate the two endpoints of
 #'   an arrow and then draw it.
 #'
 #' @importFrom graphics locator arrows
@@ -38,8 +38,7 @@
 #' }
 #'
 #' @seealso
-#' \code{\link[graphics]{arrows}},
-#'   \code{\link[graphics]{locator}}
+#' [graphics::arrows()], [graphics::locator()]
 #'
 #' @keywords
 #' hplot

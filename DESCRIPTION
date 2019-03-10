@@ -1,6 +1,6 @@
 Package: broman
-Version: 0.69-1
-Date: 2019-02-05
+Version: 0.69-2
+Date: 2019-03-10
 Title: Karl Broman's R Code
 Description: Miscellaneous R functions, including functions related to
     graphics (mostly for base graphics), permutation tests, running
@@ -31,3 +31,4 @@ Encoding: UTF-8
 ByteCompile: true
 LazyData: true
 RoxygenNote: 6.1.1
+Roxygen: list(markdown=TRUE)

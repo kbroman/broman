@@ -20,16 +20,16 @@ is not provided.}
 A data.frame with two columns: \code{x} and \code{y}.
 }
 \description{
-Utility function to plot histogram with \code{\link[graphics]{lines}}.
+Utility function to plot histogram with \code{\link[graphics:lines]{graphics::lines()}}.
 }
 \details{
 If \code{x} and \code{y} are both provided, \code{x} is interpreted to
-  be the breaks for a histogram, and \code{y} is a vector of counts or
-  density values for each interval.  These are then revised so that they
-  may be plotted with \code{\link[graphics]{lines}}.
-  If \code{y} is NULL, \code{x} is taken to be the data.  In this
-  case \code{\link[graphics]{hist}} is called with \code{breaks=breaks}, and
-  either the \code{counts} or \code{density} are used as \code{y}.
+be the breaks for a histogram, and \code{y} is a vector of counts or
+density values for each interval.  These are then revised so that they
+may be plotted with \code{\link[graphics:lines]{graphics::lines()}}.
+If \code{y} is NULL, \code{x} is taken to be the data.  In this
+case \code{\link[graphics:hist]{graphics::hist()}} is called with \code{breaks=breaks}, and
+either the \code{counts} or \code{density} are used as \code{y}.
 }
 \examples{
 x <- rnorm(1000, mean=20, sd=5)
@@ -53,7 +53,6 @@ lines(zlines, lwd=2 , col="red")
 
 }
 \seealso{
-\code{\link[graphics]{hist}},
-  \code{\link[graphics]{lines}}
+\code{\link[graphics:hist]{graphics::hist()}}, \code{\link[graphics:lines]{graphics::lines()}}
 }
 \keyword{graphics}

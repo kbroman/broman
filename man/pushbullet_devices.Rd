@@ -13,5 +13,5 @@ data frame with nickname, model, and iden for active devices.
 Get names and identifiers of Pushbullet devices.
 }
 \seealso{
-\code{\link{errors2pushbullet}}, \code{\link{done}}, \code{\link{note}}
+\code{\link[=errors2pushbullet]{errors2pushbullet()}}, \code{\link[=done]{done()}}, \code{\link[=note]{note()}}
 }

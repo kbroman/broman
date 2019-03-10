@@ -2,8 +2,6 @@
 #'
 #' Spell out an integer as a word, for use in reports/papers.
 #'
-#' @md
-#'
 #' @param number A number that is to be spelled out (can be a vector).
 #' @param capitalize If TRUE, capitalize the first letter.
 #' @param max_value Maximum value to use (generally 9); if larger than this, use numerals.

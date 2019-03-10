@@ -13,16 +13,16 @@ openfile(file)
 None.
 }
 \description{
-Open a file using \code{\link[base]{system}} and \code{"open"}
+Open a file using [base::system() and \code{"open"}
 (well, actually \code{"start"} on Linux).
 }
 \details{
 I'd thought that to open a file you'd use \code{open} in
-    MacOS and \code{start} in Windows, but
-    \code{system("start myfile.pdf")} doesn't work in Windows, and
-    rather \code{system("open myfile.pdf")} does, so here we're
-    just using \code{open}, except on Linux where at least on my
-    system, you can use \code{"start"}.
+MacOS and \code{start} in Windows, but
+\code{system("start myfile.pdf")} doesn't work in Windows, and
+rather \code{system("open myfile.pdf")} does, so here we're
+just using \code{open}, except on Linux where at least on my
+system, you can use \code{"start"}.
 }
 \examples{
 \dontrun{openfile("myplot.pdf")}

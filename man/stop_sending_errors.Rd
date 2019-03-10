@@ -14,7 +14,7 @@ longer sent to pushbullet.
 \dontrun{stop_sending_errors()}
 }
 \seealso{
-\code{\link{errors2pushbullet}},
-    \code{\link{pushbullet_devices}}
+\code{\link[=errors2pushbullet]{errors2pushbullet()}},
+\code{\link[=pushbullet_devices]{pushbullet_devices()}}
 }
 \keyword{utilities}

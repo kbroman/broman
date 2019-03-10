@@ -9,7 +9,7 @@ quantileSE(x, p = 0.95, bw = NULL, na.rm = TRUE, names = TRUE)
 \arguments{
 \item{x}{Numeric vector whose sample quantiles are wanted.}
 
-\item{p}{Numeric vector with values in [0,1].}
+\item{p}{Numeric vector with values in \link{0,1}.}
 
 \item{bw}{Bandwidth to use in the density estimation.}
 
@@ -21,24 +21,24 @@ the values in \code{p}.}
 }
 \value{
 A matrix of size 2 x \code{length(p)}.  The first row contains the
-  estimated quantiles; the second row contains the corresponding
-  estimated standard errors.
+estimated quantiles; the second row contains the corresponding
+estimated standard errors.
 }
 \description{
 Calculate sample quantiles and their estimated standard errors.
 }
 \details{
 The sample quantiles are calculated with the function
-  \code{\link[stats]{quantile}}.
-  Standard errors are obtained by the asymptotic approximation described
-  in Cox and Hinkley (1974).  Density values are estimated using a
-  kernel density estimate with the function \code{\link[stats]{density}}.
+\code{\link[stats:quantile]{stats::quantile()}}.
+Standard errors are obtained by the asymptotic approximation described
+in Cox and Hinkley (1974).  Density values are estimated using a
+kernel density estimate with the function \code{\link[stats:density]{stats::density()}}.
 }
 \examples{
 quantileSE(rchisq(1000,4), c(0.9,0.95))
 
 }
 \seealso{
-\code{\link[stats]{quantile}}, \code{\link[stats]{density}}
+\code{\link[stats:quantile]{stats::quantile()}}, \code{\link[stats:density]{stats::density()}}
 }
 \keyword{univar}

@@ -21,10 +21,10 @@
 #'
 #' @export
 #' @return
-#' If two vectors, \code{x} and \code{y}, are provided, the output is a
+#' If two vectors, `x` and `y`, are provided, the output is a
 #'   matrix with two columns, with the quantile normalized versions of
-#'   \code{x} and \code{y}.
-#'   If \code{y} is missing, \code{x} should be a matrix, in which case the
+#'   `x` and `y`.
+#'   If `y` is missing, `x` should be a matrix, in which case the
 #'   output is a matrix of the same dimensions with the columns quantile
 #'   normalized with respect to each other.
 #'

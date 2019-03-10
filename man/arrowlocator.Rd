@@ -24,17 +24,17 @@ average x-axis value of the two clicks for the horizontal placement.)}
 }
 \value{
 The locations of the endpoints of the arrow, as a two-row
-  matrix.  The first row indicates the location of the tail of the
-  arrow; the second row indicates the location of the head of the
-  arrow.
+matrix.  The first row indicates the location of the tail of the
+arrow; the second row indicates the location of the head of the
+arrow.
 }
 \description{
-Use the \code{\link[graphics]{locator}} function to indicate the
-  endpoints of an arrow and then plot it.
+Use the \code{\link[graphics:locator]{graphics::locator()}} function to indicate the
+endpoints of an arrow and then plot it.
 }
 \details{
-Use \code{\link[graphics]{locator}} to indicate the two endpoints of
-  an arrow and then draw it.
+Use \code{\link[graphics:locator]{graphics::locator()}} to indicate the two endpoints of
+an arrow and then draw it.
 }
 \examples{
 \dontrun{
@@ -44,7 +44,6 @@ arrowlocator(col="blue", lwd=2)
 
 }
 \seealso{
-\code{\link[graphics]{arrows}},
-  \code{\link[graphics]{locator}}
+\code{\link[graphics:arrows]{graphics::arrows()}}, \code{\link[graphics:locator]{graphics::locator()}}
 }
 \keyword{hplot}

@@ -9,10 +9,8 @@
 #' @aliases Numbers
 #'
 #' @details
-#' \itemize{
-#' \item \code{numbers} - lower case
-#' \item \code{Numbers} - Capitalized
-#' }
+#' - `numbers` - lower case
+#' - `Numbers` - Capitalized
 #'
 #' @format A vector of character strings
 #'

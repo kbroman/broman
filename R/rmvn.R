@@ -11,20 +11,20 @@
 #' @param V Variance-covariance matrix.
 #'
 #' @details
-#' Uses the Cholesky decomposition of the matrix \code{V}, obtained by
-#'   \code{\link[base]{chol}}.
+#' Uses the Cholesky decomposition of the matrix `V`, obtained by
+#'   [base::chol()].
 #'
 #' @importFrom stats rnorm
 #' @export
 #' @return
-#' A matrix of size n x \code{length(mu)}.  Each row corresponds to a
+#' A matrix of size n x `length(mu)`.  Each row corresponds to a
 #'   separate replicate.
 #'
 #' @examples
 #' x <- rmvn(100, c(1,2),matrix(c(1,1,1,4),ncol=2))
 #'
 #' @seealso
-#' \code{\link[stats]{rnorm}}
+#' [stats::rnorm()]
 #'
 #' @keywords
 #' datagen

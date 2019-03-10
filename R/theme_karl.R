@@ -4,9 +4,9 @@
 #'
 #' @param base_size Base font size
 #' @param base_family Base font family
-#' @param ... Passed to \code{\link[ggplot2]{theme}}
+#' @param ... Passed to [ggplot2::theme()]
 #'
-#' @return An object as returned by \code{\link[ggplot2]{theme}}
+#' @return An object as returned by [ggplot2::theme()]
 #'
 #'
 #' @examples
@@ -15,7 +15,7 @@
 #' ggplot(mtcars, aes(y=mpg, x=disp, color=cyl)) +
 #'     geom_point() + theme_karl()
 #'
-#' @seealso \code{\link[ggplot2]{theme}}
+#' @seealso [ggplot2::theme()]
 #'
 #' @export
 theme_karl <-

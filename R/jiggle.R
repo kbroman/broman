@@ -13,15 +13,14 @@
 #' @param hnum Number of horizontal bins for the jiggling.
 #' @param vnum Number of vertical bins for the jiggling.
 #'
-#' @details The \code{"random"} method is similar to
-#' \code{\link[base]{jitter}} but with amount of jiggling proportional
-#' to the number of nearby points. The \code{"fixed"} method is
-#' similar to the
-#' \href{http://www.cbs.dtu.dk/~eklund/beeswarm/}{beeswarm package}
+#' @details The `"random"` method is similar to
+#' [base::jitter()] but with amount of jiggling proportional
+#' to the number of nearby points. The `"fixed"` method is
+#' similar to the [beeswarm package](http://www.cbs.dtu.dk/~eklund/beeswarm/)
 #'
 #' @return Numeric vector with amounts to jiggle the points horizontally
 #'
-#' @seealso \code{\link[base]{jitter}}, \code{\link{dotplot}}
+#' @seealso [base::jitter()], [dotplot()]
 #' @importFrom stats runif median
 #' @export
 jiggle <-

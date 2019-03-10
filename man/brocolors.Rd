@@ -48,6 +48,6 @@ text(seq(along=sex), rep(6.7, length(sex)), names(sex))
 points(1, 8, pch=21, bg=brocolors("main"), cex=4)
 }
 \seealso{
-\code{\link{plot_crayons}}
+\code{\link[=plot_crayons]{plot_crayons()}}
 }
 \keyword{utilities}

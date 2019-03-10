@@ -13,11 +13,11 @@ paste.(...)
 A character string or vector of character strings.
 }
 \description{
-Calls \code{\link[base]{paste}} with \code{sep="."}.
+Calls \code{\link[base:paste]{base::paste()}} with \code{sep="."}.
 }
 \details{
 There's not much to this function.  It just is
-  \code{\link[base]{paste}} with \code{sep=""}, 'cause I'm lazy.
+\code{\link[base:paste]{base::paste()}} with \code{sep=""}, 'cause I'm lazy.
 }
 \examples{
 x <- 3
@@ -26,11 +26,11 @@ paste.(x, y)
 
 }
 \seealso{
-\code{\link[base]{paste}},
-  \code{\link[base]{paste0}},
-  \code{\link{paste00}},
-  \code{\link{paste..}},
-  \code{\link{paste0.}},
-  \code{\link{paste.0}}
+\code{\link[base:paste]{base::paste()}},
+\code{\link[base:paste0]{base::paste0()}},
+\code{\link[=paste00]{paste00()}},
+\code{\link[=paste..]{paste..()}},
+\code{\link[=paste0.]{paste0.()}},
+\code{\link[=paste.0]{paste.0()}}
 }
 \keyword{character}

@@ -44,7 +44,7 @@ text(x,1:length(x),xlabs,pos=4,cex=0.7)
 
 }
 \seealso{
-\code{text}
+\code{\link[graphics:text]{graphics::text()}}
 }
 \author{
 Aimee Teo Broman

@@ -10,7 +10,7 @@
 #' @param sortbysize If TRUE, sort the objects from smallest to largest.
 #'
 #' @details
-#' Calls \code{\link[utils]{object.size}} repeated to get the size of a
+#' Calls [utils::object.size()] repeated to get the size of a
 #'   list of objects.
 #'
 #' @export
@@ -22,9 +22,7 @@
 #' print(output <- objectsizes())
 #' \dontrun{sum(output)}
 #'
-#' @seealso
-#' \code{\link[utils]{object.size}},
-#'   \code{\link[base]{objects}}
+#' @seealso [utils::object.size()], [base::objects()]
 #'
 #' @keywords
 #' utilities

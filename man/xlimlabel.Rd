@@ -27,7 +27,7 @@ Minimum and maximum x-axis limits for adding horizontal text
 Calculates the x-axis limits when adding (long) labels to a plot
 }
 \details{
-See \code{text} for details on \code{pos} and \code{offset}.
+See \code{\link[graphics:text]{graphics::text()}} for details on \code{pos} and \code{offset}.
 }
 \examples{
 x <- runif(15, -1, 1)*10
@@ -45,7 +45,7 @@ text(x, 1:length(x), xlabs, pos=4, cex=0.7)
 
 }
 \seealso{
-\code{\link[graphics]{text}}
+\code{\link[graphics:text]{graphics::text()}}
 }
 \author{
 Aimee Teo Broman

@@ -24,19 +24,19 @@ attribute, \code{"tobs"}).}
 }
 \value{
 If \code{pval=TRUE}, the output is a single number: the P-value
-  testing for a difference in the distributions of the populations from
-  which \code{x} and \code{y} were drawn.
-  If \code{pval=FALSE}, the output is a vector of the t statistics from
-  the permutations.  An attributed \code{"tobs"} contains the t
-  statistic with the observed data.
+testing for a difference in the distributions of the populations from
+which \code{x} and \code{y} were drawn.
+If \code{pval=FALSE}, the output is a vector of the t statistics from
+the permutations.  An attributed \code{"tobs"} contains the t
+statistic with the observed data.
 }
 \description{
 Calculates a p-value for a t-test via permutations.
 }
 \details{
-This calls the function \code{\link[stats]{t.test}} to calculate a
-  t-statistic comparing the vectors \code{x} and \code{y}.  Permutations
-  are perfomed to give an exact or approximate conditional p-value.
+This calls the function \code{\link[stats:t.test]{stats::t.test()}} to calculate a
+t-statistic comparing the vectors \code{x} and \code{y}.  Permutations
+are perfomed to give an exact or approximate conditional p-value.
 }
 \examples{
 x <- c(43.3, 57.1, 35.0, 50.0, 38.2, 61.2)
@@ -45,6 +45,6 @@ perm.test(x,y)
 
 }
 \seealso{
-\code{\link[stats]{t.test}}, \code{\link{paired.perm.test}}
+\code{\link[stats:t.test]{stats::t.test()}}, \code{\link[=paired.perm.test]{paired.perm.test()}}
 }
 \keyword{htest}

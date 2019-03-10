@@ -6,7 +6,7 @@
 #'
 #' @return Vector of character strings with the names of the attributes.
 #'
-#' @details It just does \code{names(attributes(object))}.
+#' @details It just does `names(attributes(object))`.
 #'
 #' @export
 #' @keywords utilities

@@ -14,10 +14,10 @@ karl_theme(base_size = 12, base_family = "", ...)
 
 \item{base_family}{Base font family}
 
-\item{...}{Passed to \code{\link[ggplot2]{theme}}}
+\item{...}{Passed to \code{\link[ggplot2:theme]{ggplot2::theme()}}}
 }
 \value{
-An object as returned by \code{\link[ggplot2]{theme}}
+An object as returned by \code{\link[ggplot2:theme]{ggplot2::theme()}}
 }
 \description{
 Karl's ggplot2 theme: black border and no ticks
@@ -30,5 +30,5 @@ ggplot(mtcars, aes(y=mpg, x=disp, color=cyl)) +
 
 }
 \seealso{
-\code{\link[ggplot2]{theme}}
+\code{\link[ggplot2:theme]{ggplot2::theme()}}
 }

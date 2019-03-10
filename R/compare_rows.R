@@ -3,13 +3,13 @@
 #'
 #' For all pairs of rows in a matrix, calculate the proportion of mismatches or the RMS difference.
 #'
-#' @param mat Numeric matrix. Should be integers in the case \code{method="prop_mismatches"}.
+#' @param mat Numeric matrix. Should be integers in the case `method="prop_mismatches"`.
 #' @param method Indicates whether to use proportion mismatches or the
 #' RMS difference. Missing values are omitted.
 #'
 #' @export
-#' @return A square matrix of dimension \code{nrow(mat)} with
-#' \code{NA}s on the diagonal and the calculated statistic in the
+#' @return A square matrix of dimension `nrow(mat)` with
+#' `NA`s on the diagonal and the calculated statistic in the
 #' body.
 #'
 #' @examples
