@@ -9,7 +9,7 @@ quantileSE(x, p = 0.95, bw = NULL, na.rm = TRUE, names = TRUE)
 \arguments{
 \item{x}{Numeric vector whose sample quantiles are wanted.}
 
-\item{p}{Numeric vector with values in \link{0,1}.}
+\item{p}{Numeric vector with values in the interval [0,1]}
 
 \item{bw}{Bandwidth to use in the density estimation.}
 

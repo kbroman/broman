@@ -8,7 +8,7 @@
 #'
 #' @param x Numeric vector whose sample quantiles are wanted.
 #'
-#' @param p Numeric vector with values in [0,1].
+#' @param p Numeric vector with values in the interval \[0,1\]
 #'
 #' @param bw Bandwidth to use in the density estimation.
 #'
