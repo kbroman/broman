@@ -22,6 +22,7 @@
 #'
 #' @seealso [base::jitter()], [dotplot()]
 #' @importFrom stats runif median
+#' @useDynLib broman, .registration=TRUE
 #' @export
 jiggle <-
     function(group, y, method=c("fixed", "random"), hnum=35, vnum=40)

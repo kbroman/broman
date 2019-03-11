@@ -19,6 +19,7 @@
 #'   Missing values, which can result in differing numbers of observed
 #'   values per column, are dealt with by linear interpolation.
 #'
+#' @useDynLib broman, .registration=TRUE
 #' @export
 #' @return
 #' If two vectors, `x` and `y`, are provided, the output is a

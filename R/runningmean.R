@@ -21,6 +21,7 @@
 #'
 #' @param what  Statistic to use.
 #'
+#' @useDynLib broman, .registration=TRUE
 #' @export
 #' @return
 #' A vector with the same length as the input `at` (or `pos`,
@@ -114,6 +115,7 @@ runningmean <-
 #'
 #' @param window Window width.
 #'
+#' @useDynLib broman, .registration=TRUE
 #' @export
 #' @return
 #' A vector with the same length as the input `at` (or `pos`,

@@ -7,6 +7,7 @@
 #' @param method Indicates whether to use proportion mismatches or the
 #' RMS difference. Missing values are omitted.
 #'
+#' @useDynLib broman, .registration=TRUE
 #' @export
 #' @return A square matrix of dimension `nrow(mat)` with
 #' `NA`s on the diagonal and the calculated statistic in the
