@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.69-2, 2019-03-10:
+Version 0.69-3, 2019-03-11:
 
   Added operators %nin%, %win%, and %wnin%.
   a %nin% b   is like !(a %in% b)
@@ -10,6 +10,8 @@ Version 0.69-2, 2019-03-10:
 
   Added function spell_out() for spelling out numbers provided they are
   smallish integers. Goes with the datasets numbers and Numbers.
+
+  Added function revgray() that's like revrainbow() but white/black.
 
   Use Markdown throughout documentation
 
