@@ -27,6 +27,7 @@
 #' the CI segments with `ci_col`. You can control the width of the
 #' segments at the top and bottom with `ci_endseg`.
 #'
+#' @importFrom graphics axis points segments
 #' @export
 #'
 #' @return
