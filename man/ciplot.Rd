@@ -5,7 +5,7 @@
 \title{Effect plot with multiple CIs for different groups}
 \usage{
 ciplot(est, se = NULL, lo = NULL, hi = NULL, SEmult = 2,
-  rotate = FALSE, ...)
+  labels = NULL, rotate = FALSE, ...)
 }
 \arguments{
 \item{est}{Vector of estimates}
@@ -17,6 +17,8 @@ ciplot(est, se = NULL, lo = NULL, hi = NULL, SEmult = 2,
 \item{hi}{Vector of upper values for the intervals}
 
 \item{SEmult}{SE multiplier to create intervals}
+
+\item{labels}{Labels for the groups (vector of character strings)}
 
 \item{rotate}{If TRUE, have group as y-axis; default (FALSE) has
 group on x-axis.}
@@ -36,7 +38,8 @@ graphics parameters, as in \code{\link[=dotplot]{dotplot()}}.
 Provide either \code{se} or both \code{lo} and \code{hi}. In the case that \code{se} is
 used, the intervals will be \code{est} +/- \code{SEmult * se}.
 
-Group names are taken from the \code{names(est)}. If missing, we use capital letters.
+If \code{labels} is not provided, group names are taken from the \code{names(est)}.
+If that is also missing, we use capital letters.
 
 You can control the CI line widths with \code{ci_lwd} and the color of
 the CI segments with \code{ci_col}. You can control the width of the

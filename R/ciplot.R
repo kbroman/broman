@@ -9,6 +9,7 @@
 #' @param lo  Vector of lower values for the intervals
 #' @param hi  Vector of upper values for the intervals
 #' @param SEmult SE multiplier to create intervals
+#' @param labels Labels for the groups (vector of character strings)
 #'
 #' @param rotate If TRUE, have group as y-axis; default (FALSE) has
 #' group on x-axis.
@@ -21,7 +22,8 @@
 #' Provide either `se` or both `lo` and `hi`. In the case that `se` is
 #' used, the intervals will be `est` +/- `SEmult * se`.
 #'
-#' Group names are taken from the `names(est)`. If missing, we use capital letters.
+#' If `labels` is not provided, group names are taken from the `names(est)`.
+#' If that is also missing, we use capital letters.
 #'
 #' You can control the CI line widths with `ci_lwd` and the color of
 #' the CI segments with `ci_col`. You can control the width of the
@@ -52,7 +54,7 @@
 #' graphics
 ciplot <-
     function(est, se=NULL, lo=NULL, hi=NULL, SEmult=2,
-             rotate=FALSE, ...)
+             labels=NULL, rotate=FALSE, ...)
 {
     if(is.null(se) && is.null(lo) && is.null(hi)) {
         se <- rep(0, length(est))
@@ -69,26 +71,28 @@ ciplot <-
         stopifnot(length(lo) == length(est), length(hi) == length(est))
     }
 
-    group <- names(est)
-    if(is.null(group)) {
-        group <- rep(LETTERS, length(est))[seq_along(est)]
+    if(is.null(labels)) {
+        labels <- names(est)
     }
-
-    ugroup <- group
-    group <- seq_along(group)
-    n_group <- length(ugroup)
+    if(is.null(labels)) {
+        labels <- rep(LETTERS, length(est))[seq_along(est)]
+    }
+    stopifnot(length(labels) == length(est))
 
     # this is to deal with varying inputs
     hide_ciplot <-
-        function(group, est, lo, hi, rotate=FALSE,
+        function(est, lo, hi, rotate=FALSE,
                  vlines=NULL, vlines.col="white", vlines.lwd=1,
                  hlines=NULL, hlines.col="white", hlines.lwd=1,
                  xat=NULL, xlim=NULL, xaxs="r", xlab=NULL,
                  yat=NULL, ylim=NULL, yaxs="r", ylab=NULL,
                  las=1, pch=21, bg="slateblue", ci_col="black",
-                 ci_lwd=2, ci_endseg=0.05, ...)
+                 ci_lwd=2, ci_endseg=0.05, labels=NULL, ...)
 
         {
+            n_group <- length(est)
+            group <- seq_len(n_group)
+
             if(!rotate) {
                 xlim <- c(0.5, n_group+0.5)
                 vlines <- 1:n_group
@@ -106,7 +110,7 @@ ciplot <-
                          hlines=hlines, hlines.col=hlines.col, hlines.lwd=hlines.lwd,
                          xat=xat, xlim=xlim, xaxs=xaxs, xlab=xlab,
                          yat=yat, ylim=ylim, yaxs=yaxs, ylab=ylab, las=las, type="n")
-                axis(side=1, at=vlines, ugroup, las=las, tick=FALSE, mgp=c(0,0.2,0))
+                axis(side=1, at=vlines, labels, las=las, tick=FALSE, mgp=c(0,0.2,0))
 
                 segments(group, lo, group, hi, col=ci_col, lwd=ci_lwd)
                 segments(group-ci_endseg, lo, group+ci_endseg, lo, col=ci_col, lwd=ci_lwd)
@@ -131,7 +135,7 @@ ciplot <-
                          xat=xat, xlim=xlim, xaxs=xaxs, xlab=xlab,
                          yat=yat, ylim=ylim, yaxs=yaxs, ylab=ylab,
                          v_over_h=TRUE, las=las, type="n", ...)
-                axis(side=2, at=hlines, ugroup, las=las, tick=FALSE, mgp=c(0,0.3,0))
+                axis(side=2, at=hlines, labels, las=las, tick=FALSE, mgp=c(0,0.3,0))
 
                 segments(lo, group, hi, group, col=ci_col, lwd=ci_lwd)
                 segments(lo, group-ci_endseg, lo, group+ci_endseg, col=ci_col, lwd=ci_lwd)
@@ -142,6 +146,6 @@ ciplot <-
 
         }
 
-    hide_ciplot(group, est, lo, hi, rotate, ...)
+    hide_ciplot(est=est, lo=lo, hi=hi, rotate=rotate, labels=labels, ...)
     invisible()
 }
