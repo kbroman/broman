@@ -97,7 +97,7 @@ dotplot <-
                 vlines.col <- "gray70"
                 vlines.lwd <- 4
                 xat <- NA
-                if(is.null(xlab)) xlab <- ""
+                if(is.null(xlab)) xlab <- "Group"
 
                 # deal with vlines/lines ** FIX ME **
 

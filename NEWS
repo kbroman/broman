@@ -13,6 +13,9 @@ Version 0.69-4, 2019-03-20:
 
   Added function revgray() that's like revrainbow() but white/black.
 
+  In dotplot(), make "Group" the default axis label whether rotated or
+  not. (Was when rotate=TRUE, but not when rotate=FALSE.)
+
   Use Markdown throughout documentation
 
 
