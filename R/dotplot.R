@@ -18,6 +18,11 @@
 #' @details Calls [grayplot()] with special choices of
 #' graphics parameters for the case of categorical x.
 #'
+#' If `group` is a factor, the order of the groups is as in the
+#' levels. Otherwise, we take `sort(unique(group))`. So if you want to
+#' control the order of the levels, make `group` a factor with the levels
+#' in the desired order, for example `group <- factor(group, levels=unique(group))`.
+#'
 #' @export
 #' @importFrom graphics axis
 #'

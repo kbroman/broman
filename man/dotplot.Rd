@@ -29,6 +29,11 @@ Like the \code{\link[=grayplot]{grayplot()}} function, but with one axis assumed
 \details{
 Calls \code{\link[=grayplot]{grayplot()}} with special choices of
 graphics parameters for the case of categorical x.
+
+If \code{group} is a factor, the order of the groups is as in the
+levels. Otherwise, we take \code{sort(unique(group))}. So if you want to
+control the order of the levels, make \code{group} a factor with the levels
+in the desired order, for example \code{group <- factor(group, levels=unique(group))}.
 }
 \examples{
 \dontshow{set.seed(97536917)}

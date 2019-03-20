@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.69-3, 2019-03-11:
+Version 0.69-4, 2019-03-20:
 
   Added operators %nin%, %win%, and %wnin%.
   a %nin% b   is like !(a %in% b)
