@@ -3,6 +3,8 @@ Revision history for the R/broman package
 
 Version 0.69-4, 2019-03-20:
 
+  Added function ciplot() for plotting a set of confidence intervals.
+
   Added operators %nin%, %win%, and %wnin%.
   a %nin% b   is like !(a %in% b)
   a %win% b   is like a[a %in% b]
