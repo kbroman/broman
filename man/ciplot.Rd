@@ -47,9 +47,13 @@ segments at the top and bottom with \code{ci_endseg}.
 x <- rnorm(40, c(1,3))
 g <- rep(c("A", "B"), 20)
 me <- tapply(x, g, mean)
-se <- tapply(x, g, se)
-ciplot(me, se)
+se <- tapply(x, g, function(a) sd(a)/sqrt(sum(!is.na(a))))
+ciplot(me, se) # default is +/- 2 SE
 ciplot(me, se, SEmult=1)
+ciplot(me, se, rotate=TRUE)
+lo <- me - 2*se
+hi <- me + 2*se
+ciplot(me, lo=lo, hi=hi)
 
 }
 \seealso{
