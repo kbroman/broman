@@ -18,7 +18,7 @@ Vector of named RGB colors
 Vector of colors corresponding to Crayola crayons
 }
 \references{
-\url{http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
+\url{https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
 }
 \seealso{
 \code{\link[=plot_crayons]{plot_crayons()}}, \code{\link[=brocolors]{brocolors()}}

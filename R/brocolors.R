@@ -271,7 +271,7 @@ brocolors <-
 #' @param border If TRUE, plot a border around each rectangle
 #' @return None
 #' @export
-#' @references <http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors>
+#' @references <https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors>
 #' @seealso [brocolors()]
 #' @examples
 #' plot_crayons()
@@ -333,7 +333,7 @@ plot_crayons <-
 #'
 #' @return Vector of named RGB colors
 #'
-#' @references <http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors>
+#' @references <https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors>
 #'
 #' @seealso [plot_crayons()], [brocolors()]
 #' @export

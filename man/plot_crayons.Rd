@@ -30,7 +30,7 @@ Creates a plot of the crayon colors in \code{\link[=brocolors]{brocolors()}}
 plot_crayons()
 }
 \references{
-\url{http://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
+\url{https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}
 }
 \seealso{
 \code{\link[=brocolors]{brocolors()}}
