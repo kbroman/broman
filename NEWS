@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.69-4, 2019-03-20:
+Version 0.69-5, 2019-04-11:
 
   Added function ciplot() for plotting a set of confidence intervals.
 
