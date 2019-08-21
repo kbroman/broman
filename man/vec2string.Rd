@@ -4,10 +4,12 @@
 \alias{vec2string}
 \title{Turn a vector into a single character string}
 \usage{
-vec2string(x)
+vec2string(x, conjunction = "and")
 }
 \arguments{
 \item{x}{A vector}
+
+\item{conjunction}{Word used to combine the strings}
 }
 \description{
 Turn a vector into a single character string with the items separated by commas and an "and".
@@ -15,4 +17,5 @@ Turn a vector into a single character string with the items separated by commas 
 \examples{
 vec2string(letters[1:2])
 vec2string(letters[1:4])
+vec2string(letters[1:4], "or")
 }

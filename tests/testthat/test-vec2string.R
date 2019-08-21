@@ -7,4 +7,9 @@ test_that("vec2string works", {
     expect_equal(vec2string(c("a", "b")), "a and b")
     expect_equal(vec2string(c("a", "b", "c", "d")), "a, b, c, and d")
 
+    expect_equal(vec2string(NULL, "or"), "")
+    expect_equal(vec2string("a", "or"), "a")
+    expect_equal(vec2string(c("a", "b"), "or"), "a or b")
+    expect_equal(vec2string(c("a", "b", "c", "d"), "or"), "a, b, c, or d")
+
 })

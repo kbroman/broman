@@ -1,6 +1,12 @@
 Revision history for the R/broman package
 -----------------------------------------
 
+Version 0.70-1, 2019-08-21:
+
+  In `vec2string()`, add `conjunction` argument, to allow a different
+  combining word than `"and"`.
+
+
 Version 0.69-5, 2019-04-11:
 
   Added function ciplot() for plotting a set of confidence intervals.
