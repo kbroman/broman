@@ -87,7 +87,7 @@ ciplot <-
                  xat=NULL, xlim=NULL, xaxs="r", xlab=NULL,
                  yat=NULL, ylim=NULL, yaxs="r", ylab=NULL,
                  las=1, pch=21, bg="slateblue", ci_col="black",
-                 ci_lwd=2, ci_endseg=0.05, labels=NULL, ...)
+                 ci_lwd=2, ci_endseg=0.05, labels=NULL, main="", ...)
 
         {
             n_group <- length(est)
@@ -109,7 +109,8 @@ ciplot <-
                          vlines=vlines, vlines.col=vlines.col, vlines.lwd=vlines.lwd,
                          hlines=hlines, hlines.col=hlines.col, hlines.lwd=hlines.lwd,
                          xat=xat, xlim=xlim, xaxs=xaxs, xlab=xlab,
-                         yat=yat, ylim=ylim, yaxs=yaxs, ylab=ylab, las=las, type="n")
+                         yat=yat, ylim=ylim, yaxs=yaxs, ylab=ylab, las=las, type="n",
+                         main=main)
                 axis(side=1, at=vlines, labels, las=las, tick=FALSE, mgp=c(0,0.2,0))
 
                 segments(group, lo, group, hi, col=ci_col, lwd=ci_lwd)
