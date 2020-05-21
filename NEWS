@@ -1,9 +1,13 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.70-3, 2020-05-20:
+Version 0.70-4, 2020-05-21:
 
-  Add `twocolorpal()` for a color palette that goes from one color
+  Added an option to include grid lines in `triplot()`, and a separate
+  function `trigrid()` that does the work and may be called
+  separately.
+
+  Added `twocolorpal()` for a color palette that goes from one color
   (say blue) to another (say red) through a third (say white). That
   is, blue to white to red.
 

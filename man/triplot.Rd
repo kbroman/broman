@@ -4,8 +4,17 @@
 \alias{triplot}
 \title{Plot Holmans triangle}
 \usage{
-triplot(labels = c("(1,0,0)", "(0,1,0)", "(0,0,1)"), col = "black",
-  lwd = 2, bgcolor = "gray90", ...)
+triplot(
+  labels = c("(1,0,0)", "(0,1,0)", "(0,0,1)"),
+  col = "black",
+  lwd = 2,
+  bgcolor = "gray90",
+  gridlines = 0,
+  grid_col = "white",
+  grid_lty = 1,
+  grid_lwd = 1,
+  ...
+)
 }
 \arguments{
 \item{labels}{Labels for the three corners (lower-right, top, lower-left).}
@@ -15,6 +24,14 @@ triplot(labels = c("(1,0,0)", "(0,1,0)", "(0,0,1)"), col = "black",
 \item{lwd}{Line width for edges of triangle}
 
 \item{bgcolor}{Background color for triangle}
+
+\item{gridlines}{Number of grid lines (if 0, no grid lines will be plotted)}
+
+\item{grid_col}{Color of grid lines}
+
+\item{grid_lty}{Line type of grid lines}
+
+\item{grid_lwd}{Line width of grid lines}
 
 \item{...}{Passed to \code{\link[graphics:plot]{graphics::plot()}}.}
 }

@@ -13,6 +13,11 @@
 #'
 #' @param bgcolor Background color for triangle
 #'
+#' @param gridlines Number of grid lines (if 0, no grid lines will be plotted)
+#' @param grid_col Color of grid lines
+#' @param grid_lty Line type of grid lines
+#' @param grid_lwd Line width of grid lines
+#'
 #' @param ... Passed to [graphics::plot()].
 #'
 #' @details
@@ -47,7 +52,9 @@
 #' hplot
 triplot <-
     function(labels=c("(1,0,0)", "(0,1,0)", "(0,0,1)"),
-             col="black", lwd=2, bgcolor="gray90", ...)
+             col="black", lwd=2, bgcolor="gray90",
+             gridlines=0, grid_col="white", grid_lty=1, grid_lwd=1,
+             ...)
 {
     m <- rbind(c(2/sqrt(3), 1/sqrt(3), 0), c(0,1,0))
 
@@ -75,6 +82,8 @@ triplot <-
 
     polygon(c(pts[1,], pts[1,1]), c(pts[2,], pts[2,1]),
             border=col, col=bgcolor, lwd=lwd)
+
+    if(gridlines > 0) trigrid(gridlines, col=grid_col, lty=grid_lty, lwd=grid_lwd)
 
     invisible(pts)
 }
