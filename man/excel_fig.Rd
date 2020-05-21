@@ -4,12 +4,27 @@
 \alias{excel_fig}
 \title{Excel-style figure displaying contents of a matrix}
 \usage{
-excel_fig(mat, file = NULL, cellwidth = 80, cellheight = 26,
-  textsize = 16, fig_width = NULL, fig_height = NULL,
-  border = "#CECECE", headcol = "#E9E9E9", headborder = "#969696",
-  headtextcol = "#626262", textcol = "black", row_names = FALSE,
-  col_names = TRUE, hilitcells = NULL, hilitcolor = "#F0DCDB",
-  lwd = 1, direct2svg = FALSE, mar = rep(0.1, 4))
+excel_fig(
+  mat,
+  file = NULL,
+  cellwidth = 80,
+  cellheight = 26,
+  textsize = 16,
+  fig_width = NULL,
+  fig_height = NULL,
+  border = "#CECECE",
+  headcol = "#E9E9E9",
+  headborder = "#969696",
+  headtextcol = "#626262",
+  textcol = "black",
+  row_names = FALSE,
+  col_names = TRUE,
+  hilitcells = NULL,
+  hilitcolor = "#F0DCDB",
+  lwd = 1,
+  direct2svg = FALSE,
+  mar = rep(0.1, 4)
+)
 }
 \arguments{
 \item{mat}{A matrix}

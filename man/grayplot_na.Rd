@@ -4,9 +4,18 @@
 \alias{grayplot_na}
 \title{Scatterplot with missing values indicated}
 \usage{
-grayplot_na(x, y = NULL, type = "p", bgcolor = "gray90",
-  v_over_h = FALSE, pch = 21, bg = "lightblue", col = "black",
-  force = c("none", "x", "y", "both"), ...)
+grayplot_na(
+  x,
+  y = NULL,
+  type = "p",
+  bgcolor = "gray90",
+  v_over_h = FALSE,
+  pch = 21,
+  bg = "lightblue",
+  col = "black",
+  force = c("none", "x", "y", "both"),
+  ...
+)
 }
 \arguments{
 \item{x}{Coordinates of points in the plot}

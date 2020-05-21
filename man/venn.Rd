@@ -4,8 +4,14 @@
 \alias{venn}
 \title{Plot to-scale Venn diagram}
 \usage{
-venn(setA = 50, setB = 50, both = 25, method = c("circle",
-  "square"), labels = c("A", "B"), col = c("blue", "red"))
+venn(
+  setA = 50,
+  setB = 50,
+  both = 25,
+  method = c("circle", "square"),
+  labels = c("A", "B"),
+  col = c("blue", "red")
+)
 }
 \arguments{
 \item{setA}{Total area of set A.}

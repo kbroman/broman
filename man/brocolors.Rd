@@ -4,8 +4,10 @@
 \alias{brocolors}
 \title{Vectors of colors for figures}
 \usage{
-brocolors(set = c("general", "general2", "bg", "bgpng", "CC", "CCalt",
-  "f2", "sex", "main", "crayons", "web"))
+brocolors(
+  set = c("general", "general2", "bg", "bgpng", "CC", "CCalt", "f2", "sex", "main",
+    "crayons", "web")
+)
 }
 \arguments{
 \item{set}{Character string indicating a set of colors.}

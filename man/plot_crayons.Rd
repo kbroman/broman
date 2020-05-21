@@ -4,8 +4,14 @@
 \alias{plot_crayons}
 \title{Illustration of crayon colors}
 \usage{
-plot_crayons(method2order = c("hsv", "cluster"), cex = 0.6,
-  mar = rep(0.1, 4), bg = "white", fg = "black", border = FALSE)
+plot_crayons(
+  method2order = c("hsv", "cluster"),
+  cex = 0.6,
+  mar = rep(0.1, 4),
+  bg = "white",
+  fg = "black",
+  border = FALSE
+)
 }
 \arguments{
 \item{method2order}{method to order colors (\code{"hsv"} or \code{"cluster"})}

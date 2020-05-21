@@ -4,8 +4,7 @@
 \alias{twocolorpal}
 \title{Create vector of colors from blue to white to red}
 \usage{
-twocolorpal(colors = c("slateblue", "white", "violetred"), n = 256,
-  ...)
+twocolorpal(colors = c("slateblue", "white", "violetred"), n = 256, ...)
 }
 \arguments{
 \item{colors}{Vector of three colors}

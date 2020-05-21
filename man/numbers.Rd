@@ -5,7 +5,9 @@
 \alias{numbers}
 \alias{Numbers}
 \title{Numbers spelled out in English}
-\format{A vector of character strings}
+\format{
+A vector of character strings
+}
 \description{
 The numbers 1-20 spelled out in English, for use in reports.
 }

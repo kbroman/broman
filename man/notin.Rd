@@ -18,16 +18,16 @@ x \%wnin\% table
 \item{table}{Vector of values to be matched against.}
 }
 \value{
-\code{\%nin\%} returns a logical vector of the same length of \code{x}, indicating which values are not in \code{table}.
+\verb{\%nin\%} returns a logical vector of the same length of \code{x}, indicating which values are not in \code{table}.
 
-\code{\%win\%} returns a sub-vector of \code{x} with the values that were found in \code{table}.
+\verb{\%win\%} returns a sub-vector of \code{x} with the values that were found in \code{table}.
 
-\code{\%wnin\%} returns a sub-vector of \code{x} with the values that were not found in \code{table}.
+\verb{\%wnin\%} returns a sub-vector of \code{x} with the values that were not found in \code{table}.
 }
 \description{
 \code{\%in\%} returns logical vector indicating values that do not have a match.
-\code{\%win\%} returns a vector of the values that have a match.
-\code{\%wnin\%} returns a vector of the values that do not have a match.
+\verb{\%win\%} returns a vector of the values that have a match.
+\verb{\%wnin\%} returns a vector of the values that do not have a match.
 }
 \examples{
 vals <- c("a", "xa", "b")

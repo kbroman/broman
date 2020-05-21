@@ -18,7 +18,7 @@ Vector of colors, from white to black
 Calls \code{\link[grDevices:gray]{grDevices::gray()}} then \code{\link[base:rev]{base::rev()}}
 }
 \details{
-There's not much to this. It's just \code{gray((n:0)/n))}
+There's not much to this. It's just \verb{gray((n:0)/n))}
 }
 \examples{
 x <- matrix(rnorm(100), ncol=10)

@@ -4,8 +4,13 @@
 \alias{runningmean}
 \title{Running mean, sum, or median}
 \usage{
-runningmean(pos, value, at = NULL, window = 1000, what = c("mean",
-  "sum", "median", "sd"))
+runningmean(
+  pos,
+  value,
+  at = NULL,
+  window = 1000,
+  what = c("mean", "sum", "median", "sd")
+)
 }
 \arguments{
 \item{pos}{Positions for the values.}

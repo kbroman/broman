@@ -4,8 +4,16 @@
 \alias{ciplot}
 \title{Effect plot with multiple CIs for different groups}
 \usage{
-ciplot(est, se = NULL, lo = NULL, hi = NULL, SEmult = 2,
-  labels = NULL, rotate = FALSE, ...)
+ciplot(
+  est,
+  se = NULL,
+  lo = NULL,
+  hi = NULL,
+  SEmult = 2,
+  labels = NULL,
+  rotate = FALSE,
+  ...
+)
 }
 \arguments{
 \item{est}{Vector of estimates}

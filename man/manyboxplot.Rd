@@ -4,8 +4,13 @@
 \alias{manyboxplot}
 \title{Boxplot-like figure for many groups}
 \usage{
-manyboxplot(x, probs = c(0.05, 0.1, 0.25), dotcol = "blue",
-  linecol = c("black", "red", "green", "orange"), ...)
+manyboxplot(
+  x,
+  probs = c(0.05, 0.1, 0.25),
+  dotcol = "blue",
+  linecol = c("black", "red", "green", "orange"),
+  ...
+)
 }
 \arguments{
 \item{x}{Matrix of data, with columns indicating the groups.}

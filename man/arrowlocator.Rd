@@ -4,8 +4,13 @@
 \alias{arrowlocator}
 \title{Use the locator function to plot an arrow}
 \usage{
-arrowlocator(reverse = FALSE, horizontal = FALSE, vertical = FALSE,
-  length = 0.1, ...)
+arrowlocator(
+  reverse = FALSE,
+  horizontal = FALSE,
+  vertical = FALSE,
+  length = 0.1,
+  ...
+)
 }
 \arguments{
 \item{reverse}{If FALSE, first indicate the tail of the arrow and
