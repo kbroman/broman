@@ -3,19 +3,19 @@ Revision history for the R/broman package
 
 Version 0.70-4, 2020-05-21:
 
-  Added an option to include grid lines in `triplot()`, and a separate
-  function `trigrid()` that does the work and may be called
+  Added an option to include grid lines in triplot(), and a separate
+  function trigrid() that does the work and may be called
   separately.
 
-  Added `twocolorpal()` for a color palette that goes from one color
+  Added twocolorpal() for a color palette that goes from one color
   (say blue) to another (say red) through a third (say white). That
   is, blue to white to red.
 
-  In `vec2string()`, add `conjunction` argument, to allow a different
-  combining word than `"and"`.
+  In vec2string(), add conjunction argument, to allow a different
+  combining word than "and".
 
-  In `ciplot()`, allow argument `main` in `...` to be passed to
-  `grayplot()` and so on to `plot()`.
+  In ciplot(), allow argument main in ... to be passed to
+  grayplot() and so on to plot().
 
 
 Version 0.69-5, 2019-04-11:
