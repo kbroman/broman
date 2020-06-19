@@ -26,7 +26,7 @@
 #' @param ... Optional graphics arguments
 #'
 #' @details
-#' Calls [graphics::plot()] with `type="n", then
+#' Calls [base::plot()] with `type="n", then
 #' [graphics::rect()] to get the background, and then
 #' [graphics::points()].
 #'
@@ -45,7 +45,7 @@
 #'
 #'
 #' @export
-#' @importFrom graphics plot title rect axis abline points
+#' @importFrom graphics title rect axis abline points
 #'
 #' @return
 #' None.

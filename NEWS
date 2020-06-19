@@ -1,7 +1,13 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.70-4, 2020-05-21:
+Version 0.71-1, 2020-06-19
+
+  Fixed potential problem in documentation, since plot() has moved
+  from the graphics package to base.
+
+
+Version 0.70-4, 2020-05-21
 
   Added an option to include grid lines in triplot(), and a separate
   function trigrid() that does the work and may be called

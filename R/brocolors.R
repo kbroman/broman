@@ -8,7 +8,7 @@
 #' @export
 #' @importFrom grDevices rgb2hsv
 #' @importFrom stats hclust dist
-#' @importFrom graphics par plot rect text
+#' @importFrom graphics par rect text
 #' @seealso [plot_crayons()]
 #' @examples
 #' par(mar=c(0.6,5.1,0.6,0.6))

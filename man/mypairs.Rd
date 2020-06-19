@@ -9,7 +9,7 @@ mypairs(x, ...)
 \arguments{
 \item{x}{A numeric matrix or data frame.}
 
-\item{...}{Passed to the \code{\link[graphics:plot]{graphics::plot()}} function.}
+\item{...}{Passed to the \code{\link[base:plot]{base::plot()}} function.}
 }
 \value{
 None.

@@ -18,7 +18,7 @@
 #' @param grid_lty Line type of grid lines
 #' @param grid_lwd Line width of grid lines
 #'
-#' @param ... Passed to [graphics::plot()].
+#' @param ... Passed to [base::plot()].
 #'
 #' @details
 #' Plot of an equilateral triangle, in order to depict trinomial
@@ -31,7 +31,7 @@
 #'   related functions [tripoints()], [trilines()],
 #'   [triarrow()].
 #'
-#' @importFrom graphics plot par text polygon points lines arrows
+#' @importFrom graphics par text polygon points lines arrows
 #' @export
 #' @return
 #' The (x,y) coordinates of the points plotted, if any.

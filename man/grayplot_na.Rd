@@ -48,7 +48,7 @@ Scatterplot with a gray background and with points with missing
 values shown in separate panels near the margins.
 }
 \details{
-Calls \code{\link[graphics:plot]{graphics::plot()}} with `type="n", then
+Calls \code{\link[base:plot]{base::plot()}} with `type="n", then
 \code{\link[graphics:rect]{graphics::rect()}} to get the background, and then
 \code{\link[graphics:points]{graphics::points()}}.
 

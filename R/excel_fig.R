@@ -24,7 +24,7 @@
 #'
 #' @export
 #' @importFrom grDevices svg png jpeg pdf
-#' @importFrom graphics plot rect text par
+#' @importFrom graphics rect text par
 #' @keywords hplot
 #'
 #' @examples

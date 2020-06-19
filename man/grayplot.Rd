@@ -74,7 +74,7 @@ Like the plot function, but using a gray background just
 for the plot region.
 }
 \details{
-Calls \code{\link[graphics:plot]{graphics::plot()}} with \code{type="n"}, then \code{\link[graphics:rect]{graphics::rect()}} to
+Calls \code{\link[base:plot]{base::plot()}} with \code{type="n"}, then \code{\link[graphics:rect]{graphics::rect()}} to
 get the background, and then \code{\link[graphics:points]{graphics::points()}}. Additional
 arguments you can include: \code{mgp.x} and \code{mgp.y} (like \code{mgp}, for
 controlling parameters of axis labels, but separate for x- and
@@ -93,6 +93,6 @@ grayplot(x, col="Orchid", pch=16, bgcolor="gray80",
 
 }
 \seealso{
-\code{\link[graphics:plot]{graphics::plot()}}, \code{\link[graphics:par]{graphics::par()}}, \code{\link[graphics:rect]{graphics::rect()}}, \code{\link[graphics:points]{graphics::points()}}
+\code{\link[base:plot]{base::plot()}}, \code{\link[graphics:par]{graphics::par()}}, \code{\link[graphics:rect]{graphics::rect()}}, \code{\link[graphics:points]{graphics::points()}}
 }
 \keyword{graphics}
