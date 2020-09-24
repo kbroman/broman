@@ -29,6 +29,6 @@ x <- rmvn(100, c(1,2),matrix(c(1,1,1,4),ncol=2))
 
 }
 \seealso{
-\code{\link[stats:rnorm]{stats::rnorm()}}
+\code{\link[stats:Normal]{stats::rnorm()}}
 }
 \keyword{datagen}

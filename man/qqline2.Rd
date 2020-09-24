@@ -22,8 +22,8 @@ Corresponding quantile pairs define the line drawn.}
 Intercept and slope of the line.
 }
 \description{
-Adds a line to a quantile-quantile plot for two datasets, from \code{\link[stats:qqplot]{stats::qqplot()}}.
-(The available \code{\link[stats:qqline]{stats::qqline()}} function works mainly for
+Adds a line to a quantile-quantile plot for two datasets, from \code{\link[stats:qqnorm]{stats::qqplot()}}.
+(The available \code{\link[stats:qqnorm]{stats::qqline()}} function works mainly for
 \code{\link[stats:qqnorm]{stats::qqnorm()}}, with one sample being theoretical quantiles.)
 }
 \examples{
@@ -34,6 +34,6 @@ qqline2(x, y)
 
 }
 \seealso{
-\code{\link[stats:qqline]{stats::qqline()}}, \code{\link[stats:qqplot]{stats::qqplot()}}
+\code{\link[stats:qqnorm]{stats::qqline()}}, \code{\link[stats:qqnorm]{stats::qqplot()}}
 }
 \keyword{hplot}

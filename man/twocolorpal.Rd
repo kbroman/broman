@@ -11,7 +11,7 @@ twocolorpal(colors = c("slateblue", "white", "violetred"), n = 256, ...)
 
 \item{n}{Number of colors in output.}
 
-\item{...}{Passed to \code{\link[grDevices:colorRampPalette]{grDevices::colorRampPalette()}}.}
+\item{...}{Passed to \code{\link[grDevices:colorRamp]{grDevices::colorRampPalette()}}.}
 }
 \value{
 Vector of colors, from blue to white to red

@@ -27,7 +27,7 @@ paste.(x, y)
 }
 \seealso{
 \code{\link[base:paste]{base::paste()}},
-\code{\link[base:paste0]{base::paste0()}},
+\code{\link[base:paste]{base::paste0()}},
 \code{\link[=paste00]{paste00()}},
 \code{\link[=paste..]{paste..()}},
 \code{\link[=paste0.]{paste0.()}},

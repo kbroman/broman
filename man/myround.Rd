@@ -26,6 +26,6 @@ myround(0.199, 2)
 
 }
 \seealso{
-\code{\link[base:round]{base::round()}}, \code{\link[base:sprintf]{base::sprintf()}}
+\code{\link[base:Round]{base::round()}}, \code{\link[base:sprintf]{base::sprintf()}}
 }
 \keyword{utilities}

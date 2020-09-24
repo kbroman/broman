@@ -37,7 +37,7 @@ paste.0(x, y)
 }
 \seealso{
 \code{\link[base:paste]{base::paste()}},
-\code{\link[base:paste0]{base::paste0()}},
+\code{\link[base:paste]{base::paste0()}},
 \code{\link[=paste.]{paste.()}}
 }
 \keyword{character}

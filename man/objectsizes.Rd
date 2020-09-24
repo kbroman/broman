@@ -29,6 +29,6 @@ print(output <- objectsizes())
 
 }
 \seealso{
-\code{\link[utils:object.size]{utils::object.size()}}, \code{\link[base:objects]{base::objects()}}
+\code{\link[utils:object.size]{utils::object.size()}}, \code{\link[base:ls]{base::objects()}}
 }
 \keyword{utilities}
