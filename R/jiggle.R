@@ -25,7 +25,7 @@
 #' @useDynLib broman, .registration=TRUE
 #' @export
 jiggle <-
-    function(group, y, method=c("fixed", "random"), hnum=35, vnum=40)
+    function(group, y, method=c("random", "fixed"), hnum=35, vnum=40)
 {
     method <- match.arg(method)
     stopifnot(length(group) == length(y))

@@ -64,7 +64,7 @@ dotplot <-
 
     # horizontal jiggling
     if(is.null(jiggle))
-        jiggle <- broman::jiggle(group, y, "fixed")
+        jiggle <- broman::jiggle(group, y, "random")
     else if(is.character(jiggle))
         jiggle <- broman::jiggle(group, y, jiggle)
     else # otherwise, numeric vector

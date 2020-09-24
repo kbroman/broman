@@ -4,7 +4,7 @@
 \alias{jiggle}
 \title{Jiggle points horizontally}
 \usage{
-jiggle(group, y, method = c("fixed", "random"), hnum = 35, vnum = 40)
+jiggle(group, y, method = c("random", "fixed"), hnum = 35, vnum = 40)
 }
 \arguments{
 \item{group}{Categorical variable defining group; can be a factor,
