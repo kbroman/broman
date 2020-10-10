@@ -88,7 +88,7 @@ grayplot <-
                  col.lab=par("col.lab"),
                  xlim=NULL, ylim=NULL,
                  xlab, ylab, xname, yname,
-                 las=1, mgp=c(0.26, 0.5, 0), mgp.x=NULL, mgp.y=NULL,
+                 las=1, mgp=c(2.1, 0.5, 0), mgp.x=NULL, mgp.y=NULL,
                  pch=21, bg="lightblue", col="black",
                  v_over_h=FALSE)
         {
