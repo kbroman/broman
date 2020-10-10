@@ -88,15 +88,12 @@ grayplot <-
                  col.lab=par("col.lab"),
                  xlim=NULL, ylim=NULL,
                  xlab, ylab, xname, yname,
-                 las=1, mgp.x=c(2.6, 0.5, 0), mgp.y=c(2.6, 0.5, 0),
+                 las=1, mgp=c(0.26, 0.5, 0), mgp.x=NULL, mgp.y=NULL,
                  pch=21, bg="lightblue", col="black",
                  v_over_h=FALSE)
         {
-            dots <- list(...)
-            if("mgp" %in% names(dots) && missing(mgp.x))
-                mgp.x <- dots$mgp
-            if("mgp" %in% names(dots) && missing(mgp.y))
-                mgp.y <- dots$mgp
+            if(is.null(mgp.x)) mgp.x <- mgp
+            if(is.null(mgp.y)) mgp.y <- mgp
 
             if(is.null(y)) {
                 if(missing(xlab)) xlab <- "Index"

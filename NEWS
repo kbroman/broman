@@ -1,11 +1,16 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.71-2, 2020-09-24
+Version 0.71-3, 2020-10-10
 
   Changed the default "jiggle" method in jiggle() and dotplot() to
   be "random", as it seems to work better than the deterministic
   approach ("fixed").
+
+  Fixed problem in ciplot() to avoid warnings about some graphics
+  parameters.
+
+  grayplot() now can take mgp graphics argument.
 
   Fixed potential problem in documentation, since plot() has moved
   from the graphics package to base.
