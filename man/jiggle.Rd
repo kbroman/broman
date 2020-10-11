@@ -4,7 +4,14 @@
 \alias{jiggle}
 \title{Jiggle points horizontally}
 \usage{
-jiggle(group, y, method = c("random", "fixed"), hnum = 35, vnum = 40)
+jiggle(
+  group,
+  y,
+  method = c("random", "fixed"),
+  hnum = 35,
+  vnum = 40,
+  maxvalue = 0.25
+)
 }
 \arguments{
 \item{group}{Categorical variable defining group; can be a factor,
@@ -17,6 +24,9 @@ character, or numeric vector}
 \item{hnum}{Number of horizontal bins for the jiggling.}
 
 \item{vnum}{Number of vertical bins for the jiggling.}
+
+\item{maxvalue}{Maximum value in the results; results will be scaled to this value.
+Use \code{NULL} to not scale.}
 }
 \value{
 Numeric vector with amounts to jiggle the points horizontally

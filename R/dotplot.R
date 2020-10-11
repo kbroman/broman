@@ -14,6 +14,7 @@
 #' @param jiggle Vector of amounts to jiggle the points horizontally,
 #' or a character string (`"fixed"` or `"random"`)
 #' indicating the jiggling method; see [jiggle()].
+#' @param max_jiggle Maximum jiggle value; passed to [jiggle()] as argument `maxvalue`.
 #'
 #' @details Calls [grayplot()] with special choices of
 #' graphics parameters for the case of categorical x.
@@ -42,7 +43,8 @@
 #' @keywords
 #' graphics
 dotplot <-
-    function(group, y, jiggle=NULL, rotate=FALSE, ...)
+    function(group, y, jiggle=NULL, max_jiggle=NULL,
+             rotate=FALSE, ...)
 {
     stopifnot(length(y) == length(group))
     if(length(unique(y)) < length(unique(group)))
@@ -64,9 +66,9 @@ dotplot <-
 
     # horizontal jiggling
     if(is.null(jiggle))
-        jiggle <- broman::jiggle(group, y, "random")
+        jiggle <- broman::jiggle(group, y, "random", maxvalue=max_jiggle)
     else if(is.character(jiggle))
-        jiggle <- broman::jiggle(group, y, jiggle)
+        jiggle <- broman::jiggle(group, y, jiggle, maxvalue=max_jiggle)
     else # otherwise, numeric vector
         stopifnot(length(jiggle) == length(y))
 

@@ -13,6 +13,9 @@
 #' @param hnum Number of horizontal bins for the jiggling.
 #' @param vnum Number of vertical bins for the jiggling.
 #'
+#' @param maxvalue Maximum value in the results; results will be scaled to this value.
+#' Use `NULL` to not scale.
+#'
 #' @details The `"random"` method is similar to
 #' [base::jitter()] but with amount of jiggling proportional
 #' to the number of nearby points. The `"fixed"` method is
@@ -25,7 +28,7 @@
 #' @useDynLib broman, .registration=TRUE
 #' @export
 jiggle <-
-    function(group, y, method=c("random", "fixed"), hnum=35, vnum=40)
+    function(group, y, method=c("random", "fixed"), hnum=35, vnum=40, maxvalue=0.25)
 {
     method <- match.arg(method)
     stopifnot(length(group) == length(y))
@@ -48,7 +51,7 @@ jiggle <-
     vamount <- diff(range(y, na.rm=TRUE))/vnum
 
     if(method=="random") {
-        hamount <- 0.25
+        hamount <- ifelse(is.null(maxvalue), 0.25, maxvalue)
         yspl <- split(y, group)
         yspli <- split(seq(along=y), group)
 
@@ -118,6 +121,12 @@ jiggle <-
 
         result <- grev-group
         attr(result, "breaks") <- br
+
+        # rescale to be in the range -maxvalue to maxvalue
+        if(!is.null(maxvalue)) {
+            result <- result/max(abs(result))*maxvalue
+        }
+
         return(result)
     }
 }
