@@ -90,10 +90,11 @@ dotplot <-
                  hlines=NULL, hlines.col=NULL, hlines.lwd=NULL,
                  xat=NULL, xlim=NULL, xaxs="r", xlab=NULL,
                  yat=NULL, ylim=NULL, yaxs="r", ylab=NULL,
-                 las=1, pch=21, bg="slateblue", ...)
+                 las=1, pch=21, bg="slateblue", v_over_h=NULL, ...)
 
         {
             if(!rotate) {
+                if(is.null(v_over_h)) v_over_h <- TRUE
                 xlim <- c(0.5, n_group+0.5)
                 if(is.null(vlines)) {
                     vlines <- 1:n_group
@@ -115,6 +116,7 @@ dotplot <-
 
             }
             else {
+                if(is.null(v_over_h)) v_over_h <- FALSE
                 ylim <- c(0.5, n_group+0.5)
                 if(is.null(hlines)) {
                     hlines <- 1:n_group
@@ -131,7 +133,7 @@ dotplot <-
                          hlines=hlines, hlines.col=hlines.col, hlines.lwd=hlines.lwd,
                          xat=xat, xlim=xlim, xaxs=xaxs, xlab=xlab,
                          yat=yat, ylim=ylim, yaxs=yaxs, ylab=ylab,
-                         v_over_h=TRUE, las=las, pch=pch, bg=bg, ...)
+                         v_over_h=v_over_h, las=las, pch=pch, bg=bg, ...)
                 axis(side=2, at=hlines, ugroup, las=las, tick=FALSE, mgp=c(0,0.3,0))
             }
 
