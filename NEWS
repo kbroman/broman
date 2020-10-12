@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.71-4, 2020-10-11
+Version 0.71-4, 2020-10-12
 
   Changed the default "jiggle" method in jiggle() and dotplot() to
   be "random", as it seems to work better than the deterministic
@@ -14,7 +14,10 @@ Version 0.71-4, 2020-10-11
 
   Added argument maxvalue to jiggle(), and max_jiggle to dotplot(), to
   better control the horizontal jiggling of points when there is a lot
-  of data.
+  of data. (Fixes Issue #8)
+
+  Make it so you can adjust the vertical lines in dotplot() by including
+  vlines.lwd and/or vlines.col. (Fixes Issue #7)
 
   Fixed potential problem in documentation, since plot() has moved
   from the graphics package to base.

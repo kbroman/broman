@@ -86,8 +86,8 @@ dotplot <-
     # this is to deal with varying inputs
     hidedotplot <-
         function(group, y, rotate=FALSE,
-                 vlines=NULL, vlines.col="white", vlines.lwd=1,
-                 hlines=NULL, hlines.col="white", hlines.lwd=1,
+                 vlines=NULL, vlines.col=NULL, vlines.lwd=NULL,
+                 hlines=NULL, hlines.col=NULL, hlines.lwd=NULL,
                  xat=NULL, xlim=NULL, xaxs="r", xlab=NULL,
                  yat=NULL, ylim=NULL, yaxs="r", ylab=NULL,
                  las=1, pch=21, bg="slateblue", ...)
@@ -95,13 +95,15 @@ dotplot <-
         {
             if(!rotate) {
                 xlim <- c(0.5, n_group+0.5)
-                vlines <- 1:n_group
-                vlines.col <- "gray70"
-                vlines.lwd <- 4
-                xat <- NA
+                if(is.null(vlines)) {
+                    vlines <- 1:n_group
+                    xat <- NA
+                }
+                if(is.null(vlines.col)) vlines.col <- "gray70"
+                if(is.null(vlines.lwd)) vlines.lwd <- 4
+                if(is.null(hlines.col)) hlines.col <- "white"
+                if(is.null(hlines.lwd)) hlines.lwd <- 1
                 if(is.null(xlab)) xlab <- "Group"
-
-                # deal with vlines/lines ** FIX ME **
 
                 grayplot(group+jiggle, y,
                          vlines=vlines, vlines.col=vlines.col, vlines.lwd=vlines.lwd,
@@ -114,10 +116,14 @@ dotplot <-
             }
             else {
                 ylim <- c(0.5, n_group+0.5)
-                hlines <- 1:n_group
-                hlines.col <- "gray70"
-                hlines.lwd <- 4
-                yat <- NA
+                if(is.null(hlines)) {
+                    hlines <- 1:n_group
+                    yat <- NA
+                }
+                if(is.null(hlines.col)) hlines.col <- "gray70"
+                if(is.null(hlines.lwd)) hlines.lwd <- 4
+                if(is.null(vlines.col)) vlines.col <- "white"
+                if(is.null(vlines.lwd)) vlines.lwd <- 1
                 if(is.null(ylab)) ylab <- "Group"
 
                 grayplot(y, group + jiggle,
