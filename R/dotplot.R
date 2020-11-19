@@ -35,7 +35,7 @@
 #' x <- rnorm(40, c(1,3))
 #' g <- rep(c("A", "B"), 20)
 #' dotplot(g, x)
-#' dotplot(g, x, "random")
+#' dotplot(g, x, "fixed")
 #' dotplot(g, x, runif(length(g), -0.25, 0.25))
 #'
 #' @seealso [grayplot()]

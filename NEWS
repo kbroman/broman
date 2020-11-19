@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.71-5, 2020-10-12
+Version 0.71-6, 2020-11-18
 
   Changed the default "jiggle" method in jiggle() and dotplot() to
   be "random", as it seems to work better than the deterministic
