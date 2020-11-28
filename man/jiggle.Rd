@@ -10,7 +10,7 @@ jiggle(
   method = c("random", "fixed"),
   hnum = 35,
   vnum = 40,
-  maxvalue = 0.25
+  maxvalue = 0.45
 )
 }
 \arguments{

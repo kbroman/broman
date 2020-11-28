@@ -28,7 +28,7 @@
 #' @useDynLib broman, .registration=TRUE
 #' @export
 jiggle <-
-    function(group, y, method=c("random", "fixed"), hnum=35, vnum=40, maxvalue=0.25)
+    function(group, y, method=c("random", "fixed"), hnum=35, vnum=40, maxvalue=0.45)
 {
     method <- match.arg(method)
     stopifnot(length(group) == length(y))
@@ -51,7 +51,7 @@ jiggle <-
     vamount <- diff(range(y, na.rm=TRUE))/vnum
 
     if(method=="random") {
-        hamount <- ifelse(is.null(maxvalue), 0.25, maxvalue)
+        hamount <- ifelse(is.null(maxvalue), 0.45, maxvalue)
         yspl <- split(y, group)
         yspli <- split(seq(along=y), group)
 

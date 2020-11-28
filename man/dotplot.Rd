@@ -4,7 +4,7 @@
 \alias{dotplot}
 \title{Dot chart with a gray background}
 \usage{
-dotplot(group, y, jiggle = NULL, max_jiggle = NULL, rotate = FALSE, ...)
+dotplot(group, y, jiggle = NULL, max_jiggle = 0.45, rotate = FALSE, ...)
 }
 \arguments{
 \item{group}{Categorical coordinates for the plot}

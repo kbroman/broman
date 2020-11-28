@@ -43,7 +43,7 @@
 #' @keywords
 #' graphics
 dotplot <-
-    function(group, y, jiggle=NULL, max_jiggle=NULL,
+    function(group, y, jiggle=NULL, max_jiggle=0.45,
              rotate=FALSE, ...)
 {
     stopifnot(length(y) == length(group))
