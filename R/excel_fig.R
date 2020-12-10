@@ -13,7 +13,7 @@
 #' @param headcol Background color of cells on the top and left border
 #' @param headborder Color of border of cells on the top and left border
 #' @param headtextcol Color of text in cells on the top and left border
-#' @param textcol Color of text in in cells in body of the matrix
+#' @param textcol Color of text in cells in body of the matrix
 #' @param row_names If TRUE, and row names are present, include them as a first column
 #' @param col_names If TRUE, and column names are present, include them as a first row
 #' @param hilitcells Optional character vector of cells to highlight, like `"A1"` or `"D4"`

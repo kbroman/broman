@@ -49,7 +49,7 @@ excel_fig(
 
 \item{headtextcol}{Color of text in cells on the top and left border}
 
-\item{textcol}{Color of text in in cells in body of the matrix}
+\item{textcol}{Color of text in cells in body of the matrix}
 
 \item{row_names}{If TRUE, and row names are present, include them as a first column}
 
