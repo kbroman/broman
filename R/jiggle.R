@@ -19,7 +19,7 @@
 #' @details The `"random"` method is similar to
 #' [base::jitter()] but with amount of jiggling proportional
 #' to the number of nearby points. The `"fixed"` method is
-#' similar to the [beeswarm package](http://www.cbs.dtu.dk/~eklund/beeswarm/)
+#' similar to the [beeswarm package](https://www.cbs.dtu.dk/~eklund/beeswarm/)
 #'
 #' @return Numeric vector with amounts to jiggle the points horizontally
 #'

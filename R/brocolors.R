@@ -67,7 +67,7 @@ brocolors <-
               'lightblue'=rgb(102, 204, 255, maxColorValue=255),
               'pink'    =rgb(255, 102, 255, maxColorValue=255))
 
-    # http://compgen.unc.edu/wp/?page_id=577
+    # https://compgen.unc.edu/wp/?page_id=577
     CC <- c("AJ"  =rgb(240,240,  0,maxColorValue=255),
             "B6"  =rgb(128,128,128,maxColorValue=255),
             "129" =rgb(240,128,128,maxColorValue=255),
@@ -77,7 +77,7 @@ brocolors <-
             "PWK" =rgb(240,  0,  0,maxColorValue=255),
             "WSB" =rgb(144,  0,224,maxColorValue=255))
 
-    # improved CC colors, after http://clrs.cc/
+    # improved CC colors, after https://clrs.cc/
     CCalt <- c("AJ"  = "#FFDC00",
                "B6"  = "#888888",
                "129" = "#F08080",
@@ -228,7 +228,7 @@ brocolors <-
     "Yellow Green"="#c5e384",
     "Yellow Orange"="#ffae42")
 
-    web <- c(navy="#001f3f",  # from http://clrs.cc
+    web <- c(navy="#001f3f",  # from https://clrs.cc
              blue="#0074d9",
              aqua="#7fdbff",
              teal="#39cccc",

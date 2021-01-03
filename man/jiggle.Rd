@@ -39,7 +39,7 @@ response in multiple categories, the separate points can be seen.
 The \code{"random"} method is similar to
 \code{\link[base:jitter]{base::jitter()}} but with amount of jiggling proportional
 to the number of nearby points. The \code{"fixed"} method is
-similar to the \href{http://www.cbs.dtu.dk/~eklund/beeswarm/}{beeswarm package}
+similar to the \href{https://www.cbs.dtu.dk/~eklund/beeswarm/}{beeswarm package}
 }
 \seealso{
 \code{\link[base:jitter]{base::jitter()}}, \code{\link[=dotplot]{dotplot()}}
