@@ -11,7 +11,7 @@
 #'
 #' @param x A numeric matrix or data frame.
 #'
-#' @param ... Passed to the [base::plot()] function.
+#' @param ... Passed to the `plot()` function.
 #'
 #' @details
 #' This is like the function [graphics::pairs()], but

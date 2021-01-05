@@ -26,7 +26,7 @@
 #' @param ... Optional graphics arguments
 #'
 #' @details
-#' Calls [base::plot()] with `type="n", then
+#' Calls `plot()` with `type="n", then
 #' [graphics::rect()] to get the background, and then
 #' [graphics::points()].
 #'

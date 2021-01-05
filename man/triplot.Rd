@@ -33,7 +33,7 @@ triplot(
 
 \item{grid_lwd}{Line width of grid lines}
 
-\item{...}{Passed to \code{\link[base:plot]{base::plot()}}.}
+\item{...}{Passed to \code{plot()}.}
 }
 \value{
 The (x,y) coordinates of the points plotted, if any.

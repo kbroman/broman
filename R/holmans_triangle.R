@@ -18,7 +18,7 @@
 #' @param grid_lty Line type of grid lines
 #' @param grid_lwd Line width of grid lines
 #'
-#' @param ... Passed to [base::plot()].
+#' @param ... Passed to `plot()`.
 #'
 #' @details
 #' Plot of an equilateral triangle, in order to depict trinomial

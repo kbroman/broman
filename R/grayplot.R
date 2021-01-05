@@ -43,7 +43,7 @@
 #' the horizontal ones.
 #'
 #' @details
-#' Calls [base::plot()] with `type="n"`, then [graphics::rect()] to
+#' Calls `plot()` with `type="n"`, then [graphics::rect()] to
 #' get the background, and then [graphics::points()]. Additional
 #' arguments you can include: `mgp.x` and `mgp.y` (like `mgp`, for
 #' controlling parameters of axis labels, but separate for x- and
@@ -67,7 +67,7 @@
 #'          vlines=seq(0, 100, by=5), vlines.lwd=c(3,1,1,1))
 #'
 #' @seealso
-#' [base::plot()], [graphics::par()], [graphics::rect()], [graphics::points()]
+#' [graphics::par()], [graphics::rect()], [graphics::points()]
 #'
 #' @keywords
 #' graphics
