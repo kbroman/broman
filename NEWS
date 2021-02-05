@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.72-3, 2021-01-05
+Version 0.72-4, 2021-02-04
 
   Changed default max_jiggle in dotplot() to 0.45 (rather than NULL).
   Similarly changed default for maxvalue in jiggle() to 0.45.
