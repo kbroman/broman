@@ -8,21 +8,17 @@
 convert2hex(d)
 }
 \arguments{
-\item{d}{A number.}
+\item{d}{A vector of integers (must be < 2^31).}
 }
 \value{
-A character string; the input in hex.
+The input in hex, as character strings.
 }
 \description{
 Convert a number to hexidecimal notation.
 }
-\details{
-Nothing important to say here.
-}
 \examples{
 convert2hex(333)
 dec2hex(333)
-dec2hex(333) == "14D"
 dec2hex(0:30)
 
 }

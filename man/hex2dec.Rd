@@ -7,7 +7,8 @@
 hex2dec(h)
 }
 \arguments{
-\item{h}{#' Character string with hexadecimal representation of a number}
+\item{h}{Vector of character strings with hexadecimal representation of integers
+(values >= 2^31 converted to missing, \code{NA})}
 }
 \value{
 The input converted from hexadecimal to decimal notation.
@@ -15,12 +16,8 @@ The input converted from hexadecimal to decimal notation.
 \description{
 Convert a number from hexidecimal to decimal notation.
 }
-\details{
-Nothing important to say here.
-}
 \examples{
 hex2dec("14D")
-hex2dec("14D") == 333
 hex2dec(0:30)
 
 }

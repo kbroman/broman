@@ -5,19 +5,15 @@
 #'
 #' @aliases dec2hex
 #'
-#' @param d A number.
-#'
-#' @details
-#' Nothing important to say here.
+#' @param d A vector of integers (must be < 2^31).
 #'
 #' @export
 #' @return
-#' A character string; the input in hex.
+#' The input in hex, as character strings.
 #'
 #' @examples
 #' convert2hex(333)
 #' dec2hex(333)
-#' dec2hex(333) == "14D"
 #' dec2hex(0:30)
 #'
 #' @seealso [hex2dec()]
@@ -26,7 +22,14 @@
 #' manip
 convert2hex <-
     function(d)
+{
+    maxval <- 2^31
+    if(any(!is.na(d) & d > maxval)) {
+        warning("Only works for values < 2^31")
+        d[!is.na(d) & d > maxval] <- NA
+    }
     as.character(as.hexmode(d))
+}
 
 #' @export
 dec2hex <- convert2hex
@@ -38,10 +41,8 @@ dec2hex <- convert2hex
 #'
 #' Convert a number from hexidecimal to decimal notation.
 #'
-#' @param h #' Character string with hexadecimal representation of a number
-#'
-#' @details
-#' Nothing important to say here.
+#' @param h Vector of character strings with hexadecimal representation of integers
+#' (values >= 2^31 converted to missing, `NA`)
 #'
 #' @export
 #' @return
@@ -52,7 +53,6 @@ dec2hex <- convert2hex
 #'
 #' @examples
 #' hex2dec("14D")
-#' hex2dec("14D") == 333
 #' hex2dec(0:30)
 #'
 #' @seealso [dec2hex()]
