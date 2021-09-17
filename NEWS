@@ -1,7 +1,10 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.73-2, 2021-08-05
+Version 0.73-3, 2021-09-17
+
+  Removed all pushbullet functions. The stopped supporting iOS
+  which makes it useless for me.
 
   Added warning to dec2hex() and add to documentation for that and
   hex2dec(), about maximum allowable values (2^31 - 1).

@@ -1,6 +1,6 @@
 Package: broman
-Version: 0.73-2
-Date: 2021-08-05
+Version: 0.73-3
+Date: 2021-09-17
 Title: Karl Broman's R Code
 Description: Miscellaneous R functions, including functions related to
     graphics (mostly for base graphics), permutation tests, running
@@ -20,7 +20,6 @@ Imports:
     grDevices,
     stats,
     assertthat,
-    RPushbullet,
     jsonlite,
     ggplot2,
     grid
@@ -34,5 +33,5 @@ BugReports: https://github.com/kbroman/broman/issues
 Encoding: UTF-8
 ByteCompile: true
 LazyData: true
-RoxygenNote: 7.1.1
+RoxygenNote: 7.1.2
 Roxygen: list(markdown=TRUE)
