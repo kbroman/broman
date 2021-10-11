@@ -15,7 +15,6 @@
 #' @param q Lower quantile to use
 #'
 #' @export
-#' @importFrom assertthat assert_that is.number
 #'
 #' @return
 #' A vector like the input `x`, but with extreme values moved in to
@@ -30,8 +29,7 @@
 winsorize <-
     function(x, q=0.006)
 {
-    assert_that(is.numeric(x))
-    assert_that(is.number(q), q>=0, q<=1)
+    stopifnot(is.numeric(q), length(q)==1, q>=0, q<=1)
 
     lohi <- stats::quantile(x, c(q, 1-q), na.rm=TRUE)
     if(diff(lohi) < 0) lohi <- rev(lohi)
