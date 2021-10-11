@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-Version 0.74, 2021-10-11
+Version 0.76, 2021-10-11
 
   Removed all pushbullet functions. They stopped supporting iOS
   which makes it useless for me.
