@@ -1,6 +1,11 @@
 Revision history for the R/broman package
 -----------------------------------------
 
+Version 0.78, 2022-07-08
+
+  Include <limits.h> in a C file, for upcoming change to R.
+
+
 Version 0.76, 2021-10-11
 
   Removed all pushbullet functions. They stopped supporting iOS
