@@ -16,7 +16,7 @@
 #' @export
 #' @return
 #' A data frame with the only column being the size of each object in
-#'   megabytes (Mb).  The row names are the names of the objects.
+#'   megabytes (MB).  The row names are the names of the objects.
 #'
 #' @examples
 #' print(output <- objectsizes())
