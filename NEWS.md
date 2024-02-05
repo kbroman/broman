@@ -1,6 +1,11 @@
 Revision history for the R/broman package
 -----------------------------------------
 
+## Version 0.81-1, 2024-02-05
+
+- Small change to documentation for `objectsizes()` (Mb -> MB)
+
+
 ## Version 0.80, 2022-07-08
 
 - Include <limits.h> in a C file, for upcoming change to R.
