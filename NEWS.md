@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.81-2, 2024-05-03
+## Version 0.82, 2024-05-05
 
 - Small change to documentation for `objectsizes()` (Mb -> MB)
 
