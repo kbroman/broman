@@ -6,12 +6,16 @@
 #'
 #' @param n Number of values to use in axis
 #'
+#' @param scale Forced choice of scale for axis labels:
+#'    `"sec"`, `"min"`, `"hr"`, or `"day"`. If NULL, scale is chosen
+#'    based on the `times`.
+#'
 #' @return A data frame with the numeric values to plot plus labels to use.
 #'
 #' @export
 
 time_axis <-
-    function(times, n=8)
+    function(times, n=8, scale=NULL)
 {
     if(!("POSIXct" %in% class(times) || "POSIXt" %in% class(times))) {
         stop("times should be a vector of date/times")
@@ -22,13 +26,25 @@ time_axis <-
     r <- range(as.numeric(times))
     dr <- diff(r)
     # determine range
-    if(dr < 70) { # seconds
+    if(!is.null(scale)) {
+        scales <- c("sec", "min", "hr", "day")
+        if(!(scale %in% scales)) {
+            warning("scale ignored; should be one of ",
+                    vec2string(scales, "or"))
+            scale <- NULL
+        }
+    }
+    if(is.null(scale)) {
+        if(dr < 70) scale <- "sec"
+        else if(dr < 60*70) scale <- "min"
+        else if(dr < 60*60*55) scale <- "hr"
+        else dr <- "day"
+    }
+
+    if(scale=="sec") { # seconds
         labels <- format(prettyx, format="%S")
     }
-    else if(dr < 60*70) { # minutes
-        labels <- format(prettyx, format="%H:%M")
-    }
-    else if(dr < 60*60*26) { # hours
+    else if(scale=="min" || scale=="hr") { # minutes or hours
         labels <- format(prettyx, format="%H:%M")
     }
     else { # days
