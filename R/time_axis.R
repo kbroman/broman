@@ -61,7 +61,7 @@ time_axis <-
         if(dr < 70) scale <- "sec"
         else if(dr < 60*70) scale <- "min"
         else if(dr < 60*60*55) scale <- "hr"
-        else dr <- "day"
+        else scale <- "day"
     }
 
     if(scale=="sec") { # seconds
