@@ -13,6 +13,7 @@
 #' @return A data frame with the numeric values to plot plus labels to use.
 #'
 #' @export
+#'
 
 time_axis <-
     function(times, n=8, scale=NULL)
@@ -52,5 +53,5 @@ time_axis <-
     }
 
     # return vector of "pretty" times + labels
-    data.frame(x=prettyx, label=labels)
+    data.frame(x=prettyx, labels=labels)
 }
