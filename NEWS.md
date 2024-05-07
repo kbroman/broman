@@ -1,6 +1,11 @@
 Revision history for the R/broman package
 -----------------------------------------
 
+## Version 0.83, 2024-05-07
+
+- Allow `NA`s in `runningmean()` and `runningratio()`.
+
+
 ## Version 0.82, 2024-05-05
 
 - Small change to documentation for `objectsizes()` (Mb -> MB)

@@ -55,8 +55,15 @@ runningmean <-
     if(length(value) != n)
         stop("pos and value must have the same length\n")
 
-    if(is.null(at)) # if missing 'at', use input 'pos'
-        at <- pos
+    if(is.null(at)) { # if missing 'at', use input 'pos'
+        at <- pos[!is.na(pos)]
+    }
+
+    omit <- (is.na(pos) | is.na(value))
+    if(any(omit)) {
+        pos <- pos[!omit]
+        value <- value[!omit]
+    }
 
     # check that pos is sorted
     if(any(diff(pos) < 0)) { # needs to be sorted
@@ -143,8 +150,16 @@ runningratio <-
     if(length(numerator) != n || length(denominator) != n)
         stop("pos, numerator and denominator must all be the same length\n")
 
-    if(is.null(at)) # if missing 'at', use input 'pos'
-        at <- pos
+    if(is.null(at)) { # if missing 'at', use input 'pos'
+        at <- pos[!is.na(pos)]
+    }
+
+    omit <- (is.na(pos) | is.na(value))
+    if(any(omit)) {
+        pos <- pos[!omit]
+        value <- value[!omit]
+    }
+
 
     # check that pos is sorted
     if(any(diff(pos) < 0)) { # needs to be sorted
