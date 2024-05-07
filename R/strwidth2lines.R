@@ -19,7 +19,7 @@
 #' Aimee Teo Broman
 #'
 #' @examples
-#' p <- par(TRUE)
+#' p <- par(no.readonly = TRUE)
 #' string <- sapply(sample(1:20,15,replace=TRUE),
 #'          function(a) paste(LETTERS[1:a], collapse=""))
 #' nlines <- strwidth2lines(string)
