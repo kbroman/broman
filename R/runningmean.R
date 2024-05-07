@@ -154,10 +154,11 @@ runningratio <-
         at <- pos[!is.na(pos)]
     }
 
-    omit <- (is.na(pos) | is.na(value))
+    omit <- (is.na(pos) | is.na(numerator) | is.na(denominator))
     if(any(omit)) {
         pos <- pos[!omit]
-        value <- value[!omit]
+        denominator <- denominator[!omit]
+        numerator <- numerator[!omit]
     }
 
 
@@ -165,7 +166,8 @@ runningratio <-
     if(any(diff(pos) < 0)) { # needs to be sorted
         o <- order(pos)
         pos <- pos[o]
-        value <- value[o]
+        denominator <- denominator[o]
+        numerator <- numerator[o]
     }
 
     # check that pos is sorted
