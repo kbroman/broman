@@ -4,16 +4,43 @@
 \alias{time_axis}
 \title{Set up a time-based axis}
 \usage{
-time_axis(times, n = 8)
+time_axis(times, n = 8, scale = NULL)
 }
 \arguments{
 \item{times}{A vector of date/times that will be plotted}
 
 \item{n}{Number of values to use in axis}
+
+\item{scale}{Forced choice of scale for axis labels:
+\code{"sec"}, \code{"min"}, \code{"hr"}, or \code{"day"}. If NULL, scale is chosen
+based on the \code{times}.}
 }
 \value{
 A data frame with the numeric values to plot plus labels to use.
 }
 \description{
 Set up a time-based axis for base graphics
+}
+\examples{
+n <- 100
+y <- rnorm(n)
+
+# labels as days
+x <- seq(as.POSIXct("2024-05-01 11:23"), as.POSIXct("2024-05-07 14:50"), length.out=n)
+xax <- time_axis(x)
+grayplot(x, y, xat=NA, vlines=xax$x)
+axis(side=1, at=xax$x, labels=xax$label, mgp=c(2.1, 0.5, 0), tick=FALSE)
+
+# labels as HH:MM
+x <- seq(as.POSIXct("2024-05-01 11:23"), as.POSIXct("2024-05-01 14:50"), length.out=n)
+xax <- time_axis(x)
+grayplot(x, y, xat=NA, vlines=xax$x)
+axis(side=1, at=xax$x, labels=xax$label, mgp=c(2.1, 0.5, 0), tick=FALSE)
+
+
+# labels as seconds
+x <- seq(as.POSIXct("2024-05-01 11:23:05.3"), as.POSIXct("2024-05-01 11:23:55.7"), length.out=n)
+xax <- time_axis(x)
+grayplot(x, y, xat=NA, vlines=xax$x)
+axis(side=1, at=xax$x, labels=xax$label, mgp=c(2.1, 0.5, 0), tick=FALSE)
 }
