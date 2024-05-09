@@ -47,6 +47,6 @@ dotplot(g, x, runif(length(g), -0.25, 0.25))
 
 }
 \seealso{
-\code{\link[=grayplot]{grayplot()}}
+\code{\link[=grayplot]{grayplot()}}, \code{\link[=timeplot]{timeplot()}}
 }
 \keyword{graphics}

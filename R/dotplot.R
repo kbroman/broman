@@ -38,7 +38,7 @@
 #' dotplot(g, x, "fixed")
 #' dotplot(g, x, runif(length(g), -0.25, 0.25))
 #'
-#' @seealso [grayplot()]
+#' @seealso [grayplot()], [timeplot()]
 #'
 #' @keywords
 #' graphics

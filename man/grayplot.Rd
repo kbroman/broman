@@ -93,6 +93,6 @@ grayplot(x, col="Orchid", pch=16, bgcolor="gray80",
 
 }
 \seealso{
-\code{\link[graphics:par]{graphics::par()}}, \code{\link[graphics:rect]{graphics::rect()}}, \code{\link[graphics:points]{graphics::points()}}
+\code{\link[=dotplot]{dotplot()}}, \code{\link[=timeplot]{timeplot()}}, \code{\link[graphics:par]{graphics::par()}}, \code{\link[graphics:rect]{graphics::rect()}}, \code{\link[graphics:points]{graphics::points()}}
 }
 \keyword{graphics}

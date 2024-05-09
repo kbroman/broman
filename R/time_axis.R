@@ -16,6 +16,8 @@
 #'
 #' @export
 #'
+#' @seealso [timeplot()]
+#'
 #' @examples
 #' n <- 100
 #' y <- rnorm(n)

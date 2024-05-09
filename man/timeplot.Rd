@@ -31,3 +31,6 @@ y <- rnorm(n)
 x <- seq(as.POSIXct("2024-05-01 11:23"), as.POSIXct("2024-05-01 14:50"), length.out=n)
 timeplot(x, y)
 }
+\seealso{
+\code{\link[=time_axis]{time_axis()}}, \code{\link[=grayplot]{grayplot()}}, \code{\link[=dotplot]{dotplot()}}
+}

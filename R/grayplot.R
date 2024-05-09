@@ -67,7 +67,7 @@
 #'          vlines=seq(0, 100, by=5), vlines.lwd=c(3,1,1,1))
 #'
 #' @seealso
-#' [graphics::par()], [graphics::rect()], [graphics::points()]
+#' [dotplot()], [timeplot()], [graphics::par()], [graphics::rect()], [graphics::points()]
 #'
 #' @keywords
 #' graphics

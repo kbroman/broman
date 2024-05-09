@@ -20,6 +20,8 @@
 #'
 #' @importFrom graphics axis
 #'
+#' @seealso [time_axis()], [grayplot()], [dotplot()]
+#'
 #' @examples
 #' n <- 100
 #' y <- rnorm(n)

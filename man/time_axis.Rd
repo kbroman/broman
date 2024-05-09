@@ -50,3 +50,6 @@ xax <- time_axis(x, format="\%H:\%M:\%S")
 grayplot(x, y, xat=NA, vlines=xax$x)
 axis(side=1, at=xax$x, labels=xax$label, mgp=c(2.1, 0.5, 0), tick=FALSE)
 }
+\seealso{
+\code{\link[=timeplot]{timeplot()}}
+}
