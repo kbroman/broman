@@ -1,12 +1,12 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.83, 2024-05-07
+## Version 0.83-2, 2024-05-08
 
 - Allow `NA`s in `runningmean()` and `runningratio()`.
 
 - Add `scale` argument to `time_axis()` to allow control over time
-  labels it gives.
+  labels it gives, and `format` argument for customized labels.
 
 
 ## Version 0.82, 2024-05-05

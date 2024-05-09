@@ -10,6 +10,8 @@
 #'    `"sec"`, `"min"`, `"hr"`, or `"day"`. If NULL, scale is chosen
 #'    based on the `times`.
 #'
+#' @param format If provided, used in place of `scale` for formating the times.
+
 #' @return A data frame with the numeric values to plot plus labels to use.
 #'
 #' @export
@@ -30,21 +32,30 @@
 #' grayplot(x, y, xat=NA, vlines=xax$x)
 #' axis(side=1, at=xax$x, labels=xax$label, mgp=c(2.1, 0.5, 0), tick=FALSE)
 #'
-#'
 #' # labels as seconds
 #' x <- seq(as.POSIXct("2024-05-01 11:23:05.3"), as.POSIXct("2024-05-01 11:23:55.7"), length.out=n)
 #' xax <- time_axis(x)
 #' grayplot(x, y, xat=NA, vlines=xax$x)
 #' axis(side=1, at=xax$x, labels=xax$label, mgp=c(2.1, 0.5, 0), tick=FALSE)
+#'
+#' # custom time format
+#' xax <- time_axis(x, format="%H:%M:%S")
+#' grayplot(x, y, xat=NA, vlines=xax$x)
+#' axis(side=1, at=xax$x, labels=xax$label, mgp=c(2.1, 0.5, 0), tick=FALSE)
 
 time_axis <-
-    function(times, n=8, scale=NULL)
+    function(times, n=8, scale=NULL, format=NULL)
 {
     if(!("POSIXct" %in% class(times) || "POSIXt" %in% class(times))) {
         stop("times should be a vector of date/times")
     }
 
     prettyx <- pretty(times, n=n)
+
+    if(!is.null(format)) { # use custom format, ignoring scale
+        return(data.frame(x=prettyx,
+                          labels=format(prettyx, format)))
+    }
 
     r <- range(as.numeric(times))
     dr <- diff(r)

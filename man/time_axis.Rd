@@ -4,7 +4,7 @@
 \alias{time_axis}
 \title{Set up a time-based axis}
 \usage{
-time_axis(times, n = 8, scale = NULL)
+time_axis(times, n = 8, scale = NULL, format = NULL)
 }
 \arguments{
 \item{times}{A vector of date/times that will be plotted}
@@ -14,6 +14,8 @@ time_axis(times, n = 8, scale = NULL)
 \item{scale}{Forced choice of scale for axis labels:
 \code{"sec"}, \code{"min"}, \code{"hr"}, or \code{"day"}. If NULL, scale is chosen
 based on the \code{times}.}
+
+\item{format}{If provided, used in place of \code{scale} for formating the times.}
 }
 \value{
 A data frame with the numeric values to plot plus labels to use.
@@ -37,10 +39,14 @@ xax <- time_axis(x)
 grayplot(x, y, xat=NA, vlines=xax$x)
 axis(side=1, at=xax$x, labels=xax$label, mgp=c(2.1, 0.5, 0), tick=FALSE)
 
-
 # labels as seconds
 x <- seq(as.POSIXct("2024-05-01 11:23:05.3"), as.POSIXct("2024-05-01 11:23:55.7"), length.out=n)
 xax <- time_axis(x)
+grayplot(x, y, xat=NA, vlines=xax$x)
+axis(side=1, at=xax$x, labels=xax$label, mgp=c(2.1, 0.5, 0), tick=FALSE)
+
+# custom time format
+xax <- time_axis(x, format="\%H:\%M:\%S")
 grayplot(x, y, xat=NA, vlines=xax$x)
 axis(side=1, at=xax$x, labels=xax$label, mgp=c(2.1, 0.5, 0), tick=FALSE)
 }
