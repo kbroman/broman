@@ -59,8 +59,6 @@ time_axis <-
                           labels=format(prettyx, format)))
     }
 
-    r <- range(as.numeric(times))
-    dr <- diff(r)
     # determine range
     if(!is.null(scale)) {
         scales <- c("sec", "min", "hr", "day")
@@ -71,6 +69,9 @@ time_axis <-
         }
     }
     if(is.null(scale)) {
+        r <- range(as.numeric(times), na.rm=TRUE)
+        dr <- diff(r)
+
         if(dr < 70) scale <- "sec"
         else if(dr < 60*70) scale <- "min"
         else if(dr < 60*60*55) scale <- "hr"
