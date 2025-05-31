@@ -42,7 +42,7 @@
 #' lines(x, runningmean(x, y, window=100, what="sd"),
 #'       col="green", lwd=2)
 #'
-#' @seealso [runningratio()]
+#' @seealso [runningratio(), runningratio2()]
 #'
 #' @keywords
 #' univar
@@ -139,7 +139,7 @@ runningmean <-
 #' lines(x, runningratio(x, y, z, window=50), lwd=2, col="blue")
 #' lines(x, runningratio(x, y, z, window=100), lwd=2, col="red")
 #'
-#' @seealso [runningmean()]
+#' @seealso [runningmean(), runningratio2()]
 #'
 #' @keywords
 #' univar
