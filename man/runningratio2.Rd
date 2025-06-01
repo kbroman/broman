@@ -37,7 +37,7 @@ lines(x, runningratio2(x, y, z, window_denom=100), lwd=2, col="red")
 
 }
 \seealso{
-\code{\link[=runningmean(), runningratio]{runningmean(), runningratio()}}
+\code{\link[=runningmean]{runningmean()}}, \code{\link[=runningratio]{runningratio()}}
 }
 \author{
 Karl W Broman \email{broman@wisc.edu}

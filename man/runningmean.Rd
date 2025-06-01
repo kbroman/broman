@@ -46,7 +46,7 @@ lines(x, runningmean(x, y, window=100, what="sd"),
 
 }
 \seealso{
-\code{\link[=runningratio(), runningratio2]{runningratio(), runningratio2()}}
+\code{\link[=runningratio]{runningratio()}}, \code{\link[=runningratio2]{runningratio2()}}
 }
 \author{
 Karl W Broman \email{broman@wisc.edu}

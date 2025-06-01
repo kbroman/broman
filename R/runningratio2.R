@@ -40,7 +40,7 @@
 #' lines(x, runningratio2(x, y, z, window_denom=50), lwd=2, col="blue")
 #' lines(x, runningratio2(x, y, z, window_denom=100), lwd=2, col="red")
 #'
-#' @seealso [runningmean(), runningratio()]
+#' @seealso [runningmean()], [runningratio()]
 #'
 #' @keywords
 #' univar
