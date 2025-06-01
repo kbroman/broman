@@ -71,7 +71,7 @@ runningratio2 <-
         numerator <- numerator[o]
     }
 
-    # check that pos is sorted
+    # check that at is sorted
     if(any(diff(at) < 0)) { # needs to be sorted
         o.at <- order(at)
         at <- at[o.at]
