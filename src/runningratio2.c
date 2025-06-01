@@ -45,30 +45,74 @@
 void runningratio2(int n, double *pos, double *numerator, double *denominator,
                    int n_result, double *resultpos, double *result, double window_denom)
 {
-    int lo, ns;
-    int i, j;
-    double top, bottom;
+    int i, j, closest;
+    int left, right;
+    double top, bottom, min_d, d, dleft, dright;
 
-    window_denom /= 2.0;
+    /* get overall denominator; if <= window_denom, just return overall average for all positions */
+    top = bottom = 0.0;
+    for(i=0; i<n; i++) {
+        top += numerator[i];
+        bottom += denominator[i];
+    }
+    if(bottom <= window_denom || n==1) {
+        for(i=0; i<n_result; i++) result[i] = top/bottom;
+        return;
+    }
 
-    lo=0;
+
+    /* Read R's random seed */
+    GetRNGstate();
+
     for(i=0; i<n_result; i++) {
 
         R_CheckUserInterrupt(); /* check for ^C */
 
-        top = bottom = 0.0;  ns=0;
-        for(j=lo; j<n; j++) {
-            if(pos[j] < resultpos[i]-window_denom) lo = j+1;
-            else if(pos[j] > resultpos[i]+window_denom) break;
-            else {
-                top += numerator[j];
-                bottom += denominator[j];
-                ns++;
+        /* find closest pos to resultpos */
+        closest = 0;
+        min_d = fabs(pos[0] - resultpos[i]);
+        for(j=1; j<n; j++) {
+            d = fabs(pos[j] - resultpos[i]);
+            if((d < min_d) || (d == min_d && unif_rand() < 0.5)) { /* if tie; choose at random */
+                closest = j;
+                min_d = d;
             }
         }
 
-        if(ns==0) result[i] = NA_REAL;
-        else result[i] = (top / bottom);
+        top = numerator[closest];
+        bottom = denominator[closest];
+        left = right = closest;
+        while(bottom < window_denom) {
+            if(left > 0 && right < n_result-1) { /* look at which is closer, left or right? */
+                dleft = fabs(resultpos[i] - pos[left-1]);
+                dright = fabs(resultpos[i] - pos[right+1]);
+                if((dleft < dright) || (dleft==dright && unif_rand() < 0.5)) { /* if tie, choose at random */
+                    left--;
+                    top += numerator[left];
+                    bottom += denominator[left];
+                }
+                else {
+                    right++;
+                    top += numerator[right];
+                    bottom += denominator[right];
+                }
+            }
+            else if(left > 0) { /* have already hit right boundary so just look to left */
+                left--;
+                top += numerator[left];
+                bottom += denominator[left];
+            }
+            else if(right < n_result - 1) { /* have already hit left boundary so just look to right */
+                right++;
+                top += numerator[right];
+                bottom += denominator[right];
+            }
+            else { /* hitting the full range */
+                break;
+            }
+        }
+
+        result[i] = top/bottom;
 
     }
 
