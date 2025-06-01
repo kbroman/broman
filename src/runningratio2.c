@@ -64,14 +64,15 @@ void runningratio2(int n, double *pos, double *numerator, double *denominator,
     /* Read R's random seed */
     GetRNGstate();
 
+    closest = 0;
     for(i=0; i<n_result; i++) {
 
         R_CheckUserInterrupt(); /* check for ^C */
 
         /* find closest pos to resultpos */
-        closest = 0;
-        min_d = fabs(pos[0] - resultpos[i]);
-        for(j=1; j<n; j++) {
+        /* can start at last closest position, since pos and resultpos both assumed to be non-decreasing */
+        min_d = fabs(pos[closest] - resultpos[i]);
+        for(j=closest; j<n; j++) {
             d = fabs(pos[j] - resultpos[i]);
             if((d < min_d) || (d == min_d && unif_rand() < 0.5)) { /* if tie; choose at random */
                 closest = j;
