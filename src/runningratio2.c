@@ -47,7 +47,7 @@ void runningratio2(int n, double *pos, double *numerator, double *denominator,
 {
     int i, j, closest;
     int left, right;
-    double top, bottom, min_d, d, dleft, dright;
+    double top, bottom, min_d, d, last_d, dleft, dright;
 
     /* get overall denominator; if <= window_denom, just return overall average for all positions */
     top = bottom = 0.0;
@@ -71,13 +71,15 @@ void runningratio2(int n, double *pos, double *numerator, double *denominator,
 
         /* find closest pos to resultpos */
         /* can start at last closest position, since pos and resultpos both assumed to be non-decreasing */
-        min_d = fabs(pos[closest] - resultpos[i]);
+        last_d = min_d = fabs(pos[closest] - resultpos[i]);
         for(j=closest; j<n; j++) {
             d = fabs(pos[j] - resultpos[i]);
             if((d < min_d) || (d == min_d && unif_rand() < 0.5)) { /* if tie; choose at random */
                 closest = j;
                 min_d = d;
             }
+            else if(d > last_d) break; /* starting to move away so must have hit closest position */
+            last_d = d;
         }
 
         top = numerator[closest];
