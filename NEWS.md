@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.85-3, 2025-06-02
+## Version 0.86, 2025-06-08
 
 - Added `runningratio2()` which is like `runningratio()` but instead
   of a fixed-width window, it uses an adaptive window to hit some
