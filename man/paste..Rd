@@ -16,8 +16,8 @@ A character string or vector of character strings.
 Calls \code{\link[base:paste]{base::paste()}} with \code{sep="."}.
 }
 \details{
-There's not much to this function.  It just is
-\code{\link[base:paste]{base::paste()}} with \code{sep=""}, 'cause I'm lazy.
+There's not much to this function.  It is just
+\code{\link[base:paste]{base::paste()}} with \code{sep="."}, because I'm lazy.
 }
 \examples{
 x <- 3

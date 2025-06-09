@@ -6,8 +6,8 @@
 #' @param ...  Passed to paste.
 #'
 #' @details
-#' There's not much to this function.  It just is
-#'   [base::paste()] with `sep=""`, 'cause I'm lazy.
+#' There's not much to this function.  It is just
+#'   [base::paste()] with `sep="."`, because I'm lazy.
 #'
 #' @export
 #' @return
