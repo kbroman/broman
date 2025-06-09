@@ -30,13 +30,14 @@
 #' character
 paste. <- function(...) paste(..., sep=".")
 
-#' @export
-paste.. <- function(...) paste(..., sep=".", collapse=".")
-
 #  paste00
-#' paste with null or dot as separator and with collapse
+#' @name paste00
+#' @rdname paste00
+#' @aliases paste.. paste.0 paste0.
 #'
-#' Call [base::paste()] with `sep="."` or `sep=""`
+#' @title paste with null or dot as separator and with collapse
+#'
+#' @description Call [base::paste()] with `sep="."` or `sep=""`
 #'   and `collapse=""` or `collapse="."`.
 #'
 #' @aliases paste0. paste.0 paste..
@@ -45,10 +46,14 @@ paste.. <- function(...) paste(..., sep=".", collapse=".")
 #'
 #' @details
 #' There's not much to these functions.
-#'   `paste00(...)` is like `paste(..., sep="", collapse="")`
-#'   `paste..(...)` is like `paste(..., sep=".", collapse=".")`
-#'   `paste0.(...)` is like `paste(..., sep="", collapse=".")`
-#'   `paste.0(...)` is like `paste(..., sep=".", collapse="")`
+#'
+#' - `paste00(...)` is like `paste(..., sep="", collapse="")`
+#'
+#' - `paste..(...)` is like `paste(..., sep=".", collapse=".")`
+#'
+#' - `paste0.(...)` is like `paste(..., sep="", collapse=".")`
+#'
+#' - `paste.0(...)` is like `paste(..., sep=".", collapse="")`
 #'
 #' @export
 #' @return
@@ -71,8 +76,14 @@ paste.. <- function(...) paste(..., sep=".", collapse=".")
 #' character
 paste00 <- function(...) paste(..., sep="", collapse="")
 
+#' @rdname paste00
+#' @export
+paste.. <- function(...) paste(..., sep=".", collapse=".")
+
+#' @rdname paste00
 #' @export
 paste0. <- function(...) paste(..., sep="", collapse=".")
 
+#' @rdname paste00
 #' @export
 paste.0 <- function(...) paste(..., sep=".", collapse="")

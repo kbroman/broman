@@ -2,12 +2,18 @@
 % Please edit documentation in R/pastedot.R
 \name{paste00}
 \alias{paste00}
-\alias{paste0.}
-\alias{paste.0}
 \alias{paste..}
+\alias{paste.0}
+\alias{paste0.}
 \title{paste with null or dot as separator and with collapse}
 \usage{
 paste00(...)
+
+paste..(...)
+
+paste0.(...)
+
+paste.0(...)
 }
 \arguments{
 \item{...}{Passed to paste.}
@@ -21,10 +27,12 @@ and \code{collapse=""} or \code{collapse="."}.
 }
 \details{
 There's not much to these functions.
-\code{paste00(...)} is like \code{paste(..., sep="", collapse="")}
-\code{paste..(...)} is like \code{paste(..., sep=".", collapse=".")}
-\code{paste0.(...)} is like \code{paste(..., sep="", collapse=".")}
-\code{paste.0(...)} is like \code{paste(..., sep=".", collapse="")}
+\itemize{
+\item \code{paste00(...)} is like \code{paste(..., sep="", collapse="")}
+\item \code{paste..(...)} is like \code{paste(..., sep=".", collapse=".")}
+\item \code{paste0.(...)} is like \code{paste(..., sep="", collapse=".")}
+\item \code{paste.0(...)} is like \code{paste(..., sep=".", collapse="")}
+}
 }
 \examples{
 x <- c(3, 4)
