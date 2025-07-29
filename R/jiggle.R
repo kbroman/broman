@@ -35,7 +35,7 @@ jiggle <-
 
     # turn group into numbers 1, 2, ..., n_group
     if(is.factor(group)) {
-        ugroup <- levels(group)
+        ugroup <- levels(factor(group)) # drop missing levels
         group <- as.numeric(group)
     }
     else {
