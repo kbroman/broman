@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.87.1, 2025-07-29
+## Version 0.88, 2025-09-03
 
 - Fixed a bug in `jiggle()` for the case of a factor where some levels
   are missing. This showed up as a problem with `dotplot()`, which
