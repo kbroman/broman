@@ -352,26 +352,28 @@ crayons <-
     # look for exact matches
     m <- match(color_names, allnames)
 
-    # items not found: do grep
-    #    require exactly one match
-    notfound <- color_names[is.na(m)]
-    g <- vapply(notfound, function(a) {
-        z <- grep(a, allnames, ignore.case=TRUE)
-        if(length(z) < 1) return(-1) # not found
-        if(length(z) > 1) return(-2) # found multiply
-        z }, 1)
+    if(any(is.na(m))) {
+        # items not found: do grep
+        #    require exactly one match
+        notfound <- color_names[is.na(m)]
+        g <- vapply(notfound, function(a) {
+            z <- grep(a, allnames, ignore.case=TRUE)
+            if(length(z) < 1) return(-1) # not found
+            if(length(z) > 1) return(-2) # found multiply
+            z }, 1)
 
-    # issue warning if some not found or some found multiply
-    if(any(g < 0)) {
-        if(any(g == -1)) warning("Some colors not found")
-        if(any(g == -2)) warning("Some colors with multiple matches")
+        # issue warning if some not found or some found multiply
+        if(any(g < 0)) {
+            if(any(g == -1)) warning("Some colors not found")
+            if(any(g == -2)) warning("Some colors with multiple matches")
+        }
+        g[g < 0] <- NA
+        m[is.na(m)] <- g
     }
-    g[g < 0] <- NA
-    m[is.na(m)] <- g
 
-    result <- crayons[g]
+    result <- crayons[m]
     # for those not found singly, add input as names
-    names(result)[is.na(g)] <- color_names[is.na(g)]
+    names(result)[is.na(m)] <- color_names[is.na(m)]
 
     result
 }

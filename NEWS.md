@@ -1,6 +1,11 @@
 Revision history for the R/broman package
 -----------------------------------------
 
+## Version 0.89-1, 2025-10-08
+
+- Fixed a bug in `crayons()`, which failed to find perfect name matches.
+
+
 ## Version 0.88, 2025-09-03
 
 - Fixed a bug in `jiggle()` for the case of a factor where some levels
