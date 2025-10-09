@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.89-1, 2025-10-08
+## Version 0.89-2, 2025-10-09
 
 - Fixed a bug in `crayons()`, which failed to find perfect name matches.
 
