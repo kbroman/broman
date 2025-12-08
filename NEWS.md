@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.91, 2025-12-08
+## Version 0.92, 2025-12-08
 
 - Removed includes of `R_ext/PrtUtil.h` which began causing warnings on CRAN.
 
