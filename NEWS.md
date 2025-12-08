@@ -1,6 +1,11 @@
 Revision history for the R/broman package
 -----------------------------------------
 
+## Version 0.91, 2025-12-08
+
+- Removed includes of `R_ext/PrtUtil.h` which began causing warnings on CRAN.
+
+
 ## Version 0.90, 2025-10-09
 
 - Fixed a bug in `crayons()`, which failed to find perfect name matches.
