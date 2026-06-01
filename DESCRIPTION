@@ -31,5 +31,5 @@ BugReports: https://github.com/kbroman/broman/issues
 Encoding: UTF-8
 ByteCompile: true
 LazyData: true
-RoxygenNote: 7.3.3
 Roxygen: list(markdown=TRUE)
+Config/roxygen2/version: 8.0.0
