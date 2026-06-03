@@ -330,6 +330,8 @@ plot_crayons <-
 #'
 #' @param color_names Optional vector of color names; can be partial matches.
 #' @param ... Additional optional color names
+#' @param notexact Ignored if `length(color_names) > 1` or if `...` is
+#'     specified, but otherwise and if TRUE, give all matching colors.
 #'
 #' @return Vector of named RGB colors
 #'
@@ -338,8 +340,16 @@ plot_crayons <-
 #' @seealso [plot_crayons()], [brocolors()]
 #' @export
 #' @keywords utilities
+#'
+#' @examples
+#' crayons("Blue")
+#' crayons(c("Purple Heart", "Burnt Sienna"))
+#' crayons("Purple Heart", "Burnt Sienna")
+#' crayons("Blue", notexact=TRUE)
+#' crayons("Purple") # returns nothing because no exact match
+#' crayons("Purple", notexact=TRUE)
 crayons <-
-    function(color_names=NULL, ...)
+    function(color_names=NULL, ..., notexact=FALSE)
 {
     crayons <- brocolors("crayons")
     if(is.null(color_names)) return(crayons)
@@ -348,6 +358,17 @@ crayons <-
     color_names <- unlist(c(color_names,dots))
 
     allnames <- names(crayons)
+
+    if(length(color_names)==1 && notexact) {
+        # if you give just one color name and notexact==TRUE,
+        # return all the matching colors
+        m <- grep(color_names, allnames, ignore.case=TRUE, value=TRUE)
+        if(length(m) >= 1) return(crayons(m))
+        else {
+            warning("No matching colors")
+            return(NULL)
+        }
+    }
 
     # look for exact matches
     m <- match(color_names, allnames)

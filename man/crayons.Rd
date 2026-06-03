@@ -4,18 +4,29 @@
 \alias{crayons}
 \title{Crayon colors}
 \usage{
-crayons(color_names = NULL, ...)
+crayons(color_names = NULL, ..., notexact = FALSE)
 }
 \arguments{
 \item{color_names}{Optional vector of color names; can be partial matches.}
 
 \item{...}{Additional optional color names}
+
+\item{notexact}{Ignored if \code{length(color_names) > 1} or if \code{...} is
+specified, but otherwise and if TRUE, give all matching colors.}
 }
 \value{
 Vector of named RGB colors
 }
 \description{
 Vector of colors corresponding to Crayola crayons
+}
+\examples{
+crayons("Blue")
+crayons(c("Purple Heart", "Burnt Sienna"))
+crayons("Purple Heart", "Burnt Sienna")
+crayons("Blue", notexact=TRUE)
+crayons("Purple") # returns nothing because no exact match
+crayons("Purple", notexact=TRUE)
 }
 \references{
 \url{https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}

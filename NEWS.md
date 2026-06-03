@@ -1,6 +1,13 @@
 Revision history for the R/broman package
 -----------------------------------------
 
+## Version 0.93-1, 2026-06-02
+
+- Added argument `notexact` to `crayons()` that is considered only if
+  one color string is provided; in which case (if `notexact=TRUE`, we
+  return all matching colors (ignoring cases).
+
+
 ## Version 0.92, 2025-12-08
 
 - Removed includes of `R_ext/PrtUtil.h` which began causing warnings on CRAN.
