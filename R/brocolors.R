@@ -263,6 +263,8 @@ brocolors <-
 #' Illustration of crayon colors
 #'
 #' Creates a plot of the crayon colors in [brocolors()]
+#' @param colors Set of colors to display, by name or RGB code; must
+#'     be a subset of the [crayons()] colors.
 #' @param method2order method to order colors (`"hsv"` or `"cluster"`)
 #' @param cex character expansion for the text
 #' @param mar margin paramaters; vector of length 4 (see [graphics::par()])
@@ -275,13 +277,30 @@ brocolors <-
 #' @seealso [brocolors()]
 #' @examples
 #' plot_crayons()
+#' plot_crayons("blue", cex=1) # plot just those that match "blue"
+#' plot_crayons("green", cex=1) # plot just those that match "green"
 plot_crayons <-
-    function(method2order=c("hsv", "cluster"), cex=0.6, mar=rep(0.1, 4),
+    function(colors=NULL, method2order=c("hsv", "cluster"), cex=NULL, mar=rep(0.1, 4),
              bg="white", fg="black", border=FALSE)
 {
     method2order <- match.arg(method2order)
 
     crayons <- brocolors("crayons")
+    if(!is.null(colors)) {
+        if(all(grepl("^#[0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f][0-9A-Fa-f]$",
+                     colors))) { # all RGB codes
+            m <- match(colors, crayons)
+            if(all(is.na(m))) stop("colors must be from crayons(), as RGB codes or names")
+            if(any(is.na(m))) {
+                warning(sum(is.na(m)), " RGB codes not in crayons(); ignored")
+                m <- m[!is.na(m)]
+            }
+            crayons <- crayons[m]
+        } else { # presume names
+            crayons <- crayons(colors, notexact=TRUE)
+            if(length(crayons)==0) stop("No colors found")
+        }
+    }
 
     # get rgb
     colval <- col2rgb(crayons)
@@ -305,10 +324,22 @@ plot_crayons <-
     on.exit(par(mar=oldmar, fg=oldfg, bg=oldbg))
 
     par(mar=mar, fg=fg, bg=bg)
-    x <- (1:7)-1
-    y <- (1:19)-1
-    x <- rep(x, each=19)
-    y <- rep(y, 7)
+    nc <- ceiling(sqrt(length(crayons)/3))
+    nr <- ceiling(length(crayons)/nc)
+    x <- (1:nc)-1
+    y <- (1:nr)-1
+    x <- rep(x, each=nr)
+    y <- rep(y, nc)
+
+    if(is.null(cex)) {
+        if(nc <= 3) cex <- 1
+        else if(nc <= 5) cex <- 0.8
+        else if(nc <= 6) cex <- 0.7
+        else cex <- 0.6
+    }
+
+    x <- x[seq(along=crayons)]
+    y <- y[seq(along=crayons)]
 
     plot(0, 0, type="n", xlab="", ylab="", xaxs="i", yaxs="i",
          xlim=c(0, max(x)+1), ylim=c(max(y)+0.5, -0.5),

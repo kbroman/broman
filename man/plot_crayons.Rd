@@ -5,8 +5,9 @@
 \title{Illustration of crayon colors}
 \usage{
 plot_crayons(
+  colors = NULL,
   method2order = c("hsv", "cluster"),
-  cex = 0.6,
+  cex = NULL,
   mar = rep(0.1, 4),
   bg = "white",
   fg = "black",
@@ -14,6 +15,9 @@ plot_crayons(
 )
 }
 \arguments{
+\item{colors}{Set of colors to display, by name or RGB code; must
+be a subset of the \code{\link[=crayons]{crayons()}} colors.}
+
 \item{method2order}{method to order colors (\code{"hsv"} or \code{"cluster"})}
 
 \item{cex}{character expansion for the text}
@@ -34,6 +38,8 @@ Creates a plot of the crayon colors in \code{\link[=brocolors]{brocolors()}}
 }
 \examples{
 plot_crayons()
+plot_crayons("blue", cex=1) # plot just those that match "blue"
+plot_crayons("green", cex=1) # plot just those that match "green"
 }
 \references{
 \url{https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}

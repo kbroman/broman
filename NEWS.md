@@ -1,10 +1,13 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.93-1, 2026-06-02
+## Version 0.93-2, 2026-06-03
 
 - Added argument `notexact` to `crayons()`. If TRUE, return all
   partial matches to any of the provided strings, ignoring cases.
+
+- `plot_crayons()` now takes a `colors` argument; give it a list of
+  crayon colors and it will show just that subset.
 
 
 ## Version 0.92, 2025-12-08
