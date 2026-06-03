@@ -11,8 +11,8 @@ crayons(color_names = NULL, ..., notexact = FALSE)
 
 \item{...}{Additional optional color names}
 
-\item{notexact}{Ignored if \code{length(color_names) > 1} or if \code{...} is
-specified, but otherwise and if TRUE, give all matching colors.}
+\item{notexact}{If TRUE, find all partial matches to any of the
+color names provided, ignoring case.}
 }
 \value{
 Vector of named RGB colors
@@ -24,9 +24,10 @@ Vector of colors corresponding to Crayola crayons
 crayons("Blue")
 crayons(c("Purple Heart", "Burnt Sienna"))
 crayons("Purple Heart", "Burnt Sienna")
-crayons("Blue", notexact=TRUE)
 crayons("Purple") # returns nothing because no exact match
-crayons("Purple", notexact=TRUE)
+crayons("Purple", notexact=TRUE) # returns all the purples
+crayons("Blue", notexact=TRUE) # returns all the blues
+crayons("Blue", "Purple", notexact=TRUE) # returns everything with either blue or purple
 }
 \references{
 \url{https://en.wikipedia.org/wiki/List_of_Crayola_crayon_colors}

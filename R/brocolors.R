@@ -330,8 +330,8 @@ plot_crayons <-
 #'
 #' @param color_names Optional vector of color names; can be partial matches.
 #' @param ... Additional optional color names
-#' @param notexact Ignored if `length(color_names) > 1` or if `...` is
-#'     specified, but otherwise and if TRUE, give all matching colors.
+#' @param notexact If TRUE, find all partial matches to any of the
+#'     color names provided, ignoring case.
 #'
 #' @return Vector of named RGB colors
 #'
@@ -345,9 +345,10 @@ plot_crayons <-
 #' crayons("Blue")
 #' crayons(c("Purple Heart", "Burnt Sienna"))
 #' crayons("Purple Heart", "Burnt Sienna")
-#' crayons("Blue", notexact=TRUE)
 #' crayons("Purple") # returns nothing because no exact match
-#' crayons("Purple", notexact=TRUE)
+#' crayons("Purple", notexact=TRUE) # returns all the purples
+#' crayons("Blue", notexact=TRUE) # returns all the blues
+#' crayons("Blue", "Purple", notexact=TRUE) # returns everything with either blue or purple
 crayons <-
     function(color_names=NULL, ..., notexact=FALSE)
 {
@@ -359,11 +360,13 @@ crayons <-
 
     allnames <- names(crayons)
 
-    if(length(color_names)==1 && notexact) {
+    if(notexact) {
         # if you give just one color name and notexact==TRUE,
         # return all the matching colors
-        m <- grep(color_names, allnames, ignore.case=TRUE, value=TRUE)
-        if(length(m) >= 1) return(crayons(m))
+        m <- unlist(lapply(color_names, function(x)
+                           grep(x, allnames, ignore.case=TRUE, value=TRUE)))
+
+        if(length(m) >= 1) return(crayons(unique(m)))
         else {
             warning("No matching colors")
             return(NULL)
