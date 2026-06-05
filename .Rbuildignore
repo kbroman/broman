@@ -4,3 +4,4 @@
 Makefile
 ^LICENSE\.md$
 ^\.github$
+^figures/

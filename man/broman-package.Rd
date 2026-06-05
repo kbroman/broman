@@ -6,6 +6,8 @@
 \alias{broman-package}
 \title{broman: Karl Broman's R Code}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 Miscellaneous R functions, including functions related to graphics (mostly for base graphics), permutation tests, running mean/median, and general utilities.
 }
 \seealso{
