@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.93-3, 2026-06-05
+## Version 0.94, 2026-06-08
 
 - Added argument `notexact` to `crayons()`. If TRUE, return all
   partial matches to any of the provided strings, ignoring cases.
