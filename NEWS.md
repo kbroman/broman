@@ -7,6 +7,8 @@ Revision history for the R/broman package
   sets of confidence intervals may be compared. (Issue #19)
 
 - `mypairs()` now calls `grayplot()` for the individual plots.
+  Actually, if `show_na=TRUE` it uses `grayplot_na()` so that missing
+  values are shown, and this is now the default.
 
 
 ## Version 0.94, 2026-06-08

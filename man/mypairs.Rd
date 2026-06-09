@@ -4,10 +4,12 @@
 \alias{mypairs}
 \title{My scatterplot matrix}
 \usage{
-mypairs(x, ...)
+mypairs(x, show_na = TRUE, ...)
 }
 \arguments{
 \item{x}{A numeric matrix or data frame.}
+
+\item{show_na}{If TRUE, use \code{\link[=grayplot_na]{grayplot_na()}} for the plots rather than \code{\link[=grayplot]{grayplot()}}}
 
 \item{...}{Passed to the \code{\link[=grayplot]{grayplot()}} function.}
 }
@@ -27,7 +29,14 @@ only the upper triangle is produced.
 v <- rbind(c(1,0.5,0.2),c(0.5,1,0.9),c(0.2,0.9,1))
 x <- rmvn(500, rep(5,3), v)
 colnames(x) <- c("V1", "V2", "V3")
-mypairs(x, col=sample(c("blue","red"), 500, repl=TRUE))
+group_col <- sample(crayons(c("Blue","Red")), 500, repl=TRUE)
+mypairs(x, pch=21, bg=group_col)
+
+# add some missing data to the first two columns
+for(i in 1:2) x[sample(500, 20),i] <- NA
+mypairs(x, pch=21, bg=group_col)
+mypairs(x, pch=21, bg=group_col, show_na=FALSE)
+mypairs(x, pch=21, bg=group_col, force="both")
 
 }
 \seealso{
