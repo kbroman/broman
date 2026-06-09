@@ -10,6 +10,12 @@
 
 Miscellaneous R functions, including functions related to graphics (mostly for base graphics), permutation tests, running mean/median, and general utilities.
 }
+\section{Vignette}{
+
+
+See the \href{https://kbroman.org/broman/broman.html}{online user guide}.
+}
+
 \seealso{
 Useful links:
 \itemize{
