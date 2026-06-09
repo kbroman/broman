@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+
+<title>R/broman User Guide</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+
+
+
+
+
+<style type="text/css">body {
+background-color: #fff;
+margin: 1em auto;
+max-width: 700px;
+overflow: visible;
+padding-left: 2em;
+padding-right: 2em;
+font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+font-size: 14px;
+line-height: 1.35;
+}
+#TOC {
+clear: both;
+margin: 0 0 10px 10px;
+padding: 4px;
+width: 400px;
+border: 1px solid #CCCCCC;
+border-radius: 5px;
+background-color: #f6f6f6;
+font-size: 13px;
+line-height: 1.3;
+}
+#TOC .toctitle {
+font-weight: bold;
+font-size: 15px;
+margin-left: 5px;
+}
+#TOC ul {
+padding-left: 40px;
+margin-left: -1.5em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+#TOC ul ul {
+margin-left: -2em;
+}
+#TOC li {
+line-height: 16px;
+}
+table {
+margin: 1em auto;
+border-width: 1px;
+border-color: #DDDDDD;
+border-style: outset;
+border-collapse: collapse;
+}
+table th {
+border-width: 2px;
+padding: 5px;
+border-style: inset;
+}
+table td {
+border-width: 1px;
+border-style: inset;
+line-height: 18px;
+padding: 5px 5px;
+}
+table, table th, table td {
+border-left-style: none;
+border-right-style: none;
+}
+table thead, table tr.even {
+background-color: #f7f7f7;
+}
+p {
+margin: 0.5em 0;
+}
+blockquote {
+background-color: #f6f6f6;
+padding: 0.25em 0.75em;
+}
+hr {
+border-style: solid;
+border: none;
+border-top: 1px solid #777;
+margin: 28px 0;
+}
+dl {
+margin-left: 0;
+}
+dl dd {
+margin-bottom: 13px;
+margin-left: 13px;
+}
+dl dt {
+font-weight: bold;
+}
+ul {
+margin-top: 0;
+}
+ul li {
+list-style: circle outside;
+}
+ul ul {
+margin-bottom: 0;
+}
+pre, code {
+background-color: #f7f7f7;
+border-radius: 3px;
+color: #333;
+white-space: pre-wrap; 
+}
+pre {
+border-radius: 3px;
+margin: 5px 0px 10px 0px;
+padding: 10px;
+}
+pre:not([class]) {
+background-color: #f7f7f7;
+}
+code {
+font-family: Consolas, Monaco, 'Courier New', monospace;
+font-size: 85%;
+}
+p > code, li > code {
+padding: 2px 0px;
+}
+div.figure {
+text-align: center;
+}
+img {
+background-color: #FFFFFF;
+padding: 2px;
+border: 1px solid #DDDDDD;
+border-radius: 3px;
+border: 1px solid #CCCCCC;
+margin: 0 5px;
+}
+h1 {
+margin-top: 0;
+font-size: 35px;
+line-height: 40px;
+}
+h2 {
+border-bottom: 4px solid #f7f7f7;
+padding-top: 10px;
+padding-bottom: 2px;
+font-size: 145%;
+}
+h3 {
+border-bottom: 2px solid #f7f7f7;
+padding-top: 10px;
+font-size: 120%;
+}
+h4 {
+border-bottom: 1px solid #f7f7f7;
+margin-left: 8px;
+font-size: 105%;
+}
+h5, h6 {
+border-bottom: 1px solid #ccc;
+font-size: 105%;
+}
+a {
+color: #0033dd;
+text-decoration: none;
+}
+a:hover {
+color: #6666ff; }
+a:visited {
+color: #800080; }
+a:visited:hover {
+color: #BB00BB; }
+a[href^="http:"] {
+text-decoration: underline; }
+a[href^="https:"] {
+text-decoration: underline; }
+
+code > span.kw { color: #555; font-weight: bold; } 
+code > span.dt { color: #902000; } 
+code > span.dv { color: #40a070; } 
+code > span.bn { color: #d14; } 
+code > span.fl { color: #d14; } 
+code > span.ch { color: #d14; } 
+code > span.st { color: #d14; } 
+code > span.co { color: #888888; font-style: italic; } 
+code > span.ot { color: #007020; } 
+code > span.al { color: #ff0000; font-weight: bold; } 
+code > span.fu { color: #900; font-weight: bold; } 
+code > span.er { color: #a61717; background-color: #e3d2d2; } 
+</style>
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">R/broman User Guide</h1>
+
+
+
+<p><style type="text/css">body {
+max-width: 1100px;
+margin-left: auto;
+margin-right: auto;
+}
+img { border: 0; }
+</style></script></p>
+<p><a href="https://github.com/kbroman/broman"><img role="img" aria-label="R/broman logo" src="https://kbroman.org/broman/broman_logo.png" align="right" height="138" alt="R/broman logo" /></a></p>
+<p><a href="https://github.com/kbroman/broman/actions/workflows/R-CMD-check.yaml"><img role="img" aria-label="R-CMD-check" src="data:image/svg+xml; charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxODIiIGhlaWdodD0iMjAiPgogIDx0aXRsZT5SLUNNRC1jaGVjay55YW1sIC0gcGFzc2luZzwvdGl0bGU+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9IndvcmtmbG93LWZpbGwiIHgxPSI1MCUiIHkxPSIwJSIgeDI9IjUwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBzdG9wLWNvbG9yPSIjNDQ0RDU2IiBvZmZzZXQ9IjAlIj48L3N0b3A+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiMyNDI5MkUiIG9mZnNldD0iMTAwJSI+PC9zdG9wPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0ic3RhdGUtZmlsbCIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIHN0b3AtY29sb3I9IiMzNEQwNTgiIG9mZnNldD0iMCUiPjwvc3RvcD4KICAgICAgPHN0b3Agc3RvcC1jb2xvcj0iIzI4QTc0NSIgb2Zmc2V0PSIxMDAlIj48L3N0b3A+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgPGcgZm9udC1mYW1pbHk9IiYjMzk7RGVqYVZ1IFNhbnMmIzM5OyxWZXJkYW5hLEdlbmV2YSxzYW5zLXNlcmlmIiBmb250LXNpemU9IjExIj4KICAgICAgPHBhdGggaWQ9IndvcmtmbG93LWJnIiBkPSJNMCwzIEMwLDEuMzQzMSAxLjM1NTIsMCAzLjAyNzAyNzAzLDAgTDEzMiwwIEwxMzIsMjAgTDMuMDI3MDI3MDMsMjAgQzEuMzU1MiwyMCAwLDE4LjY1NjkgMCwxNyBMMCwzIFoiIGZpbGw9InVybCgjd29ya2Zsb3ctZmlsbCkiIGZpbGwtcnVsZT0ibm9uemVybyI+PC9wYXRoPgogICAgICA8dGV4dCBmaWxsPSIjMDEwMTAxIiBmaWxsLW9wYWNpdHk9Ii4zIj4KICAgICAgICA8dHNwYW4geD0iMjIuMTk4MTk4MiIgeT0iMTUiIGFyaWEtaGlkZGVuPSJ0cnVlIj5SLUNNRC1jaGVjay55YW1sPC90c3Bhbj4KICAgICAgPC90ZXh0PgogICAgICA8dGV4dCBmaWxsPSIjRkZGRkZGIj4KICAgICAgICA8dHNwYW4geD0iMjIuMTk4MTk4MiIgeT0iMTQiPlItQ01ELWNoZWNrLnlhbWw8L3RzcGFuPgogICAgICA8L3RleHQ+CiAgICA8L2c+CiAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMzIpIiBmb250LWZhbWlseT0iJiMzOTtEZWphVnUgU2FucyYjMzk7LFZlcmRhbmEsR2VuZXZhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiPgogICAgICA8cGF0aCBkPSJNMCAwaDQ2LjkzOUM0OC42MjkgMCA1MCAxLjM0MyA1MCAzdjE0YzAgMS42NTctMS4zNyAzLTMuMDYxIDNIMFYweiIgaWQ9InN0YXRlLWJnIiBmaWxsPSJ1cmwoI3N0YXRlLWZpbGwpIiBmaWxsLXJ1bGU9Im5vbnplcm8iPjwvcGF0aD4KICAgICAgPHRleHQgZmlsbD0iIzAxMDEwMSIgZmlsbC1vcGFjaXR5PSIuMyIgYXJpYS1oaWRkZW49InRydWUiPgogICAgICAgIDx0c3BhbiB4PSI0IiB5PSIxNSI+cGFzc2luZzwvdHNwYW4+CiAgICAgIDwvdGV4dD4KICAgICAgPHRleHQgZmlsbD0iI0ZGRkZGRiI+CiAgICAgICAgPHRzcGFuIHg9IjQiIHk9IjE0Ij5wYXNzaW5nPC90c3Bhbj4KICAgICAgPC90ZXh0PgogICAgPC9nPgogICAgPHBhdGggZmlsbD0iIzk1OURBNSIgZD0iTTExIDNjLTMuODY4IDAtNyAzLjEzMi03IDdhNi45OTYgNi45OTYgMCAwIDAgNC43ODYgNi42NDFjLjM1LjA2Mi40ODItLjE0OC40ODItLjMzMiAwLS4xNjYtLjAxLS43MTgtLjAxLTEuMzA0LTEuNzU4LjMyNC0yLjIxMy0uNDI5LTIuMzUzLS44MjItLjA3OS0uMjAyLS40Mi0uODIzLS43MTctLjk5LS4yNDUtLjEzLS41OTUtLjQ1NC0uMDEtLjQ2My41NTItLjAwOS45NDYuNTA4IDEuMDc3LjcxOC42MyAxLjA1OCAxLjYzNi43NiAyLjAzOS41NzcuMDYxLS40NTUuMjQ1LS43NjEuNDQ2LS45MzYtMS41NTctLjE3NS0zLjE4NS0uNzc5LTMuMTg1LTMuNDU2IDAtLjc2Mi4yNzEtMS4zOTIuNzE4LTEuODgyLS4wNy0uMTc1LS4zMTUtLjg5Mi4wNy0xLjg1NSAwIDAgLjU4Ni0uMTgzIDEuOTI1LjcxOGE2LjUgNi41IDAgMCAxIDEuNzUtLjIzNiA2LjUgNi41IDAgMCAxIDEuNzUuMjM2YzEuMzM4LS45MSAxLjkyNS0uNzE4IDEuOTI1LS43MTguMzg1Ljk2My4xNCAxLjY4LjA3IDEuODU1LjQ0Ni40OS43MTcgMS4xMTIuNzE3IDEuODgyIDAgMi42ODYtMS42MzYgMy4yOC0zLjE5NCAzLjQ1Ni4yNTQuMjE5LjQ3My42MzkuNDczIDEuMjk1IDAgLjkzNi0uMDA5IDEuNjg5LS4wMDkgMS45MjUgMCAuMTg0LjEzMS40MDIuNDgxLjMzMkE3LjAxMSA3LjAxMSAwIDAgMCAxOCAxMGMwLTMuODY3LTMuMTMzLTctNy03eiI+PC9wYXRoPgogIDwvZz4KPC9zdmc+Cgo=" alt="R-CMD-check" /></a> <a href="https://cran.r-project.org/package=broman"><img role="img" aria-label="CRAN_Status_Badge" src="data:image/svg+xml; charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MiIgaGVpZ2h0PSIyMCIgYXJpYS1sYWJlbD0iQ1JBTiAwLjk0Ij4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImIiIHgyPSIwIiB5Mj0iMTAwJSI+CiAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNiYmIiIHN0b3Atb3BhY2l0eT0iLjEiLz4KICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1vcGFjaXR5PSIuMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPG1hc2sgaWQ9ImEiPgogICAgPHJlY3Qgd2lkdGg9IjgyIiBoZWlnaHQ9IjIwIiByeD0iMyIgZmlsbD0iI2ZmZiIvPgogIDwvbWFzaz4KICA8ZyBtYXNrPSJ1cmwoI2EpIj4KICAgIDxwYXRoIGZpbGw9IiM1NTUiIGQ9Ik0wIDBoNDN2MjBIMHoiLz4KICAgIDxwYXRoIGZpbGw9IiM0YzEiIGQ9Ik00MyAwaDU4LjV2MjBINDN6Ii8+CiAgICA8cGF0aCBmaWxsPSJ1cmwoI2IpIiBkPSJNMCAwaDgydjIwSDB6Ii8+CiAgPC9nPgogIDxnIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiCiAgICAgZm9udC1mYW1pbHk9IkRlamFWdSBTYW5zLFZlcmRhbmEsR2VuZXZhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiPgogICAgPHRleHQgeD0iMjEuNSIgeT0iMTUiIGZpbGw9IiMwMTAxMDEiIGZpbGwtb3BhY2l0eT0iLjMiPgogICAgICBDUkFOCiAgICA8L3RleHQ+CiAgICA8dGV4dCB4PSIyMS41IiB5PSIxNCI+CiAgICAgIENSQU4KICAgIDwvdGV4dD4KICAgIDx0ZXh0IHg9IjYxLjUiIHk9IjE1IiBmaWxsPSIjMDEwMTAxIiBmaWxsLW9wYWNpdHk9Ii4zIj4KICAgICAgMC45NAogICAgPC90ZXh0PgogICAgPHRleHQgeD0iNjEuNSIgeT0iMTQiPgogICAgICAwLjk0CiAgICA8L3RleHQ+CiAgPC9nPgo8L3N2Zz4=" alt="CRAN_Status_Badge" /></a> <a href="https://kbroman.r-universe.dev/broman"><img role="img" aria-label="r-universe badge" src="data:image/svg+xml; charset=utf-8;base64,PHN2ZyB3aWR0aD0iMTEzLjgiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMTM4IDIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9InItdW5pdmVyc2U6IDAuOTUtMiI+CiAgPGEgaHJlZj0iaHR0cHM6Ly9rYnJvbWFuLnItdW5pdmVyc2UuZGV2L2Jyb21hbiIgYWx0PSJyLXVuaXZlcnNlIj4KICA8dGl0bGU+ci11bml2ZXJzZTogMC45NS0yPC90aXRsZT4KICA8bGluZWFyR3JhZGllbnQgaWQ9ImF0bWpqIiB4Mj0iMCIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLW9wYWNpdHk9Ii4xIiBzdG9wLWNvbG9yPSIjRUVFIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3Atb3BhY2l0eT0iLjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxtYXNrIGlkPSJwaXRHZiI+PHJlY3Qgd2lkdGg9IjExMzgiIGhlaWdodD0iMjAwIiByeD0iMzAiIGZpbGw9IiNGRkYiLz48L21hc2s+CiAgPGcgbWFzaz0idXJsKCNwaXRHZikiPgogICAgPHJlY3Qgd2lkdGg9IjY2OCIgaGVpZ2h0PSIyMDAiIGZpbGw9IiM1NTUiLz4KICAgIDxyZWN0IHdpZHRoPSI0NzAiIGhlaWdodD0iMjAwIiBmaWxsPSIjM0MxIiB4PSI2NjgiLz4KICAgIDxyZWN0IHdpZHRoPSIxMTM4IiBoZWlnaHQ9IjIwMCIgZmlsbD0idXJsKCNhdG1qaikiLz4KICA8L2c+CiAgPGcgYXJpYS1oaWRkZW49InRydWUiIHRleHQtYW5jaG9yPSJzdGFydCIgZm9udC1mYW1pbHk9IlZlcmRhbmEsRGVqYVZ1IFNhbnMsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMTAiPgogICAgPHRleHQgeD0iNjAiIHk9IjE0OCIgdGV4dExlbmd0aD0iNTY4IiBmaWxsPSIjMDAwIiBvcGFjaXR5PSIwLjI1Ij5yLXVuaXZlcnNlPC90ZXh0PgogICAgPHRleHQgeD0iNTAiIHk9IjEzOCIgdGV4dExlbmd0aD0iNTY4IiBmaWxsPSIjZmZmIj5yLXVuaXZlcnNlPC90ZXh0PgogICAgPHRleHQgeD0iNzIzIiB5PSIxNDgiIHRleHRMZW5ndGg9IjM3MCIgZmlsbD0iIzAwMCIgb3BhY2l0eT0iMC4yNSI+MC45NS0yPC90ZXh0PgogICAgPHRleHQgeD0iNzEzIiB5PSIxMzgiIHRleHRMZW5ndGg9IjM3MCIgZmlsbD0iI2ZmZiI+MC45NS0yPC90ZXh0PgogIDwvZz4KICAKICA8L2E+Cjwvc3ZnPg==" alt="r-universe badge" /></a> <a href="https://doi.org/10.5281/zenodo.2636796"><img role="img" aria-label="zenodo DOI" src="data:image/svg+xml; charset=utf-8;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgd2lkdGg9IjE4My44NDM3NSIgaGVpZ2h0PSIyMCI+CiAgICAgICAgPGxpbmVhckdyYWRpZW50IGlkPSJiIiB4Mj0iMCIgeTI9IjEwMCUiPgogICAgICAgICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNiYmIiIHN0b3Atb3BhY2l0eT0iLjEiLz4KICAgICAgICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLW9wYWNpdHk9Ii4xIi8+CiAgICAgICAgPC9saW5lYXJHcmFkaWVudD4KICAgICAgICA8bWFzayBpZD0iYSIgd2lkdGg9IjE4My44NDM3NSIgaGVpZ2h0PSIyMCI+CiAgICAgICAgICAgIDxyZWN0IHdpZHRoPSIxODMuODQzNzUiIGhlaWdodD0iMjAiIHJ4PSIzIgogICAgICAgICAgICBmaWxsPSIjZmZmIi8+CiAgICAgICAgPC9tYXNrPgogICAgICAgIDxnIG1hc2s9InVybCgjYSkiPgogICAgICAgICAgICA8cGF0aCBmaWxsPSIjNTU1IiBkPSJNMCAwaDMxLjM3NXYyMEgweiIgLz4KICAgICAgICAgICAgPHBhdGggZmlsbD0iIzAwN2VjNiIKICAgICAgICAgICAgZD0iTTMxLjM3NSAwaDE1Mi40Njg3NXYyMEgzMS4zNzV6IgogICAgICAgICAgICAvPgogICAgICAgICAgICA8cGF0aCBmaWxsPSJ1cmwoI2IpIiBkPSJNMCAwaDE4My44NDM3NXYyMEgweiIgLz4KICAgICAgICA8L2c+CiAgICAgICAgPGcgZmlsbD0iI2ZmZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkRlamFWdSBTYW5zLAogICAgICAgIFZlcmRhbmEsR2VuZXZhLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTEiPgogICAgICAgICAgICA8dGV4dCB4PSIxNi4xODc1IiB5PSIxNSIgZmlsbD0iIzAxMDEwMSIKICAgICAgICAgICAgZmlsbC1vcGFjaXR5PSIuMyI+CiAgICAgICAgICAgICAgICBET0kKICAgICAgICAgICAgPC90ZXh0PgogICAgICAgICAgICA8dGV4dCB4PSIxNi4xODc1IiB5PSIxNCI+CiAgICAgICAgICAgICAgICBET0kKICAgICAgICAgICAgPC90ZXh0PgogICAgICAgICAgICA8dGV4dCB4PSIxMDcuMTA5Mzc1IgogICAgICAgICAgICB5PSIxNSIgZmlsbD0iIzAxMDEwMSIgZmlsbC1vcGFjaXR5PSIuMyI+CiAgICAgICAgICAgICAgICAxMC41MjgxL3plbm9kby4yNjM2Nzk2CiAgICAgICAgICAgIDwvdGV4dD4KICAgICAgICAgICAgPHRleHQgeD0iMTA3LjEwOTM3NSIgeT0iMTQiPgogICAgICAgICAgICAgICAgMTAuNTI4MS96ZW5vZG8uMjYzNjc5NgogICAgICAgICAgICA8L3RleHQ+CiAgICAgICAgPC9nPgogICAgPC9zdmc+" alt="zenodo DOI" /></a></p>
+<p><a href="https://github.com/kbroman/broman">R/broman</a> is an <a href="https://www.r-project.org">R</a> package with miscellanoues R
+functions that are useful to me. It’s gotten rather large, and the
+functions do a lot of different, unrelated things, so my purpose here is
+to organize them and illustrate their use.</p>
+<div id="document-helpers" class="section level3">
+<h3>Document helpers</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#add_commas"><code>add_commas</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#myround"><code>myround</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#numbers"><code>numbers</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#spell_out"><code>spell_out</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#vec2string"><code>vec2string</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#kbdate%60"><code>kbdate</code></a>
+- seems unnecessary. Was used for date stamps, but it seems to give the
+same output as <code>Sys.Date()</code>.</li>
+</ul>
+</div>
+<div id="statistical-tests" class="section level3">
+<h3>Statistical tests</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#chisq"><code>chisq</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#fisher"><code>fisher</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#perm.test"><code>perm.test</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#paired.perm.test"><code>paired.perm.test</code></a></li>
+</ul>
+</div>
+<div id="statistical-estimation" class="section level3">
+<h3>Statistical estimation</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#quantileSE"><code>quantileSE</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#runningmean"><code>runningmean</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#runningratio"><code>runningratio</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#runningratio2"><code>runningratio2</code></a></li>
+</ul>
+</div>
+<div id="data-diagnosticscleaning" class="section level3">
+<h3>Data diagnostics/cleaning</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#align_vectors"><code>align_vectors</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#pick_more_precise"><code>pick_more_precise</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#get_precision"><code>get_precision</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#compare_rows"><code>compare_rows</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#winsorize"><code>winsorize</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#normalize"><code>normalize</code></a></li>
+</ul>
+</div>
+<div id="systemfile-helpers" class="section level3">
+<h3>System/file helpers</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#h"><code>h</code></a>
+<ul>
+<li>open the help document for a function/object in your web browser.
+I’m usually using R within emacs, and if I type <code>help(h)</code>,
+the help for the <code>h</code> function shows up within emacs. So I use
+<code>h(h)</code> to see it within my web browser.</li>
+</ul></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#make"><code>make</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#exit"><code>exit</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#objectsizes"><code>objectsizes</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#openfile"><code>openfile</code></a></li>
+</ul>
+</div>
+<div id="programming" class="section level3">
+<h3>Programming</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#qr2"><code>qr2</code></a>
+- the base function <code>qr</code> does a QR decomposition, but the
+results it produces are not what you might expect. This function gets
+you the basic Q and R pieces.</li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#simp"><code>simp</code></a>
+- Perform numerical integration by Simpson’s rule.</li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#trap"><code>trap</code></a>
+- Perform numerical integration by the trapezoidal role.</li>
+</ul>
+</div>
+<div id="programming-helpers" class="section level3">
+<h3>Programming helpers</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#+25nin+25"><code>%nin%</code></a>,
+<a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#+25nin+25"><code>%win</code></a>,
+and <a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#+25nin+25%60"><code>%wnin%</code></a>
+- compare to the recent addition to base R, <code>%notin%</code>.</li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#attrnames"><code>attrnames</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#cf"><code>cf</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#convert2hex"><code>convert2hex</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#convert2hex"><code>dec2hex</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#fac2num"><code>fac2num</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#hex2dec"><code>hex2dec</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#lenuniq"><code>lenuniq</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#maxabs"><code>maxabs</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#paste00"><code>paste00</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#paste%2E%22"><code>paste.</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#setRNGparallel"><code>setRNGparallel</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#setRNGparallel"><code>unsetRNGparallel</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#switchv"><code>switchv</code></a></li>
+</ul>
+</div>
+<div id="data-visualization" class="section level3">
+<h3>Data visualization</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#ciplot"><code>ciplot</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#dotplot"><code>dotplot</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#grayplot"><code>grayplot</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#grayplot_na"><code>grayplot_na</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#manyboxplot"><code>manyboxplot</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#mypairs"><code>mypairs</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#qqline2"><code>qqline2</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#timeplot"><code>timeplot</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#excel_fig"><code>excel_fig</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#venn"><code>venn</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#histlines"><code>histlines</code></a></li>
+</ul>
+</div>
+<div id="a-particular-data-visualation-ternery-diagram" class="section level3">
+<h3>A particular data visualation: ternery diagram</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#triplot"><code>triplot</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#tripoints"><code>tripoints</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#trilines"><code>trilines</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#triarrow"><code>triarrow</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#tritext"><code>tritext</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#trigrid"><code>trigrid</code></a></li>
+</ul>
+</div>
+<div id="data-visualization-helpers" class="section level3">
+<h3>Data visualization helpers</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#arrowlocator"><code>arrowlocator</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#colwalpha"><code>colwalpha</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#brocolors"><code>brocolors</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#crayons"><code>crayons</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#plot_crayons"><code>plot_crayons</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#jiggle"><code>jiggle</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#revgray"><code>revgray</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#revrainbow"><code>revrainbow</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#theme_karl"><code>theme_karl</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#time_axis"><code>time_axis</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#twocolorpal"><code>twocolorpal</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#xlimlabel"><code>xlimlabel</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#strwidth2lines"><code>strwidth2lines</code></a></li>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#strwidth2xlim"><code>strwidth2xlim</code></a></li>
+</ul>
+</div>
+<div id="simulation" class="section level3">
+<h3>Simulation</h3>
+<ul>
+<li><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#rmvn"><code>rmvn</code></a></li>
+</ul>
+</div>
+
+
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

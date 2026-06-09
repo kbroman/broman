@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.95-2, 2026-06-09
+## Version 0.95-3, 2026-06-09
 
 - Added arguments `add` and `offset` to `ciplot()` so that multiple
   sets of confidence intervals may be compared. (Issue #19)
@@ -9,6 +9,8 @@ Revision history for the R/broman package
 - `mypairs()` now calls `grayplot()` for the individual plots.
   Actually, if `show_na=TRUE` it uses `grayplot_na()` so that missing
   values are shown, and this is now the default.
+
+- Began work on a [vignette about the package](https://kbroman.org/broman/broman.html)
 
 
 ## Version 0.94, 2026-06-08

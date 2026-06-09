@@ -1,4 +1,4 @@
-## R/broman <a href="https://github.com/kbroman/broman"><img src="figures/broman_logo.png" align="right" height="138" alt="R/broman logo"/></a>
+## R/broman <a href="https://github.com/kbroman/broman"><img src="https://kbroman.org/broman/broman_logo.png" align="right" height="138" alt="R/broman logo"/></a>
 
 [![R-CMD-check](https://github.com/kbroman/broman/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kbroman/broman/actions/workflows/R-CMD-check.yaml)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/broman)](https://cran.r-project.org/package=broman)
@@ -11,6 +11,48 @@
 
 R/broman is an [R](https://www.r-project.org) package with miscellaneous R functions that are
 useful to me.
+
+---
+
+### Installation
+
+Install the R/broman package from [CRAN](https://cran.r-project.org):
+
+```r
+install.packages("broman")
+```
+
+Alternatively, install it from [R
+universe](https://kbroman.r-universe.dev):
+
+```r
+install.packages("broman", repos=c("https://kbroman.r-universe.dev",
+                                    "https://cloud.r-project.org"))
+```
+
+Or use [remotes](https://remotes.r-lib.org) to install it from its GitHub source:
+
+```r
+install.packages("remotes")
+remotes::install_github("kbroman/broman")
+```
+
+
+
+---
+
+### Vignette
+
+
+A vignette describing the use of the package is available
+[on the web](https://kbroman.org/broman/broman.html).
+Or view it from within R by loading the package and then using the
+`vignette()` function.
+
+```r
+library(broman)
+vignette("broman", package="broman")
+```
 
 ---
 

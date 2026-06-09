@@ -1,0 +1,157 @@
+---
+title: R/broman User Guide
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{R/broman User Guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8](inputenc)
+---
+
+```{r knitr_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=7, fig.height=4.5)
+old_digits <- options("digits")$digits
+options(digits=3)
+```
+
+<link rel=stylesheet type="text/css" href="https://kbroman.org/stylesheets/kbroman_vignette.css"></script>
+
+<a href="https://github.com/kbroman/broman"><img src="https://kbroman.org/broman/broman_logo.png" align="right" height="138" alt="R/broman logo"/></a>
+
+[![R-CMD-check](https://github.com/kbroman/broman/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kbroman/broman/actions/workflows/R-CMD-check.yaml)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/broman)](https://cran.r-project.org/package=broman)
+[![r-universe badge](https://kbroman.r-universe.dev/broman/badges/version)](https://kbroman.r-universe.dev/broman)
+[![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2636796.svg)](https://doi.org/10.5281/zenodo.2636796)
+
+[R/broman](https://github.com/kbroman/broman) is an
+[R](https://www.r-project.org) package with miscellanoues R functions
+that are useful to me. It's gotten rather large, and the functions do
+a lot of different, unrelated things, so my purpose here is to
+organize them and illustrate their use.
+
+
+### Document helpers
+
+- [`add_commas`](https://cran.r-project.org/web/packages/broman/refman/broman.html#add_commas)
+- [`myround`](https://cran.r-project.org/web/packages/broman/refman/broman.html#myround)
+- [`numbers`](https://cran.r-project.org/web/packages/broman/refman/broman.html#numbers)
+- [`spell_out`](https://cran.r-project.org/web/packages/broman/refman/broman.html#spell_out)
+- [`vec2string`](https://cran.r-project.org/web/packages/broman/refman/broman.html#vec2string)
+- [`kbdate`](https://cran.r-project.org/web/packages/broman/refman/broman.html#kbdate`) -
+  seems unnecessary. Was used for date stamps, but it seems to give
+  the same output as `Sys.Date()`.
+
+
+### Statistical tests
+
+- [`chisq`](https://cran.r-project.org/web/packages/broman/refman/broman.html#chisq)
+- [`fisher`](https://cran.r-project.org/web/packages/broman/refman/broman.html#fisher)
+- [`perm.test`](https://cran.r-project.org/web/packages/broman/refman/broman.html#perm.test)
+- [`paired.perm.test`](https://cran.r-project.org/web/packages/broman/refman/broman.html#paired.perm.test)
+
+### Statistical estimation
+
+- [`quantileSE`](https://cran.r-project.org/web/packages/broman/refman/broman.html#quantileSE)
+- [`runningmean`](https://cran.r-project.org/web/packages/broman/refman/broman.html#runningmean)
+- [`runningratio`](https://cran.r-project.org/web/packages/broman/refman/broman.html#runningratio)
+- [`runningratio2`](https://cran.r-project.org/web/packages/broman/refman/broman.html#runningratio2)
+
+### Data diagnostics/cleaning
+
+- [`align_vectors`](https://cran.r-project.org/web/packages/broman/refman/broman.html#align_vectors)
+- [`pick_more_precise`](https://cran.r-project.org/web/packages/broman/refman/broman.html#pick_more_precise)
+- [`get_precision`](https://cran.r-project.org/web/packages/broman/refman/broman.html#get_precision)
+- [`compare_rows`](https://cran.r-project.org/web/packages/broman/refman/broman.html#compare_rows)
+- [`winsorize`](https://cran.r-project.org/web/packages/broman/refman/broman.html#winsorize)
+- [`normalize`](https://cran.r-project.org/web/packages/broman/refman/broman.html#normalize)
+
+
+### System/file helpers
+
+- [`h`](https://cran.r-project.org/web/packages/broman/refman/broman.html#h)
+  - open the help document for a function/object in your web
+  browser. I'm usually using R within emacs, and if I type `help(h)`,
+  the help for the `h` function shows up within emacs. So I use `h(h)`
+  to see it within my web browser.
+- [`make`](https://cran.r-project.org/web/packages/broman/refman/broman.html#make)
+- [`exit`](https://cran.r-project.org/web/packages/broman/refman/broman.html#exit)
+- [`objectsizes`](https://cran.r-project.org/web/packages/broman/refman/broman.html#objectsizes)
+- [`openfile`](https://cran.r-project.org/web/packages/broman/refman/broman.html#openfile)
+
+
+### Programming
+
+- [`qr2`](https://cran.r-project.org/web/packages/broman/refman/broman.html#qr2) -
+  the base function `qr` does a QR decomposition, but the results it
+  produces are not what you might expect. This function gets you the
+  basic Q and R pieces.
+- [`simp`](https://cran.r-project.org/web/packages/broman/refman/broman.html#simp) -
+  Perform numerical integration by Simpson's rule.
+- [`trap`](https://cran.r-project.org/web/packages/broman/refman/broman.html#trap) -
+  Perform numerical integration by the trapezoidal role.
+
+
+### Programming helpers
+
+- [`%nin%`](https://cran.r-project.org/web/packages/broman/refman/broman.html#+25nin+25),
+  [`%win`](https://cran.r-project.org/web/packages/broman/refman/broman.html#+25nin+25), and
+  [`%wnin%`](https://cran.r-project.org/web/packages/broman/refman/broman.html#+25nin+25`) -
+  compare to the recent addition to base R, `%notin%`.
+- [`attrnames`](https://cran.r-project.org/web/packages/broman/refman/broman.html#attrnames)
+- [`cf`](https://cran.r-project.org/web/packages/broman/refman/broman.html#cf)
+- [`convert2hex`](https://cran.r-project.org/web/packages/broman/refman/broman.html#convert2hex)
+- [`dec2hex`](https://cran.r-project.org/web/packages/broman/refman/broman.html#convert2hex)
+- [`fac2num`](https://cran.r-project.org/web/packages/broman/refman/broman.html#fac2num)
+- [`hex2dec`](https://cran.r-project.org/web/packages/broman/refman/broman.html#hex2dec)
+- [`lenuniq`](https://cran.r-project.org/web/packages/broman/refman/broman.html#lenuniq)
+- [`maxabs`](https://cran.r-project.org/web/packages/broman/refman/broman.html#maxabs)
+- [`paste00`](https://cran.r-project.org/web/packages/broman/refman/broman.html#paste00)
+- [`paste.`](https://cran.r-project.org/web/packages/broman/refman/broman.html#paste%2E")
+- [`setRNGparallel`](https://cran.r-project.org/web/packages/broman/refman/broman.html#setRNGparallel)
+- [`unsetRNGparallel`](https://cran.r-project.org/web/packages/broman/refman/broman.html#setRNGparallel)
+- [`switchv`](https://cran.r-project.org/web/packages/broman/refman/broman.html#switchv)
+
+### Data visualization
+
+- [`ciplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#ciplot)
+- [`dotplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#dotplot)
+- [`grayplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#grayplot)
+- [`grayplot_na`](https://cran.r-project.org/web/packages/broman/refman/broman.html#grayplot_na)
+- [`manyboxplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#manyboxplot)
+- [`mypairs`](https://cran.r-project.org/web/packages/broman/refman/broman.html#mypairs)
+- [`qqline2`](https://cran.r-project.org/web/packages/broman/refman/broman.html#qqline2)
+- [`timeplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#timeplot)
+- [`excel_fig`](https://cran.r-project.org/web/packages/broman/refman/broman.html#excel_fig)
+- [`venn`](https://cran.r-project.org/web/packages/broman/refman/broman.html#venn)
+- [`histlines`](https://cran.r-project.org/web/packages/broman/refman/broman.html#histlines)
+
+### A particular data visualation: ternery diagram
+
+- [`triplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#triplot)
+- [`tripoints`](https://cran.r-project.org/web/packages/broman/refman/broman.html#tripoints)
+- [`trilines`](https://cran.r-project.org/web/packages/broman/refman/broman.html#trilines)
+- [`triarrow`](https://cran.r-project.org/web/packages/broman/refman/broman.html#triarrow)
+- [`tritext`](https://cran.r-project.org/web/packages/broman/refman/broman.html#tritext)
+- [`trigrid`](https://cran.r-project.org/web/packages/broman/refman/broman.html#trigrid)
+
+
+### Data visualization helpers
+
+- [`arrowlocator`](https://cran.r-project.org/web/packages/broman/refman/broman.html#arrowlocator)
+- [`colwalpha`](https://cran.r-project.org/web/packages/broman/refman/broman.html#colwalpha)
+- [`brocolors`](https://cran.r-project.org/web/packages/broman/refman/broman.html#brocolors)
+- [`crayons`](https://cran.r-project.org/web/packages/broman/refman/broman.html#crayons)
+- [`plot_crayons`](https://cran.r-project.org/web/packages/broman/refman/broman.html#plot_crayons)
+- [`jiggle`](https://cran.r-project.org/web/packages/broman/refman/broman.html#jiggle)
+- [`revgray`](https://cran.r-project.org/web/packages/broman/refman/broman.html#revgray)
+- [`revrainbow`](https://cran.r-project.org/web/packages/broman/refman/broman.html#revrainbow)
+- [`theme_karl`](https://cran.r-project.org/web/packages/broman/refman/broman.html#theme_karl)
+- [`time_axis`](https://cran.r-project.org/web/packages/broman/refman/broman.html#time_axis)
+- [`twocolorpal`](https://cran.r-project.org/web/packages/broman/refman/broman.html#twocolorpal)
+- [`xlimlabel`](https://cran.r-project.org/web/packages/broman/refman/broman.html#xlimlabel)
+- [`strwidth2lines`](https://cran.r-project.org/web/packages/broman/refman/broman.html#strwidth2lines)
+- [`strwidth2xlim`](https://cran.r-project.org/web/packages/broman/refman/broman.html#strwidth2xlim)
+
+
+### Simulation
+
+- [`rmvn`](https://cran.r-project.org/web/packages/broman/refman/broman.html#rmvn)
