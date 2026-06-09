@@ -1,10 +1,6 @@
 ---
 title: R/broman User Guide
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{R/broman User Guide}
-  %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8](inputenc)
+output: html_document
 ---
 
 ```{r knitr_options, include=FALSE}

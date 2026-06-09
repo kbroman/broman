@@ -46,13 +46,6 @@ remotes::install_github("kbroman/broman")
 
 A vignette describing the use of the package is available
 [on the web](https://kbroman.org/broman/broman.html).
-Or view it from within R by loading the package and then using the
-`vignette()` function.
-
-```r
-library(broman)
-vignette("broman", package="broman")
-```
 
 ---
 
