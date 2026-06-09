@@ -131,7 +131,8 @@ There are a bunch of functions to help while writing data analysis reports.
 - [`simp`](https://cran.r-project.org/web/packages/broman/refman/broman.html#simp) -
   Perform numerical integration by Simpson's rule.
 - [`trap`](https://cran.r-project.org/web/packages/broman/refman/broman.html#trap) -
-  Perform numerical integration by the trapezoidal role.
+  Perform numerical integration by the trapezoidal role. `trap()` and `simp()` are
+  much like `integrate()` but coded directly in R.
 
 
 ### Programming helpers
