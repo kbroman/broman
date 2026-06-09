@@ -1,12 +1,16 @@
 ---
 title: R/broman User Guide
-output: html_document
+output:
+    html_document:
+        toc: true
+        toc_float: true
 ---
 
 ```{r knitr_options, include=FALSE}
 knitr::opts_chunk$set(fig.width=7, fig.height=4.5)
 old_digits <- options("digits")$digits
 options(digits=3)
+library(broman)
 ```
 
 <link rel=stylesheet type="text/css" href="https://kbroman.org/stylesheets/kbroman_vignette.css"></script>
@@ -27,29 +31,71 @@ organize them and illustrate their use.
 
 ### Document helpers
 
-- [`add_commas`](https://cran.r-project.org/web/packages/broman/refman/broman.html#add_commas)
-- [`myround`](https://cran.r-project.org/web/packages/broman/refman/broman.html#myround)
-- [`numbers`](https://cran.r-project.org/web/packages/broman/refman/broman.html#numbers)
-- [`spell_out`](https://cran.r-project.org/web/packages/broman/refman/broman.html#spell_out)
-- [`vec2string`](https://cran.r-project.org/web/packages/broman/refman/broman.html#vec2string)
+There are a bunch of functions to help while writing data analysis reports.
+
+- [`add_commas`](https://cran.r-project.org/web/packages/broman/refman/broman.html#add_commas) -
+  This adds commas to large numbers so they look more natural, so if
+  `x` is 150000, `add_commas(x)` becomes `r add_commas(150000)`.
+
+
+- [`myround`](https://cran.r-project.org/web/packages/broman/refman/broman.html#myround) -
+  I'm very particular about sig figs, so I may want `myround(3.10, 2)`
+  to appear as `r myround(3.10, 2)` and not `r round(3.10, 2)`.
+
+- [`spell_out`](https://cran.r-project.org/web/packages/broman/refman/broman.html#spell_out) -
+  Spell out an integer as a word; values <10 become words and values
+  >=10 remain in numerals. So if `x` is 5, `spell_out(x)` becomes
+  "five" while if it were 10 it would remain "10".
+
+- [`numbers`](https://cran.r-project.org/web/packages/broman/refman/broman.html#numbers) -
+  This is just a vector of the first twenty positive integers as
+  words, for a similar use as `spell_out()`.
+
+- [`vec2string`](https://cran.r-project.org/web/packages/broman/refman/broman.html#vec2string) -
+  Take a vector of numbers and turn it into text, like
+  `add_commas[problem_ids]` becomes `123, 125, 128, and 129`.
+
 - [`kbdate`](https://cran.r-project.org/web/packages/broman/refman/broman.html#kbdate`) -
-  seems unnecessary. Was used for date stamps, but it seems to give
-  the same output as `Sys.Date()`.
+  Shows today's date in a particular format. It seems unnecessary. I
+  had used it for date stamps, but it seems to give the same output as `Sys.Date()`.
 
 
-### Statistical tests
+### Statistics stuff
 
-- [`chisq`](https://cran.r-project.org/web/packages/broman/refman/broman.html#chisq)
-- [`fisher`](https://cran.r-project.org/web/packages/broman/refman/broman.html#fisher)
-- [`perm.test`](https://cran.r-project.org/web/packages/broman/refman/broman.html#perm.test)
+- [`chisq`](https://cran.r-project.org/web/packages/broman/refman/broman.html#chisq) -
+  This is like `chisq.test()` but using Monte Carlo to get an
+  approximate p-value rather than relying on asymptotics.
+
+- [`fisher`](https://cran.r-project.org/web/packages/broman/refman/broman.html#fisher) -
+  This is like `fisher.test()` in doing Fisher's exact test but
+  getting the p-value by Monte Carlo rather than doing an exhaustive calculation.
+
+- [`perm.test`](https://cran.r-project.org/web/packages/broman/refman/broman.html#perm.test) -
+  This does a two-sample permutation test using the t statistic (via
+  `t.test()`), using Monte Carlo to get the p-value rather than
+  referring to the t distribution.
+
 - [`paired.perm.test`](https://cran.r-project.org/web/packages/broman/refman/broman.html#paired.perm.test)
+  This is similar to `perm.test` but for paired data.
 
-### Statistical estimation
+- [`quantileSE`](https://cran.r-project.org/web/packages/broman/refman/broman.html#quantileSE) -
+  This is like the function `quantile()` but it also gives an
+  estimated standard error.
 
-- [`quantileSE`](https://cran.r-project.org/web/packages/broman/refman/broman.html#quantileSE)
-- [`runningmean`](https://cran.r-project.org/web/packages/broman/refman/broman.html#runningmean)
-- [`runningratio`](https://cran.r-project.org/web/packages/broman/refman/broman.html#runningratio)
-- [`runningratio2`](https://cran.r-project.org/web/packages/broman/refman/broman.html#runningratio2)
+- [`runningmean`](https://cran.r-project.org/web/packages/broman/refman/broman.html#runningmean) -
+  For a set of values at a given set of positions, this calculates a
+  running mean, sum, or median, with a fixed window width.
+
+- [`runningratio`](https://cran.r-project.org/web/packages/broman/refman/broman.html#runningratio) -
+  Like `runningmean` but with a pair of values at each position, and
+  then we calculate the ratio of the sums within fixed windows.
+
+- [`runningratio2`](https://cran.r-project.org/web/packages/broman/refman/broman.html#runningratio2) -
+  Like `runningratio2` but instead of a fixed window, it adapts the
+  size of the window to achieve some minimum number of points before
+  taking the ratio.
+- [`rmvn`](https://cran.r-project.org/web/packages/broman/refman/broman.html#rmvn) -
+  Simulate data from a multivariate normal distribution.
 
 ### Data diagnostics/cleaning
 
@@ -148,9 +194,6 @@ organize them and illustrate their use.
 - [`strwidth2xlim`](https://cran.r-project.org/web/packages/broman/refman/broman.html#strwidth2xlim)
 
 
-### Simulation
-
-- [`rmvn`](https://cran.r-project.org/web/packages/broman/refman/broman.html#rmvn)
 
 ---
 
