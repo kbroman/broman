@@ -53,11 +53,13 @@ There are a bunch of functions to help while writing data analysis reports.
 
 - [`vec2string`](https://cran.r-project.org/web/packages/broman/refman/broman.html#vec2string) -
   Take a vector of numbers and turn it into text, like
-  `add_commas[problem_ids]` becomes `123, 125, 128, and 129`.
+  `vec2string(problem_ids)` might become `123, 125, 128, and 129`.
 
 - [`kbdate`](https://cran.r-project.org/web/packages/broman/refman/broman.html#kbdate`) -
   Shows today's date in a particular format. It seems unnecessary. I
-  had used it for date stamps, but it seems to give the same output as `Sys.Date()`.
+  had used it for date stamps, but it seems to give the same output as
+  `Sys.Date()`. I think maybe I knew about `Sys.time()` but not about
+  `Sys.Date()` so I made my own.
 
 
 ### Statistics stuff

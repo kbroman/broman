@@ -1530,12 +1530,14 @@ remain “10”.</p></li>
 for a similar use as <code>spell_out()</code>.</p></li>
 <li><p><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#vec2string"><code>vec2string</code></a>
 - Take a vector of numbers and turn it into text, like
-<code>add_commas[problem_ids]</code> becomes
+<code>vec2string(problem_ids)</code> might become
 <code>123, 125, 128, and 129</code>.</p></li>
 <li><p><a href="https://cran.r-project.org/web/packages/broman/refman/broman.html#kbdate%60"><code>kbdate</code></a>
 - Shows today’s date in a particular format. It seems unnecessary. I had
 used it for date stamps, but it seems to give the same output as
-<code>Sys.Date()</code>.</p></li>
+<code>Sys.Date()</code>. I think maybe I knew about
+<code>Sys.time()</code> but not about <code>Sys.Date()</code> so I made
+my own.</p></li>
 </ul>
 </div>
 <div id="statistics-stuff" class="section level3">
