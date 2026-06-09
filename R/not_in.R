@@ -1,6 +1,6 @@
 #' Value matching
 #'
-#' `%in%` returns logical vector indicating values that do not have a match.
+#' `%nin%` returns logical vector indicating values that do not have a match.
 #' `%win%` returns a vector of the values that have a match.
 #' `%wnin%` returns a vector of the values that do not have a match.
 #'
