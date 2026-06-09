@@ -67,8 +67,8 @@ organize them and illustrate their use.
 
 ### System/file helpers
 
-- [`h`](https://cran.r-project.org/web/packages/broman/refman/broman.html#h)
-  - open the help document for a function/object in your web
+- [`h`](https://cran.r-project.org/web/packages/broman/refman/broman.html#h) -
+  open the help document for a function/object in your web
   browser. I'm usually using R within emacs, and if I type `help(h)`,
   the help for the `h` function shows up within emacs. So I use `h(h)`
   to see it within my web browser.
