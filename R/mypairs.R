@@ -6,11 +6,12 @@
 #' My scatterplot matrix
 #'
 #' A matrix of scatterplots is produced; it's similar to
-#'   [graphics::pairs()], but with only the upper triangle.
+#'   [graphics::pairs()], but with only the upper triangle,
+#'   and call [grayplot()].
 #'
 #' @param x A numeric matrix or data frame.
 #'
-#' @param ... Passed to the `plot()` function.
+#' @param ... Passed to the [grayplot()] function.
 #'
 #' @details
 #' This is like the function [graphics::pairs()], but
@@ -23,9 +24,10 @@
 #' @examples
 #' v <- rbind(c(1,0.5,0.2),c(0.5,1,0.9),c(0.2,0.9,1))
 #' x <- rmvn(500, rep(5,3), v)
+#' colnames(x) <- c("V1", "V2", "V3")
 #' mypairs(x, col=sample(c("blue","red"), 500, repl=TRUE))
 #'
-#' @seealso [graphics::pairs()]
+#' @seealso [graphics::pairs()], [grayplot()]
 #'
 #' @keywords
 #' hplot
@@ -48,7 +50,7 @@ mypairs <-
 
     for(i in 1:(n-1)) {
         for(j in (i+1):n) {
-            plot(x[,j], x[,i], xlab=nam[j], ylab=nam[i], ...)
+            grayplot(x[,j], x[,i], xlab=nam[j], ylab=nam[i], ...)
         }
     }
 }
