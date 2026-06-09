@@ -10,10 +10,11 @@
 #' @param hi  Vector of upper values for the intervals
 #' @param SEmult SE multiplier to create intervals
 #' @param labels Labels for the groups (vector of character strings)
-#'
 #' @param rotate If TRUE, have group as y-axis; default (FALSE) has
 #' group on x-axis.
-#'
+#' @param add If TRUE, add the CIs to a previous plot with the same axes
+#' @param offset Amount to offset the positions of the confidence intervals
+#' (particularly for the case `add=TRUE`)
 #' @param ... Optional graphics arguments
 #'
 #' @details Calls [grayplot()] with special choices of
@@ -48,13 +49,21 @@
 #' hi <- me + 2*se
 #' ciplot(me, lo=lo, hi=hi)
 #'
+#' # show two sets of CIs side by side
+#' colors <- crayons(c("Royal Purple", "Navy Blue"))
+#' ciplot(me, se, SEmult=1, offset=-0.1,
+#'        ci_col=colors[1], bg=colors[1],
+#'        ylim=range(c(lo,hi)))
+#' ciplot(me, lo=lo, hi=hi, add=TRUE, offset=0.1,
+#'         ci_col=colors[2], bg=colors[2])
+#'
 #' @seealso [grayplot()], [dotplot()]
 #'
 #' @keywords
 #' graphics
 ciplot <-
     function(est, se=NULL, lo=NULL, hi=NULL, SEmult=2,
-             labels=NULL, rotate=FALSE, ...)
+             labels=NULL, rotate=FALSE, add=FALSE, offset=0, ...)
 {
     if(is.null(se) && is.null(lo) && is.null(hi)) {
         se <- rep(0, length(est))
@@ -88,12 +97,14 @@ ciplot <-
                  yat=NULL, ylim=NULL, yaxs="r", ylab=NULL,
                  las=1, pch=21, bg="slateblue", ci_col="black",
                  ci_lwd=2, ci_endseg=0.05, labels=NULL, main="",
-                 mgp.x=NULL, mgp.y=NULL, mgp=NULL, ...)
+                 mgp.x=NULL, mgp.y=NULL, mgp=NULL,
+                 add=add, offset=offset, ...)
 
-        {
-            n_group <- length(est)
-            group <- seq_len(n_group)
+    {
+        n_group <- length(est)
+        group <- seq_len(n_group)
 
+        if(!add) {
             if(!rotate) {
                 xlim <- c(0.5, n_group+0.5)
                 vlines <- 1:n_group
@@ -113,13 +124,6 @@ ciplot <-
                          yat=yat, ylim=ylim, yaxs=yaxs, ylab=ylab, las=las, type="n",
                          main=main, mgp=mgp, mgp.x=mgp.x, mgp.y=mgp.y, ...)
                 axis(side=1, at=vlines, labels, las=las, tick=FALSE, mgp=c(0,0.2,0))
-
-                segments(group, lo, group, hi, col=ci_col, lwd=ci_lwd)
-                segments(group-ci_endseg, lo, group+ci_endseg, lo, col=ci_col, lwd=ci_lwd)
-                segments(group-ci_endseg, hi, group+ci_endseg, hi, col=ci_col, lwd=ci_lwd)
-
-                points(group, est, pch=pch, bg=bg, ...)
-
             }
             else {
                 ylim <- c(0.5, n_group+0.5)
@@ -140,15 +144,28 @@ ciplot <-
                          mgp=mgp, mgp.x=mgp.x, mgp.y=mgp.y, ...)
                 axis(side=2, at=hlines, labels, las=las, tick=FALSE, mgp=c(0,0.3,0))
 
-                segments(lo, group, hi, group, col=ci_col, lwd=ci_lwd)
-                segments(lo, group-ci_endseg, lo, group+ci_endseg, col=ci_col, lwd=ci_lwd)
-                segments(hi, group-ci_endseg, hi, group+ci_endseg, col=ci_col, lwd=ci_lwd)
-
-                points(est, group, pch=pch, bg=bg, ...)
             }
 
+        } # end if(!add)
+
+        if(!rotate) {
+            segments(group+offset, lo, group+offset, hi, col=ci_col, lwd=ci_lwd)
+            segments(group+offset-ci_endseg, lo, group+offset+ci_endseg, lo, col=ci_col, lwd=ci_lwd)
+            segments(group+offset-ci_endseg, hi, group+offset+ci_endseg, hi, col=ci_col, lwd=ci_lwd)
+
+            points(group+offset, est, pch=pch, bg=bg, ...)
+        } else {
+            segments(lo, group+offset, hi, group+offset, col=ci_col, lwd=ci_lwd)
+            segments(lo, group+offset-ci_endseg, lo, group+offset+ci_endseg, col=ci_col, lwd=ci_lwd)
+            segments(hi, group+offset-ci_endseg, hi, group+offset+ci_endseg, col=ci_col, lwd=ci_lwd)
+
+            points(est, group+offset, pch=pch, bg=bg, ...)
         }
 
-    hide_ciplot(est=est, lo=lo, hi=hi, rotate=rotate, labels=labels, ...)
+
+    }
+
+    hide_ciplot(est=est, lo=lo, hi=hi, rotate=rotate, labels=labels,
+                add=add, offset=offset, ...)
     invisible()
 }

@@ -12,6 +12,8 @@ ciplot(
   SEmult = 2,
   labels = NULL,
   rotate = FALSE,
+  add = FALSE,
+  offset = 0,
   ...
 )
 }
@@ -30,6 +32,11 @@ ciplot(
 
 \item{rotate}{If TRUE, have group as y-axis; default (FALSE) has
 group on x-axis.}
+
+\item{add}{If TRUE, add the CIs to a previous plot with the same axes}
+
+\item{offset}{Amount to offset the positions of the confidence intervals
+(particularly for the case \code{add=TRUE})}
 
 \item{...}{Optional graphics arguments}
 }
@@ -65,6 +72,14 @@ ciplot(me, se, rotate=TRUE)
 lo <- me - 2*se
 hi <- me + 2*se
 ciplot(me, lo=lo, hi=hi)
+
+# show two sets of CIs side by side
+colors <- crayons(c("Royal Purple", "Navy Blue"))
+ciplot(me, se, SEmult=1, offset=-0.1,
+       ci_col=colors[1], bg=colors[1],
+       ylim=range(c(lo,hi)))
+ciplot(me, lo=lo, hi=hi, add=TRUE, offset=0.1,
+        ci_col=colors[2], bg=colors[2])
 
 }
 \seealso{
