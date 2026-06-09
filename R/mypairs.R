@@ -6,8 +6,7 @@
 #' My scatterplot matrix
 #'
 #' A matrix of scatterplots is produced; it's similar to
-#'   [graphics::pairs()], but with only the upper triangle is
-#'   made.
+#'   [graphics::pairs()], but with only the upper triangle.
 #'
 #' @param x A numeric matrix or data frame.
 #'

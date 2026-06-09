@@ -16,8 +16,7 @@ None.
 }
 \description{
 A matrix of scatterplots is produced; it's similar to
-\code{\link[graphics:pairs]{graphics::pairs()}}, but with only the upper triangle is
-made.
+\code{\link[graphics:pairs]{graphics::pairs()}}, but with only the upper triangle.
 }
 \details{
 This is like the function \code{\link[graphics:pairs]{graphics::pairs()}}, but
