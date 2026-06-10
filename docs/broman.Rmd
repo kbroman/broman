@@ -105,11 +105,30 @@ There are a bunch of functions to help while writing data analysis reports.
 
 ### Data diagnostics/cleaning
 
-- [`align_vectors`](https://cran.r-project.org/web/packages/broman/refman/broman.html#align_vectors)
-- [`pick_more_precise`](https://cran.r-project.org/web/packages/broman/refman/broman.html#pick_more_precise)
-- [`get_precision`](https://cran.r-project.org/web/packages/broman/refman/broman.html#get_precision)
-- [`compare_rows`](https://cran.r-project.org/web/packages/broman/refman/broman.html#compare_rows)
+- [`align_vectors`](https://cran.r-project.org/web/packages/broman/refman/broman.html#align_vectors) -
+  align two vectors by their names, either expanding them with NAs (if
+  there are names that are unique to one or the other) or reducing
+  the vectors to the names that appear in both.
+
+- [`pick_more_precise`](https://cran.r-project.org/web/packages/broman/refman/broman.html#pick_more_precise) -
+  for a quirky situation where two columns of numbers were subjected
+  to weird rounding patterns and I needed to merge them. I hope I don't
+  need this again.
+
+- [`get_precision`](https://cran.r-project.org/web/packages/broman/refman/broman.html#get_precision) -
+  used by `pick_more_precise()`
+
+- [`compare_rows`](https://cran.r-project.org/web/packages/broman/refman/broman.html#compare_rows) -
+  for all pairs of rows in a matrix, calculate either the proportion of
+  differences or the RMS difference, creating a distance matrix.
+
+- [`cf`](https://cran.r-project.org/web/packages/broman/refman/broman.html#cf) -
+  useful for verifying that data columns match when they're supposed
+  to. It checks whether they are the same, including the pattern of
+  missing data. I use this a lot when doing data diagnostics/cleaning.
+
 - [`winsorize`](https://cran.r-project.org/web/packages/broman/refman/broman.html#winsorize)
+
 - [`normalize`](https://cran.r-project.org/web/packages/broman/refman/broman.html#normalize)
 
 
@@ -146,7 +165,6 @@ There are a bunch of functions to help while writing data analysis reports.
   [`%wnin%`](https://cran.r-project.org/web/packages/broman/refman/broman.html#+25nin+25`) -
   compare to the recent addition to base R, `%notin%`.
 - [`attrnames`](https://cran.r-project.org/web/packages/broman/refman/broman.html#attrnames)
-- [`cf`](https://cran.r-project.org/web/packages/broman/refman/broman.html#cf)
 - [`convert2hex`](https://cran.r-project.org/web/packages/broman/refman/broman.html#convert2hex)
 - [`dec2hex`](https://cran.r-project.org/web/packages/broman/refman/broman.html#convert2hex)
 - [`fac2num`](https://cran.r-project.org/web/packages/broman/refman/broman.html#fac2num)
