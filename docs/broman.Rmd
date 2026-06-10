@@ -139,11 +139,20 @@ There are a bunch of functions to help while writing data analysis reports.
   browser. I'm usually using R within emacs, and if I type `help(h)`,
   the help for the `h` function shows up within emacs. So I use `h(h)`
   to see it within my web browser.
-- [`make`](https://cran.r-project.org/web/packages/broman/refman/broman.html#make)
-- [`exit`](https://cran.r-project.org/web/packages/broman/refman/broman.html#exit)
-- [`objectsizes`](https://cran.r-project.org/web/packages/broman/refman/broman.html#objectsizes)
-- [`openfile`](https://cran.r-project.org/web/packages/broman/refman/broman.html#openfile)
 
+- [`make`](https://cran.r-project.org/web/packages/broman/refman/broman.html#make) -
+  this runs [GNU make](https://www.gnu.org/software/make) within an R
+  package directory, in a similar way to the various tools in
+  [devtools](https://devtools.r-lib.org) like `test()` and `document()`.
+
+- [`exit`](https://cran.r-project.org/web/packages/broman/refman/broman.html#exit) -
+  exit from R without saving `.RData`
+
+- [`objectsizes`](https://cran.r-project.org/web/packages/broman/refman/broman.html#objectsizes) -
+  get the sizes of all objects in memory, in MB
+
+- [`openfile`](https://cran.r-project.org/web/packages/broman/refman/broman.html#openfile) -
+  open a file using command line `open` (Mac/Windows) or `start` (linux).
 
 ### Programming
 
@@ -151,8 +160,10 @@ There are a bunch of functions to help while writing data analysis reports.
   the base function `qr` does a QR decomposition, but the results it
   produces are not what you might expect. This function gets you the
   basic Q and R pieces.
+
 - [`simp`](https://cran.r-project.org/web/packages/broman/refman/broman.html#simp) -
   Perform numerical integration by Simpson's rule.
+
 - [`trap`](https://cran.r-project.org/web/packages/broman/refman/broman.html#trap) -
   Perform numerical integration by the trapezoidal role. `trap()` and `simp()` are
   much like `integrate()` but coded directly in R.
@@ -164,18 +175,39 @@ There are a bunch of functions to help while writing data analysis reports.
   [`%win`](https://cran.r-project.org/web/packages/broman/refman/broman.html#+25nin+25), and
   [`%wnin%`](https://cran.r-project.org/web/packages/broman/refman/broman.html#+25nin+25`) -
   compare to the recent addition to base R, `%notin%`.
-- [`attrnames`](https://cran.r-project.org/web/packages/broman/refman/broman.html#attrnames)
+
+- [`attrnames`](https://cran.r-project.org/web/packages/broman/refman/broman.html#attrnames) -
+  get the names of all attributes of an object.
+
 - [`convert2hex`](https://cran.r-project.org/web/packages/broman/refman/broman.html#convert2hex)
-- [`dec2hex`](https://cran.r-project.org/web/packages/broman/refman/broman.html#convert2hex)
-- [`fac2num`](https://cran.r-project.org/web/packages/broman/refman/broman.html#fac2num)
-- [`hex2dec`](https://cran.r-project.org/web/packages/broman/refman/broman.html#hex2dec)
-- [`lenuniq`](https://cran.r-project.org/web/packages/broman/refman/broman.html#lenuniq)
-- [`maxabs`](https://cran.r-project.org/web/packages/broman/refman/broman.html#maxabs)
-- [`paste00`](https://cran.r-project.org/web/packages/broman/refman/broman.html#paste00)
-- [`paste.`](https://cran.r-project.org/web/packages/broman/refman/broman.html#paste%2E")
-- [`setRNGparallel`](https://cran.r-project.org/web/packages/broman/refman/broman.html#setRNGparallel)
-- [`unsetRNGparallel`](https://cran.r-project.org/web/packages/broman/refman/broman.html#setRNGparallel)
-- [`switchv`](https://cran.r-project.org/web/packages/broman/refman/broman.html#switchv)
+  [`dec2hex`](https://cran.r-project.org/web/packages/broman/refman/broman.html#convert2hex) -
+  convert a base 10 number to hexidecimal (mostly for working with RGB color codes).
+
+- [`hex2dec`](https://cran.r-project.org/web/packages/broman/refman/broman.html#hex2dec) -
+  convert a hexidecimal number to base 10.
+
+- [`fac2num`](https://cran.r-project.org/web/packages/broman/refman/broman.html#fac2num) -
+  convert a factor with numeric levels to numeric
+
+- [`lenuniq`](https://cran.r-project.org/web/packages/broman/refman/broman.html#lenuniq) -
+  the number of unique values in a vector, by just calling `length(unique(x))`
+
+- [`maxabs`](https://cran.r-project.org/web/packages/broman/refman/broman.html#maxabs) -
+  maximum of absolute values of a vector, removing NAs
+
+- [`paste00`](https://cran.r-project.org/web/packages/broman/refman/broman.html#paste00) -
+  like `paste0` but also using `collapse=""`
+
+- [`paste.`](https://cran.r-project.org/web/packages/broman/refman/broman.html#paste%2E") -
+  like `paste0` but with `sep="."`
+
+- [`setRNGparallel`](https://cran.r-project.org/web/packages/broman/refman/broman.html#setRNGparallel) -
+  set up random number generation for use in parallel calculations,
+  and then [`unsetRNGparallel`](https://cran.r-project.org/web/packages/broman/refman/broman.html#setRNGparallel)
+  to go back to the standard RNG method.
+
+- [`switchv`](https://cran.r-project.org/web/packages/broman/refman/broman.html#switchv) -
+  a vectorized version of the base function `switch`.
 
 ### Data visualization
 

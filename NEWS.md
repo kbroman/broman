@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.95-3, 2026-06-09
+## Version 0.95-4, 2026-06-10
 
 - Added arguments `add` and `offset` to `ciplot()` so that multiple
   sets of confidence intervals may be compared. (Issue #19)
