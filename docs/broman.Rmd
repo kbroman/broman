@@ -23,7 +23,7 @@ library(broman)
 [![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2636796.svg)](https://doi.org/10.5281/zenodo.2636796)
 
 [R/broman](https://github.com/kbroman/broman) is an
-[R](https://www.r-project.org) package with miscellanoues R functions
+[R](https://www.r-project.org) package with miscellaneous R functions
 that are useful to me. It includes many functions related to graphics (mostly
 for base graphics), permutation tests, running mean/median/sum/ratio, and
 a variety of utilities for programming, for data diagnostics/cleaning,
@@ -127,9 +127,13 @@ There are a bunch of functions to help while writing data analysis reports.
   to. It checks whether they are the same, including the pattern of
   missing data. I use this a lot when doing data diagnostics/cleaning.
 
-- [`winsorize`](https://cran.r-project.org/web/packages/broman/refman/broman.html#winsorize)
+- [`winsorize`](https://cran.r-project.org/web/packages/broman/refman/broman.html#winsorize) -
+  a way to deal with outliers in a numeric vector: move some proportion of the most extreme
+  values in to the next-most-extreme values.
 
-- [`normalize`](https://cran.r-project.org/web/packages/broman/refman/broman.html#normalize)
+- [`normalize`](https://cran.r-project.org/web/packages/broman/refman/broman.html#normalize) -
+  quantile-normalize a set of columns of a matrix (or just two
+  vectors), to force them to have the same marginal distribution
 
 
 ### System/file helpers
@@ -181,10 +185,10 @@ There are a bunch of functions to help while writing data analysis reports.
 
 - [`convert2hex`](https://cran.r-project.org/web/packages/broman/refman/broman.html#convert2hex)
   [`dec2hex`](https://cran.r-project.org/web/packages/broman/refman/broman.html#convert2hex) -
-  convert a base 10 number to hexidecimal (mostly for working with RGB color codes).
+  convert a base 10 number to hexadecimal (mostly for working with RGB color codes).
 
 - [`hex2dec`](https://cran.r-project.org/web/packages/broman/refman/broman.html#hex2dec) -
-  convert a hexidecimal number to base 10.
+  convert a hexadecimal number to base 10.
 
 - [`fac2num`](https://cran.r-project.org/web/packages/broman/refman/broman.html#fac2num) -
   convert a factor with numeric levels to numeric
@@ -254,7 +258,7 @@ There are a bunch of functions to help while writing data analysis reports.
   make venn diagrams (as circles or squares) where the sizes are "to scale".
 
 - [`histlines`](https://cran.r-project.org/web/packages/broman/refman/broman.html#histlines) -
-  this is a tool for using `lines()` for making a histograph, so that
+  this is a tool for using `lines()` for making a histogram, so that
   you can show multiple histograms on top of each other.
 
 ### A favored data visualization: ternary plots
@@ -267,7 +271,7 @@ genotype frequencies. So I have a bunch of base-graphics-based tools
 for making these plots.
 
 - [`triplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#triplot) -
-  creates the basic plot, with no contents but labelling the three verticies.
+  creates the basic plot, with no contents but labelling the three vertices.
 
 - [`tripoints`](https://cran.r-project.org/web/packages/broman/refman/broman.html#tripoints) -
   add a scatter of points on a ternary plot.
@@ -343,7 +347,7 @@ tripoints(t(x), pch=21, bg=crayons("Purple Mountain's Majesty"))
   background with white gridlines, but with a box around the plot and without the tick marks.
 
 - [`time_axis`](https://cran.r-project.org/web/packages/broman/refman/broman.html#time_axis) -
-  set up a time-based axis; used by `timeplote()`
+  set up a time-based axis; used by `timeplot()`
 
 - [`xlimlabel`](https://cran.r-project.org/web/packages/broman/refman/broman.html#xlimlabel) -
   figure out what `xlim` should be for a plot, to make sure that a set
