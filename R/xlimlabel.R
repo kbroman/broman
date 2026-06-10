@@ -17,7 +17,7 @@
 #' @param offset  offset of the label from the coordinate in fractions of
 #'     a character width
 #'
-#' @param ... Additional par arguments
+#' @param cex Character expansion, passed to [graphics::strwidth()]
 #'
 #' @details
 #' See [graphics::text()] for details on `pos` and `offset`.
@@ -45,10 +45,8 @@
 #' plot(x, 1:length(x), xlim=xlims, ylab="Index")
 #' text(x, 1:length(x), xlabs, pos=4, cex=0.7)
 #'
-#' @seealso [graphics::text()]
-xlimlabel <- function(x,xlabels, pos=4, offset=0.5,...){
-    dots <- list(...)
-    cex <- if(!is.na(match("cex",names(dots)))) dots$cex else 1
+#' @seealso [graphics::text()], [strwidth2xlim()], [strwidth2lines()]
+xlimlabel <- function(x,xlabels, pos=4, offset=0.5,cex=1){
     xwid <- (strwidth(xlabels,units="inches",cex=cex)+
              offset*par("cin")[1])/par("pin")[1]
     xmax <- max(x,na.rm=TRUE)

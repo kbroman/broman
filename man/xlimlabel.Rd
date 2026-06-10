@@ -4,7 +4,7 @@
 \alias{xlimlabel}
 \title{Calulate horizontal limit in user coordinates for adding labels}
 \usage{
-xlimlabel(x, xlabels, pos = 4, offset = 0.5, ...)
+xlimlabel(x, xlabels, pos = 4, offset = 0.5, cex = 1)
 }
 \arguments{
 \item{x}{numeric vector of horizontal coordinates}
@@ -18,7 +18,7 @@ the left of, above, and to the right of the coordinates}
 \item{offset}{offset of the label from the coordinate in fractions of
 a character width}
 
-\item{...}{Additional par arguments}
+\item{cex}{Character expansion, passed to \code{\link[graphics:strwidth]{graphics::strwidth()}}}
 }
 \value{
 Minimum and maximum x-axis limits for adding horizontal text
@@ -45,7 +45,7 @@ text(x, 1:length(x), xlabs, pos=4, cex=0.7)
 
 }
 \seealso{
-\code{\link[graphics:text]{graphics::text()}}
+\code{\link[graphics:text]{graphics::text()}}, \code{\link[=strwidth2xlim]{strwidth2xlim()}}, \code{\link[=strwidth2lines]{strwidth2lines()}}
 }
 \author{
 Aimee Teo Broman
