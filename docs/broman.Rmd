@@ -323,8 +323,8 @@ tripoints(t(x), pch=21, bg=crayons("Purple Mountain's Majesty"))
   plot a set of colors from the `crayons` palette
 
 - [`jiggle`](https://cran.r-project.org/web/packages/broman/refman/broman.html#jiggle) -
-  jiggle points vertically. Similar to `jitter()` with
-  `method="fixed"` it gives results similar to the
+  jiggle points vertically. Similar to `jitter()` but with
+  `method="fixed"`, which gives results similar to the
   [beeswarm](https://github.com/aroneklund/beeswarm) package, for
   closely packed non-overlapping points. Used in my `dotplot()`.
 
