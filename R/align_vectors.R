@@ -8,6 +8,12 @@
 #'
 #' @return A list with two components, `x` and `y`
 #'
+#' @examples
+#' x <- c(a=1, b=2, c=3, d=4)
+#' y <- c(b=1, c=2, e=3, a=4)
+#' align_vectors(x,y)
+#' align_vectors(x,y,expand=FALSE)
+#'
 #' @importFrom stats setNames
 #' @export
 align_vectors <-
