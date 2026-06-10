@@ -30,7 +30,7 @@ objectsizes <-
     function(obj=NULL, sortbysize=TRUE)
 {
     if(is.null(obj)) obj <- objects(pos=1)
-    result <- data.frame(Mb=rep(0, length(obj)))
+    result <- data.frame(MB=rep(0, length(obj)))
     rownames(result) <- obj
     for(i in seq(along=obj))
         result[i,1] <- utils::object.size(get(obj[i], pos=1))/1024^2
