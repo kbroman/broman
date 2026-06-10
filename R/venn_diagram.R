@@ -35,7 +35,7 @@
 venn <-
     function(setA=50, setB=50, both=25,
              method=c("circle", "square"), labels=c("A","B"),
-             col=c("blue","red"))
+             col=crayons(c("Blue","Red")))
 {
     if(setA < 0 || setB < 0 || both < 0)
         stop("The arguments must by non-negative.\n")
@@ -202,7 +202,7 @@ venn <-
 #function(A=17, B=37, C=55,
 #         AB=9, AC=12, BC=28,
 #         ABC=9, labels=c("A","B","C"),
-#         col=c("black","blue","red"))
+#         col=crayons(c("Black","Blue","Red")))
 #{
 #  # make A < B < C
 #  if(A > B) {

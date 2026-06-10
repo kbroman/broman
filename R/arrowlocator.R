@@ -34,7 +34,7 @@
 #' @examples
 #' \dontrun{
 #' plot(0,0,type="n", xlab="", ylab="", xlim=c(0,100), ylim=c(0,100))
-#' arrowlocator(col="blue", lwd=2)
+#' arrowlocator(col=crayons("Blue"), lwd=2)
 #' }
 #'
 #' @seealso

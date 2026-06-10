@@ -10,7 +10,7 @@ venn(
   both = 25,
   method = c("circle", "square"),
   labels = c("A", "B"),
-  col = c("blue", "red")
+  col = crayons(c("Blue", "Red"))
 )
 }
 \arguments{

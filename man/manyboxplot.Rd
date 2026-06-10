@@ -7,8 +7,8 @@
 manyboxplot(
   x,
   probs = c(0.05, 0.1, 0.25),
-  dotcol = "blue",
-  linecol = c("black", "red", "green", "orange"),
+  dotcol = crayons("Blue"),
+  linecol = crayons(c("Black", "Red", "Green", "Orange")),
   ...
 )
 }
@@ -40,8 +40,9 @@ lines at median plus lines at a series of quantiles, using
 \dontshow{set.seed(8422668)}
 mu <- c(rnorm(50, 0, 0.3), rnorm(50, 2, 0.3)) # vector of means
 x <- t(matrix(rnorm(1000*100, mu), ncol=1000))
+colors <- crayons(c("Blue", "Green"))
 manyboxplot(x, c(0.05, 0.25), ylim=range(x),
-           dotcol=c("blue","green")[(1:100 > 50) + 1],
+           dotcol=colors[(1:100 > 50) + 1],
            hlines=seq(-4, 6, by=2),
            vlines=c(1, seq(20, 100, by=20)))
 

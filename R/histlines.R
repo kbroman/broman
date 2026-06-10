@@ -51,8 +51,8 @@
 #' ymx <- max(c(xlines$y, zlines$y))*1.05
 #' plot(xlines, ylim=c(0, ymx), yaxs="i", xaxs="i",
 #'      type="l", lwd=2, xlab="x", ylab="Density", las=1,
-#'      col="blue")
-#' lines(zlines, lwd=2 , col="red")
+#'      col=crayons("Blue"))
+#' lines(zlines, lwd=2 , col=crayons("Red"))
 #'
 #' @seealso [graphics::hist()], [graphics::lines()]
 #'

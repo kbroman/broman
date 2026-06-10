@@ -36,11 +36,11 @@
 #' y <- rnorm(length(x))
 #' plot(x,y, xaxs="i", yaxs="i")
 #' lines(x, runningmean(x, y, window=100, what="mean"),
-#'       col="blue", lwd=2)
+#'       col=crayons("Blue"), lwd=2)
 #' lines(x, runningmean(x, y, window=100, what="median"),
-#'       col="red", lwd=2)
+#'       col=crayons("Red"), lwd=2)
 #' lines(x, runningmean(x, y, window=100, what="sd"),
-#'       col="green", lwd=2)
+#'       col=crayons("Green"), lwd=2)
 #'
 #' @seealso [runningratio()], [runningratio2()]
 #'
@@ -136,8 +136,8 @@ runningmean <-
 #' y <- runif(1000, 1, 5)
 #' z <- runif(1000, 1, 5)
 #' plot(x, runningratio(x, y, z, window=5), type="l", lwd=2)
-#' lines(x, runningratio(x, y, z, window=50), lwd=2, col="blue")
-#' lines(x, runningratio(x, y, z, window=100), lwd=2, col="red")
+#' lines(x, runningratio(x, y, z, window=50), lwd=2, col=crayons("Blue"))
+#' lines(x, runningratio(x, y, z, window=100), lwd=2, col=crayons("Red"))
 #'
 #' @seealso [runningmean()], [runningratio2()]
 #'
