@@ -39,9 +39,8 @@ explain and perhaps illustrate their use.
 There are a bunch of functions to help while writing data analysis reports.
 
 - [`add_commas`](https://cran.r-project.org/web/packages/broman/refman/broman.html#add_commas) -
-  This adds commas to large numbers so they look more natural, so if
+  This adds commas to large numbers so they are easier to read. If
   `x` is 150000, `add_commas(x)` becomes `r add_commas(150000)`.
-
 
 - [`myround`](https://cran.r-project.org/web/packages/broman/refman/broman.html#myround) -
   I'm very particular about sig figs, so I may want `myround(3.10, 2)`
