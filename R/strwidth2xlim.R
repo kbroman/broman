@@ -15,7 +15,7 @@
 #' @param offset offset of the label from the coordinate in fractions of
 #'     a character width
 #'
-#' @param ... additional text parameters from `par`, such as `cex`
+#' @param ... additional text parameters from `par`, such as `cex`; passed to [graphics::strwidth()]
 #'
 #' @details
 #' See `text` for details on `pos` and `offset`.
@@ -32,6 +32,7 @@
 #' x <- runif(15,-1,1)*10
 #' xlabs <- sapply(sample(1:20,15,replace=TRUE),
 #'          function(a) paste(LETTERS[1:a], collapse=""))
+#' par(mfrow=c(2,1), las=1)
 #' ## Labels to the left ##
 #' xlims <- strwidth2xlim(x,xlabs,pos=2)
 #' plot(x,1:length(x),xlim=xlims)
@@ -41,7 +42,7 @@
 #' plot(x,1:length(x),xlim=xlims)
 #' text(x,1:length(x),xlabs,pos=4,cex=0.7)
 #'
-#' @seealso [graphics::text()]
+#' @seealso [graphics::text()], [xlimlabel()], [strwidth2lines()]
 strwidth2xlim <- function(x,xstring, pos=4, offset=0.5,...){
     xwid <- (strwidth(xstring,units="inches", ...)+
              offset*par("cin")[1])/par("pin")[1]

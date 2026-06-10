@@ -18,7 +18,7 @@ the left of, above, and to the right of the coordinates}
 \item{offset}{offset of the label from the coordinate in fractions of
 a character width}
 
-\item{...}{additional text parameters from \code{par}, such as \code{cex}}
+\item{...}{additional text parameters from \code{par}, such as \code{cex}; passed to \code{\link[graphics:strwidth]{graphics::strwidth()}}}
 }
 \value{
 Minimum and maximum x-axis limits for adding horizontal text
@@ -33,6 +33,7 @@ See \code{text} for details on \code{pos} and \code{offset}.
 x <- runif(15,-1,1)*10
 xlabs <- sapply(sample(1:20,15,replace=TRUE),
          function(a) paste(LETTERS[1:a], collapse=""))
+par(mfrow=c(2,1), las=1)
 ## Labels to the left ##
 xlims <- strwidth2xlim(x,xlabs,pos=2)
 plot(x,1:length(x),xlim=xlims)
@@ -44,7 +45,7 @@ text(x,1:length(x),xlabs,pos=4,cex=0.7)
 
 }
 \seealso{
-\code{\link[graphics:text]{graphics::text()}}
+\code{\link[graphics:text]{graphics::text()}}, \code{\link[=xlimlabel]{xlimlabel()}}, \code{\link[=strwidth2lines]{strwidth2lines()}}
 }
 \author{
 Aimee Teo Broman

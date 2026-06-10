@@ -18,6 +18,8 @@
 #' @author
 #' Aimee Teo Broman
 #'
+#' @seealso [graphics::text()], [xlimlabel()], [strwidth2lines()]
+#'
 #' @examples
 #' p <- par(no.readonly = TRUE)
 #' string <- sapply(sample(1:20,15,replace=TRUE),

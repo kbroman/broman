@@ -37,6 +37,9 @@ par(mar=c(mar[1:3],nlines+0.1))
        mgp=c(mgp[1],nlines,mgp[3]),cex.axis=1.5)
 par(p)
 }
+\seealso{
+\code{\link[graphics:text]{graphics::text()}}, \code{\link[=xlimlabel]{xlimlabel()}}, \code{\link[=strwidth2lines]{strwidth2lines()}}
+}
 \author{
 Aimee Teo Broman
 }
