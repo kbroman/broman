@@ -268,21 +268,61 @@ tripoints(t(x), pch=21, bg=crayons("Purple Mountain's Majesty"))
 
 ### Data visualization helpers
 
-- [`arrowlocator`](https://cran.r-project.org/web/packages/broman/refman/broman.html#arrowlocator)
-- [`colwalpha`](https://cran.r-project.org/web/packages/broman/refman/broman.html#colwalpha)
-- [`brocolors`](https://cran.r-project.org/web/packages/broman/refman/broman.html#brocolors)
-- [`crayons`](https://cran.r-project.org/web/packages/broman/refman/broman.html#crayons)
-- [`plot_crayons`](https://cran.r-project.org/web/packages/broman/refman/broman.html#plot_crayons)
-- [`jiggle`](https://cran.r-project.org/web/packages/broman/refman/broman.html#jiggle)
-- [`revgray`](https://cran.r-project.org/web/packages/broman/refman/broman.html#revgray)
-- [`revrainbow`](https://cran.r-project.org/web/packages/broman/refman/broman.html#revrainbow)
-- [`theme_karl`](https://cran.r-project.org/web/packages/broman/refman/broman.html#theme_karl)
-- [`time_axis`](https://cran.r-project.org/web/packages/broman/refman/broman.html#time_axis)
-- [`twocolorpal`](https://cran.r-project.org/web/packages/broman/refman/broman.html#twocolorpal)
-- [`xlimlabel`](https://cran.r-project.org/web/packages/broman/refman/broman.html#xlimlabel)
-- [`strwidth2lines`](https://cran.r-project.org/web/packages/broman/refman/broman.html#strwidth2lines)
-- [`strwidth2xlim`](https://cran.r-project.org/web/packages/broman/refman/broman.html#strwidth2xlim)
+- [`arrowlocator`](https://cran.r-project.org/web/packages/broman/refman/broman.html#arrowlocator) -
+  use `locator()` to interactively draw an arrow on a plot
 
+- [`colwalpha`](https://cran.r-project.org/web/packages/broman/refman/broman.html#colwalpha) -
+
+
+- [`brocolors`](https://cran.r-project.org/web/packages/broman/refman/broman.html#brocolors) -
+  a set of color palettes that I use, including `brocolors("web")`
+  that are a set of basic colors that look nicer than R's basic colors.
+
+- [`crayons`](https://cran.r-project.org/web/packages/broman/refman/broman.html#crayons) -
+  colors scraped from the wikipedia entry for Crayola crayons, so you
+  can use fun colors like `crayons("Tickle Me Pink")` in your graphs.
+  You can use `crayons("pink", notexact=TRUE)` to find all the ones
+  with "pink" or "Pink" in the name, such as "Shocking Pink", "Piggy
+  Pink", and "Pink Sherbert".
+
+- [`plot_crayons`](https://cran.r-project.org/web/packages/broman/refman/broman.html#plot_crayons) -
+  plot a set of colors from the `crayons` palette
+
+- [`jiggle`](https://cran.r-project.org/web/packages/broman/refman/broman.html#jiggle) -
+  jiggle points vertically. Similar to `jitter()` with
+  `method="fixed"` it gives results similar to the
+  [beeswarm](https://github.com/aroneklund/beeswarm) package, for
+  closely packed non-overlapping points. Used in my `dotplot()`.
+
+- [`revgray`](https://cran.r-project.org/web/packages/broman/refman/broman.html#revgray) -
+  reverse grayscale, from white to black rather than black to white.
+
+- [`revrainbow`](https://cran.r-project.org/web/packages/broman/refman/broman.html#revrainbow) -
+  reverse rainbow color palette, going from blue to red. The use of
+  rainbow color palettes in heatmaps is now frowned upon, though.
+
+- [`twocolorpal`](https://cran.r-project.org/web/packages/broman/refman/broman.html#twocolorpal) -
+  set up a color palette that goes from blue to white to red
+
+- [`theme_karl`](https://cran.r-project.org/web/packages/broman/refman/broman.html#theme_karl) -
+  I don't do much ggplot, but when I do, this is my theme. Gray
+  background with white gridlines, but with a box around the plot and without the tick marks.
+
+- [`time_axis`](https://cran.r-project.org/web/packages/broman/refman/broman.html#time_axis) -
+  set up a time-based axis; used by `timeplote()`
+
+- [`xlimlabel`](https://cran.r-project.org/web/packages/broman/refman/broman.html#xlimlabel) -
+  figure out what `xlim` should be for a plot, to make sure that a set
+  of labels will all fit. You give the range of your points, and then
+  the set of labels, and it gives you what xlim should be to get the
+  labels to fit
+
+- [`strwidth2lines`](https://cran.r-project.org/web/packages/broman/refman/broman.html#strwidth2lines) -
+  converts `strwidth` to units of margin lines, to determine how big
+  the margin should be so that your text fits.
+
+- [`strwidth2xlim`](https://cran.r-project.org/web/packages/broman/refman/broman.html#strwidth2xlim) -
+  seems the same as `xlimlabel`
 
 
 ---
