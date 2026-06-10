@@ -176,6 +176,8 @@ There are a bunch of functions to help while writing data analysis reports.
 
 ### A particular data visualation: ternery diagram
 
+A ternary diagram (I know it as Holman's triangle, from the paper Ho
+
 - [`triplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#triplot)
 - [`tripoints`](https://cran.r-project.org/web/packages/broman/refman/broman.html#tripoints)
 - [`trilines`](https://cran.r-project.org/web/packages/broman/refman/broman.html#trilines)

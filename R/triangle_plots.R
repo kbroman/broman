@@ -1,8 +1,8 @@
 #  triplot
 #'
-#' Plot Holmans triangle
+#' Plot ternary diagram (triangle plot)
 #'
-#' Plot Holmans triangle (an equilateral triangle used to depict
+#' Plot ternary plot (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
 #' @param labels Labels for the three corners (lower-right, top, lower-left).
@@ -91,9 +91,9 @@ triplot <-
 
 #  tripoints
 #'
-#' Plot points within a Holmans triangle
+#' Plot points within a ternary plot
 #'
-#' Plot points within a Holmans triangle (an equilateral triangle used to depict
+#' Plot points within a ternary plot (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
 #' @param x A matrix with three rows, each column being a trinomial distribution.
@@ -163,9 +163,9 @@ tripoints <-
 
 #  trilines
 #'
-#' Plot lines within a Holmans triangle
+#' Plot lines within a ternary plot
 #'
-#' Plot lines within a Holmans triangle (an equilateral triangle used to depict
+#' Plot lines within a ternary plot (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
 #' @param x A matrix with three rows, each column being a trinomial
@@ -236,9 +236,9 @@ trilines <-
 
 #  triarrow
 #'
-#' Plot an arrow within a Holmans triangle
+#' Plot an arrow within a ternary plot
 #'
-#' Plot an arrow within a Holmans triangle (an equilateral triangle used to depict
+#' Plot an arrow within a ternary plot (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
 #' @param x A matrix with three rows and two columns, each column being a trinomial
@@ -314,9 +314,9 @@ triarrow <-
 
 #  tritext
 #'
-#' Plot text within a Holmans triangle
+#' Plot text within a ternary plot
 #'
-#' Plot text within a Holmans triangle (an equilateral triangle used to depict
+#' Plot text within a ternary plot (an equilateral triangle used to depict
 #'   trinomial distributions).
 #'
 #' @param x A matrix with three rows, each column being a trinomial distribution.

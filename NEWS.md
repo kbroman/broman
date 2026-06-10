@@ -487,7 +487,7 @@ Revision history for the R/broman package
 ## Version 0.31, 2010-11-22
 
 - Added functions triplot(), tripoints(), trilines(), triarrow() for
-  plotting Holmans triangle (an equilateral triangle used to depict
+  plotting ternary plot (an equilateral triangle used to depict
   trinomial distributions).
 
 - Added function venn() for drawing a to-scale Venn diagram.
