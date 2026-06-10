@@ -24,9 +24,14 @@ library(broman)
 
 [R/broman](https://github.com/kbroman/broman) is an
 [R](https://www.r-project.org) package with miscellanoues R functions
-that are useful to me. It's gotten rather large, and the functions do
-a lot of different, unrelated things, so my purpose here is to
-organize them and illustrate their use.
+that are useful to me. It includes many functions related to graphics (mostly
+for base graphics), permutation tests, running mean/median/sum/ratio, and
+a variety of utilities for programming, for data diagnostics/cleaning,
+and for writing reproducible data analysis reports.
+
+It has gotten rather large, and the functions do a lot of different,
+unrelated things, so my purpose here is to organize them and
+explain and perhaps illustrate their use.
 
 
 ### Document helpers

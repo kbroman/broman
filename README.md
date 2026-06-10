@@ -10,7 +10,10 @@
 ---
 
 R/broman is an [R](https://www.r-project.org) package with miscellaneous R functions that are
-useful to me.
+useful to me. It includes many functions related to graphics (mostly
+for base graphics), permutation tests, running mean/median/sum/ratio, and
+a variety of utilities for programming, for data diagnostics/cleaning,
+and for writing reproducible data analysis reports.
 
 ---
 
