@@ -211,17 +211,51 @@ There are a bunch of functions to help while writing data analysis reports.
 
 ### Data visualization
 
-- [`ciplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#ciplot)
-- [`dotplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#dotplot)
-- [`grayplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#grayplot)
-- [`grayplot_na`](https://cran.r-project.org/web/packages/broman/refman/broman.html#grayplot_na)
-- [`manyboxplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#manyboxplot)
-- [`mypairs`](https://cran.r-project.org/web/packages/broman/refman/broman.html#mypairs)
-- [`qqline2`](https://cran.r-project.org/web/packages/broman/refman/broman.html#qqline2)
-- [`timeplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#timeplot)
-- [`excel_fig`](https://cran.r-project.org/web/packages/broman/refman/broman.html#excel_fig)
-- [`venn`](https://cran.r-project.org/web/packages/broman/refman/broman.html#venn)
-- [`histlines`](https://cran.r-project.org/web/packages/broman/refman/broman.html#histlines)
+- [`grayplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#grayplot) -
+  a base-graphics-based scatterplot, but with particular styling I
+  learned from [Dan Carr](https://mason.gmu.edu/~dcarr/): gray
+  background, white gridlines, black box, no tick marks
+
+- [`grayplot_na`](https://cran.r-project.org/web/packages/broman/refman/broman.html#grayplot_na) -
+  a base-graphics-based scatterplot, but including NA values in
+  margins rather than omitted. Use the `force` argument to control
+  whether the boxes for NAs in the margins are included even if the
+  data have no NAs.
+
+- [`ciplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#ciplot) -
+  plot a set of confidence intervals, with styling like `grayplot()`
+
+- [`dotplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#dotplot) -
+  a scatterplot where one variable is categorical (so like `stripchart()`,
+  with styling like `grayplot()`
+
+- [`timeplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#timeplot) -
+  a scatterplot where one variable is date/time,
+  with styling like `grayplot()`
+
+- [`mypairs`](https://cran.r-project.org/web/packages/broman/refman/broman.html#mypairs) -
+  a scatterplot matrix (like `pairs()`) but with only the upper
+  triangle (to save some space) and calling `grayplot()`
+
+- [`manyboxplot`](https://cran.r-project.org/web/packages/broman/refman/broman.html#manyboxplot) -
+  a version of box plots for high-dimensional data, just drawing lines
+  at various quantiles, potentially going farther out in the tails.
+
+- [`qqline2`](https://cran.r-project.org/web/packages/broman/refman/broman.html#qqline2) -
+  this is like `qqline()` but for general `qqplot()`. (`qqline()` is
+  only for use with `qqnorm()`.)
+
+- [`excel_fig`](https://cran.r-project.org/web/packages/broman/refman/broman.html#excel_fig) -
+  this is a tool for making figures that look like excel files. I used
+  it to make all of the examples in the "Data organization in
+  spreadsheets" paper [Broman and Woo (2018)](https://doi.org/10/gdz6cm).
+
+- [`venn`](https://cran.r-project.org/web/packages/broman/refman/broman.html#venn) -
+  make venn diagrams (as circles or squares) where the sizes are "to scale".
+
+- [`histlines`](https://cran.r-project.org/web/packages/broman/refman/broman.html#histlines) -
+  this is a tool for using `lines()` for making a histograph, so that
+  you can show multiple histograms on top of each other.
 
 ### A favored data visualization: ternary plots
 
@@ -269,10 +303,10 @@ tripoints(t(x), pch=21, bg=crayons("Purple Mountain's Majesty"))
 ### Data visualization helpers
 
 - [`arrowlocator`](https://cran.r-project.org/web/packages/broman/refman/broman.html#arrowlocator) -
-  use `locator()` to interactively draw an arrow on a plot
+  use `locator()` to interactively draw an arrow on a plot.
 
 - [`colwalpha`](https://cran.r-project.org/web/packages/broman/refman/broman.html#colwalpha) -
-
+  convert a named color to the same color but with alpha to control transparency.
 
 - [`brocolors`](https://cran.r-project.org/web/packages/broman/refman/broman.html#brocolors) -
   a set of color palettes that I use, including `brocolors("web")`
