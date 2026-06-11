@@ -9,6 +9,8 @@
 #'
 #' @param b Another object
 #'
+#' @param tol Tolerance value. If NULL, we use the comparison `a==b`; if not NULL we use `max(a-b)<tol`.
+#'
 #' @details
 #' It's not very complicated: `((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & a == b))`
 #'
@@ -44,17 +46,21 @@
 #'
 #' @keywords
 #' data
-cf <- function(a, b) UseMethod("cf")
+cf <- function(a, b, tol=NULL) UseMethod("cf")
 
 #' @export
 cf.default <-
-    function(a, b)
-    ((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & a == b))
+    function(a, b, tol=NULL)
+{
+    if(is.null(tol)) return( ((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & a == b)) )
+
+    ((is.na(a) & is.na(b)) | (!is.na(a) & !is.na(b) & abs(a - b) < tol) )
+}
 
 #' @export
 cf.list <-
-    function(a,b)
+    function(a,b, tol=NULL)
 {
-    for(i in seq(along=a)) a[[i]] <- cf(a[[i]], b[[i]])
+    for(i in seq(along=a)) a[[i]] <- cf(a[[i]], b[[i]], tol)
     a
 }

@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.95-4, 2026-06-10
+## Version 0.95-5, 2026-06-11
 
 - Added arguments `add` and `offset` to `ciplot()` so that multiple
   sets of confidence intervals may be compared. (Issue #19)
@@ -10,7 +10,11 @@ Revision history for the R/broman package
   Actually, if `show_na=TRUE` it uses `grayplot_na()` so that missing
   values are shown, and this is now the default.
 
-- Began work on a [vignette about the package](https://kbroman.org/broman/broman.html)
+- Added [vignette about the package](https://kbroman.org/broman/broman.html)
+
+- Added a `tol` argument to `cf()`; if provided, we use `abs(x-y)<tol`
+  rather than `x==y`. (Issue #20)
+
 
 
 ## Version 0.94, 2026-06-08

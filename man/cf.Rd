@@ -6,12 +6,14 @@
 \alias{cf.list}
 \title{Compare objects, including missing data pattern}
 \usage{
-cf(a, b)
+cf(a, b, tol = NULL)
 }
 \arguments{
 \item{a}{Some object.}
 
 \item{b}{Another object}
+
+\item{tol}{Tolerance value. If NULL, we use the comparison \code{a==b}; if not NULL we use \code{max(a-b)<tol}.}
 }
 \value{
 Boolean object with \code{TRUE} indicating an element is the same.
