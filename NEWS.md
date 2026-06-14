@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.95-5, 2026-06-11
+## Version 0.95-6, 2026-06-14
 
 - Added arguments `add` and `offset` to `ciplot()` so that multiple
   sets of confidence intervals may be compared. (Issue #19)
@@ -15,6 +15,8 @@ Revision history for the R/broman package
 - Added a `tol` argument to `cf()`; if provided, we use `abs(x-y)<tol`
   rather than `x==y`. (Issue #20)
 
+- In `rmvn()`, if `V` is a single number, it is taken to be the
+  correlation between all pairs, and the variances are taken to be 1.
 
 
 ## Version 0.94, 2026-06-08
