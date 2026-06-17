@@ -11,7 +11,9 @@ rmvn(n, mu = 0, V = matrix(1))
 
 \item{mu}{Mean vector.}
 
-\item{V}{Variance-covariance matrix.}
+\item{V}{Variance-covariance matrix.
+If a single number, we take it to be the correlation between all pairs,
+in which case the variances are taken to be 1.}
 }
 \value{
 A matrix of size n x \code{length(mu)}.  Each row corresponds to a
