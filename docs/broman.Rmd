@@ -30,8 +30,8 @@ a variety of utilities for programming, for data diagnostics/cleaning,
 and for writing reproducible data analysis reports.
 
 It has gotten rather large, and the functions do a lot of different,
-unrelated things, so my purpose here is to organize them and
-explain and perhaps illustrate their use.
+unrelated things, so my purpose here is to organize them, and
+to explain and perhaps illustrate their use.
 
 
 ### Document helpers
