@@ -5,10 +5,6 @@
 [![r-universe badge](https://kbroman.r-universe.dev/broman/badges/version)](https://kbroman.r-universe.dev/broman)
 [![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.2636796.svg)](https://doi.org/10.5281/zenodo.2636796)
 
-[Karl W Broman](https://kbroman.org)
-
----
-
 R/broman is an [R](https://www.r-project.org) package with miscellaneous R functions that are
 useful to me. It includes many functions related to graphics (mostly
 for base graphics), permutation tests, running mean/median/sum/ratio, and
