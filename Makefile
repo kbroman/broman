@@ -15,3 +15,4 @@ vignette: docs/broman.html
 
 docs/broman.html: docs/broman.Rmd
 	cd $(<D);R $(R_OPTS) -e "rmarkdown::render('$(<F)')"
+	cd $(@D);paste_badges.R $(@F)
