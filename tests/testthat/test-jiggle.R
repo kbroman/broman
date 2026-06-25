@@ -22,7 +22,7 @@ test_that("jiggle with method=fixed works", {
 
 
 
-    m <- c(CC004 = "D", CC008 = "H", CC015 = "D", CC017 = "G", CC020 = "B",
+    g <- c(CC004 = "D", CC008 = "H", CC015 = "D", CC017 = "G", CC020 = "B",
            CC023 = NA, CC025 = "E", CC029 = "C", CC032 = "C", CC037 = "D",
            CC058 = "F", CC061 = "G", CC080 = "A")
     y <- c(CC004 = -2.8167, CC008 = -5.925, CC015 = -2.38, CC017 = -2.7189,
@@ -31,8 +31,8 @@ test_that("jiggle with method=fixed works", {
 
     expected <- c(0, 0, 0, 0, 0, NA, 0, 0, 0, 0, 0, 0, 0)
 
-    expect_equivalent(jiggle(m, y, method="fixed"), expected)
-    expect_equivalent(jiggle(m, y, method="fixed", maxvalue=0.1), expected)
+    expect_equivalent(jiggle(g, y, method="fixed"), expected)
+    expect_equivalent(jiggle(g, y, method="fixed", maxvalue=0.1), expected)
 
 
 })
@@ -62,7 +62,7 @@ test_that("jiggle with method=random works", {
                   0, 0.00957026235759258, 0.00199242285918444, 0, 0.0977408314589411)
     expect_equivalent(jiggle(g, y, method="random", maxvalue=0.1), expected)
 
-    m <- c(CC004 = "D", CC008 = "H", CC015 = "D", CC017 = "G", CC020 = "B",
+    g <- c(CC004 = "D", CC008 = "H", CC015 = "D", CC017 = "G", CC020 = "B",
            CC023 = NA, CC025 = "E", CC029 = "C", CC032 = "C", CC037 = "D",
            CC058 = "F", CC061 = "G", CC080 = "A")
     y <- c(CC004 = -2.8167, CC008 = -5.925, CC015 = -2.38, CC017 = -2.7189,
@@ -71,10 +71,10 @@ test_that("jiggle with method=random works", {
 
     expected <- c(-0.0513827899703756, 0, 0, 0, 0, -0.163120478927158, 0, -0.0521027790033258,
                   0.0196616823901422, 0.0682791111990809, 0, 0, 0)
-    expect_equivalent(jiggle(m, y, method="random"), expected)
+    expect_equivalent(jiggle(g, y, method="random"), expected)
 
     expected <- c(0.0137072402130192, 0, 0, 0, 0, -0.00972040663473309, 0, -0.0141159515672674,
                   -0.00592605986942848, -0.0041690049925819, 0, 0, 0)
-    expect_equivalent(jiggle(m, y, method="random", maxvalue=0.1), expected)
+    expect_equivalent(jiggle(g, y, method="random", maxvalue=0.1), expected)
 
 })
