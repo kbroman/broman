@@ -1,6 +1,12 @@
 Revision history for the R/broman package
 -----------------------------------------
 
+## Version 0.97-1, 2026-06-25
+
+- Fixed bug in `jiggle()` with `method=fixed` in the case `maxvalue`
+  is provided but the output would be all 0's.
+
+
 ## Version 0.96, 2026-06-23
 
 - Added arguments `add` and `offset` to `ciplot()` so that multiple

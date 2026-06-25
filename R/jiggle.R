@@ -123,8 +123,8 @@ jiggle <-
         attr(result, "breaks") <- br
 
         # rescale to be in the range -maxvalue to maxvalue
-        if(!is.null(maxvalue)) {
-            result <- result/max(abs(result))*maxvalue
+        if(!is.null(maxvalue) && maxabs(result, na.rm=TRUE) > 0) {
+            result <- result/maxabs(result, na.rm=TRUE)*maxvalue
         }
 
         return(result)
