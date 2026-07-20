@@ -1,7 +1,7 @@
 Revision history for the R/broman package
 -----------------------------------------
 
-## Version 0.97-1, 2026-06-25
+## Version 0.98, 2026-07-20
 
 - Fixed bug in `jiggle()` with `method=fixed` in the case `maxvalue`
   is provided but the output would be all 0's.
